@@ -1,0 +1,151 @@
+Program.cs(62,17): warning CS0219: The variable 'nOrbitals' is assigned but its value is never used [/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/MolecularHydrogen.csproj]
+----- Creating Jordan–Wigner encoding
+----- End Creating Jordan–Wigner encoding 
+
+----- Print Hamiltonian
+Identity has 1 entries).
+    [Identity: [  ], -0.098834446]
+Z has 4 entries).
+    [Z: [ 0 ], 0.171201285]
+    [Z: [ 1 ], 0.171201285]
+    [Z: [ 2 ], -0.222796536]
+    [Z: [ 3 ], -0.222796536]
+ZZ has 6 entries).
+    [ZZ: [ 0 1 ], 0.1686232915]
+    [ZZ: [ 0 2 ], 0.12054614575]
+    [ZZ: [ 1 3 ], 0.12054614575]
+    [ZZ: [ 1 2 ], 0.16586802525]
+    [ZZ: [ 0 3 ], 0.16586802525]
+    [ZZ: [ 2 3 ], 0.1743495025]
+v01234 has 1 entries).
+    [v01234: [ 0 1 2 3 ], 0, -0.0453218795, 0, 0.0453218795]
+----- End Print Hamiltonian 
+
+Exact molecular Hydrogen ground state energy: -1.137260278.
+
+----- Performing quantum energy estimation by Trotter simulation algorithm
+----- BEGIN ORACLE WRITE -----
+Zterm | Qubit 0 | 1712.01285
+Zterm | Qubit 1 | 1712.01285
+Zterm | Qubit 2 | -2227.96536
+Zterm | Qubit 3 | -2227.96536
+ZZterm | Qubit 0, 1 | 1686.232915
+ZZterm | Qubit 0, 2 | 1205.4614575
+ZZterm | Qubit 0, 3 | 1658.6802525
+ZZterm | Qubit 1, 2 | 1658.6802525
+ZZterm | Qubit 1, 3 | 1205.4614575
+ZZterm | Qubit 2, 3 | 1743.495025
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliX,PauliX,PauliY,PauliY]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliY,PauliX,PauliX,PauliY]
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliY,PauliY,PauliX,PauliX]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliX,PauliY,PauliY,PauliX]
+-----Finished oracle implementation-----
+Zterm | Qubit 0 | 1712.01285
+Zterm | Qubit 1 | 1712.01285
+Zterm | Qubit 2 | -2227.96536
+Zterm | Qubit 3 | -2227.96536
+ZZterm | Qubit 0, 1 | 1686.232915
+ZZterm | Qubit 0, 2 | 1205.4614575
+ZZterm | Qubit 0, 3 | 1658.6802525
+ZZterm | Qubit 1, 2 | 1658.6802525
+ZZterm | Qubit 1, 3 | 1205.4614575
+ZZterm | Qubit 2, 3 | 1743.495025
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliX,PauliX,PauliY,PauliY]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliY,PauliX,PauliX,PauliY]
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliY,PauliY,PauliX,PauliX]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliX,PauliY,PauliY,PauliX]
+-----Finished oracle implementation-----
+Zterm | Qubit 0 | 1712.01285
+Zterm | Qubit 1 | 1712.01285
+Zterm | Qubit 2 | -2227.96536
+Zterm | Qubit 3 | -2227.96536
+ZZterm | Qubit 0, 1 | 1686.232915
+ZZterm | Qubit 0, 2 | 1205.4614575
+ZZterm | Qubit 0, 3 | 1658.6802525
+ZZterm | Qubit 1, 2 | 1658.6802525
+ZZterm | Qubit 1, 3 | 1205.4614575
+ZZterm | Qubit 2, 3 | 1743.495025
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliX,PauliX,PauliY,PauliY]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliY,PauliX,PauliX,PauliY]
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliY,PauliY,PauliX,PauliX]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliX,PauliY,PauliY,PauliX]
+-----Finished oracle implementation-----
+Zterm | Qubit 0 | 1712.01285
+Zterm | Qubit 1 | 1712.01285
+Zterm | Qubit 2 | -2227.96536
+Zterm | Qubit 3 | -2227.96536
+ZZterm | Qubit 0, 1 | 1686.232915
+ZZterm | Qubit 0, 2 | 1205.4614575
+ZZterm | Qubit 0, 3 | 1658.6802525
+ZZterm | Qubit 1, 2 | 1658.6802525
+ZZterm | Qubit 1, 3 | 1205.4614575
+ZZterm | Qubit 2, 3 | 1743.495025
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliX,PauliX,PauliY,PauliY]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliY,PauliX,PauliX,PauliY]
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliY,PauliY,PauliX,PauliX]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliX,PauliY,PauliY,PauliX]
+-----Finished oracle implementation-----
+Zterm | Qubit 0 | 1712.01285
+Zterm | Qubit 1 | 1712.01285
+Zterm | Qubit 2 | -2227.96536
+Zterm | Qubit 3 | -2227.96536
+ZZterm | Qubit 0, 1 | 1686.232915
+ZZterm | Qubit 0, 2 | 1205.4614575
+ZZterm | Qubit 0, 3 | 1658.6802525
+ZZterm | Qubit 1, 2 | 1658.6802525
+ZZterm | Qubit 1, 3 | 1205.4614575
+ZZterm | Qubit 2, 3 | 1743.495025
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliX,PauliX,PauliY,PauliY]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliY,PauliX,PauliX,PauliY]
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliY,PauliY,PauliX,PauliX]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliX,PauliY,PauliY,PauliX]
+-----Finished oracle implementation-----
+Zterm | Qubit 0 | 1712.01285
+Zterm | Qubit 1 | 1712.01285
+Zterm | Qubit 2 | -2227.96536
+Zterm | Qubit 3 | -2227.96536
+ZZterm | Qubit 0, 1 | 1686.232915
+ZZterm | Qubit 0, 2 | 1205.4614575
+ZZterm | Qubit 0, 3 | 1658.6802525
+ZZterm | Qubit 1, 2 | 1658.6802525
+ZZterm | Qubit 1, 3 | 1205.4614575
+ZZterm | Qubit 2, 3 | 1743.495025
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliX,PauliX,PauliY,PauliY]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliY,PauliX,PauliX,PauliY]
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliY,PauliY,PauliX,PauliX]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliX,PauliY,PauliY,PauliX]
+-----Finished oracle implementation-----
+Zterm | Qubit 0 | 1712.01285
+Zterm | Qubit 1 | 1712.01285
+Zterm | Qubit 2 | -2227.96536
+Zterm | Qubit 3 | -2227.96536
+ZZterm | Qubit 0, 1 | 1686.232915
+ZZterm | Qubit 0, 2 | 1205.4614575
+ZZterm | Qubit 0, 3 | 1658.6802525
+ZZterm | Qubit 1, 2 | 1658.6802525
+ZZterm | Qubit 1, 3 | 1205.4614575
+ZZterm | Qubit 2, 3 | 1743.495025
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliX,PauliX,PauliY,PauliY]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliY,PauliX,PauliX,PauliY]
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliY,PauliY,PauliX,PauliX]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliX,PauliY,PauliY,PauliX]
+-----Finished oracle implementation-----
+Zterm | Qubit 0 | 1712.01285
+Zterm | Qubit 1 | 1712.01285
+Zterm | Qubit 2 | -2227.96536
+Zterm | Qubit 3 | -2227.96536
+ZZterm | Qubit 0, 1 | 1686.232915
+ZZterm | Qubit 0, 2 | 1205.4614575
+ZZterm | Qubit 0, 3 | 1658.6802525
+ZZterm | Qubit 1, 2 | 1658.6802525
+ZZterm | Qubit 1, 3 | 1205.4614575
+ZZterm | Qubit 2, 3 | 1743.495025
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliX,PauliX,PauliY,PauliY]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliY,PauliX,PauliX,PauliY]
+0123term | Qubit 0-1, 2-3 | -453.218795 | [PauliY,PauliY,PauliX,PauliX]
+0123term | Qubit 0-1, 2-3 | 453.218795 | [PauliX,PauliY,PauliY,PauliX]
+-----Finished oracle implementation-----
+Rep #1/5: Energy estimate: -0.0991022405044589; Phase estimate: -2.67794504458899
+----- End Performing quantum energy estimation by Trotter simulation algorithm
+
+Press Enter to continue...

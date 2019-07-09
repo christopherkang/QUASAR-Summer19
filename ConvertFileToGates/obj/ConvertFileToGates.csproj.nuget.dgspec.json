@@ -45,6 +45,10 @@
               "version": "[2.0.0, )",
               "autoReferenced": true
             },
+            "Microsoft.Quantum.Chemistry": {
+              "target": "Package",
+              "version": "[0.7.1905.3109, )"
+            },
             "Microsoft.Quantum.Development.Kit": {
               "target": "Package",
               "version": "[0.7.1905.3109, )"

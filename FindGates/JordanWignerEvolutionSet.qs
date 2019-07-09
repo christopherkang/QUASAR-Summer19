@@ -39,8 +39,8 @@ namespace Microsoft.Quantum.Chemistry.JordanWigner {
             let angle = (1.0 * coeff[0]) * stepSize;
             let qubit = qubits[idxFermions[0]];
             Exp([PauliZ], angle, [qubit]);
-            Message($"Exp([PauliZ], {angle}, [qubit[{idxFermions[0]}]])");
-            // Message($"Zterm | Qubit {idxFermions[0]} | {angle}");
+            // Message($"Exp([PauliZ], {angle}, [qubit[{idxFermions[0]}]])");
+            Message($"Zterm | Qubit {idxFermions[0]} | {angle}");
         }
         
         adjoint invert;
@@ -66,7 +66,7 @@ namespace Microsoft.Quantum.Chemistry.JordanWigner {
             let angle = (1.0 * coeff[0]) * stepSize;
             let qubitsZZ = Subarray(idxFermions[0 .. 1], qubits);
             Exp([PauliZ, PauliZ], angle, qubitsZZ);
-            Message($"Exp([PauliZ, PauliZ], {angle}, [qubits {idxFermions[0]}, {idxFermions[1]}])");
+            // Message($"Exp([PauliZ, PauliZ], {angle}, [qubits {idxFermions[0]}, {idxFermions[1]}])");
             Message($"ZZterm | Qubit {idxFermions[0]}, {idxFermions[1]} | {angle}");
         }
         
@@ -133,22 +133,19 @@ namespace Microsoft.Quantum.Chemistry.JordanWigner {
             // This amounts to applying a PQ term, followed by same PQ term after a CNOT from q to the parity bit.
             if (Length(idxFermions) == 2) {
                 let termPR0 = GeneratorIndex((idxTermType, [1.0]), idxFermions);
-                Message($"PQQRterm | Qubit {idxFermions[0]}-{idxFermions[1]} + parity | {angle} | XX");
-                Message($"PQQRterm | Qubit {idxFermions[0]}-{idxFermions[1]} + parity | {angle} | YY");
+                Message($"PQterm | Qubit {idxFermions[0]}-{idxFermions[1]} + parity | {angle}");
                 _ApplyJordanWignerPQTerm_(termPR0, angle, new Qubit[0], qubits);
             }
             else {
                 
                 if (idxFermions[0] < qubitQidx and qubitQidx < idxFermions[3]) {
                     let termPR1 = GeneratorIndex((idxTermType, [1.0]), [idxFermions[0], idxFermions[3] - 1]);
-                    Message($"PQQRterm | Qubit {idxFermions[0]}-{idxFermions[3]} + parity | {angle} | XX");
-                    Message($"PQQRterm | Qubit {idxFermions[0]}-{idxFermions[3]} + parity | {angle} | YY");
+                    Message($"PQQRterm | Qubit {idxFermions[0]}-{idxFermions[3]} + -1 | {angle}");
                     _ApplyJordanWignerPQTerm_(termPR1, angle, new Qubit[0], Exclude([qubitQidx], qubits));
                 }
                 else {
                     let termPR1 = GeneratorIndex((idxTermType, [1.0]), [0, idxFermions[3] - idxFermions[0]]);
-                    Message($"PQQRterm | Qubit {idxFermions[0]}-{idxFermions[3]} + parity {qubitQidx} | {angle} | XX");
-                    Message($"PQQRterm | Qubit {idxFermions[0]}-{idxFermions[3]} + parity {qubitQidx} | {angle} | YY");
+                    Message($"PQQRterm | Qubit {idxFermions[0]}-{idxFermions[3]} + {qubitQidx} | {angle}");
                     _ApplyJordanWignerPQTerm_(termPR1, angle, [qubits[qubitQidx]], qubits[idxFermions[0] .. idxFermions[3]]);
                 }
             }
