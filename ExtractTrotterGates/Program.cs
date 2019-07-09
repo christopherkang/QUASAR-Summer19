@@ -141,42 +141,14 @@ namespace Microsoft.Quantum.Chemistry.Samples.Hydrogen
                 var qSharpWavefunctionData = fermionWavefunction.ToQSharpFormat();
                 var qSharpData = QSharpFormat.Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
 
-                // We specify the bits of precision desired in the phase estimation 
-                // algorithm
-                var bits = 1;
-
                 // We specify the step-size of the simulated time-evolution
-                var trotterStep = 10000.0;
+                var trotterStep = 1;
 
                 // Choose the Trotter integrator order
                 Int64 trotterOrder = 1;
 
-                // As the quantum algorithm is probabilistic, let us run a few trials.
-
-                // This may be compared to true value of
-                Console.WriteLine("Exact molecular Hydrogen ground state energy: -1.137260278.\n");
-                Console.WriteLine("----- Performing quantum energy estimation by Trotter simulation algorithm");
                 Console.WriteLine("----- BEGIN ORACLE WRITE -----");
-                for (int i = 0; i < 1; i++)
-                {
-                    // EstimateEnergyByTrotterization
-                    // Name shold make clear that it does it by trotterized
-                    var (phaseEst, energyEst) = GetEnergyByTrotterization.Run(qsim, qSharpData, bits, trotterStep, trotterOrder).Result;
-
-                    Console.WriteLine($"Rep #{i+1}/5: Energy estimate: {energyEst}; Phase estimate: {phaseEst}");
-                }
-                Console.WriteLine("----- End Performing quantum energy estimation by Trotter simulation algorithm\n");
-
-                // Console.WriteLine("----- Performing quantum energy estimation by Qubitization simulation algorithm");
-                // for (int i = 0; i < 1; i++)
-                // {
-                //     // EstimateEnergyByTrotterization
-                //     // Name shold make clear that it does it by trotterized
-                //     var (phaseEst, energyEst) = GetEnergyByQubitization.Run(qsim, qSharpData, bits).Result;
-
-                //     Console.WriteLine($"Rep #{i+1}/1: Energy estimate: {energyEst}; Phase estimate: {phaseEst}");
-                // }
-                // Console.WriteLine("----- End Performing quantum energy estimation by Qubitization simulation algorithm\n");
+                TargetedGateExtraction.Run(qsim, qSharpData, trotterStep, trotterOrder).Wait();
             }
 
             Console.WriteLine("Press Enter to continue...");

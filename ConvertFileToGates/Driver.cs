@@ -36,7 +36,7 @@ namespace ConvertFileToGates
                                 string[] infoTypes = ln.Split(" | ");
                                 infoTypes[1] = infoTypes[1].Replace(",", string.Empty);
                                 string[] qubitInfo = infoTypes[1].Split(" ");
-                                var targetInfo = (-1, -1, -1, -1);
+                                (int, int, int, int) targetInfo = (-1, -1, -1, -1);
 
                                 if (infoTypes[0] == "Zterm") 
                                 {
@@ -68,7 +68,9 @@ namespace ConvertFileToGates
                                 }
 
                                 var totalInfo = (infoTypes[0], targetInfo, float.Parse(infoTypes[2]));
-                                listOfGates.Add(totalInfo);
+                                // listOfGates.Add(totalInfo);
+                                CompressedGateForm test = ("yes", (1, 1, 1, 1), 1.1);
+                                // listOfGates.Add();
                             }
                         }
                         else if (ln == "----- BEGIN ORACLE WRITE -----") 

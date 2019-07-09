@@ -60,6 +60,19 @@ namespace Microsoft.Quantum.Chemistry.Samples.Hydrogen {
         // We return both the estimated phase, and the estimated energy.
         return (estPhase, estEnergy);
     }
+
+    operation TargetedGateExtraction (qSharpData : JordanWignerEncodingData, trotterStepSize : Double, trotterOrder : Int) : Unit {
+        // This code is copied from above, and only applies the Trotter Oracle once
+        // This means that the output will only contain one set of gates, thereby allowing
+        // for easy extraction.
+        let (nSpinOrbitals, fermionTermData, statePrepData, energyOffset) = qSharpData!;
+        let (nQubits, (rescaleFactor, oracle)) = TrotterStepOracle(qSharpData, trotterStepSize, trotterOrder);
+        
+        using (register = Qubit[nQubits]) {
+            oracle(register);
+            ResetAll(register);
+        }
+    }
     
     
     //////////////////////////////////////////////////////////////////////////
