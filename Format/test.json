@@ -6,7 +6,7 @@
             "controls":[],
             "targets":[],
             "parity":[]
-        }, 
+        }
     ],
     "constants":{
         "nSpinOrbitals":1,

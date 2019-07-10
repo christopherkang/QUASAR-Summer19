@@ -17,3 +17,7 @@ This tool allows you to dump the exact gates applied in the Trotterization libra
 6. Your code should now already be using the modified libraries and will print the additional information to the console. To collect this data, run from the command line:
     - dotnet run > test_gates.txt
     - This stores the output in a txt file.
+
+## WARNING
+
+If you proceed with this modification, DO NOT REFERENCE THE LOCAL CHEM LIBRARY! It will NOT apply gates to qubits, and your results will be incorrect.
