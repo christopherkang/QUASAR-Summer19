@@ -148,8 +148,8 @@ namespace Microsoft.Quantum.Chemistry.Samples.Hydrogen
                 Int64 trotterOrder = 1;
 
                 TargetedGateExtraction.Run(qsim, qSharpData, trotterStep, trotterOrder).Wait();
-                Console.WriteLine($"trotterStep: {trotterStep}");
-                Console.WriteLine($"trotterOrder: {trotterOrder}");
+                Console.WriteLine($"trotterStep:float:{trotterStep}");
+                Console.WriteLine($"trotterOrder:int:{trotterOrder}");
                 Console.WriteLine($"----- END FILE -----");
             }
             #endregion

@@ -190,9 +190,9 @@ namespace Microsoft.Quantum.Chemistry.Samples.Hydrogen
             }
 
 #line 77 "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/HydrogenSimulation.qs"
-            MicrosoftQuantumIntrinsicMessage.Apply(String.Format("nSpinOrbitals: {0}", nSpinOrbitals));
+            MicrosoftQuantumIntrinsicMessage.Apply(String.Format("nSpinOrbitals:int:{0}", nSpinOrbitals));
 #line 78 "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/HydrogenSimulation.qs"
-            MicrosoftQuantumIntrinsicMessage.Apply(String.Format("energyOffset: {0}", energyOffset));
+            MicrosoftQuantumIntrinsicMessage.Apply(String.Format("energyOffset:float:{0}", energyOffset));
 #line hidden
             return QVoid.Instance;
         }

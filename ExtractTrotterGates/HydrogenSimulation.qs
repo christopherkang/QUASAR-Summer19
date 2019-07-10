@@ -74,8 +74,8 @@ namespace Microsoft.Quantum.Chemistry.Samples.Hydrogen {
             Message("----- END ORACLE WRITE -----");
             ResetAll(register);
         }
-        Message($"nSpinOrbitals: {nSpinOrbitals}");
-        Message($"energyOffset: {energyOffset}");
+        Message($"nSpinOrbitals:int:{nSpinOrbitals}");
+        Message($"energyOffset:float:{energyOffset}");
     }
     
     

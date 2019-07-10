@@ -40,8 +40,10 @@ def parse_line(line):
     # OPS CONVERSION TABLE
     # [I, X, Y, Z] - [0, 1, 2, 3]
 
+    # Split the line into its data components
     line_terms = line.split(" | ")
-    print(line_terms)
+
+    # build a sample dict to be returned
     out_dict = {
         "type": line_terms[0],
         "angle": 0,
@@ -50,45 +52,57 @@ def parse_line(line):
         "parity": [],
         "targets": []
     }
-    term_name = line_terms[0]
-    qubit_targets = line_terms[1].split(", ")
 
-    # add the base ops and angle for all terms
-    op_terms = Constant.OPS.value[term_name]
-    out_dict["ops"] = list(
-        map(lambda x: Constant.PAULI_TO_INT.value[x], op_terms))
-    out_dict["angle"] = line_terms[2]
+    # find the type of the term
+    term_type = line_terms[0]
+
+    # extract the qubit targets, and convert them to integers
+    qubit_targets = line_terms[1].split(", ")
+    qubit_targets = list(map(int, qubit_targets))
     out_dict["targets"] = qubit_targets
 
-    if "Zterm" in term_name:
+    # add the base ops and angle for all terms.
+    # Converts them to integers, as defined by the Constant class
+    op_terms = Constant.OPS.value[term_type]
+    out_dict["ops"] = list(
+        map(lambda x: Constant.PAULI_TO_INT.value[x], op_terms))
+
+    # also adds angle data to the dict
+    out_dict["angle"] = float(line_terms[2])
+
+    # modify the data based on the different terms
+    if "Zterm" in term_type:
         # no additional work necessary
         pass
-    elif "ZZterm" in term_name:
+    elif "ZZterm" in term_type:
         # no additional work necessary
         pass
-    elif "PQterm" in term_name:
+    elif "PQterm" in term_type:
         # we'll need to add the qubits in between the two given qubits
         for index in range(qubit_targets[0], qubit_targets[1]):
             out_dict["targets"].append(index)
             out_dict["ops"].append(Constant.PAULI_TO_INT.value["PauliZ"])
-    elif "PQQRterm" in term_name:
+    elif "PQQRterm" in term_type:
         # we need to do a more complicated series of manipulations
         pass
-    elif "0123term" in term_name:
-        # we have a 0123 term - additional information is stored in the +
-        term_type = term_name[-1]
+    elif "0123term" in term_type:
+        # we have a 0123 term, so we'll need to add additional Z ops
+        # use the naming convention from
+        # /Chemistry/src/Runtime/JordanWigner/JordanWignerEvolutionSet.qs
+        PQJW = range(qubit_targets[0] + 1, qubit_targets[1] - 1)
+        RSJW = range(qubit_targets[2] + 1, qubit_targets[3] - 1)
 
-        # FLAG unfinished
-        out_dict["ops"] = [
-            map(lambda x: Constant.PAULI_TO_INT[x], Constant.OPS_0123[term_type])]
+        for index in PQJW:
+            out_dict["targets"].append(index)
+            out_dict["ops"].append(Constant.PAULI_TO_INT.value["PauliZ"])
 
-        qubit_targets = line_terms[1].split(", ")
-        out_dict["targets"] = qubit_targets
-        out_dict["angle"] = line_terms[2]
+        for index in RSJW:
+            out_dict["targets"].append(index)
+            out_dict["ops"].append(Constant.PAULI_TO_INT.value["PauliZ"])
 
-    # # the number of operations should match the number of target and parity qubits
-    # assert len(out_dict["ops"]) == len(
-    #     out_dict["targets"]) + len(out_dict["parity"])
+    # the number of operations should match the number of target and parity qubits
+    assert len(out_dict["ops"]) == len(
+        out_dict["targets"]) + len(out_dict["parity"])
 
     return out_dict
 
@@ -137,13 +151,13 @@ with open(path) as f:
             if not cleanedLine[:2] == "Ge":
                 terms.append(parse_line(cleanedLine))
         elif hasConstantInfo:
-            # take in constant information, in the format "name: data"
-            print("not implemented yet either LOL")
-            keyValuePair = cleanedLine.split(": ")
+            # take in constant information, in the format "name:type:data"
+            # FLAG - WHEN ADDING NEW CONSTANTS, TYPE MUST BE THE PYTHON EQUIVALENT TO CONVERT
+            # int(), float(), str(), etc.
+            keyValuePair = cleanedLine.split(":")
             print(keyValuePair)
-            constants[keyValuePair[0]] = keyValuePair[1]
-
-        # print(line)
+            constants[keyValuePair[0]] = eval(
+                keyValuePair[1] + f"({keyValuePair[2]})")
 
 data = {
     "constants": constants,
