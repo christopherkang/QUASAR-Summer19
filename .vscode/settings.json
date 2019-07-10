@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/Users/kang828/anaconda3/bin/python",
+    "python.pythonPath": "/Users/kang828/anaconda3/envs/quantum/bin/python",
     "python.linting.pylintEnabled": true,
     "python.linting.enabled": true
 }

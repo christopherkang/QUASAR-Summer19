@@ -117,14 +117,14 @@ namespace Microsoft.Quantum.Chemistry.Samples.Hydrogen
             // expressed in terms of Pauli matrices. This is an essential step
             // for simulating our constructed Hamiltonians on a qubit quantum
             // computer.
-            Console.WriteLine("----- Creating Jordan–Wigner encoding");
+            // Console.WriteLine("----- Creating Jordan–Wigner encoding");
             var jordanWignerEncoding = fermionHamiltonian.ToPauliHamiltonian(Paulis.QubitEncoding.JordanWigner);
-            Console.WriteLine("----- End Creating Jordan–Wigner encoding \n");
+            // Console.WriteLine("----- End Creating Jordan–Wigner encoding \n");
 
             // Print the Jordan–Wigner encoded Hamiltonian to see verify what it contains.
-            Console.WriteLine("----- Print Hamiltonian");
-            Console.Write(jordanWignerEncoding);
-            Console.WriteLine("----- End Print Hamiltonian \n");
+            // Console.WriteLine("----- Print Hamiltonian");
+            // Console.Write(jordanWignerEncoding);
+            // Console.WriteLine("----- End Print Hamiltonian \n");
             #endregion
 
             #region Performing the simulation 
@@ -147,14 +147,10 @@ namespace Microsoft.Quantum.Chemistry.Samples.Hydrogen
                 // Choose the Trotter integrator order
                 Int64 trotterOrder = 1;
 
-                Console.WriteLine("----- BEGIN ORACLE WRITE -----");
                 TargetedGateExtraction.Run(qsim, qSharpData, trotterStep, trotterOrder).Wait();
-            }
-
-            Console.WriteLine("Press Enter to continue...");
-            if (System.Diagnostics.Debugger.IsAttached)
-            {
-                Console.ReadLine();
+                Console.WriteLine($"trotterStep: {trotterStep}");
+                Console.WriteLine($"trotterOrder: {trotterOrder}");
+                Console.WriteLine($"----- END FILE -----");
             }
             #endregion
         }

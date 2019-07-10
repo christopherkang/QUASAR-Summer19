@@ -1,17 +1,17 @@
 {
-    "gates":{
-        "numOfTerms":5,
-        "terms":[
-            {
-                "type":"ZTerm",
-                "angle":-0.48954,
-                "controls":[],
-                "targets":[],
-                "parity":[]
-            }
-        ]
-    },
-    "nSpinOrbitals":1,
-    "trotterStepSize":1.0,
-    "energyOffset":1.345,
+    "terms":[
+        {
+            "type":"ZTerm",
+            "angle":-0.48954,
+            "controls":[],
+            "targets":[],
+            "parity":[]
+        }, 
+    ],
+    "constants":{
+        "nSpinOrbitals":1,
+        "trotterStepSize":1.0,
+        "rescaleFactor":1.0,
+        "energyOffset":1.345
+    }
 }
