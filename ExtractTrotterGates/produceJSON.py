@@ -49,7 +49,6 @@ def parse_line(line):
         "angle": 0,
         "controls": [],
         "ops": [],
-        "parity": [],
         "targets": []
     }
 
@@ -101,8 +100,7 @@ def parse_line(line):
             out_dict["ops"].append(Constant.PAULI_TO_INT.value["PauliZ"])
 
     # the number of operations should match the number of target and parity qubits
-    assert len(out_dict["ops"]) == len(
-        out_dict["targets"]) + len(out_dict["parity"])
+    assert len(out_dict["ops"]) == len(out_dict["targets"])
 
     return out_dict
 

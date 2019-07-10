@@ -1,7 +1,7 @@
 #!/bin/bash
 # Extract and Convert Trotter terms to the JSON format
 
-read -p "Have you already specified the desired Hamiltonian in the C# file? " -n 1 -r
+read -p "Have you already specified the desired Hamiltonian in the C# file? [Y/n] " -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then

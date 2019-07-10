@@ -132,26 +132,25 @@ namespace Microsoft.Quantum.Chemistry.Samples.Hydrogen
             // We will use this to obtain an estimate of its ground state energy.
 
             // Here, we make an instance of the simulator used to run our Q# code.
-            using (var qsim = new QuantumSimulator())
-            {
 
-                // This Jordan–Wigner data structure also contains a representation 
-                // of the Hamiltonian and wavefunction made for consumption by the Q# algorithms.
-                var qSharpHamiltonianData = jordanWignerEncoding.ToQSharpFormat();
-                var qSharpWavefunctionData = fermionWavefunction.ToQSharpFormat();
-                var qSharpData = QSharpFormat.Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
+            // This Jordan–Wigner data structure also contains a representation 
+            // of the Hamiltonian and wavefunction made for consumption by the Q# algorithms.
+            var qSharpHamiltonianData = jordanWignerEncoding.ToQSharpFormat();
+            var qSharpWavefunctionData = fermionWavefunction.ToQSharpFormat();
+            var qSharpData = QSharpFormat.Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
 
-                // We specify the step-size of the simulated time-evolution
-                var trotterStep = 1;
+            // We specify the step-size of the simulated time-evolution
+            var trotterStep = 1;
 
-                // Choose the Trotter integrator order
-                Int64 trotterOrder = 1;
+            // Choose the Trotter integrator order
+            Int64 trotterOrder = 1;
 
-                TargetedGateExtraction.Run(qsim, qSharpData, trotterStep, trotterOrder).Wait();
-                Console.WriteLine($"trotterStep:float:{trotterStep}");
-                Console.WriteLine($"trotterOrder:int:{trotterOrder}");
-                Console.WriteLine($"----- END FILE -----");
-            }
+            // TargetedGateExtraction.Run(qsim, qSharpData, trotterStep, trotterOrder).Wait();
+            ResourcesEstimator estimator = new ResourcesEstimator();
+            TargetedGateExtraction.Run(estimator, qSharpData, trotterStep, trotterOrder).Wait();
+            Console.WriteLine($"trotterStep:float:{trotterStep}");
+            Console.WriteLine($"trotterOrder:int:{trotterOrder}");
+            Console.WriteLine($"----- END FILE -----");
             #endregion
         }
     }
