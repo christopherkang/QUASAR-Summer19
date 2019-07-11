@@ -16,6 +16,10 @@ class Constant(Enum):
         "ZZterm": ["PauliZ", "PauliZ"],
         "PQterm+X": ["PauliX", "PauliX"],
         "PQterm+Y": ["PauliY", "PauliY"],
+        "PQQRterm+X": ["PauliX", "PauliX"],
+        "PQQRterm+Y": ["PauliY", "PauliY"],
+        "PQQR_Parityterm+X": ["PauliX", "PauliX"],
+        "PQQR_Parityterm+Y": ["PauliY", "PauliY"],
         "0123term+0": ["PauliX", "PauliX", "PauliX", "PauliX"],
         "0123term+1": ["PauliX", "PauliX", "PauliY", "PauliY"],
         "0123term+2": ["PauliX", "PauliY", "PauliX", "PauliY"],
@@ -78,11 +82,24 @@ def parse_line(line):
         pass
     elif "PQterm" in term_type:
         # we'll need to add the qubits in between the two given qubits
-        for index in range(qubit_targets[0], qubit_targets[1]):
+        for index in range(qubit_targets[0] + 1, qubit_targets[1]):
             out_dict["targets"].append(index)
             out_dict["ops"].append(Constant.PAULI_TO_INT.value["PauliZ"])
     elif "PQQRterm" in term_type:
         # we need to do a more complicated series of manipulations
+        for index in range(qubit_targets[0] + 1, qubit_targets[1]):
+            if (index == qubit_targets[2]):
+                pass
+            else:
+                out_dict["targets"].append(index)
+                out_dict["ops"].append(Constant.PAULI_TO_INT.value["PauliZ"])
+    elif "PQQR_Parityterm" in term_type:
+        # we need to do even more complicated work
+        for index in range(qubit_targets[0] + 1, qubit_targets[1]):
+            out_dict["targets"].append(index)
+            out_dict["ops"].append(Constant.PAULI_TO_INT.value["PauliZ"])
+        out_dict["targets"].append(qubit_targets[2])
+        out_dict["ops"].append(Constant.PAULI_TO_INT.value["PauliZ"])
         pass
     elif "0123term" in term_type:
         # we have a 0123 term, so we'll need to add additional Z ops
@@ -146,8 +163,7 @@ with open(path) as f:
             hasConstantInfo = True
         elif hasTermInfo:
             # ingest the term here
-            if not cleanedLine[:2] == "Ge":
-                terms.append(parse_line(cleanedLine))
+            terms.append(parse_line(cleanedLine))
         elif hasConstantInfo:
             # take in constant information, in the format "name:type:data"
             # FLAG - WHEN ADDING NEW CONSTANTS, TYPE MUST BE THE PYTHON EQUIVALENT TO CONVERT
