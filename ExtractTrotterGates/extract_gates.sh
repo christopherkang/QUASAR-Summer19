@@ -7,9 +7,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
     # do dangerous stuff
     directory=$(pwd)
-    echo Saving a temp file to $directory"/_temp.txt"
-    dotnet run > _temp.txt
-    python3 produceJSON.py $directory"/_temp.txt" -o extracted_terms.json
+    mkdir temp
+    echo Saving a temp file to $directory"/temp/_temp.txt"
+    dotnet run > ./temp/_temp.txt
+    python3 produceJSON.py $directory"/temp" -o extracted_terms.json
     echo Finished term extraction. 
     echo JSON at $directory/extracted_terms.json 
 fi

@@ -150,7 +150,21 @@ namespace Microsoft.Quantum.Chemistry.Samples.Hydrogen
             TargetedGateExtraction.Run(estimator, qSharpData, trotterStep, trotterOrder).Wait();
             Console.WriteLine($"trotterStep:float:{trotterStep}");
             Console.WriteLine($"trotterOrder:int:{trotterOrder}");
+            Console.WriteLine($"nElectrons:int:{nElectrons}");
             Console.WriteLine($"----- END FILE -----");
+
+
+            // get the state data
+            var (trash1, trash2, important, trash3) = qSharpData;
+            var (intinfo, datalist) = important;
+
+            var lines = new List<String>();
+            lines.Add(intinfo.ToString("N0"));
+            foreach (var term in datalist) {
+                lines.Add(term.ToString());
+            }
+            System.IO.Directory.CreateDirectory("./temp");
+            System.IO.File.WriteAllLines("./temp/_tempState.txt", lines);
             #endregion
         }
     }

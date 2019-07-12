@@ -126,7 +126,7 @@ def parse_line(line):
 parser = argparse.ArgumentParser(
     description='Create JSON file from C# output.')
 
-parser.add_argument("filepath", help="path to .NET output", type=str)
+parser.add_argument("filepath", help="path to output folder", type=str)
 parser.add_argument("-o", "--outpath", help="output name", type=str)
 args = parser.parse_args()
 path = args.filepath
@@ -136,6 +136,9 @@ outpath = "./hamiltonian.json"
 data = {}
 terms = []
 constants = {}
+statePrepData = {
+    "terms": []
+}
 
 if args.outpath:
     assert args.outpath[-5:] == ".json", "Must use a .json filename"
@@ -145,7 +148,7 @@ if args.outpath:
 print(f"Outputting file to {outpath}")
 
 # parse the file
-with open(path) as f:
+with open(path + "/_temp.txt") as f:
     # this script needs to have resiliency from extraneous lines
     # remember, it is the .NET output, so it may begin with error lines
     hasTermInfo = False
@@ -153,7 +156,7 @@ with open(path) as f:
     for line in f:
         cleanedLine = line.rstrip()
         if (cleanedLine == "----- END FILE -----"):
-            print("End of file reached")
+            print("End of Hamiltonian Data file reached")
         elif (cleanedLine == "----- BEGIN ORACLE WRITE -----"):
             # next lines will have term info
             hasTermInfo = True
@@ -173,9 +176,20 @@ with open(path) as f:
             constants[keyValuePair[0]] = eval(
                 keyValuePair[1] + f"({keyValuePair[2]})")
 
+with open(path + "/_tempState.txt") as f:
+    statePrepData["int"] = int(f.readline())
+    for line in f:
+        # data comes in the format:
+        # JordanWignerInputState(((1, 0), [0,1]))
+        # so, we strip away unecessary info to (((1, 0), [0, 1]))
+        raw_data = line.split("JordanWignerInputState")[1]
+        raw_data = eval(raw_data)
+        statePrepData["terms"].append(raw_data)
+
 data = {
     "constants": constants,
-    "terms": terms
+    "terms": terms,
+    "statePrepData": statePrepData
 }
 
 

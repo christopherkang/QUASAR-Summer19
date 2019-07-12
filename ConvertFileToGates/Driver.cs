@@ -20,8 +20,17 @@ namespace ConvertFileToGates
                 // Do stuff if the file exists
                 string raw_JSON = System.IO.File.ReadAllText(gateFile);
                 var output = JObject.Parse(raw_JSON);
-                // Console.WriteLine(output["terms"]);
+                var constants = output["constants"];
+
+                float trotterStepSize = (float)constants["trotterStep"];
+                double rescaleFactor = 1.0 / trotterStepSize;
+                float energyOffset = (float)constants["energyOffset"];
+                int nSpinOrbitals = (int)constants["nSpinOrbitals"];
+                int trotterOrder = (int)constants["trotterOrder"];
                 List<CompressedHamiltonian> out_values = Auxiliary.ProduceTermInfo(output);
+
+                Console.WriteLine($"Running a Hamiltonian of order {trotterOrder}");
+                Console.WriteLine($"Step size: {trotterStepSize}");
 
                 // foreach (var term in out_values) 
                 // {

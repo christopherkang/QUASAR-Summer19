@@ -1,0 +1,22 @@
+----- BEGIN ORACLE WRITE -----
+Zterm | 0 | 0.171201285
+Zterm | 1 | 0.171201285
+Zterm | 2 | -0.222796536
+Zterm | 3 | -0.222796536
+ZZterm | 0, 1 | 0.1686232915
+ZZterm | 0, 2 | 0.12054614575
+ZZterm | 0, 3 | 0.16586802525
+ZZterm | 1, 2 | 0.16586802525
+ZZterm | 1, 3 | 0.12054614575
+ZZterm | 2, 3 | 0.1743495025
+0123term+1 | 0, 1, 2, 3 | -0.0453218795 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 1, 2, 3 | 0.0453218795 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 1, 2, 3 | -0.0453218795 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 1, 2, 3 | 0.0453218795 | [PauliX,PauliY,PauliY,PauliX]
+----- END ORACLE WRITE -----
+nSpinOrbitals:int:4
+energyOffset:float:-0.098834446
+trotterStep:float:1
+trotterOrder:int:1
+nElectrons:int:2
+----- END FILE -----
