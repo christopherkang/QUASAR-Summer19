@@ -1,0 +1,4 @@
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/obj/Debug/netcoreapp2.1/ProduceSampleEnergy.csprojAssemblyReference.cache
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/obj/Debug/netcoreapp2.1/ProduceSampleEnergy.csproj.CoreCompileInputs.cache
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/obj/Debug/netcoreapp2.1/ProduceSampleEnergy.AssemblyInfoInputs.cache
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/obj/Debug/netcoreapp2.1/ProduceSampleEnergy.AssemblyInfo.cs

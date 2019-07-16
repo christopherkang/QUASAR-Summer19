@@ -1,10 +1,24 @@
 ﻿namespace ConvertFileToGates
 {
-    open Microsoft.Quantum.Canon;
     open Microsoft.Quantum.Intrinsic;
+    open Microsoft.Quantum.Canon;
+    open Microsoft.Quantum.Chemistry.JordanWigner;  
+	open Microsoft.Quantum.Simulation;	
+    open Microsoft.Quantum.Characterization;
+    open Microsoft.Quantum.Convert;
+    open Microsoft.Quantum.Math;
     open Microsoft.Quantum.Arrays;
-    open Microsoft.Quantum.Chemistry;
+    // open Microsoft.Quantum.Canon;
+    // open Microsoft.Quantum.Intrinsic;
+    // open Microsoft.Quantum.Arrays;
+    // open Microsoft.Quantum.Chemistry;
+    // open Microsoft.Quantum.Chemistry.JordanWigner;
+	// open Microsoft.Quantum.Simulation;	
+    // open Microsoft.Quantum.Characterization;
+    // open Microsoft.Quantum.Convert;
+    // open Microsoft.Quantum.Math;
 
+    // This is a diagonstic methods and also experiment in generics
     operation AcceptArray<'T> (array : 'T[]) : Unit {
         for (i in 0..Length(array) - 1) {
             Message($"{array[i]}");
@@ -17,13 +31,15 @@
         return ops[index];
     }
 
-    operation AutomaticIngestion (data : CompressedHamiltonian[], nSpinOrbitals : Int, nElectrons : Int) : Unit {
-        using (register = Qubit[5]) {
+    operation OracleFromJSON (data : CompressedHamiltonian[], register : Qubit[]) : Unit {
+        body (...) {
             for (index in 0..Length(data) - 1) {
                 ApplyTerm(index, data, register);
             }
-            ResetAll(register);
         }
+        controlled auto;
+        adjoint auto;
+        controlled adjoint auto;
     }
 
     // operation that takes in CompressedHamiltonian data and applies selected term
@@ -39,6 +55,37 @@
         controlled auto;
         adjoint auto;
         controlled adjoint auto;
+    }
+
+    operation GetEnergyByTrotterization (data : CompleteHamiltonian, nBitsPrecision : Int) : (Double, Double) {
+
+        // Decompress data:
+        let (constants, initialState, termData) = data!;
+        let (nSpinOrbitals, energyOffset, trotterStepSize, trotterOrder) = constants!;
+
+        // We use a Product formula, also known as `Trotterization` to
+        // simulate the Hamiltonian.
+        let rescaleFactor = 1.0 / trotterStepSize;
+        let oracle = OracleFromJSON(termData, _);
+        
+        // The operation that creates the trial state is defined below.
+        // By default, greedy filling of spin-orbitals is used.
+        let statePrep = PrepareTrialState(initialState, _);
+        
+        // We use the Robust Phase Estimation algorithm
+        // of Kimmel, Low and Yoder.
+        let phaseEstAlgorithm = RobustPhaseEstimation(nBitsPrecision, _, _);
+        
+        // This runs the quantum algorithm and returns a phase estimate.
+        let estPhase = EstimateEnergy(nSpinOrbitals, statePrep, oracle, phaseEstAlgorithm);
+        
+        // We obtain the energy estimate by rescaling the phase estimate
+        // with the trotterStepSize. We also add the constant energy offset
+        // to the estimated energy.
+        let estEnergy = estPhase * rescaleFactor + energyOffset;
+        
+        // We return both the estimated phase, and the estimated energy.
+        return (estPhase, estEnergy);
     }
 
     // operation ConvertToGates (termSpecs : CompressedGateForm, qubits : Qubit[]) : Unit {

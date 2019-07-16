@@ -184,14 +184,17 @@ with open(path + "/_tempState.txt") as f:
         # so, we strip away unecessary info to (((1, 0), [0, 1]))
         raw_data = line.split("JordanWignerInputState")[1]
         raw_data = eval(raw_data)
-        statePrepData["terms"].append(raw_data)
+        reformed_data = {
+            "tuple": list(map(float, raw_data[0])),
+            "array": list(map(int, raw_data[1]))
+        }
+        statePrepData["terms"].append(reformed_data)
 
 data = {
     "constants": constants,
     "terms": terms,
     "statePrepData": statePrepData
 }
-
 
 # output the data
 with open(outpath, 'w') as outfile:

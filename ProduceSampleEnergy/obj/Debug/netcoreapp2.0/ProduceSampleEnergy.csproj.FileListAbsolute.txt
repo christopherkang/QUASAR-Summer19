@@ -1,0 +1,11 @@
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/obj/Debug/netcoreapp2.0/ProduceSampleEnergy.csprojAssemblyReference.cache
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/obj/Debug/netcoreapp2.0/ProduceSampleEnergy.csproj.CoreCompileInputs.cache
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/obj/Debug/netcoreapp2.0/ProduceSampleEnergy.AssemblyInfoInputs.cache
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/obj/Debug/netcoreapp2.0/ProduceSampleEnergy.AssemblyInfo.cs
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/bin/Debug/netcoreapp2.0/ProduceSampleEnergy.deps.json
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/bin/Debug/netcoreapp2.0/ProduceSampleEnergy.runtimeconfig.json
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/bin/Debug/netcoreapp2.0/ProduceSampleEnergy.runtimeconfig.dev.json
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/bin/Debug/netcoreapp2.0/ProduceSampleEnergy.dll
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/bin/Debug/netcoreapp2.0/ProduceSampleEnergy.pdb
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/obj/Debug/netcoreapp2.0/ProduceSampleEnergy.dll
+/Users/kang828/Documents/GitHub/QUASAR-Summer19/ProduceSampleEnergy/obj/Debug/netcoreapp2.0/ProduceSampleEnergy.pdb
