@@ -9,6 +9,8 @@
 // We will use the data model implemented by the Quantum Development Kit chemistry
 // libraries. This model defines what a fermionic Hamiltonian is, and how to
 // represent Hamiltonians on disk.
+using Microsoft.Quantum.Chemistry;
+using Microsoft.Quantum.Chemistry.Broombridge;
 using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
 using Microsoft.Quantum.Chemistry.Fermion;
 using Microsoft.Quantum.Chemistry.QSharpFormat;
@@ -38,134 +40,53 @@ using Microsoft.Extensions.Logging;
 using System.Linq;
 #endregion
 
-namespace Microsoft.Quantum.Chemistry.Samples.Hydrogen
+namespace ExtractTrotterGates
 {
     class Program
     {
         static void Main(string[] args)
         {
-            //////////////////////////////////////////////////////////////////////////
-            // Introduction //////////////////////////////////////////////////////////
-            //////////////////////////////////////////////////////////////////////////
-
-            // In this example, we will create a spin-orbital representation of the molecular
-            // Hydrogen Hamiltonian `H`, given ovelap coefficients for its one- and 
-            // two - electron integrals.
-
-            // We when perform quantum phase estimation to obtain an estimate of
-            // the molecular Hydrogen ground state energy.
-
-            #region Building the Hydrogen Hamiltonian through orbital integrals
-
-            // One of the simplest representations of Hydrogen uses only two 
-            // molecular orbitals indexed by `0` and `1`.
-            var nOrbitals = 2;
-
-            // This representation also has two occupied spin-orbitals.
-            var nElectrons = 2;
-
-            // The Coulomb repulsion energy between nuclei is
-            var energyOffset = 0.713776188;
-
-            // One-electron integrals are listed below
-            // <0|H|0> = -1.252477495
-            // <1|H|1> = -0.475934275
-
-            // Two-electron integrals are listed below
-            // <00|H|00> = 0.674493166
-            // <01|H|01> = 0.181287518
-            // <01|H|10> = 0.663472101
-            // <11|H|11> = 0.697398010
-            // Note that orbitals are assumed to be real. Moreover, indistinguishability
-            // of electrons means that the following integrals are equal.
-            //   <PQ|H|RS> = <PR|H|QS> = <SQ|H|RP> = <SR|H|QP>
-            // = <QP|H|SR> = <RP|H|SQ> = <QS|H|PR> = <RS|H|PQ>
-            // Thus it sufficies to specify just any one of these terms from each symmetry
-            // group.
-
-            // These orbital integrals are represented using the OrbitalIntegral
-            // data structure.
-            var orbitalIntegrals = new OrbitalIntegral[]
+            if (args.Length < 5) 
             {
-                new OrbitalIntegral(new[] { 0,0 }, -1.252477495),
-                new OrbitalIntegral(new[] { 1,1 }, -0.475934275),
-                new OrbitalIntegral(new[] { 0,0,0,0 }, 0.674493166),
-                new OrbitalIntegral(new[] { 0,1,0,1 }, 0.181287518),
-                new OrbitalIntegral(new[] { 0,1,1,0 }, 0.663472101),
-                new OrbitalIntegral(new[] { 1,1,1,1 }, 0.697398010),
-                // Add the identity term
-                new OrbitalIntegral(new int[] { }, energyOffset)
-            };
-
-            // We initialize a fermion Hamiltonian data structure and add terms to it
-            var fermionHamiltonian = new OrbitalIntegralHamiltonian(orbitalIntegrals).ToFermionHamiltonian();
-
-            // These orbital integral terms are automatically expanded into
-            // spin-orbitals. We may print the Hamiltonian to see verify what it contains.
-            // Console.WriteLine("----- Print Hamiltonian");
-            // Console.Write(fermionHamiltonian);
-            // Console.WriteLine("----- End Print Hamiltonian \n");
-
-            // We also need to create an input quantum state to this Hamiltonian.
-            // Let us use the Hartree–Fock state.
-            var fermionWavefunction = fermionHamiltonian.CreateHartreeFockState(nElectrons);
-            #endregion
-
-            #region Jordan–Wigner representation 
-            // The Jordan–Wigner encoding converts the fermion Hamiltonian, 
-            // expressed in terms of Fermionic operators, to a qubit Hamiltonian,
-            // expressed in terms of Pauli matrices. This is an essential step
-            // for simulating our constructed Hamiltonians on a qubit quantum
-            // computer.
-            // Console.WriteLine("----- Creating Jordan–Wigner encoding");
-            var jordanWignerEncoding = fermionHamiltonian.ToPauliHamiltonian(Paulis.QubitEncoding.JordanWigner);
-            // Console.WriteLine("----- End Creating Jordan–Wigner encoding \n");
-
-            // Print the Jordan–Wigner encoded Hamiltonian to see verify what it contains.
-            // Console.WriteLine("----- Print Hamiltonian");
-            // Console.Write(jordanWignerEncoding);
-            // Console.WriteLine("----- End Print Hamiltonian \n");
-            #endregion
-
-            #region Performing the simulation 
-            // We are now ready to run a quantum simulation of molecular Hydrogen.
-            // We will use this to obtain an estimate of its ground state energy.
-
-            // Here, we make an instance of the simulator used to run our Q# code.
-
-            // This Jordan–Wigner data structure also contains a representation 
-            // of the Hamiltonian and wavefunction made for consumption by the Q# algorithms.
-            var qSharpHamiltonianData = jordanWignerEncoding.ToQSharpFormat();
-            var qSharpWavefunctionData = fermionWavefunction.ToQSharpFormat();
-            var qSharpData = QSharpFormat.Convert.ToQSharpFormat(qSharpHamiltonianData, qSharpWavefunctionData);
-
-            // We specify the step-size of the simulated time-evolution
-            var trotterStep = 1;
-
-            // Choose the Trotter integrator order
-            Int64 trotterOrder = 1;
-
-            // TargetedGateExtraction.Run(qsim, qSharpData, trotterStep, trotterOrder).Wait();
-            ResourcesEstimator estimator = new ResourcesEstimator();
-            TargetedGateExtraction.Run(estimator, qSharpData, trotterStep, trotterOrder).Wait();
-            Console.WriteLine($"trotterStep:float:{trotterStep}");
-            Console.WriteLine($"trotterOrder:int:{trotterOrder}");
-            Console.WriteLine($"nElectrons:int:{nElectrons}");
-            Console.WriteLine($"----- END FILE -----");
-
-
-            // get the state data
-            var (trash1, trash2, important, trash3) = qSharpData;
-            var (intinfo, datalist) = important;
-
-            var lines = new List<String>();
-            lines.Add(intinfo.ToString("N0"));
-            foreach (var term in datalist) {
-                lines.Add(term.ToString());
+                Console.WriteLine("Too few parameters provided!");
+                Console.WriteLine("Must provide the path to the YAML, input state label, precision, step size, and trotter order.");
             }
-            System.IO.Directory.CreateDirectory("./temp");
-            System.IO.File.WriteAllLines("./temp/_tempState.txt", lines);
-            #endregion
+            else 
+            {
+                string YAMLPath = args[0];
+                string inputState = $"|{args[1]}>";
+                int nBitsPrecision = Int16.Parse(args[2]);
+                float trotterStepSize = float.Parse(args[3]);
+                int trotterOrder = Int16.Parse(args[4]);
+                Console.WriteLine($"Extracting the YAML from {YAMLPath}");
+
+                // convert the YAML file into a JWED
+                var broombridge = Deserializers.DeserializeBroombridge(YAMLPath);
+                var problem = broombridge.ProblemDescriptions.Single();
+
+                Console.WriteLine("Preparing Q# data format");
+                var qSharpData = problem.ToQSharpFormat(inputState);
+
+                // get the spin data and state data and dump to an auxiliary file
+                var (nElectrons, trash2, stateData, trash3) = qSharpData;
+                var (intinfo, datalist) = stateData;
+
+                // Begin resource estimation (extract gate information)
+                ResourcesEstimator estimator = new ResourcesEstimator();
+                TargetedGateExtraction.Run(estimator, qSharpData, trotterStepSize, trotterOrder).Wait();
+                Console.WriteLine($"trotterStep:float:{trotterStepSize}");
+                Console.WriteLine($"trotterOrder:int:{trotterOrder}");
+                Console.WriteLine($"nElectrons:int:{nElectrons}");
+                Console.WriteLine($"----- END FILE -----");
+
+                var lines = new List<String>();
+                lines.Add(intinfo.ToString("N0"));
+                foreach (var term in datalist) {
+                    lines.Add(term.ToString());
+                }
+                System.IO.Directory.CreateDirectory("./temp");
+                System.IO.File.WriteAllLines("./temp/_tempState.txt", lines);
+            }
         }
     }
 }

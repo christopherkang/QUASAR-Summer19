@@ -1,0 +1,23 @@
+Running a Hamiltonian of order 1
+Step size: 1
+Predicted energy: -1.26995695081212
+Predicted energy: -1.38040356753988
+Predicted energy: -1.3681317212368
+Predicted energy: -1.89582111226946
+Predicted energy: -1.38764806143052
+Predicted energy: -0.901801561719561
+Predicted energy: -1.27498430322456
+Predicted energy: -1.38764806143052
+Predicted energy: -0.631820943051688
+Predicted energy: -1.37315907364924
+Predicted energy: -1.26995695081212
+Predicted energy: -1.38764806143052
+Predicted energy: -1.26995695081212
+Predicted energy: -1.8590055733602
+Predicted energy: -1.89582111226946
+Predicted energy: -1.3681317212368
+Predicted energy: -1.88857661837882
+Predicted energy: -1.90306560616009
+Predicted energy: -1.90809295857254
+Predicted energy: -1.37315907364924
+Average predicted energy: -1.44973949915231

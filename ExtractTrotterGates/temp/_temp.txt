@@ -1,22 +1,102 @@
+Extracting the YAML from /Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.000.yaml
+Preparing Q# data format
 ----- BEGIN ORACLE WRITE -----
-Zterm | 0 | 0.171201285
-Zterm | 1 | 0.171201285
-Zterm | 2 | -0.222796536
-Zterm | 3 | -0.222796536
-ZZterm | 0, 1 | 0.1686232915
-ZZterm | 0, 2 | 0.12054614575
-ZZterm | 0, 3 | 0.16586802525
-ZZterm | 1, 2 | 0.16586802525
-ZZterm | 1, 3 | 0.12054614575
-ZZterm | 2, 3 | 0.1743495025
-0123term+1 | 0, 1, 2, 3 | -0.0453218795 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 0, 1, 2, 3 | 0.0453218795 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 0, 1, 2, 3 | -0.0453218795 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 0, 1, 2, 3 | 0.0453218795 | [PauliX,PauliY,PauliY,PauliX]
+Zterm | 0 | 0.098255873575
+Zterm | 1 | 0.098255873575
+Zterm | 2 | 0.0349157819
+Zterm | 3 | 0.0349157819
+Zterm | 4 | 0.0349157819000001
+Zterm | 5 | 0.0349157819000001
+Zterm | 6 | -0.0217115238
+Zterm | 7 | -0.0217115238
+ZZterm | 0, 1 | 0.091153405025
+ZZterm | 0, 2 | 0.05611145285
+ZZterm | 0, 3 | 0.09194369185
+ZZterm | 0, 4 | 0.05611145285
+ZZterm | 0, 5 | 0.09194369185
+ZZterm | 0, 6 | 0.0654787244
+ZZterm | 0, 7 | 0.09296120895
+ZZterm | 1, 2 | 0.09194369185
+ZZterm | 1, 3 | 0.05611145285
+ZZterm | 1, 4 | 0.09194369185
+ZZterm | 1, 5 | 0.05611145285
+ZZterm | 1, 6 | 0.09296120895
+ZZterm | 1, 7 | 0.0654787244
+ZZterm | 2, 3 | 0.093644400175
+ZZterm | 2, 4 | 0.06469063015
+ZZterm | 2, 5 | 0.09314150305
+ZZterm | 2, 6 | 0.055387879375
+ZZterm | 2, 7 | 0.0948937585
+ZZterm | 3, 4 | 0.09314150305
+ZZterm | 3, 5 | 0.06469063015
+ZZterm | 3, 6 | 0.0948937585
+ZZterm | 3, 7 | 0.055387879375
+ZZterm | 4, 5 | 0.093644400175
+ZZterm | 4, 6 | 0.055387879375
+ZZterm | 4, 7 | 0.0948937585
+ZZterm | 5, 6 | 0.0948937585
+ZZterm | 5, 7 | 0.055387879375
+ZZterm | 6, 7 | 0.09678962645
+0123term+1 | 0, 1, 2, 3 | -0.035832239 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 1, 2, 3 | 0.035832239 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 1, 2, 3 | -0.035832239 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 1, 2, 3 | 0.035832239 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 0, 1, 4, 5 | -0.035832239 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 1, 4, 5 | 0.035832239 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 1, 4, 5 | -0.035832239 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 1, 4, 5 | 0.035832239 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 0, 1, 6, 7 | -0.02748248455 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 1, 6, 7 | 0.02748248455 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 1, 6, 7 | -0.02748248455 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 1, 6, 7 | 0.02748248455 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 0, 2, 4, 6 | 0.0093800456 | [PauliX,PauliX,PauliX,PauliX]
+0123term+3 | 0, 2, 4, 6 | 0.0093800456 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 0, 2, 4, 6 | 0.0093800456 | [PauliY,PauliY,PauliY,PauliY]
+0123term+7 | 0, 2, 4, 6 | 0.0093800456 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 0, 2, 5, 7 | 0.037341973725 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 0, 2, 5, 7 | 0.037341973725 | [PauliX,PauliX,PauliY,PauliY]
+0123term+4 | 0, 2, 5, 7 | 0.037341973725 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 0, 2, 5, 7 | 0.037341973725 | [PauliY,PauliY,PauliX,PauliX]
+0123term+1 | 0, 3, 4, 7 | -0.037341973725 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 3, 4, 7 | 0.037341973725 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 3, 4, 7 | -0.037341973725 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 3, 4, 7 | 0.037341973725 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 0, 3, 5, 6 | -0.027961928125 | [PauliX,PauliX,PauliX,PauliX]
+0123term+3 | 0, 3, 5, 6 | -0.027961928125 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 0, 3, 5, 6 | -0.027961928125 | [PauliY,PauliY,PauliY,PauliY]
+0123term+7 | 0, 3, 5, 6 | -0.027961928125 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 1, 2, 4, 7 | -0.027961928125 | [PauliX,PauliX,PauliX,PauliX]
+0123term+3 | 1, 2, 4, 7 | -0.027961928125 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 1, 2, 4, 7 | -0.027961928125 | [PauliY,PauliY,PauliY,PauliY]
+0123term+7 | 1, 2, 4, 7 | -0.027961928125 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 1, 2, 5, 6 | -0.037341973725 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 1, 2, 5, 6 | 0.037341973725 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 1, 2, 5, 6 | -0.037341973725 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 1, 2, 5, 6 | 0.037341973725 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 1, 3, 4, 6 | 0.037341973725 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 1, 3, 4, 6 | 0.037341973725 | [PauliX,PauliX,PauliY,PauliY]
+0123term+4 | 1, 3, 4, 6 | 0.037341973725 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 1, 3, 4, 6 | 0.037341973725 | [PauliY,PauliY,PauliX,PauliX]
+0123term+0 | 1, 3, 5, 7 | 0.0093800456 | [PauliX,PauliX,PauliX,PauliX]
+0123term+3 | 1, 3, 5, 7 | 0.0093800456 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 1, 3, 5, 7 | 0.0093800456 | [PauliY,PauliY,PauliY,PauliY]
+0123term+7 | 1, 3, 5, 7 | 0.0093800456 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 2, 3, 4, 5 | -0.0284508729 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 2, 3, 4, 5 | 0.0284508729 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 2, 3, 4, 5 | -0.0284508729 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 2, 3, 4, 5 | 0.0284508729 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 2, 3, 6, 7 | -0.039505879125 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 2, 3, 6, 7 | 0.039505879125 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 2, 3, 6, 7 | -0.039505879125 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 2, 3, 6, 7 | 0.039505879125 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 4, 5, 6, 7 | -0.039505879125 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 4, 5, 6, 7 | 0.039505879125 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 4, 5, 6, 7 | -0.039505879125 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 4, 5, 6, 7 | 0.039505879125 | [PauliX,PauliY,PauliY,PauliX]
 ----- END ORACLE WRITE -----
-nSpinOrbitals:int:4
-energyOffset:float:-0.098834446
+nSpinOrbitals:int:8
+energyOffset:float:-1.06133560315828
 trotterStep:float:1
 trotterOrder:int:1
-nElectrons:int:2
+nElectrons:int:8
 ----- END FILE -----

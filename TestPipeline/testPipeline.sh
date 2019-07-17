@@ -6,29 +6,52 @@
 
 mkdir _temp
 
-YAML_PATH = "/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H2O/h2o_oh0.7_sto3g.nw.out.yaml"
-INPUT_STATE = "E1"
-echo Reading YAML at $YAML_PATH and state $INPUT_STATE
+YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.000.yaml"
+INPUT_STATE="E1"
+PRECISION="7"
+TROTTER_STEP="1.0"
+TROTTER_ORDER="1"
+SAMPLE_SIZE="20"
+
+CMD_ARGS="$YAML_PATH $INPUT_STATE $PRECISION $TROTTER_STEP $TROTTER_ORDER"
+
+echo "Reading YAML at $YAML_PATH and state $INPUT_STATE"
+echo "Using $PRECISION bits of precision, stepsize=$TROTTER_STEP, order=$TROTTER_ORDER"
+echo "Sample size = $SAMPLE_SIZE"
 read -p "Confirm? [Y/n] " -n 1 -r
-echo 
-if [[ $REPLY =~ ^[Yy]$ ]]
-then
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+    echo "Abbreviated prompts enabled."
     # do dangerous stuff
-    # STEP 1 - Produce a sample energy estimate
+    mkdir "_temp"
+
+    # ----- STEP 1 - Produce a sample energy estimate
     cd ../ProduceSampleEnergy
 
     # arguments: path, state label, precision, step size, order, number of samples
-    dotnet run $YAML_PATH E1 4 1.0 1 100 > ../TestPipeline/_temp/_sampled_reference_energy.txt 
-    yes | ../ExtractTrotterGates/extract_gates.sh
-    # STEP 2 - Produce the JSON file
+    echo "RUNNING: dotnet run $CMD_ARGS $SAMPLE_SIZE >./_temp/_sampled_reference_energy.txt"
+    dotnet run $CMD_ARGS $SAMPLE_SIZE >../TestPipeline/_temp/_sampled_reference_energy.txt
+    cd ../TestPipeline
 
-    # STEP 3 - (optional) Process the terms
+    # ----- STEP 2 - Produce the JSON file
+    echo "RUNNING: ./extract_gates.sh $CMD_ARGS"
+    cd ../ExtractTrotterGates
+    ./extract_gates.sh $CMD_ARGS
+    cd ../TestPipeline
+    echo "MOVING FILES TO ./_test/"
+    echo $(pwd)
+    cp ../ExtractTrotterGates/extracted_terms.json ./_temp/
 
-    # STEP 4 - Ingest the JSON file
+    # ----- STEP 3 - (optional) Process the terms
+    echo "Begin processing terms"
+    # insert optimizer caller
 
-    # STEP 5 - Return information to user
+    # ----- STEP 4 - Ingest the JSON file
+    cd ../ConvertFileToGates 
+    echo "RUNNING: dotnet run ./extracted_terms.json $SAMPLE_SIZE >./_temp/_sampled_optimized_energy.txt"
+    dotnet run ../TestPipeline/_temp/extracted_terms.json $SAMPLE_SIZE $PRECISION >../TestPipeline/_temp/_sampled_optimized_energy.txt
+
+    # ----- STEP 5 - Return information to user
 else
-    echo Exiting. 
+    echo Exiting from user cancellation.
 fi
-
-

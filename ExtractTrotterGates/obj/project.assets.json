@@ -4142,9 +4142,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/MolecularHydrogen.csproj",
-      "projectName": "MolecularHydrogen",
-      "projectPath": "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/MolecularHydrogen.csproj",
+      "projectUniqueName": "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/ExtractTrotterGates.csproj",
+      "projectName": "ExtractTrotterGates",
+      "projectPath": "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/ExtractTrotterGates.csproj",
       "packagesPath": "/Users/kang828/.nuget/packages/",
       "outputPath": "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/obj/",
       "projectStyle": "PackageReference",

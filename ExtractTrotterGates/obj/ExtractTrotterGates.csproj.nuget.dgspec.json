@@ -1,0 +1,271 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/ExtractTrotterGates.csproj": {}
+  },
+  "projects": {
+    "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj",
+        "projectName": "Microsoft.Quantum.Chemistry",
+        "projectPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj",
+        "packagesPath": "/Users/kang828/.nuget/packages/",
+        "outputPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/kang828/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj": {
+                "projectPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj",
+                "privateAssets": "all"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.Quantum.Development.Kit": {
+              "target": "Package",
+              "version": "[0.7.1905.3109, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Serilog.Extensions.Logging.File": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "YamlDotNet": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj",
+        "projectName": "Microsoft.Quantum.Chemistry.Runtime",
+        "projectPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj",
+        "packagesPath": "/Users/kang828/.nuget/packages/",
+        "outputPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/Runtime/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/kang828/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {
+              "/Users/kang828/Documents/GitHub/QuantumLibraries/Standard/src/Standard.csproj": {
+                "projectPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Standard/src/Standard.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.Quantum.Development.Kit": {
+              "target": "Package",
+              "version": "[0.7.1905.3109, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "/Users/kang828/Documents/GitHub/QuantumLibraries/Standard/src/Standard.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kang828/Documents/GitHub/QuantumLibraries/Standard/src/Standard.csproj",
+        "projectName": "Microsoft.Quantum.Standard",
+        "projectPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Standard/src/Standard.csproj",
+        "packagesPath": "/Users/kang828/.nuget/packages/",
+        "outputPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Standard/src/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/kang828/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.0": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.0": {
+          "dependencies": {
+            "Microsoft.Quantum.Development.Kit": {
+              "target": "Package",
+              "version": "[0.7.1905.3109, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/ExtractTrotterGates.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/ExtractTrotterGates.csproj",
+        "projectName": "ExtractTrotterGates",
+        "projectPath": "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/ExtractTrotterGates.csproj",
+        "packagesPath": "/Users/kang828/.nuget/packages/",
+        "outputPath": "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/kang828/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "projectReferences": {
+              "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj": {
+                "projectPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj"
+              },
+              "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj": {
+                "projectPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj"
+              },
+              "/Users/kang828/Documents/GitHub/QuantumLibraries/Standard/src/Standard.csproj": {
+                "projectPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Standard/src/Standard.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Quantum.Development.Kit": {
+              "target": "Package",
+              "version": "[0.7.1905.3109, )"
+            },
+            "Microsoft.Quantum.Standard": {
+              "target": "Package",
+              "version": "[0.7.1905.3109, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

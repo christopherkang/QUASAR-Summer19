@@ -105,8 +105,8 @@ def parse_line(line):
         # we have a 0123 term, so we'll need to add additional Z ops
         # use the naming convention from
         # /Chemistry/src/Runtime/JordanWigner/JordanWignerEvolutionSet.qs
-        PQJW = range(qubit_targets[0] + 1, qubit_targets[1] - 1)
-        RSJW = range(qubit_targets[2] + 1, qubit_targets[3] - 1)
+        PQJW = range(qubit_targets[0] + 1, qubit_targets[1])
+        RSJW = range(qubit_targets[2] + 1, qubit_targets[3])
 
         for index in PQJW:
             out_dict["targets"].append(index)
