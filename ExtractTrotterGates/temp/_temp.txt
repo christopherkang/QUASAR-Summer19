@@ -1,426 +1,193 @@
-JordanWigner/OptimizedBEOperator.qs(71,13): warning CS0162: Unreachable code detected [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj]
-JordanWigner/OptimizedBEOperator.qs(91,13): warning CS0162: Unreachable code detected [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj]
-QSharpFormat/QSharpFormatPauliHamiltonian.cs(91,63): warning CS1570: XML comment has badly formed XML -- 'End tag 'c' does not match the start tag 'Double'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/IndexOrderedSequence.cs(25,11): warning CS1570: XML comment has badly formed XML -- 'End tag 'summary' does not match the start tag 'list'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/Convenience.cs(62,15): warning CS1570: XML comment has badly formed XML -- 'End tag 'summary' does not match the start tag 'a'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(104,32): warning CS1570: XML comment has badly formed XML -- 'An identifier was expected.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/FermionTerm.cs(28,11): warning CS1570: XML comment has badly formed XML -- 'End tag 'summary' does not match the start tag 'list'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-QSharpFormat/QSharpFormatPauliHamiltonian.cs(93,15): warning CS1570: XML comment has badly formed XML -- 'End tag 'summary' does not match the start tag 'Int64'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/SpinOrbital.cs(40,93): warning CS1570: XML comment has badly formed XML -- 'The character(s) ' ' cannot be used at this location.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/Convenience.cs(68,1): warning CS1570: XML comment has badly formed XML -- 'Expected an end tag for element 'summary'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/IndexOrderedSequence.cs(26,1): warning CS1570: XML comment has badly formed XML -- 'Expected an end tag for element 'summary'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/FermionTerm.cs(29,1): warning CS1570: XML comment has badly formed XML -- 'Expected an end tag for element 'summary'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(104,32): warning CS1570: XML comment has badly formed XML -- 'The character(s) '=' cannot be used at this location.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-QSharpFormat/QSharpFormatPauliHamiltonian.cs(94,1): warning CS1570: XML comment has badly formed XML -- 'Expected an end tag for element 'c'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-QSharpFormat/QSharpFormatPauliHamiltonian.cs(94,1): warning CS1570: XML comment has badly formed XML -- 'Expected an end tag for element 'summary'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/HermitianFermionTerm.cs(35,11): warning CS1570: XML comment has badly formed XML -- 'End tag 'summary' does not match the start tag 'list'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(104,37): warning CS1570: XML comment has badly formed XML -- 'An identifier was expected.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/NormalOrderedSequence.cs(18,11): warning CS1570: XML comment has badly formed XML -- 'End tag 'item' does not match the start tag 'list'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(104,37): warning CS1570: XML comment has badly formed XML -- 'The character(s) '=' cannot be used at this location.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/HermitianFermionTerm.cs(36,1): warning CS1570: XML comment has badly formed XML -- 'Expected an end tag for element 'summary'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(104,42): warning CS1570: XML comment has badly formed XML -- 'An identifier was expected.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(104,42): warning CS1570: XML comment has badly formed XML -- 'The character(s) '=' cannot be used at this location.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(194,1): warning CS1570: XML comment has badly formed XML -- 'Expected an end tag for element 'summary'.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(195,13): warning CS1570: XML comment has badly formed XML -- 'End tag was not expected at this location.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegral.cs(203,28): warning CS1584: XML comment has syntactically incorrect cref attribute 'false' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegral.cs(203,28): warning CS1658: Identifier expected; 'false' is a keyword. See also error CS1041. [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/SpinOrbital.cs(45,56): warning CS1570: XML comment has badly formed XML -- 'The character(s) ' ' cannot be used at this location.' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/FermionTerm.cs(7,7): warning CS0105: The using directive for 'System.Linq' appeared previously in this namespace [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/HermitianFermionTerm.cs(10,7): warning CS0105: The using directive for 'Microsoft.Quantum.Chemistry' appeared previously in this namespace [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/Wavefunction/SingleCFWavefunction.cs(69,48): warning CS0108: 'SingleCFWavefunction<TIndex>.SelectIndex<TNewIndex>(Func<TIndex, TNewIndex>)' hides inherited member 'LadderSequence<TIndex>.SelectIndex<TNewIndex>(Func<TIndex, TNewIndex>)'. Use the new keyword if hiding was intended. [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/Wavefunction/UnitaryCCWavefunction.cs(27,49): warning CS0108: 'UnitaryCCWavefunction<TIndex>.SelectIndex<TNewIndex>(Func<TIndex, TNewIndex>)' hides inherited member 'SparseMultiCFWavefunction<TIndex>.SelectIndex<TNewIndex>(Func<TIndex, TNewIndex>)'. Use the new keyword if hiding was intended. [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/WorkFlows.cs(98,27): warning CS0219: The variable 'UseQubitEncoding' is assigned but its value is never used [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(156,33): warning CS0169: The field 'Extensions.ArrayLexicographicComparer<TElement>.useComparer' is never used [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/SpinOrbital.cs(17,25): warning CS0169: The field 'SpinOrbital.IdxConvention' is never used [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(133,33): warning CS0649: Field 'Extensions.ArrayEqualityComparer<TElement>.useComparer' is never assigned to, and will always have its default value null [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(25,23): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Data' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(29,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Data.Schema' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(32,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Data.Format' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(35,30): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Data.Generator' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(38,43): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Data.Bibliography' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(42,38): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Data.IntegralSets' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(48,23): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.IntegralSet' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(51,47): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.IntegralSet.Metadata' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(54,29): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.IntegralSet.BasisSet' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(57,29): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.IntegralSet.Geometry' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(60,35): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.IntegralSet.CoulombRepulsion' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(63,35): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.IntegralSet.ScfEnergy' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(66,35): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.IntegralSet.ScfEnergyOffset' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(69,36): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.IntegralSet.FciEnergy' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(72,24): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.IntegralSet.NOrbitals' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(75,24): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.IntegralSet.NElectrons' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(78,35): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.IntegralSet.EnergyOffset' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(81,36): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.IntegralSet.Hamiltonian' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(88,41): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.IntegralSet.SuggestedState' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(91,23): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.SuggestedState' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(94,39): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.SuggestedState.SuggestedStateData' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(97,23): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.SuggestedStateData' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(100,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.SuggestedStateData.Label' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(103,35): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.SuggestedStateData.Energy' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(106,39): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.SuggestedStateData.Superposition' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(110,23): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Format' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(113,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Format.Version' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(116,23): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Generator' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(119,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Generator.Source' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(122,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Generator.Version' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(126,21): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BibliographyKind' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(128,13): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BibliographyKind.arXiv' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(128,20): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BibliographyKind.DOI' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(128,25): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BibliographyKind.URL' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(130,23): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BibliographyItem' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(132,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BibliographyItem.Value' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(133,37): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BibliographyItem.Kind' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(135,25): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BibliographyItem.Read(IParser, Type, ObjectDeserializer)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(160,25): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BibliographyItem.Write(IEmitter, ObjectSerializer)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(173,23): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BasisSet' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(176,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BasisSet.Type' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(179,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BasisSet.Name' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(182,22): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.HasUnits' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(186,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.HasUnits.Units' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(189,22): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Geometry' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(192,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Geometry.CoordinateSystem' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(195,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Geometry.Symmetry' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(199,53): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.Geometry.Atoms' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(202,23): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.HamiltonianData' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(207,50): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.HamiltonianData.ParticleHoleRepresentation' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(210,48): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.HamiltonianData.OneElectronIntegrals' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(213,48): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.HamiltonianData.TwoElectronIntegrals' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(217,22): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.SimpleQuantity' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(220,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.SimpleQuantity.Value' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(223,22): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BoundedQuantity' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(226,28): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BoundedQuantity.Value' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(229,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BoundedQuantity.Upper' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(232,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.BoundedQuantity.Lower' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(235,22): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.ArrayQuantity<TIndex, TValue>' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(238,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.ArrayQuantity<TIndex, TValue>.Format' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(239,45): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.ArrayQuantity<TIndex, TValue>.Values' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(241,25): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.ArrayQuantity<TIndex, TValue>.Read(IParser, Type, ObjectDeserializer)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.1.cs(257,25): warning CS1591: Missing XML comment for publicly visible type or member 'V0_1.ArrayQuantity<TIndex, TValue>.Write(IEmitter, ObjectSerializer)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(64,23): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.Data' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(69,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.Data.Schema' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(73,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.Data.Format' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(77,30): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.Data.Generator' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(81,43): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.Data.Bibliography' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(85,45): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.Data.ProblemDescriptions' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(89,23): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ProblemDescription' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(93,47): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ProblemDescription.Metadata' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(97,29): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ProblemDescription.BasisSet' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(101,29): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ProblemDescription.Geometry' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(105,35): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ProblemDescription.CoulombRepulsion' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(109,35): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ProblemDescription.ScfEnergy' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(113,35): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ProblemDescription.ScfEnergyOffset' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(117,36): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ProblemDescription.FciEnergy' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(121,24): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ProblemDescription.NOrbitals' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(125,24): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ProblemDescription.NElectrons' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(129,35): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ProblemDescription.EnergyOffset' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(133,36): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ProblemDescription.Hamiltonian' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(137,32): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ProblemDescription.InitialStates' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(142,23): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.State' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(145,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.State.Label' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(148,27): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.State.Method' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(180,33): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ClusterOperator.Reference' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(183,39): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ClusterOperator.OneBodyAmplitudes' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeDataStructurev0.2.cs(186,39): warning CS1591: Missing XML comment for publicly visible type or member 'V0_2.ClusterOperator.TwoBodyAmplitudes' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeSerializer.cs(21,9): warning CS1591: Missing XML comment for publicly visible type or member 'VersionNumber.NotRecognized' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeSerializer.cs(21,29): warning CS1591: Missing XML comment for publicly visible type or member 'VersionNumber.v0_1' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeSerializer.cs(21,39): warning CS1591: Missing XML comment for publicly visible type or member 'VersionNumber.v0_2' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeSerializer.cs(124,63): warning CS1573: Parameter 'data' has no matching param tag in the XML comment for 'Serializers.SerializeBroombridgev0_2(V0_2.Data, string)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/BroombridgeVersionUpdater.cs(17,33): warning CS1591: Missing XML comment for publicly visible type or member 'DataStructures' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/OtherFileFormats/LiQuiD.cs(16,27): warning CS1574: XML comment has cref attribute 'FermionHamiltonian' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/OtherFileFormats/LiQuiD.cs(20,23): warning CS1591: Missing XML comment for publicly visible type or member 'LiQuiD.ProblemDescription' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/OtherFileFormats/LiQuiD.cs(22,24): warning CS1591: Missing XML comment for publicly visible type or member 'LiQuiD.ProblemDescription.NOrbitals' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/OtherFileFormats/LiQuiD.cs(23,24): warning CS1591: Missing XML comment for publicly visible type or member 'LiQuiD.ProblemDescription.NElectrons' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/OtherFileFormats/LiQuiD.cs(24,27): warning CS1591: Missing XML comment for publicly visible type or member 'LiQuiD.ProblemDescription.CoulombRepulsion' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/OtherFileFormats/LiQuiD.cs(25,27): warning CS1591: Missing XML comment for publicly visible type or member 'LiQuiD.ProblemDescription.MiscellaneousInformation' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/OtherFileFormats/LiQuiD.cs(26,47): warning CS1591: Missing XML comment for publicly visible type or member 'LiQuiD.ProblemDescription.OrbitalIntegralHamiltonian' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/OtherFileFormats/LiQuiD.cs(57,26): warning CS1572: XML comment has a param tag for 'lines', but there is no parameter by that name [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Broombridge/OtherFileFormats/LiQuiD.cs(61,67): warning CS1573: Parameter 'line' has no matching param tag in the XML comment for 'LiQuiD.DeserializeSingle(string)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(11,33): warning CS1591: Missing XML comment for publicly visible type or member 'Extensions' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(20,60): warning CS1573: Parameter 'x' has no matching param tag in the XML comment for 'Extensions.Norm(IEnumerable<double>, double)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(131,22): warning CS1591: Missing XML comment for publicly visible type or member 'Extensions.ArrayEqualityComparer<TElement>' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(134,20): warning CS1591: Missing XML comment for publicly visible type or member 'Extensions.ArrayEqualityComparer<TElement>.ArrayEqualityComparer(IComparer<TElement>)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(139,25): warning CS1591: Missing XML comment for publicly visible type or member 'Extensions.ArrayEqualityComparer<TElement>.Equals(IEnumerable<TElement>, IEnumerable<TElement>)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(143,24): warning CS1591: Missing XML comment for publicly visible type or member 'Extensions.ArrayEqualityComparer<TElement>.GetHashCode(IEnumerable<TElement>)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(154,22): warning CS1591: Missing XML comment for publicly visible type or member 'Extensions.ArrayLexicographicComparer<TElement>' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(157,20): warning CS1591: Missing XML comment for publicly visible type or member 'Extensions.ArrayLexicographicComparer<TElement>.ArrayLexicographicComparer(IComparer<TElement>)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(161,24): warning CS1591: Missing XML comment for publicly visible type or member 'Extensions.ArrayLexicographicComparer<TElement>.Compare(IEnumerable<TElement>, IEnumerable<TElement>)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(191,9): warning CS1587: XML comment is not placed on a valid language element [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(217,30): warning CS1711: XML comment has a typeparam tag for 'T', but there is no type parameter by that name [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extensions.cs(220,38): warning CS1712: Type parameter 'TValue' has no matching typeparam tag in the XML comment on 'Extensions.Clone<TValue>(TValue[])' (but other type parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/FermionHamiltonian.cs(10,26): warning CS1591: Missing XML comment for publicly visible type or member 'FermionHamiltonian' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/FermionHamiltonian.cs(12,16): warning CS1591: Missing XML comment for publicly visible type or member 'FermionHamiltonian.FermionHamiltonian()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/FermionHamiltonian.cs(17,26): warning CS1572: XML comment has a param tag for 'orbitalIntegral', but there is no parameter by that name [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/FermionHamiltonian.cs(18,70): warning CS1573: Parameter 'index' has no matching param tag in the XML comment for 'FermionHamiltonian.AddToSystemIndices(HermitianFermionTerm)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/FermionTerm.cs(47,78): warning CS1573: Parameter 'setSign' has no matching param tag in the XML comment for 'FermionTerm.FermionTerm(IEnumerable<LadderOperator<int>>, int)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/HermitianFermionTerm.cs(56,87): warning CS1573: Parameter 'setSign' has no matching param tag in the XML comment for 'HermitianFermionTerm.HermitianFermionTerm(IEnumerable<LadderOperator<int>>, int)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/HermitianFermionTerm.cs(64,26): warning CS1572: XML comment has a param tag for 'ladderOperators', but there is no parameter by that name [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/HermitianFermionTerm.cs(65,54): warning CS1573: Parameter 'indices' has no matching param tag in the XML comment for 'HermitianFermionTerm.HermitianFermionTerm(IEnumerable<int>)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/HermitianFermionTerm.cs(70,41): warning CS1591: Missing XML comment for publicly visible type or member 'HermitianFermionTerm.implicit operator HermitianFermionTerm((RaisingLowering, int)[])' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/HermitianFermionTerm.cs(191,30): warning CS1591: Missing XML comment for publicly visible type or member 'HermitianFermionTerm.Equals(object)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/HermitianFermionTerm.cs(193,21): warning CS1591: Missing XML comment for publicly visible type or member 'HermitianFermionTerm.Equals(HermitianFermionTerm)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/HermitianFermionTerm.cs(195,29): warning CS1591: Missing XML comment for publicly visible type or member 'HermitianFermionTerm.GetHashCode()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/Wavefunction/SingleCFWavefunction.cs(48,34): warning CS1574: XML comment has cref attribute 'WavefunctionFermionSCF' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/Wavefunction/SingleCFWavefunction.cs(50,26): warning CS1572: XML comment has a param tag for 'setSequence', but there is no parameter by that name [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/Wavefunction/SingleCFWavefunction.cs(55,57): warning CS1573: Parameter 'indices' has no matching param tag in the XML comment for 'SingleCFWavefunction<TIndex>.SingleCFWavefunction(IEnumerable<TIndex>)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/Wavefunction/UnitaryCCWavefunction.cs(16,18): warning CS1591: Missing XML comment for publicly visible type or member 'UnitaryCCWavefunction<TIndex>' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Fermion/Wavefunction/UnitaryCCWavefunction.cs(19,16): warning CS1591: Missing XML comment for publicly visible type or member 'UnitaryCCWavefunction<TIndex>.UnitaryCCWavefunction()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-JsonSerialization/LadderOperatorJsonConverter.cs(27,30): warning CS1591: Missing XML comment for publicly visible type or member 'LadderOperatorJsonConverter.CanConvert(Type)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-JsonSerialization/LadderSequenceJsonConverter.cs(28,30): warning CS1591: Missing XML comment for publicly visible type or member 'LadderSequenceJsonConverter.CanConvert(Type)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/IndexOrderedSequence.cs(48,94): warning CS1573: Parameter 'setSign' has no matching param tag in the XML comment for 'IndexOrderedSequence<TIndex>.IndexOrderedSequence(IEnumerable<LadderOperator<TIndex>>, int)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/IndexOrderedSequence.cs(56,36): warning CS1574: XML comment has cref attribute 'NormalOrderedLadderSequence' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderOperator.cs(71,16): warning CS1591: Missing XML comment for publicly visible type or member 'LadderOperator<TIndex>.LadderOperator()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderOperator.cs(96,30): warning CS1591: Missing XML comment for publicly visible type or member 'LadderOperator<TIndex>.Equals(object)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderOperator.cs(98,21): warning CS1591: Missing XML comment for publicly visible type or member 'LadderOperator<TIndex>.Equals(LadderOperator<TIndex>)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderOperator.cs(100,29): warning CS1591: Missing XML comment for publicly visible type or member 'LadderOperator<TIndex>.GetHashCode()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderOperator.cs(102,37): warning CS1591: Missing XML comment for publicly visible type or member 'LadderOperator<TIndex>.operator ==(LadderOperator<TIndex>, LadderOperator<TIndex>)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderOperator.cs(104,37): warning CS1591: Missing XML comment for publicly visible type or member 'LadderOperator<TIndex>.operator !=(LadderOperator<TIndex>, LadderOperator<TIndex>)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderOperatorExtensions.cs(11,33): warning CS1591: Missing XML comment for publicly visible type or member 'Extensions' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderOperatorExtensions.cs(65,36): warning CS1574: XML comment has cref attribute 'LadderSequence' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderOperatorExtensions.cs(115,36): warning CS1574: XML comment has cref attribute 'LadderSequence' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderSequence.cs(91,84): warning CS1573: Parameter 'setCoefficient' has no matching param tag in the XML comment for 'LadderSequence<TIndex>.LadderSequence(IEnumerable<LadderOperator<TIndex>>, int)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderSequence.cs(101,26): warning CS1572: XML comment has a param tag for 'setOperator', but there is no parameter by that name [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderSequence.cs(104,92): warning CS1573: Parameter 'setSequence' has no matching param tag in the XML comment for 'LadderSequence<TIndex>.implicit operator LadderSequence<TIndex>((RaisingLowering, TIndex)[])' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderSequence.cs(171,48): warning CS1574: XML comment has cref attribute 'LadderSequence' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderSequence.cs(172,50): warning CS1574: XML comment has cref attribute 'LadderSequence' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderSequence.cs(174,36): warning CS1574: XML comment has cref attribute 'LadderSequence' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderSequence.cs(184,78): warning CS1574: XML comment has cref attribute 'LadderOperator' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderSequence.cs(185,29): warning CS1574: XML comment has cref attribute 'LadderSequence' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderSequence.cs(214,30): warning CS1591: Missing XML comment for publicly visible type or member 'LadderSequence<TIndex>.Equals(object)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderSequence.cs(216,21): warning CS1591: Missing XML comment for publicly visible type or member 'LadderSequence<TIndex>.Equals(LadderSequence<TIndex>)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderSequence.cs(239,29): warning CS1591: Missing XML comment for publicly visible type or member 'LadderSequence<TIndex>.GetHashCode()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderSequence.cs(249,37): warning CS1591: Missing XML comment for publicly visible type or member 'LadderSequence<TIndex>.operator ==(LadderSequence<TIndex>, LadderSequence<TIndex>)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/LadderSequence.cs(267,37): warning CS1591: Missing XML comment for publicly visible type or member 'LadderSequence<TIndex>.operator !=(LadderSequence<TIndex>, LadderSequence<TIndex>)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/NormalOrderedSequence.cs(39,95): warning CS1573: Parameter 'setSign' has no matching param tag in the XML comment for 'NormalOrderedSequence<TIndex>.NormalOrderedSequence(IEnumerable<LadderOperator<TIndex>>, int)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/NormalOrderedSequence.cs(54,76): warning CS1574: XML comment has cref attribute 'LadderSequence' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-LadderOperator/NormalOrderedSequence.cs(63,80): warning CS1574: XML comment has cref attribute 'LadderSequence' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Logging.cs(9,25): warning CS1591: Missing XML comment for publicly visible type or member 'Logging' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Logging.cs(13,30): warning CS1591: Missing XML comment for publicly visible type or member 'Logging.LogPath' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Logging.cs(30,38): warning CS1591: Missing XML comment for publicly visible type or member 'Logging.LoggerFactory' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegral.cs(20,21): warning CS1591: Missing XML comment for publicly visible type or member 'OrbitalIntegral.Convention' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegral.cs(22,13): warning CS1591: Missing XML comment for publicly visible type or member 'OrbitalIntegral.Convention.Dirac' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegral.cs(22,20): warning CS1591: Missing XML comment for publicly visible type or member 'OrbitalIntegral.Convention.Mulliken' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegral.cs(42,16): warning CS1591: Missing XML comment for publicly visible type or member 'OrbitalIntegral.OrbitalIntegral(double)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegral.cs(94,41): warning CS1591: Missing XML comment for publicly visible type or member 'OrbitalIntegral.TermType' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegral.cs(264,30): warning CS1591: Missing XML comment for publicly visible type or member 'OrbitalIntegral.Equals(object)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegral.cs(266,21): warning CS1591: Missing XML comment for publicly visible type or member 'OrbitalIntegral.Equals(OrbitalIntegral)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegral.cs(289,29): warning CS1591: Missing XML comment for publicly visible type or member 'OrbitalIntegral.GetHashCode()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegral.cs(299,37): warning CS1591: Missing XML comment for publicly visible type or member 'OrbitalIntegral.operator ==(OrbitalIntegral, OrbitalIntegral)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegral.cs(317,37): warning CS1591: Missing XML comment for publicly visible type or member 'OrbitalIntegral.operator !=(OrbitalIntegral, OrbitalIntegral)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegralHamiltonian.cs(12,18): warning CS1591: Missing XML comment for publicly visible type or member 'OrbitalIntegralHamiltonian' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegralHamiltonian.cs(41,26): warning CS1572: XML comment has a param tag for 'orbitalIntegral', but there is no parameter by that name [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegralHamiltonian.cs(42,54): warning CS1573: Parameter 'terms' has no matching param tag in the XML comment for 'OrbitalIntegralHamiltonian.Add(IEnumerable<OrbitalIntegral>)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegralHamiltonian.cs(53,26): warning CS1572: XML comment has a param tag for 'orbitalIntegral', but there is no parameter by that name [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/OrbitalIntegralHamiltonian.cs(54,65): warning CS1573: Parameter 'index' has no matching param tag in the XML comment for 'OrbitalIntegralHamiltonian.AddToSystemIndices(OrbitalIntegral)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/SpinOrbital.cs(54,42): warning CS1573: Parameter 'indexConvention' has no matching param tag in the XML comment for 'SpinOrbital.ToInt(IndexConvention, int)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/SpinOrbital.cs(189,30): warning CS1591: Missing XML comment for publicly visible type or member 'SpinOrbital.Equals(object)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/SpinOrbital.cs(191,21): warning CS1591: Missing XML comment for publicly visible type or member 'SpinOrbital.Equals(SpinOrbital)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-OrbitalIntegral/SpinOrbital.cs(209,29): warning CS1591: Missing XML comment for publicly visible type or member 'SpinOrbital.GetHashCode()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliHamiltonian.cs(11,82): warning CS1574: XML comment has cref attribute 'FermionHamiltonian' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliHamiltonian.cs(12,78): warning CS1574: XML comment has cref attribute 'FermionHamiltonian' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliHamiltonian.cs(17,48): warning CS1574: XML comment has cref attribute 'FermionTermType' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliHamiltonian.cs(18,20): warning CS1574: XML comment has cref attribute 'IdentityTermType' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliHamiltonian.cs(19,20): warning CS1574: XML comment has cref attribute 'PPTermType' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliHamiltonian.cs(20,20): warning CS1574: XML comment has cref attribute 'PQTermType' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliHamiltonian.cs(21,20): warning CS1574: XML comment has cref attribute 'PQQPTermType' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliHamiltonian.cs(22,20): warning CS1574: XML comment has cref attribute 'PQQRTermType' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliHamiltonian.cs(23,20): warning CS1574: XML comment has cref attribute 'PQRSTermType' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliHamiltonian.cs(41,16): warning CS1591: Missing XML comment for publicly visible type or member 'PauliHamiltonian.PauliHamiltonian()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(11,17): warning CS1591: Missing XML comment for publicly visible type or member 'QubitEncoding' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(13,9): warning CS1591: Missing XML comment for publicly visible type or member 'QubitEncoding.JordanWigner' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(48,26): warning CS1572: XML comment has a param tag for 'pauliString', but there is no parameter by that name [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(49,43): warning CS1573: Parameter 'qubitIndices' has no matching param tag in the XML comment for 'PauliTerm.PauliTerm(IEnumerable<int>, TermType.PauliTerm)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(49,76): warning CS1573: Parameter 'type' has no matching param tag in the XML comment for 'PauliTerm.PauliTerm(IEnumerable<int>, TermType.PauliTerm)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(83,30): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTerm.Equals(object)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(85,21): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTerm.Equals(PauliTerm)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(108,29): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTerm.GetHashCode()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(118,37): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTerm.operator ==(PauliTerm, PauliTerm)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(136,37): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTerm.operator !=(PauliTerm, PauliTerm)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(141,19): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(143,25): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.Value' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(145,16): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.PauliTermValue(double)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(150,16): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.PauliTermValue(IEnumerable<double>)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(155,31): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.Default()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(157,31): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.AddValue(PauliTermValue, int)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(160,31): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.SetValue(PauliTermValue, int)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(163,32): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.ToString()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(185,30): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.Equals(object)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(190,21): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.Equals(PauliTermValue)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(213,29): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.GetHashCode()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(218,37): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.operator ==(PauliTermValue, PauliTermValue)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(236,37): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.operator !=(PauliTermValue, PauliTermValue)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(241,47): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.operator +(PauliTermValue, PauliTermValue)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(246,47): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.operator -(PauliTermValue, PauliTermValue)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Paulis/PauliTerm.cs(251,47): warning CS1591: Missing XML comment for publicly visible type or member 'PauliTermValue.operator *(PauliTermValue, PauliTermValue)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-QSharpFormat/QSharpFormatFermionWavefunction.cs(50,30): warning CS1572: XML comment has a param tag for 'term', but there is no parameter by that name [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-QSharpFormat/QSharpFormatFermionWavefunction.cs(53,44): warning CS1573: Parameter 'wavefunction' has no matching param tag in the XML comment for 'Convert.InitialStateSparseMultiConfigural(SparseMultiCFWavefunction<int>)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-QSharpFormat/QSharpFormatFermionWavefunction.cs(105,26): warning CS1572: XML comment has a param tag for 'terms', but there is no parameter by that name [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-QSharpFormat/QSharpFormatFermionWavefunction.cs(108,40): warning CS1573: Parameter 'wavefunction' has no matching param tag in the XML comment for 'Convert.InitialStateUnitaryCoupledCluster(UnitaryCCWavefunction<int>)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-QSharpFormat/QSharpFormatPauliHamiltonian.cs(21,29): warning CS1591: Missing XML comment for publicly visible type or member 'Convert.FromPauliTerm(PauliTerm, PauliTermValue)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-QSharpFormat/QSharpFormatPauliHamiltonian.cs(38,58): warning CS1591: Missing XML comment for publicly visible type or member 'Convert.ToQSharpFormat(PauliHamiltonian)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-QSharpFormat/QSharpFormatPauliHamiltonian.cs(81,24): warning CS1591: Missing XML comment for publicly visible type or member 'Convert.HPQandPQQRIComparer.Compare(HTerm, HTerm)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-QSharpFormat/QSharpFormatPauliHamiltonian.cs(96,24): warning CS1591: Missing XML comment for publicly visible type or member 'Convert.HTermIndexIComparer.Compare(HTerm, HTerm)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-QSharpFormat/QSharpFormatPauliHamiltonian.cs(106,25): warning CS1591: Missing XML comment for publicly visible type or member 'Convert.HTermArrayComparer.Equals(HTerm, HTerm)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-QSharpFormat/QSharpFormatPauliHamiltonian.cs(117,24): warning CS1591: Missing XML comment for publicly visible type or member 'Convert.HTermArrayComparer.GetHashCode(HTerm)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(15,55): warning CS1712: Type parameter 'TTermIndex' has no matching typeparam tag in the XML comment on 'ITermIndex<TTermClassification, TTermIndex>' (but other type parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(43,26): warning CS1711: XML comment has a typeparam tag for 'TTermClassification', but there is no type parameter by that name [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(44,33): warning CS1712: Type parameter 'TTermValue' has no matching typeparam tag in the XML comment on 'ITermValue<TTermValue>' (but other type parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(53,20): warning CS1591: Missing XML comment for publicly visible type or member 'ITermValue<TTermValue>.AddValue(TTermValue, int)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(54,20): warning CS1591: Missing XML comment for publicly visible type or member 'ITermValue<TTermValue>.Default()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(56,20): warning CS1591: Missing XML comment for publicly visible type or member 'ITermValue<TTermValue>.Clone()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(76,21): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.OrbitalIntegral' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(79,13): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.OrbitalIntegral.Identity' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(79,23): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.OrbitalIntegral.OneBody' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(79,32): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.OrbitalIntegral.TwoBody' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(83,21): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.Fermion' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(85,13): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.Fermion.Identity' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(85,27): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.Fermion.PP' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(85,35): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.Fermion.PQ' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(85,43): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.Fermion.PQQP' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(85,53): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.Fermion.PQQR' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(85,63): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.Fermion.PQRS' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(89,21): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.PauliTerm' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(91,13): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.PauliTerm.Identity' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(92,13): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.PauliTerm.Z' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(93,13): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.PauliTerm.ZZ' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(94,13): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.PauliTerm.PQ' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(95,13): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.PauliTerm.PQQR' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(96,13): warning CS1591: Missing XML comment for publicly visible type or member 'TermType.PauliTerm.v01234' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(106,9): warning CS1591: Missing XML comment for publicly visible type or member 'Spin.u' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(106,16): warning CS1591: Missing XML comment for publicly visible type or member 'Spin.d' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(114,9): warning CS1591: Missing XML comment for publicly visible type or member 'IndexConvention.NotApplicable' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(114,24): warning CS1591: Missing XML comment for publicly visible type or member 'IndexConvention.UpDown' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(114,32): warning CS1591: Missing XML comment for publicly visible type or member 'IndexConvention.HalfUp' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(123,9): warning CS1591: Missing XML comment for publicly visible type or member 'StateType.NotRecognized' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(123,29): warning CS1591: Missing XML comment for publicly visible type or member 'StateType.Default' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(123,42): warning CS1591: Missing XML comment for publicly visible type or member 'StateType.SingleConfigurational' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(123,69): warning CS1591: Missing XML comment for publicly visible type or member 'StateType.SparseMultiConfigurational' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(123,101): warning CS1591: Missing XML comment for publicly visible type or member 'StateType.UnitaryCoupledCluster' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(132,9): warning CS1591: Missing XML comment for publicly visible type or member 'RaisingLowering.u' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(132,16): warning CS1591: Missing XML comment for publicly visible type or member 'RaisingLowering.d' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(132,23): warning CS1591: Missing XML comment for publicly visible type or member 'RaisingLowering.identity' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(136,64): warning CS1574: XML comment has cref attribute 'ITermValue' that could not be resolved [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(142,23): warning CS1591: Missing XML comment for publicly visible type or member 'DoubleCoeff.Value' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(144,16): warning CS1591: Missing XML comment for publicly visible type or member 'DoubleCoeff.DoubleCoeff(double)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(149,41): warning CS1591: Missing XML comment for publicly visible type or member 'DoubleCoeff.implicit operator DoubleCoeff(double)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(150,41): warning CS1591: Missing XML comment for publicly visible type or member 'DoubleCoeff.implicit operator double(DoubleCoeff)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(152,28): warning CS1591: Missing XML comment for publicly visible type or member 'DoubleCoeff.Default()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(154,28): warning CS1591: Missing XML comment for publicly visible type or member 'DoubleCoeff.AddValue(DoubleCoeff, int)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(155,28): warning CS1591: Missing XML comment for publicly visible type or member 'DoubleCoeff.SetValue(DoubleCoeff, int)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(180,30): warning CS1591: Missing XML comment for publicly visible type or member 'DoubleCoeff.Equals(object)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(182,21): warning CS1591: Missing XML comment for publicly visible type or member 'DoubleCoeff.Equals(DoubleCoeff)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(205,29): warning CS1591: Missing XML comment for publicly visible type or member 'DoubleCoeff.GetHashCode()' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(207,20): warning CS1591: Missing XML comment for publicly visible type or member 'DoubleCoeff.CompareTo(object)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(214,37): warning CS1591: Missing XML comment for publicly visible type or member 'DoubleCoeff.operator ==(DoubleCoeff, DoubleCoeff)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-TermTypes.cs(232,37): warning CS1591: Missing XML comment for publicly visible type or member 'DoubleCoeff.operator !=(DoubleCoeff, DoubleCoeff)' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/Convenience.cs(25,22): warning CS1591: Missing XML comment for publicly visible type or member 'Convenience.ProblemContainer' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/Convenience.cs(27,26): warning CS1591: Missing XML comment for publicly visible type or member 'Convenience.ProblemContainer.Config' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/Convenience.cs(32,47): warning CS1591: Missing XML comment for publicly visible type or member 'Convenience.ProblemContainer.orbitalIntegralHamiltonian' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/Convenience.cs(33,39): warning CS1591: Missing XML comment for publicly visible type or member 'Convenience.ProblemContainer.fermionHamiltonian' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/Convenience.cs(34,37): warning CS1591: Missing XML comment for publicly visible type or member 'Convenience.ProblemContainer.pauliHamiltonian' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/Convenience.cs(40,45): warning CS1591: Missing XML comment for publicly visible type or member 'Convenience.ProblemContainer.qSharpData' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/Convenience.cs(43,24): warning CS1591: Missing XML comment for publicly visible type or member 'Convenience.ProblemContainer.NOrbitals' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/Convenience.cs(44,24): warning CS1591: Missing XML comment for publicly visible type or member 'Convenience.ProblemContainer.NElectrons' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/Convenience.cs(45,27): warning CS1591: Missing XML comment for publicly visible type or member 'Convenience.ProblemContainer.MiscellaneousInformation' [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/WorkFlows.cs(28,20): warning CS1573: Parameter 'wavefunctionLabel' has no matching param tag in the XML comment for 'Workflows.SampleWorkflow(string, string, IndexConvention)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Workflows/WorkFlows.cs(29,29): warning CS1573: Parameter 'indexConvention' has no matching param tag in the XML comment for 'Workflows.SampleWorkflow(string, string, IndexConvention)' (but other parameters do) [/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj]
-Extracting the YAML from /Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.000.yaml
+Extracting the YAML from /Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.500.yaml
 Preparing Q# data format
 ----- BEGIN ORACLE WRITE -----
-Zterm | 0 | 0.098255873575
-Zterm | 1 | 0.098255873575
-Zterm | 2 | 0.0349157819
-Zterm | 3 | 0.0349157819
-Zterm | 4 | 0.0349157819000001
-Zterm | 5 | 0.0349157819000001
-Zterm | 6 | -0.0217115238
-Zterm | 7 | -0.0217115238
-ZZterm | 0, 1 | 0.091153405025
-ZZterm | 0, 2 | 0.05611145285
-ZZterm | 0, 3 | 0.09194369185
-ZZterm | 0, 4 | 0.05611145285
-ZZterm | 0, 5 | 0.09194369185
-ZZterm | 0, 6 | 0.0654787244
-ZZterm | 0, 7 | 0.09296120895
-ZZterm | 1, 2 | 0.09194369185
-ZZterm | 1, 3 | 0.05611145285
-ZZterm | 1, 4 | 0.09194369185
-ZZterm | 1, 5 | 0.05611145285
-ZZterm | 1, 6 | 0.09296120895
-ZZterm | 1, 7 | 0.0654787244
-ZZterm | 2, 3 | 0.093644400175
-ZZterm | 2, 4 | 0.06469063015
-ZZterm | 2, 5 | 0.09314150305
-ZZterm | 2, 6 | 0.055387879375
-ZZterm | 2, 7 | 0.0948937585
-ZZterm | 3, 4 | 0.09314150305
-ZZterm | 3, 5 | 0.06469063015
-ZZterm | 3, 6 | 0.0948937585
-ZZterm | 3, 7 | 0.055387879375
-ZZterm | 4, 5 | 0.093644400175
-ZZterm | 4, 6 | 0.055387879375
-ZZterm | 4, 7 | 0.0948937585
-ZZterm | 5, 6 | 0.0948937585
-ZZterm | 5, 7 | 0.055387879375
-ZZterm | 6, 7 | 0.09678962645
-0123term+1 | 0, 1, 2, 3 | -0.035832239 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 0, 1, 2, 3 | 0.035832239 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 0, 1, 2, 3 | -0.035832239 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 0, 1, 2, 3 | 0.035832239 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 0, 1, 4, 5 | -0.035832239 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 0, 1, 4, 5 | 0.035832239 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 0, 1, 4, 5 | -0.035832239 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 0, 1, 4, 5 | 0.035832239 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 0, 1, 6, 7 | -0.02748248455 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 0, 1, 6, 7 | 0.02748248455 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 0, 1, 6, 7 | -0.02748248455 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 0, 1, 6, 7 | 0.02748248455 | [PauliX,PauliY,PauliY,PauliX]
-0123term+0 | 0, 2, 4, 6 | 0.0093800456 | [PauliX,PauliX,PauliX,PauliX]
-0123term+3 | 0, 2, 4, 6 | 0.0093800456 | [PauliY,PauliX,PauliX,PauliY]
-0123term+4 | 0, 2, 4, 6 | 0.0093800456 | [PauliY,PauliY,PauliY,PauliY]
-0123term+7 | 0, 2, 4, 6 | 0.0093800456 | [PauliX,PauliY,PauliY,PauliX]
-0123term+0 | 0, 2, 5, 7 | 0.037341973725 | [PauliX,PauliX,PauliX,PauliX]
-0123term+1 | 0, 2, 5, 7 | 0.037341973725 | [PauliX,PauliX,PauliY,PauliY]
-0123term+4 | 0, 2, 5, 7 | 0.037341973725 | [PauliY,PauliY,PauliY,PauliY]
-0123term+5 | 0, 2, 5, 7 | 0.037341973725 | [PauliY,PauliY,PauliX,PauliX]
-0123term+1 | 0, 3, 4, 7 | -0.037341973725 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 0, 3, 4, 7 | 0.037341973725 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 0, 3, 4, 7 | -0.037341973725 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 0, 3, 4, 7 | 0.037341973725 | [PauliX,PauliY,PauliY,PauliX]
-0123term+0 | 0, 3, 5, 6 | -0.027961928125 | [PauliX,PauliX,PauliX,PauliX]
-0123term+3 | 0, 3, 5, 6 | -0.027961928125 | [PauliY,PauliX,PauliX,PauliY]
-0123term+4 | 0, 3, 5, 6 | -0.027961928125 | [PauliY,PauliY,PauliY,PauliY]
-0123term+7 | 0, 3, 5, 6 | -0.027961928125 | [PauliX,PauliY,PauliY,PauliX]
-0123term+0 | 1, 2, 4, 7 | -0.027961928125 | [PauliX,PauliX,PauliX,PauliX]
-0123term+3 | 1, 2, 4, 7 | -0.027961928125 | [PauliY,PauliX,PauliX,PauliY]
-0123term+4 | 1, 2, 4, 7 | -0.027961928125 | [PauliY,PauliY,PauliY,PauliY]
-0123term+7 | 1, 2, 4, 7 | -0.027961928125 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 1, 2, 5, 6 | -0.037341973725 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 1, 2, 5, 6 | 0.037341973725 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 1, 2, 5, 6 | -0.037341973725 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 1, 2, 5, 6 | 0.037341973725 | [PauliX,PauliY,PauliY,PauliX]
-0123term+0 | 1, 3, 4, 6 | 0.037341973725 | [PauliX,PauliX,PauliX,PauliX]
-0123term+1 | 1, 3, 4, 6 | 0.037341973725 | [PauliX,PauliX,PauliY,PauliY]
-0123term+4 | 1, 3, 4, 6 | 0.037341973725 | [PauliY,PauliY,PauliY,PauliY]
-0123term+5 | 1, 3, 4, 6 | 0.037341973725 | [PauliY,PauliY,PauliX,PauliX]
-0123term+0 | 1, 3, 5, 7 | 0.0093800456 | [PauliX,PauliX,PauliX,PauliX]
-0123term+3 | 1, 3, 5, 7 | 0.0093800456 | [PauliY,PauliX,PauliX,PauliY]
-0123term+4 | 1, 3, 5, 7 | 0.0093800456 | [PauliY,PauliY,PauliY,PauliY]
-0123term+7 | 1, 3, 5, 7 | 0.0093800456 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 2, 3, 4, 5 | -0.0284508729 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 2, 3, 4, 5 | 0.0284508729 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 2, 3, 4, 5 | -0.0284508729 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 2, 3, 4, 5 | 0.0284508729 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 2, 3, 6, 7 | -0.039505879125 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 2, 3, 6, 7 | 0.039505879125 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 2, 3, 6, 7 | -0.039505879125 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 2, 3, 6, 7 | 0.039505879125 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 4, 5, 6, 7 | -0.039505879125 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 4, 5, 6, 7 | 0.039505879125 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 4, 5, 6, 7 | -0.039505879125 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 4, 5, 6, 7 | 0.039505879125 | [PauliX,PauliY,PauliY,PauliX]
+Zterm | 0 | 0.084009490475
+Zterm | 1 | 0.084009490475
+Zterm | 2 | 0.058307799225
+Zterm | 3 | 0.058307799225
+Zterm | 4 | 0.0217821519749999
+Zterm | 5 | 0.0217821519749999
+Zterm | 6 | -0.0149544562750001
+Zterm | 7 | -0.0149544562750001
+ZZterm | 0, 1 | 0.087493550775
+ZZterm | 0, 2 | 0.03861718845
+ZZterm | 0, 3 | 0.079683548175
+ZZterm | 0, 4 | 0.04860114505
+ZZterm | 0, 5 | 0.0805060156
+ZZterm | 0, 6 | 0.0597063802
+ZZterm | 0, 7 | 0.090539045425
+ZZterm | 1, 2 | 0.079683548175
+ZZterm | 1, 3 | 0.03861718845
+ZZterm | 1, 4 | 0.0805060156
+ZZterm | 1, 5 | 0.04860114505
+ZZterm | 1, 6 | 0.090539045425
+ZZterm | 1, 7 | 0.0597063802
+ZZterm | 2, 3 | 0.083079213225
+ZZterm | 2, 4 | 0.047321090125
+ZZterm | 2, 5 | 0.0838390484
+ZZterm | 2, 6 | 0.0496062946
+ZZterm | 2, 7 | 0.08265114335
+ZZterm | 3, 4 | 0.0838390484
+ZZterm | 3, 5 | 0.047321090125
+ZZterm | 3, 6 | 0.08265114335
+ZZterm | 3, 7 | 0.0496062946
+ZZterm | 4, 5 | 0.085514416375
+ZZterm | 4, 6 | 0.03995694835
+ZZterm | 4, 7 | 0.083798009475
+ZZterm | 5, 6 | 0.083798009475
+ZZterm | 5, 7 | 0.03995694835
+ZZterm | 6, 7 | 0.094788726175
+PQterm+X | 0, 4 | 0.0051918287
+PQterm+Y | 0, 4 | 0.0051918287
+PQQRterm+X | 0, 4, 1 | 0.0144021457
+PQQRterm+Y | 0, 4, 1 | 0.0144021457
+PQQRterm+X | 0, 4, 2 | 0.01306646785
+PQQRterm+Y | 0, 4, 2 | 0.01306646785
+PQQRterm+X | 0, 4, 3 | -0.0043868564
+PQQRterm+Y | 0, 4, 3 | -0.0043868564
+PQQR_Parityterm+X | 0, 4, 5 | -0.00454010305
+PQQR_Parityterm+Y | 0, 4, 5 | -0.00454010305
+PQQR_Parityterm+X | 0, 4, 6 | 0.007391421625
+PQQR_Parityterm+Y | 0, 4, 6 | 0.007391421625
+PQQR_Parityterm+X | 0, 4, 7 | 0.015038609925
+PQQR_Parityterm+Y | 0, 4, 7 | 0.015038609925
+PQterm+X | 1, 5 | 0.0051918287
+PQterm+Y | 1, 5 | 0.0051918287
+PQQR_Parityterm+X | 1, 5, 0 | 0.0144021457
+PQQR_Parityterm+Y | 1, 5, 0 | 0.0144021457
+PQQRterm+X | 1, 5, 2 | -0.0043868564
+PQQRterm+Y | 1, 5, 2 | -0.0043868564
+PQQRterm+X | 1, 5, 3 | 0.01306646785
+PQQRterm+Y | 1, 5, 3 | 0.01306646785
+PQQRterm+X | 1, 5, 4 | -0.00454010305
+PQQRterm+Y | 1, 5, 4 | -0.00454010305
+PQQR_Parityterm+X | 1, 5, 6 | 0.015038609925
+PQQR_Parityterm+Y | 1, 5, 6 | 0.015038609925
+PQQR_Parityterm+X | 1, 5, 7 | 0.007391421625
+PQQR_Parityterm+Y | 1, 5, 7 | 0.007391421625
+PQterm+X | 2, 6 | 0.0066196245
+PQterm+Y | 2, 6 | 0.0066196245
+PQQR_Parityterm+X | 2, 6, 0 | -0.007358584125
+PQQR_Parityterm+Y | 2, 6, 0 | -0.007358584125
+PQQR_Parityterm+X | 2, 6, 1 | -0.014979989675
+PQQR_Parityterm+Y | 2, 6, 1 | -0.014979989675
+PQQRterm+X | 2, 6, 3 | 0.003808973025
+PQQRterm+Y | 2, 6, 3 | 0.003808973025
+PQQRterm+X | 2, 6, 4 | -0.013768861225
+PQQRterm+Y | 2, 6, 4 | -0.013768861225
+PQQRterm+X | 2, 6, 5 | 0.00446059885
+PQQRterm+Y | 2, 6, 5 | 0.00446059885
+PQQR_Parityterm+X | 2, 6, 7 | -0.0158409629
+PQQR_Parityterm+Y | 2, 6, 7 | -0.0158409629
+PQterm+X | 3, 7 | 0.0066196245
+PQterm+Y | 3, 7 | 0.0066196245
+PQQR_Parityterm+X | 3, 7, 0 | -0.014979989675
+PQQR_Parityterm+Y | 3, 7, 0 | -0.014979989675
+PQQR_Parityterm+X | 3, 7, 1 | -0.007358584125
+PQQR_Parityterm+Y | 3, 7, 1 | -0.007358584125
+PQQR_Parityterm+X | 3, 7, 2 | 0.003808973025
+PQQR_Parityterm+Y | 3, 7, 2 | 0.003808973025
+PQQRterm+X | 3, 7, 4 | 0.00446059885
+PQQRterm+Y | 3, 7, 4 | 0.00446059885
+PQQRterm+X | 3, 7, 5 | -0.013768861225
+PQQRterm+Y | 3, 7, 5 | -0.013768861225
+PQQRterm+X | 3, 7, 6 | -0.0158409629
+PQQRterm+Y | 3, 7, 6 | -0.0158409629
+0123term+1 | 0, 1, 2, 3 | -0.041066359725 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 1, 2, 3 | 0.041066359725 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 1, 2, 3 | -0.041066359725 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 1, 2, 3 | 0.041066359725 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 0, 1, 2, 7 | -0.00762140555 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 1, 2, 7 | 0.00762140555 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 1, 2, 7 | -0.00762140555 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 1, 2, 7 | 0.00762140555 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 0, 1, 3, 6 | -0.00762140555 | [PauliX,PauliX,PauliX,PauliX]
+0123term+3 | 0, 1, 3, 6 | -0.00762140555 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 0, 1, 3, 6 | -0.00762140555 | [PauliY,PauliY,PauliY,PauliY]
+0123term+7 | 0, 1, 3, 6 | -0.00762140555 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 0, 1, 4, 5 | -0.03190487055 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 1, 4, 5 | 0.03190487055 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 1, 4, 5 | -0.03190487055 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 1, 4, 5 | 0.03190487055 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 0, 1, 6, 7 | -0.030832665225 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 1, 6, 7 | 0.030832665225 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 1, 6, 7 | -0.030832665225 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 1, 6, 7 | 0.030832665225 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 0, 2, 3, 5 | 0.01745332425 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 0, 2, 3, 5 | 0.01745332425 | [PauliX,PauliX,PauliY,PauliY]
+0123term+4 | 0, 2, 3, 5 | 0.01745332425 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 0, 2, 3, 5 | 0.01745332425 | [PauliY,PauliY,PauliX,PauliX]
+0123term+0 | 0, 2, 4, 6 | -0.01610073675 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 0, 2, 4, 6 | -0.0098331025 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 2, 4, 6 | -0.00626763425 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 0, 2, 4, 6 | -0.01610073675 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 0, 2, 4, 6 | -0.0098331025 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 2, 4, 6 | -0.00626763425 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 0, 2, 5, 7 | -0.042098455775 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 0, 2, 5, 7 | -0.042098455775 | [PauliX,PauliX,PauliY,PauliY]
+0123term+4 | 0, 2, 5, 7 | -0.042098455775 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 0, 2, 5, 7 | -0.042098455775 | [PauliY,PauliY,PauliX,PauliX]
+0123term+1 | 0, 3, 4, 7 | 0.032265353275 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 3, 4, 7 | -0.032265353275 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 3, 4, 7 | 0.032265353275 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 3, 4, 7 | -0.032265353275 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 0, 3, 5, 6 | 0.025997719025 | [PauliX,PauliX,PauliX,PauliX]
+0123term+3 | 0, 3, 5, 6 | 0.025997719025 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 0, 3, 5, 6 | 0.025997719025 | [PauliY,PauliY,PauliY,PauliY]
+0123term+7 | 0, 3, 5, 6 | 0.025997719025 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 0, 5, 6, 7 | 0.0076471883 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 5, 6, 7 | -0.0076471883 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 5, 6, 7 | 0.0076471883 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 5, 6, 7 | -0.0076471883 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 1, 2, 3, 4 | -0.01745332425 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 1, 2, 3, 4 | 0.01745332425 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 1, 2, 3, 4 | -0.01745332425 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 1, 2, 3, 4 | 0.01745332425 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 1, 2, 4, 7 | 0.025997719025 | [PauliX,PauliX,PauliX,PauliX]
+0123term+3 | 1, 2, 4, 7 | 0.025997719025 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 1, 2, 4, 7 | 0.025997719025 | [PauliY,PauliY,PauliY,PauliY]
+0123term+7 | 1, 2, 4, 7 | 0.025997719025 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 1, 2, 5, 6 | 0.032265353275 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 1, 2, 5, 6 | -0.032265353275 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 1, 2, 5, 6 | 0.032265353275 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 1, 2, 5, 6 | -0.032265353275 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 1, 3, 4, 6 | -0.042098455775 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 1, 3, 4, 6 | -0.042098455775 | [PauliX,PauliX,PauliY,PauliY]
+0123term+4 | 1, 3, 4, 6 | -0.042098455775 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 1, 3, 4, 6 | -0.042098455775 | [PauliY,PauliY,PauliX,PauliX]
+0123term+0 | 1, 3, 5, 7 | -0.01610073675 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 1, 3, 5, 7 | -0.0098331025 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 1, 3, 5, 7 | -0.00626763425 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 1, 3, 5, 7 | -0.01610073675 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 1, 3, 5, 7 | -0.0098331025 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 1, 3, 5, 7 | -0.00626763425 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 1, 4, 6, 7 | 0.0076471883 | [PauliX,PauliX,PauliX,PauliX]
+0123term+3 | 1, 4, 6, 7 | 0.0076471883 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 1, 4, 6, 7 | 0.0076471883 | [PauliY,PauliY,PauliY,PauliY]
+0123term+7 | 1, 4, 6, 7 | 0.0076471883 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 2, 3, 4, 5 | -0.036517958275 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 2, 3, 4, 5 | 0.036517958275 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 2, 3, 4, 5 | -0.036517958275 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 2, 3, 4, 5 | 0.036517958275 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 2, 3, 6, 7 | -0.03304484875 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 2, 3, 6, 7 | 0.03304484875 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 2, 3, 6, 7 | -0.03304484875 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 2, 3, 6, 7 | 0.03304484875 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 2, 4, 5, 7 | -0.018229460075 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 2, 4, 5, 7 | -0.018229460075 | [PauliX,PauliX,PauliY,PauliY]
+0123term+4 | 2, 4, 5, 7 | -0.018229460075 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 2, 4, 5, 7 | -0.018229460075 | [PauliY,PauliY,PauliX,PauliX]
+0123term+1 | 3, 4, 5, 6 | 0.018229460075 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 3, 4, 5, 6 | -0.018229460075 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 3, 4, 5, 6 | 0.018229460075 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 3, 4, 5, 6 | -0.018229460075 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 4, 5, 6, 7 | -0.043841061125 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 4, 5, 6, 7 | 0.043841061125 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 4, 5, 6, 7 | -0.043841061125 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 4, 5, 6, 7 | 0.043841061125 | [PauliX,PauliY,PauliY,PauliX]
 ----- END ORACLE WRITE -----
 nSpinOrbitals:int:8
-energyOffset:float:-1.06133560315828
+energyOffset:float:-1.07226688558399
 trotterStep:float:1
 trotterOrder:int:1
 nElectrons:int:8

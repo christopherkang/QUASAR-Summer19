@@ -6,11 +6,11 @@
 
 mkdir _temp
 
-YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.000.yaml"
+YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.500.yaml"
 INPUT_STATE="E1"
 PRECISION="7"
 TROTTER_STEP="1.0"
-TROTTER_ORDER="2"
+TROTTER_ORDER="1"
 SAMPLE_SIZE="20"
 
 CMD_ARGS="$YAML_PATH $INPUT_STATE $PRECISION $TROTTER_STEP $TROTTER_ORDER"

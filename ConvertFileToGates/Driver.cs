@@ -19,13 +19,13 @@ namespace ConvertFileToGates
             else
             {
                 // var gateFile = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/extracted_terms.json";
-                string gateFile = args[0];
+                string YAMLPath = args[0];
                 int numberOfSamples = Int16.Parse(args[1]);
                 var nBitsPrecision = Int64.Parse(args[2]);
-                if (File.Exists(gateFile))
+                if (File.Exists(YAMLPath))
                 {
                     // Do stuff if the file exists
-                    string raw_JSON = System.IO.File.ReadAllText(gateFile);
+                    string raw_JSON = System.IO.File.ReadAllText(YAMLPath);
                     var output = JObject.Parse(raw_JSON);
                     var constants = output["constants"];
 
@@ -46,8 +46,11 @@ namespace ConvertFileToGates
                         )
                     );
 
-                    Console.WriteLine($"Running a Hamiltonian of order {trotterOrder}");
-                    Console.WriteLine($"Step size: {trotterStepSize}");
+                    Console.WriteLine($"Extracting the YAML from {YAMLPath}");
+                    Console.WriteLine($"Precision: {nBitsPrecision}");
+                    Console.WriteLine($"Trotter step size: {trotterStepSize}");
+                    Console.WriteLine($"Trotter order: {trotterOrder}");
+                    Console.WriteLine($"Number of samples: {numberOfSamples}");
 
                     // Send the gates to the quantum computer
                     using (var qsim = new QuantumSimulator())

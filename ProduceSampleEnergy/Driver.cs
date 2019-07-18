@@ -32,6 +32,11 @@ namespace ProduceSampleEnergy
                 var numberOfSamples = Int16.Parse(args[5]);
 
                 Console.WriteLine($"Extracting the YAML from {YAMLPath}");
+                Console.WriteLine($"Input state: {inputState}");
+                Console.WriteLine($"Precision: {nBitsPrecision}");
+                Console.WriteLine($"Trotter step size: {trotterStepSize}");
+                Console.WriteLine($"Trotter order: {trotterOrder}");
+                Console.WriteLine($"Number of samples: {numberOfSamples}");
 
                 // This deserializes a Broombridge file, given its filename.
                 var broombridge = Deserializers.DeserializeBroombridge(YAMLPath);

@@ -62,6 +62,9 @@ def parse_line(line):
     # extract the qubit targets, and convert them to integers
     qubit_targets = line_terms[1].split(", ")
     qubit_targets = list(map(int, qubit_targets))
+
+    # note - this will put too many targets for some terms. We'll remove them later
+    # (specifically, PQ, PQQRS terms)
     out_dict["targets"] = qubit_targets
 
     # add the base ops and angle for all terms.
@@ -86,6 +89,11 @@ def parse_line(line):
             out_dict["targets"].append(index)
             out_dict["ops"].append(Constant.PAULI_TO_INT.value["PauliZ"])
     elif "PQQRterm" in term_type:
+        # we need to remove the ignored term from the targets
+        # let's store it and then remove it
+        out_dict["qIdx"] = qubit_targets[2]
+        out_dict["targets"] = qubit_targets[:2]
+
         # we need to do a more complicated series of manipulations
         for index in range(qubit_targets[0] + 1, qubit_targets[1]):
             if (index == qubit_targets[2]):
@@ -94,13 +102,17 @@ def parse_line(line):
                 out_dict["targets"].append(index)
                 out_dict["ops"].append(Constant.PAULI_TO_INT.value["PauliZ"])
     elif "PQQR_Parityterm" in term_type:
+        # we need to to remove the parity term from the targets; we'll add it back later
+        # let's store it and then remove it
+        out_dict["qIdx"] = qubit_targets[2]
+        out_dict["targets"] = qubit_targets[:2]
+
         # we need to do even more complicated work
         for index in range(qubit_targets[0] + 1, qubit_targets[1]):
             out_dict["targets"].append(index)
             out_dict["ops"].append(Constant.PAULI_TO_INT.value["PauliZ"])
         out_dict["targets"].append(qubit_targets[2])
         out_dict["ops"].append(Constant.PAULI_TO_INT.value["PauliZ"])
-        pass
     elif "0123term" in term_type:
         # we have a 0123 term, so we'll need to add additional Z ops
         # use the naming convention from
@@ -117,6 +129,7 @@ def parse_line(line):
             out_dict["ops"].append(Constant.PAULI_TO_INT.value["PauliZ"])
 
     # the number of operations should match the number of target and parity qubits
+    print(f"{out_dict['type']} | {out_dict['ops']} | {out_dict['targets']}")
     assert len(out_dict["ops"]) == len(out_dict["targets"])
 
     return out_dict
