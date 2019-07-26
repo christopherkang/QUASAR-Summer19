@@ -1,0 +1,27 @@
+YAML Path: /Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/integrals_lih_sto-3g_0.800.nw.out.yaml
+Extracting the YAML from ../TestPipeline/_temp/extracted_terms.json
+Precision: 7
+Trotter step size: 0.4
+Trotter order: 1
+Number of samples: 20
+Predicted energy: -7.50157823896432
+Predicted energy: -7.51414661980815
+Predicted energy: -7.50157823896432
+Predicted energy: -7.51414661980815
+Predicted energy: -7.53225785426487
+Predicted energy: -7.53225785426487
+Predicted energy: -7.51414661980815
+Predicted energy: -7.50157823896432
+Predicted energy: -7.50157823896432
+Predicted energy: -7.51414661980815
+Predicted energy: -7.50157823896432
+Predicted energy: -7.57550585040926
+Predicted energy: -7.53225785426487
+Predicted energy: -7.51414661980815
+Predicted energy: -7.67308754992379
+Predicted energy: -7.53225785426487
+Predicted energy: -7.50157823896432
+Predicted energy: -7.53225785426487
+Predicted energy: -7.50157823896432
+Predicted energy: -7.51414661980815
+Average predicted energy: -7.52529050316283

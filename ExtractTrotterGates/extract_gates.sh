@@ -1,5 +1,7 @@
 #!/bin/bash
 # Extract and Convert Trotter terms to the JSON format
+# Positional argument order:
+# YAML, input state label, precision, step size, and trotter order.
 
 if [ "$5" != "" ]
 then

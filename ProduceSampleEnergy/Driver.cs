@@ -66,6 +66,10 @@ namespace ProduceSampleEnergy
                     Console.WriteLine("----- End simulation -----");
                     Console.WriteLine($"Average energy estimate: {runningSum / (float)numberOfSamples}");
                 }
+
+                ResourcesEstimator estimator = new ResourcesEstimator();
+                GetEnergyByTrotterization.Run(estimator, qSharpData, nBitsPrecision, trotterStepSize, trotterOrder).Wait();
+                System.IO.File.WriteAllLines("./temp/_costEstimate.txt", new []{estimator.ToTSV()});
             }
         }
     }

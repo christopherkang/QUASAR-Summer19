@@ -1,0 +1,30 @@
+Extracting the YAML from /Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H2O/h2o_oh3.0_sto3g.nw.out.yaml
+Input state: |E1>
+Precision: 7
+Trotter step size: 0.4
+Trotter order: 1
+Number of samples: 20
+Preparing Q# data format
+----- Begin simulation -----
+-43.1927143830869
+-43.1927143830869
+-43.2108256175436
+-43.2108256175436
+-43.1927143830869
+-43.2233939983875
+-43.2108256175436
+-43.2233939983875
+-43.2108256175436
+-43.1927143830869
+-43.1927143830869
+-43.2233939983875
+-43.2108256175436
+-43.2233939983875
+-43.2108256175436
+-43.2108256175436
+-43.1620347677864
+-42.3950443852726
+-43.3154328442891
+-43.2359623792313
+----- End simulation -----
+Average energy estimate: -43.1720700804185

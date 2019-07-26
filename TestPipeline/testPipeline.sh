@@ -6,12 +6,12 @@
 
 mkdir _temp
 
-YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.500.yaml"
+YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.100.yaml"
 INPUT_STATE="E1"
 PRECISION="7"
-TROTTER_STEP="1.0"
+TROTTER_STEP="0.4"
 TROTTER_ORDER="1"
-SAMPLE_SIZE="20"
+SAMPLE_SIZE="100"
 
 CMD_ARGS="$YAML_PATH $INPUT_STATE $PRECISION $TROTTER_STEP $TROTTER_ORDER"
 
@@ -48,9 +48,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
     # ----- STEP 4 - Ingest the JSON file
     cd ../ConvertFileToGates 
+    echo "YAML Path: $YAML_PATH" > ../TestPipeline/_temp/_sampled_optimized_energy.txt
     echo "RUNNING: dotnet run ./extracted_terms.json $SAMPLE_SIZE >./_temp/_sampled_optimized_energy.txt"
-    dotnet run ../TestPipeline/_temp/extracted_terms.json $SAMPLE_SIZE $PRECISION >../TestPipeline/_temp/_sampled_optimized_energy.txt
-
+    dotnet run ../TestPipeline/_temp/extracted_terms.json $SAMPLE_SIZE $PRECISION >>../TestPipeline/_temp/_sampled_optimized_energy.txt
+    # sed -i "1s/^/YAML Path: $YAML_PATH /" ../TestPipeline/_temp/_sampled_optimized_energy.txt
     # ----- STEP 5 - Return information to user
 else
     echo Exiting from user cancellation.

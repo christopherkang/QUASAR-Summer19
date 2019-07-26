@@ -1,194 +1,194 @@
-Extracting the YAML from /Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.500.yaml
+Extracting the YAML from /Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.100.yaml
 Preparing Q# data format
 ----- BEGIN ORACLE WRITE -----
-Zterm | 0 | 0.084009490475
-Zterm | 1 | 0.084009490475
-Zterm | 2 | 0.058307799225
-Zterm | 3 | 0.058307799225
-Zterm | 4 | 0.0217821519749999
-Zterm | 5 | 0.0217821519749999
-Zterm | 6 | -0.0149544562750001
-Zterm | 7 | -0.0149544562750001
-ZZterm | 0, 1 | 0.087493550775
-ZZterm | 0, 2 | 0.03861718845
-ZZterm | 0, 3 | 0.079683548175
-ZZterm | 0, 4 | 0.04860114505
-ZZterm | 0, 5 | 0.0805060156
-ZZterm | 0, 6 | 0.0597063802
-ZZterm | 0, 7 | 0.090539045425
-ZZterm | 1, 2 | 0.079683548175
-ZZterm | 1, 3 | 0.03861718845
-ZZterm | 1, 4 | 0.0805060156
-ZZterm | 1, 5 | 0.04860114505
-ZZterm | 1, 6 | 0.090539045425
-ZZterm | 1, 7 | 0.0597063802
-ZZterm | 2, 3 | 0.083079213225
-ZZterm | 2, 4 | 0.047321090125
-ZZterm | 2, 5 | 0.0838390484
-ZZterm | 2, 6 | 0.0496062946
-ZZterm | 2, 7 | 0.08265114335
-ZZterm | 3, 4 | 0.0838390484
-ZZterm | 3, 5 | 0.047321090125
-ZZterm | 3, 6 | 0.08265114335
-ZZterm | 3, 7 | 0.0496062946
-ZZterm | 4, 5 | 0.085514416375
-ZZterm | 4, 6 | 0.03995694835
-ZZterm | 4, 7 | 0.083798009475
-ZZterm | 5, 6 | 0.083798009475
-ZZterm | 5, 7 | 0.03995694835
-ZZterm | 6, 7 | 0.094788726175
-PQterm+X | 0, 4 | 0.0051918287
-PQterm+Y | 0, 4 | 0.0051918287
-PQQRterm+X | 0, 4, 1 | 0.0144021457
-PQQRterm+Y | 0, 4, 1 | 0.0144021457
-PQQRterm+X | 0, 4, 2 | 0.01306646785
-PQQRterm+Y | 0, 4, 2 | 0.01306646785
-PQQRterm+X | 0, 4, 3 | -0.0043868564
-PQQRterm+Y | 0, 4, 3 | -0.0043868564
-PQQR_Parityterm+X | 0, 4, 5 | -0.00454010305
-PQQR_Parityterm+Y | 0, 4, 5 | -0.00454010305
-PQQR_Parityterm+X | 0, 4, 6 | 0.007391421625
-PQQR_Parityterm+Y | 0, 4, 6 | 0.007391421625
-PQQR_Parityterm+X | 0, 4, 7 | 0.015038609925
-PQQR_Parityterm+Y | 0, 4, 7 | 0.015038609925
-PQterm+X | 1, 5 | 0.0051918287
-PQterm+Y | 1, 5 | 0.0051918287
-PQQR_Parityterm+X | 1, 5, 0 | 0.0144021457
-PQQR_Parityterm+Y | 1, 5, 0 | 0.0144021457
-PQQRterm+X | 1, 5, 2 | -0.0043868564
-PQQRterm+Y | 1, 5, 2 | -0.0043868564
-PQQRterm+X | 1, 5, 3 | 0.01306646785
-PQQRterm+Y | 1, 5, 3 | 0.01306646785
-PQQRterm+X | 1, 5, 4 | -0.00454010305
-PQQRterm+Y | 1, 5, 4 | -0.00454010305
-PQQR_Parityterm+X | 1, 5, 6 | 0.015038609925
-PQQR_Parityterm+Y | 1, 5, 6 | 0.015038609925
-PQQR_Parityterm+X | 1, 5, 7 | 0.007391421625
-PQQR_Parityterm+Y | 1, 5, 7 | 0.007391421625
-PQterm+X | 2, 6 | 0.0066196245
-PQterm+Y | 2, 6 | 0.0066196245
-PQQR_Parityterm+X | 2, 6, 0 | -0.007358584125
-PQQR_Parityterm+Y | 2, 6, 0 | -0.007358584125
-PQQR_Parityterm+X | 2, 6, 1 | -0.014979989675
-PQQR_Parityterm+Y | 2, 6, 1 | -0.014979989675
-PQQRterm+X | 2, 6, 3 | 0.003808973025
-PQQRterm+Y | 2, 6, 3 | 0.003808973025
-PQQRterm+X | 2, 6, 4 | -0.013768861225
-PQQRterm+Y | 2, 6, 4 | -0.013768861225
-PQQRterm+X | 2, 6, 5 | 0.00446059885
-PQQRterm+Y | 2, 6, 5 | 0.00446059885
-PQQR_Parityterm+X | 2, 6, 7 | -0.0158409629
-PQQR_Parityterm+Y | 2, 6, 7 | -0.0158409629
-PQterm+X | 3, 7 | 0.0066196245
-PQterm+Y | 3, 7 | 0.0066196245
-PQQR_Parityterm+X | 3, 7, 0 | -0.014979989675
-PQQR_Parityterm+Y | 3, 7, 0 | -0.014979989675
-PQQR_Parityterm+X | 3, 7, 1 | -0.007358584125
-PQQR_Parityterm+Y | 3, 7, 1 | -0.007358584125
-PQQR_Parityterm+X | 3, 7, 2 | 0.003808973025
-PQQR_Parityterm+Y | 3, 7, 2 | 0.003808973025
-PQQRterm+X | 3, 7, 4 | 0.00446059885
-PQQRterm+Y | 3, 7, 4 | 0.00446059885
-PQQRterm+X | 3, 7, 5 | -0.013768861225
-PQQRterm+Y | 3, 7, 5 | -0.013768861225
-PQQRterm+X | 3, 7, 6 | -0.0158409629
-PQQRterm+Y | 3, 7, 6 | -0.0158409629
-0123term+1 | 0, 1, 2, 3 | -0.041066359725 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 0, 1, 2, 3 | 0.041066359725 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 0, 1, 2, 3 | -0.041066359725 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 0, 1, 2, 3 | 0.041066359725 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 0, 1, 2, 7 | -0.00762140555 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 0, 1, 2, 7 | 0.00762140555 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 0, 1, 2, 7 | -0.00762140555 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 0, 1, 2, 7 | 0.00762140555 | [PauliX,PauliY,PauliY,PauliX]
-0123term+0 | 0, 1, 3, 6 | -0.00762140555 | [PauliX,PauliX,PauliX,PauliX]
-0123term+3 | 0, 1, 3, 6 | -0.00762140555 | [PauliY,PauliX,PauliX,PauliY]
-0123term+4 | 0, 1, 3, 6 | -0.00762140555 | [PauliY,PauliY,PauliY,PauliY]
-0123term+7 | 0, 1, 3, 6 | -0.00762140555 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 0, 1, 4, 5 | -0.03190487055 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 0, 1, 4, 5 | 0.03190487055 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 0, 1, 4, 5 | -0.03190487055 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 0, 1, 4, 5 | 0.03190487055 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 0, 1, 6, 7 | -0.030832665225 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 0, 1, 6, 7 | 0.030832665225 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 0, 1, 6, 7 | -0.030832665225 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 0, 1, 6, 7 | 0.030832665225 | [PauliX,PauliY,PauliY,PauliX]
-0123term+0 | 0, 2, 3, 5 | 0.01745332425 | [PauliX,PauliX,PauliX,PauliX]
-0123term+1 | 0, 2, 3, 5 | 0.01745332425 | [PauliX,PauliX,PauliY,PauliY]
-0123term+4 | 0, 2, 3, 5 | 0.01745332425 | [PauliY,PauliY,PauliY,PauliY]
-0123term+5 | 0, 2, 3, 5 | 0.01745332425 | [PauliY,PauliY,PauliX,PauliX]
-0123term+0 | 0, 2, 4, 6 | -0.01610073675 | [PauliX,PauliX,PauliX,PauliX]
-0123term+1 | 0, 2, 4, 6 | -0.0098331025 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 0, 2, 4, 6 | -0.00626763425 | [PauliY,PauliX,PauliX,PauliY]
-0123term+4 | 0, 2, 4, 6 | -0.01610073675 | [PauliY,PauliY,PauliY,PauliY]
-0123term+5 | 0, 2, 4, 6 | -0.0098331025 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 0, 2, 4, 6 | -0.00626763425 | [PauliX,PauliY,PauliY,PauliX]
-0123term+0 | 0, 2, 5, 7 | -0.042098455775 | [PauliX,PauliX,PauliX,PauliX]
-0123term+1 | 0, 2, 5, 7 | -0.042098455775 | [PauliX,PauliX,PauliY,PauliY]
-0123term+4 | 0, 2, 5, 7 | -0.042098455775 | [PauliY,PauliY,PauliY,PauliY]
-0123term+5 | 0, 2, 5, 7 | -0.042098455775 | [PauliY,PauliY,PauliX,PauliX]
-0123term+1 | 0, 3, 4, 7 | 0.032265353275 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 0, 3, 4, 7 | -0.032265353275 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 0, 3, 4, 7 | 0.032265353275 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 0, 3, 4, 7 | -0.032265353275 | [PauliX,PauliY,PauliY,PauliX]
-0123term+0 | 0, 3, 5, 6 | 0.025997719025 | [PauliX,PauliX,PauliX,PauliX]
-0123term+3 | 0, 3, 5, 6 | 0.025997719025 | [PauliY,PauliX,PauliX,PauliY]
-0123term+4 | 0, 3, 5, 6 | 0.025997719025 | [PauliY,PauliY,PauliY,PauliY]
-0123term+7 | 0, 3, 5, 6 | 0.025997719025 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 0, 5, 6, 7 | 0.0076471883 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 0, 5, 6, 7 | -0.0076471883 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 0, 5, 6, 7 | 0.0076471883 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 0, 5, 6, 7 | -0.0076471883 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 1, 2, 3, 4 | -0.01745332425 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 1, 2, 3, 4 | 0.01745332425 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 1, 2, 3, 4 | -0.01745332425 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 1, 2, 3, 4 | 0.01745332425 | [PauliX,PauliY,PauliY,PauliX]
-0123term+0 | 1, 2, 4, 7 | 0.025997719025 | [PauliX,PauliX,PauliX,PauliX]
-0123term+3 | 1, 2, 4, 7 | 0.025997719025 | [PauliY,PauliX,PauliX,PauliY]
-0123term+4 | 1, 2, 4, 7 | 0.025997719025 | [PauliY,PauliY,PauliY,PauliY]
-0123term+7 | 1, 2, 4, 7 | 0.025997719025 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 1, 2, 5, 6 | 0.032265353275 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 1, 2, 5, 6 | -0.032265353275 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 1, 2, 5, 6 | 0.032265353275 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 1, 2, 5, 6 | -0.032265353275 | [PauliX,PauliY,PauliY,PauliX]
-0123term+0 | 1, 3, 4, 6 | -0.042098455775 | [PauliX,PauliX,PauliX,PauliX]
-0123term+1 | 1, 3, 4, 6 | -0.042098455775 | [PauliX,PauliX,PauliY,PauliY]
-0123term+4 | 1, 3, 4, 6 | -0.042098455775 | [PauliY,PauliY,PauliY,PauliY]
-0123term+5 | 1, 3, 4, 6 | -0.042098455775 | [PauliY,PauliY,PauliX,PauliX]
-0123term+0 | 1, 3, 5, 7 | -0.01610073675 | [PauliX,PauliX,PauliX,PauliX]
-0123term+1 | 1, 3, 5, 7 | -0.0098331025 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 1, 3, 5, 7 | -0.00626763425 | [PauliY,PauliX,PauliX,PauliY]
-0123term+4 | 1, 3, 5, 7 | -0.01610073675 | [PauliY,PauliY,PauliY,PauliY]
-0123term+5 | 1, 3, 5, 7 | -0.0098331025 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 1, 3, 5, 7 | -0.00626763425 | [PauliX,PauliY,PauliY,PauliX]
-0123term+0 | 1, 4, 6, 7 | 0.0076471883 | [PauliX,PauliX,PauliX,PauliX]
-0123term+3 | 1, 4, 6, 7 | 0.0076471883 | [PauliY,PauliX,PauliX,PauliY]
-0123term+4 | 1, 4, 6, 7 | 0.0076471883 | [PauliY,PauliY,PauliY,PauliY]
-0123term+7 | 1, 4, 6, 7 | 0.0076471883 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 2, 3, 4, 5 | -0.036517958275 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 2, 3, 4, 5 | 0.036517958275 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 2, 3, 4, 5 | -0.036517958275 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 2, 3, 4, 5 | 0.036517958275 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 2, 3, 6, 7 | -0.03304484875 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 2, 3, 6, 7 | 0.03304484875 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 2, 3, 6, 7 | -0.03304484875 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 2, 3, 6, 7 | 0.03304484875 | [PauliX,PauliY,PauliY,PauliX]
-0123term+0 | 2, 4, 5, 7 | -0.018229460075 | [PauliX,PauliX,PauliX,PauliX]
-0123term+1 | 2, 4, 5, 7 | -0.018229460075 | [PauliX,PauliX,PauliY,PauliY]
-0123term+4 | 2, 4, 5, 7 | -0.018229460075 | [PauliY,PauliY,PauliY,PauliY]
-0123term+5 | 2, 4, 5, 7 | -0.018229460075 | [PauliY,PauliY,PauliX,PauliX]
-0123term+1 | 3, 4, 5, 6 | 0.018229460075 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 3, 4, 5, 6 | -0.018229460075 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 3, 4, 5, 6 | 0.018229460075 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 3, 4, 5, 6 | -0.018229460075 | [PauliX,PauliY,PauliY,PauliX]
-0123term+1 | 4, 5, 6, 7 | -0.043841061125 | [PauliX,PauliX,PauliY,PauliY]
-0123term+3 | 4, 5, 6, 7 | 0.043841061125 | [PauliY,PauliX,PauliX,PauliY]
-0123term+5 | 4, 5, 6, 7 | -0.043841061125 | [PauliY,PauliY,PauliX,PauliX]
-0123term+7 | 4, 5, 6, 7 | 0.043841061125 | [PauliX,PauliY,PauliY,PauliX]
+Zterm | 0 | 0.0350239283818972
+Zterm | 1 | 0.0350239283818972
+Zterm | 2 | 0.0215926228817552
+Zterm | 3 | 0.0215926228817552
+Zterm | 4 | 0.00868888052947445
+Zterm | 5 | 0.00868888052947445
+Zterm | 6 | -0.00507751095566078
+Zterm | 7 | -0.00507751095566078
+ZZterm | 0, 1 | 0.0365335611443925
+ZZterm | 0, 2 | 0.0190095511432644
+ZZterm | 0, 3 | 0.0335767337103323
+ZZterm | 0, 4 | 0.0211601185953103
+ZZterm | 0, 5 | 0.0337912320235286
+ZZterm | 0, 6 | 0.0249332320415341
+ZZterm | 0, 7 | 0.0374859437785841
+ZZterm | 1, 2 | 0.0335767337103323
+ZZterm | 1, 3 | 0.0190095511432644
+ZZterm | 1, 4 | 0.0337912320235286
+ZZterm | 1, 5 | 0.0211601185953103
+ZZterm | 1, 6 | 0.0374859437785841
+ZZterm | 1, 7 | 0.0249332320415341
+ZZterm | 2, 3 | 0.0358334086739594
+ZZterm | 2, 4 | 0.0218478164755578
+ZZterm | 2, 5 | 0.0359894174662841
+ZZterm | 2, 6 | 0.0211581997452817
+ZZterm | 2, 7 | 0.034488117453913
+ZZterm | 3, 4 | 0.0359894174662841
+ZZterm | 3, 5 | 0.0218478164755578
+ZZterm | 3, 6 | 0.034488117453913
+ZZterm | 3, 7 | 0.0211581997452817
+ZZterm | 4, 5 | 0.0364278824128177
+ZZterm | 4, 6 | 0.0189446921622979
+ZZterm | 4, 7 | 0.0348483803492813
+ZZterm | 5, 6 | 0.0348483803492813
+ZZterm | 5, 7 | 0.0189446921622979
+ZZterm | 6, 7 | 0.0390546887319602
+PQterm+X | 0, 4 | 0.000857380432775964
+PQterm+Y | 0, 4 | 0.000857380432775964
+PQQRterm+X | 0, 4, 1 | 0.0051100584061458
+PQQRterm+Y | 0, 4, 1 | 0.0051100584061458
+PQQRterm+X | 0, 4, 2 | 0.00294850570393616
+PQQRterm+Y | 0, 4, 2 | 0.00294850570393616
+PQQRterm+X | 0, 4, 3 | -0.00292830800363519
+PQQRterm+Y | 0, 4, 3 | -0.00292830800363519
+PQQR_Parityterm+X | 0, 4, 5 | -0.00286164682264186
+PQQR_Parityterm+Y | 0, 4, 5 | -0.00286164682264186
+PQQR_Parityterm+X | 0, 4, 6 | 0.0016261420742314
+PQQR_Parityterm+Y | 0, 4, 6 | 0.0016261420742314
+PQQR_Parityterm+X | 0, 4, 7 | 0.00550838042208126
+PQQR_Parityterm+Y | 0, 4, 7 | 0.00550838042208126
+PQterm+X | 1, 5 | 0.000857380432775964
+PQterm+Y | 1, 5 | 0.000857380432775964
+PQQR_Parityterm+X | 1, 5, 0 | 0.0051100584061458
+PQQR_Parityterm+Y | 1, 5, 0 | 0.0051100584061458
+PQQRterm+X | 1, 5, 2 | -0.00292830800363519
+PQQRterm+Y | 1, 5, 2 | -0.00292830800363519
+PQQRterm+X | 1, 5, 3 | 0.00294850570393616
+PQQRterm+Y | 1, 5, 3 | 0.00294850570393616
+PQQRterm+X | 1, 5, 4 | -0.00286164682264186
+PQQRterm+Y | 1, 5, 4 | -0.00286164682264186
+PQQR_Parityterm+X | 1, 5, 6 | 0.00550838042208126
+PQQR_Parityterm+Y | 1, 5, 6 | 0.00550838042208126
+PQQR_Parityterm+X | 1, 5, 7 | 0.0016261420742314
+PQQR_Parityterm+Y | 1, 5, 7 | 0.0016261420742314
+PQterm+X | 2, 6 | 0.00193828954888277
+PQterm+Y | 2, 6 | 0.00193828954888277
+PQQR_Parityterm+X | 2, 6, 0 | -0.00157577031348081
+PQQR_Parityterm+Y | 2, 6, 0 | -0.00157577031348081
+PQQR_Parityterm+X | 2, 6, 1 | -0.00524584759816922
+PQQR_Parityterm+Y | 2, 6, 1 | -0.00524584759816922
+PQQRterm+X | 2, 6, 3 | 0.0028985529531918
+PQQRterm+Y | 2, 6, 3 | 0.0028985529531918
+PQQRterm+X | 2, 6, 4 | -0.00310653975629105
+PQQRterm+Y | 2, 6, 4 | -0.00310653975629105
+PQQRterm+X | 2, 6, 5 | 0.0029822707444393
+PQQRterm+Y | 2, 6, 5 | 0.0029822707444393
+PQQR_Parityterm+X | 2, 6, 7 | -0.00573708549548923
+PQQR_Parityterm+Y | 2, 6, 7 | -0.00573708549548923
+PQterm+X | 3, 7 | 0.00193828954888277
+PQterm+Y | 3, 7 | 0.00193828954888277
+PQQR_Parityterm+X | 3, 7, 0 | -0.00524584759816922
+PQQR_Parityterm+Y | 3, 7, 0 | -0.00524584759816922
+PQQR_Parityterm+X | 3, 7, 1 | -0.00157577031348081
+PQQR_Parityterm+Y | 3, 7, 1 | -0.00157577031348081
+PQQR_Parityterm+X | 3, 7, 2 | 0.0028985529531918
+PQQR_Parityterm+Y | 3, 7, 2 | 0.0028985529531918
+PQQRterm+X | 3, 7, 4 | 0.0029822707444393
+PQQRterm+Y | 3, 7, 4 | 0.0029822707444393
+PQQRterm+X | 3, 7, 5 | -0.00310653975629105
+PQQRterm+Y | 3, 7, 5 | -0.00310653975629105
+PQQRterm+X | 3, 7, 6 | -0.00573708549548923
+PQQRterm+Y | 3, 7, 6 | -0.00573708549548923
+0123term+1 | 0, 1, 2, 3 | -0.0145671825670679 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 1, 2, 3 | 0.0145671825670679 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 1, 2, 3 | -0.0145671825670679 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 1, 2, 3 | 0.0145671825670679 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 0, 1, 2, 7 | -0.00367007728468841 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 1, 2, 7 | 0.00367007728468841 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 1, 2, 7 | -0.00367007728468841 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 1, 2, 7 | 0.00367007728468841 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 0, 1, 3, 6 | -0.00367007728468841 | [PauliX,PauliX,PauliX,PauliX]
+0123term+3 | 0, 1, 3, 6 | -0.00367007728468841 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 0, 1, 3, 6 | -0.00367007728468841 | [PauliY,PauliY,PauliY,PauliY]
+0123term+7 | 0, 1, 3, 6 | -0.00367007728468841 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 0, 1, 4, 5 | -0.0126311134282183 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 1, 4, 5 | 0.0126311134282183 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 1, 4, 5 | -0.0126311134282183 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 1, 4, 5 | 0.0126311134282183 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 0, 1, 6, 7 | -0.01255271173705 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 1, 6, 7 | 0.01255271173705 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 1, 6, 7 | -0.01255271173705 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 1, 6, 7 | 0.01255271173705 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 0, 2, 3, 5 | 0.00587681370757135 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 0, 2, 3, 5 | 0.00587681370757135 | [PauliX,PauliX,PauliY,PauliY]
+0123term+4 | 0, 2, 3, 5 | 0.00587681370757135 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 0, 2, 3, 5 | 0.00587681370757135 | [PauliY,PauliY,PauliX,PauliX]
+0123term+0 | 0, 2, 4, 6 | -0.00489018415286942 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 0, 2, 4, 6 | -0.00218950107262611 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 2, 4, 6 | -0.00270068308024331 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 0, 2, 4, 6 | -0.00489018415286942 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 0, 2, 4, 6 | -0.00218950107262611 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 2, 4, 6 | -0.00270068308024331 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 0, 2, 5, 7 | -0.0150970914149642 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 0, 2, 5, 7 | -0.0150970914149642 | [PauliX,PauliX,PauliY,PauliY]
+0123term+4 | 0, 2, 5, 7 | -0.0150970914149642 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 0, 2, 5, 7 | -0.0150970914149642 | [PauliY,PauliY,PauliX,PauliX]
+0123term+1 | 0, 3, 4, 7 | 0.0129075903423381 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 3, 4, 7 | -0.0129075903423381 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 3, 4, 7 | 0.0129075903423381 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 3, 4, 7 | -0.0129075903423381 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 0, 3, 5, 6 | 0.0102069072620948 | [PauliX,PauliX,PauliX,PauliX]
+0123term+3 | 0, 3, 5, 6 | 0.0102069072620948 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 0, 3, 5, 6 | 0.0102069072620948 | [PauliY,PauliY,PauliY,PauliY]
+0123term+7 | 0, 3, 5, 6 | 0.0102069072620948 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 0, 5, 6, 7 | 0.00388223834784986 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 0, 5, 6, 7 | -0.00388223834784986 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 0, 5, 6, 7 | 0.00388223834784986 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 0, 5, 6, 7 | -0.00388223834784986 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 1, 2, 3, 4 | -0.00587681370757135 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 1, 2, 3, 4 | 0.00587681370757135 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 1, 2, 3, 4 | -0.00587681370757135 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 1, 2, 3, 4 | 0.00587681370757135 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 1, 2, 4, 7 | 0.0102069072620948 | [PauliX,PauliX,PauliX,PauliX]
+0123term+3 | 1, 2, 4, 7 | 0.0102069072620948 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 1, 2, 4, 7 | 0.0102069072620948 | [PauliY,PauliY,PauliY,PauliY]
+0123term+7 | 1, 2, 4, 7 | 0.0102069072620948 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 1, 2, 5, 6 | 0.0129075903423381 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 1, 2, 5, 6 | -0.0129075903423381 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 1, 2, 5, 6 | 0.0129075903423381 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 1, 2, 5, 6 | -0.0129075903423381 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 1, 3, 4, 6 | -0.0150970914149642 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 1, 3, 4, 6 | -0.0150970914149642 | [PauliX,PauliX,PauliY,PauliY]
+0123term+4 | 1, 3, 4, 6 | -0.0150970914149642 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 1, 3, 4, 6 | -0.0150970914149642 | [PauliY,PauliY,PauliX,PauliX]
+0123term+0 | 1, 3, 5, 7 | -0.00489018415286942 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 1, 3, 5, 7 | -0.00218950107262611 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 1, 3, 5, 7 | -0.00270068308024331 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 1, 3, 5, 7 | -0.00489018415286942 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 1, 3, 5, 7 | -0.00218950107262611 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 1, 3, 5, 7 | -0.00270068308024331 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 1, 4, 6, 7 | 0.00388223834784986 | [PauliX,PauliX,PauliX,PauliX]
+0123term+3 | 1, 4, 6, 7 | 0.00388223834784986 | [PauliY,PauliX,PauliX,PauliY]
+0123term+4 | 1, 4, 6, 7 | 0.00388223834784986 | [PauliY,PauliY,PauliY,PauliY]
+0123term+7 | 1, 4, 6, 7 | 0.00388223834784986 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 2, 3, 4, 5 | -0.0141416009907263 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 2, 3, 4, 5 | 0.0141416009907263 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 2, 3, 4, 5 | -0.0141416009907263 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 2, 3, 4, 5 | 0.0141416009907263 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 2, 3, 6, 7 | -0.0133299177086312 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 2, 3, 6, 7 | 0.0133299177086312 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 2, 3, 6, 7 | -0.0133299177086312 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 2, 3, 6, 7 | 0.0133299177086312 | [PauliX,PauliY,PauliY,PauliX]
+0123term+0 | 2, 4, 5, 7 | -0.00608881050073035 | [PauliX,PauliX,PauliX,PauliX]
+0123term+1 | 2, 4, 5, 7 | -0.00608881050073035 | [PauliX,PauliX,PauliY,PauliY]
+0123term+4 | 2, 4, 5, 7 | -0.00608881050073035 | [PauliY,PauliY,PauliY,PauliY]
+0123term+5 | 2, 4, 5, 7 | -0.00608881050073035 | [PauliY,PauliY,PauliX,PauliX]
+0123term+1 | 3, 4, 5, 6 | 0.00608881050073035 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 3, 4, 5, 6 | -0.00608881050073035 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 3, 4, 5, 6 | 0.00608881050073035 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 3, 4, 5, 6 | -0.00608881050073035 | [PauliX,PauliY,PauliY,PauliX]
+0123term+1 | 4, 5, 6, 7 | -0.0159036881869834 | [PauliX,PauliX,PauliY,PauliY]
+0123term+3 | 4, 5, 6, 7 | 0.0159036881869834 | [PauliY,PauliX,PauliX,PauliY]
+0123term+5 | 4, 5, 6, 7 | -0.0159036881869834 | [PauliY,PauliY,PauliX,PauliX]
+0123term+7 | 4, 5, 6, 7 | 0.0159036881869834 | [PauliX,PauliY,PauliY,PauliX]
 ----- END ORACLE WRITE -----
 nSpinOrbitals:int:8
-energyOffset:float:-1.07226688558399
-trotterStep:float:1
+energyOffset:float:-1.07259043376792
+trotterStep:float:0.4
 trotterOrder:int:1
 nElectrons:int:8
 ----- END FILE -----
