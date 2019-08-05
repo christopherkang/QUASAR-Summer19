@@ -33,6 +33,8 @@ with open(path) as f:
     term_data = json_data["terms"]
     number_of_qubits = json_data["constants"]["nSpinOrbitals"]
 
+    round_dict_list.append(make_round_dict())
+
     round_num = 0
     occupied_qubits = set()
     temp_dict = make_round_dict()

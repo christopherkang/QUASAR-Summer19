@@ -44,9 +44,15 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
     # ----- STEP 3 - (optional) Process the terms
     echo "Begin processing terms"
+    cd ../OptimizeCircuit
+
     # insert optimizer caller
 
+
+    # optimizer output to JSON
+
     # ----- STEP 4 - Ingest the JSON file
+    echo "Begin ingesting the JSON file"
     cd ../ConvertFileToGates 
     echo "YAML Path: $YAML_PATH" > ../TestPipeline/_temp/_sampled_optimized_energy.txt
     echo "RUNNING: dotnet run ./extracted_terms.json $SAMPLE_SIZE >./_temp/_sampled_optimized_energy.txt"
