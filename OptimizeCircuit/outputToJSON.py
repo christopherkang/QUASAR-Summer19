@@ -27,8 +27,18 @@ out_path = "reconstructed.json"
 
 # categorize the term data with collections.defaultdict
 def prepare_interaction_categories(file_path):
+    """Prepare the interaction categories to be used later on
+
+    Arguments:
+        file_path {str} -- json file path
+
+    Returns:
+        collections category -- categories to list of terms
+    """
     interaction_categories = collections.defaultdict(list)
     with open(file_path) as json_file:
+
+        # load json file + the data terms
         data = json.load(json_file)
         terms = data["terms"]
 
@@ -37,6 +47,8 @@ def prepare_interaction_categories(file_path):
             # add it to the interaction category
             targets = term_data["targets"].copy()
             targets.sort()
+
+            # the id will be the str / tuple version of the array
             target_id = str(tuple(targets))
             # print(term_data["targets"])
 
@@ -46,6 +58,14 @@ def prepare_interaction_categories(file_path):
 
 
 def retrieve_auxiliary_data(file_path):
+    """Get the auxiliary data
+
+    Arguments:
+        file_path {str} -- name of the json file
+
+    Returns:
+        dict, dict -- other data from json file
+    """
     with open(file_path) as json_file:
         data = json.load(json_file)
         constants = data["constants"]
@@ -56,7 +76,7 @@ def retrieve_auxiliary_data(file_path):
 hamiltonian_constants, state_prep_data = retrieve_auxiliary_data(import_path)
 number_of_qubits = hamiltonian_constants["nSpinOrbitals"]
 
-new_json_file = {
+output_json = {
     "constants": hamiltonian_constants,
     "statePrepData": state_prep_data
 }
@@ -67,16 +87,19 @@ new_json_file = {
 spin_order = list(range(0, number_of_qubits + 1))
 
 with open(optimization_path, "r") as interaction_file:
+    # new terms to be used
     new_term_list = []
+
+    # categories + their terms
     categorized_interactions = prepare_interaction_categories(import_path)
     while True:
-        # [1, 2, 3, 4]
+        # [0, 1, 2, 3]
         swap_patterns = interaction_file.readline()
 
         # check that the number of qubits in swap == number of qubits
         assert len(swap_patterns) == number_of_qubits
 
-        # [(1, 2), (3, 4)]
+        # [(0, 1), (2, 3)]
         interactions = interaction_file.readline()
 
         # end read file
@@ -84,17 +107,19 @@ with open(optimization_path, "r") as interaction_file:
             break
 
         # update the swapped qubits
-        for new_index in range(0, len(swap_patterns)):
+        for index in range(0, len(swap_patterns)):
             # create a new qubit order
             new_spin_order = list(range(0, number_of_qubits + 1))
 
             # set it to the respective qubits
             # intuitively, we are moving the data from the index to the new index
-            new_spin_order[swap_patterns[new_index]] = spin_order[new_index]
-            spin_order = new_spin_order
+            new_spin_order[swap_patterns[index]] = spin_order[index]
 
-            # ensure that all elements of the ordering are unique
-            assert list(set(spin_order)) == spin_order
+        # update the spin order
+        spin_order = new_spin_order
+
+        # ensure that all elements of the ordering are unique
+        assert list(set(spin_order)) == spin_order
 
         # convert the interaction list back to spin orbital numberings
         for interaction_term in interactions:
@@ -107,12 +132,16 @@ with open(optimization_path, "r") as interaction_file:
             # pull this type of term from the categorized term list
             sorted_renumbered_terms = renumbered_terms.copy()
             sorted_renumbered_terms.sort()
+
+            # pull the relevant terms
             relevant_terms = categorized_interactions[str(
                 tuple(sorted_renumbered_terms))]
+
+            # add them to our list
             new_term_list.extend(relevant_terms)
 
 
-new_json_file["terms"] = new_term_list
+output_json["terms"] = new_term_list
 
 with open(out_path, 'w') as out_file:
-    json.dump(new_json_file, out_file)
+    json.dump(output_json, out_file)
