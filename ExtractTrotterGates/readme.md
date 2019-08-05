@@ -8,12 +8,12 @@ Ensure the modified `JordanWignerEvolutionSet.qs` file has overwritten the local
 
 ## Usage
 
-In order to extract the Hamiltonian terms in the supported JSON format, first select the correct YAML file to be used in the `Program.cs` file. Then, run the `extract_gates.sh` shell script. The script will again prompt you to ensure you have the correct YAML file, and then run.
+In order to extract the Hamiltonian terms in the supported JSON format, use the `extract_gates.sh` script. This will first run Q# to obtain the gates / state prep data, then write the gates and state prep data to file. A Python script then converts this to the final JSON.
 
 ## Components
 
 In order to support the pipeline, a number of new components had to be written and integrated:
 
-  - A modified Q#/.NET project to dump the raw gates and other metadata
-  - Rewritten `JordanWignerEvolutionSet.qs` to extract the terms
-  - Python file to convert the dumped information into the standardized JSON format
+- A modified Q#/.NET project to dump the raw gates and other metadata
+- Rewritten `JordanWignerEvolutionSet.qs` to extract the terms
+- Python file to convert the dumped information into the standardized JSON format

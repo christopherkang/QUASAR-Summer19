@@ -53,11 +53,13 @@ namespace ExtractTrotterGates
             }
             else 
             {
+                // get the core variables from command line
                 string YAMLPath = args[0];
                 string inputState = $"|{args[1]}>";
                 int nBitsPrecision = Int16.Parse(args[2]);
                 float trotterStepSize = float.Parse(args[3]);
                 int trotterOrder = Int16.Parse(args[4]);
+
                 Console.WriteLine($"Extracting the YAML from {YAMLPath}");
 
                 // convert the YAML file into a JWED
@@ -79,11 +81,13 @@ namespace ExtractTrotterGates
                 Console.WriteLine($"nElectrons:int:{nElectrons}");
                 Console.WriteLine($"----- END FILE -----");
 
+                // also write the state information
                 var lines = new List<String>();
                 lines.Add(intinfo.ToString("N0"));
                 foreach (var term in datalist) {
                     lines.Add(term.ToString());
                 }
+
                 System.IO.Directory.CreateDirectory("./temp");
                 System.IO.File.WriteAllLines("./temp/_tempState.txt", lines);
             }
