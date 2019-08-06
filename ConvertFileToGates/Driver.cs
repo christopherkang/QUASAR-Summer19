@@ -1,4 +1,14 @@
-﻿using System;
+﻿// This project enables the conversion of the JSON format back into gates
+// and then produces the expected energy level associated with running the 
+// optimized Trotter gate (phase estimation + rescale code kept the same)
+
+// Auxiliary.cs describes many of the secondary methods used to pass info
+// to the Q# code. Types.qs describes the new types needed to be created
+// in order to ingest the JSON file into Q#.
+
+// This project takes command line arguments to run; see below.
+
+using System;
 using System.IO;
 using System.Collections.Generic;
 
@@ -18,14 +28,13 @@ namespace ConvertFileToGates
             }
             else
             {
-                // var gateFile = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/extracted_terms.json";
-                string YAMLPath = args[0];
+                string JSONPath = args[0];
                 int numberOfSamples = Int16.Parse(args[1]);
                 var nBitsPrecision = Int64.Parse(args[2]);
-                if (File.Exists(YAMLPath))
+                if (File.Exists(JSONPath))
                 {
-                    // Do stuff if the file exists
-                    string raw_JSON = System.IO.File.ReadAllText(YAMLPath);
+                    #region Extract JSON information
+                    string raw_JSON = System.IO.File.ReadAllText(JSONPath);
                     var output = JObject.Parse(raw_JSON);
                     var constants = output["constants"];
 
@@ -34,7 +43,9 @@ namespace ConvertFileToGates
                     float energyOffset = (float)constants["energyOffset"];
                     int nSpinOrbitals = (int)constants["nSpinOrbitals"];
                     int trotterOrder = (int)constants["trotterOrder"];
+                    #endregion
 
+                    #region Convert to Q# format
                     var hamiltonianTermData = Auxiliary.ProduceTermInfo(output);
                     var inputState = Auxiliary.ProduceStateData(output);
 
@@ -46,13 +57,14 @@ namespace ConvertFileToGates
                         )
                     );
 
-                    Console.WriteLine($"Extracting the YAML from {YAMLPath}");
+                    Console.WriteLine($"Extracting the JSON from {JSONPath}");
                     Console.WriteLine($"Precision: {nBitsPrecision}");
                     Console.WriteLine($"Trotter step size: {trotterStepSize}");
                     Console.WriteLine($"Trotter order: {trotterOrder}");
                     Console.WriteLine($"Number of samples: {numberOfSamples}");
+                    #endregion
 
-                    // Send the gates to the quantum computer
+                    #region Obtain energy level estimates
                     using (var qsim = new QuantumSimulator())
                     {
                         var runningSum = 0.0;
@@ -64,6 +76,7 @@ namespace ConvertFileToGates
                         }
                         Console.WriteLine($"Average predicted energy: {runningSum / (float)numberOfSamples}");
                     }
+                    #endregion
                 }
                 else
                 {

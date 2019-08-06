@@ -1,1 +1,3558 @@
-{"(0,)": [{"type": "Zterm", "angle": 0.0350239283818972, "controls": [], "ops": [3], "targets": [0]}], "(1,)": [{"type": "Zterm", "angle": 0.0350239283818972, "controls": [], "ops": [3], "targets": [1]}], "(2,)": [{"type": "Zterm", "angle": 0.0215926228817552, "controls": [], "ops": [3], "targets": [2]}], "(3,)": [{"type": "Zterm", "angle": 0.0215926228817552, "controls": [], "ops": [3], "targets": [3]}], "(4,)": [{"type": "Zterm", "angle": 0.00868888052947445, "controls": [], "ops": [3], "targets": [4]}], "(5,)": [{"type": "Zterm", "angle": 0.00868888052947445, "controls": [], "ops": [3], "targets": [5]}], "(6,)": [{"type": "Zterm", "angle": -0.00507751095566078, "controls": [], "ops": [3], "targets": [6]}], "(7,)": [{"type": "Zterm", "angle": -0.00507751095566078, "controls": [], "ops": [3], "targets": [7]}], "(0, 1)": [{"type": "ZZterm", "angle": 0.0365335611443925, "controls": [], "ops": [3, 3], "targets": [0, 1]}], "(0, 2)": [{"type": "ZZterm", "angle": 0.0190095511432644, "controls": [], "ops": [3, 3], "targets": [0, 2]}], "(0, 3)": [{"type": "ZZterm", "angle": 0.0335767337103323, "controls": [], "ops": [3, 3], "targets": [0, 3]}], "(0, 4)": [{"type": "ZZterm", "angle": 0.0211601185953103, "controls": [], "ops": [3, 3], "targets": [0, 4]}], "(0, 5)": [{"type": "ZZterm", "angle": 0.0337912320235286, "controls": [], "ops": [3, 3], "targets": [0, 5]}], "(0, 6)": [{"type": "ZZterm", "angle": 0.0249332320415341, "controls": [], "ops": [3, 3], "targets": [0, 6]}], "(0, 7)": [{"type": "ZZterm", "angle": 0.0374859437785841, "controls": [], "ops": [3, 3], "targets": [0, 7]}], "(1, 2)": [{"type": "ZZterm", "angle": 0.0335767337103323, "controls": [], "ops": [3, 3], "targets": [1, 2]}], "(1, 3)": [{"type": "ZZterm", "angle": 0.0190095511432644, "controls": [], "ops": [3, 3], "targets": [1, 3]}], "(1, 4)": [{"type": "ZZterm", "angle": 0.0337912320235286, "controls": [], "ops": [3, 3], "targets": [1, 4]}], "(1, 5)": [{"type": "ZZterm", "angle": 0.0211601185953103, "controls": [], "ops": [3, 3], "targets": [1, 5]}], "(1, 6)": [{"type": "ZZterm", "angle": 0.0374859437785841, "controls": [], "ops": [3, 3], "targets": [1, 6]}], "(1, 7)": [{"type": "ZZterm", "angle": 0.0249332320415341, "controls": [], "ops": [3, 3], "targets": [1, 7]}], "(2, 3)": [{"type": "ZZterm", "angle": 0.0358334086739594, "controls": [], "ops": [3, 3], "targets": [2, 3]}], "(2, 4)": [{"type": "ZZterm", "angle": 0.0218478164755578, "controls": [], "ops": [3, 3], "targets": [2, 4]}], "(2, 5)": [{"type": "ZZterm", "angle": 0.0359894174662841, "controls": [], "ops": [3, 3], "targets": [2, 5]}], "(2, 6)": [{"type": "ZZterm", "angle": 0.0211581997452817, "controls": [], "ops": [3, 3], "targets": [2, 6]}], "(2, 7)": [{"type": "ZZterm", "angle": 0.034488117453913, "controls": [], "ops": [3, 3], "targets": [2, 7]}], "(3, 4)": [{"type": "ZZterm", "angle": 0.0359894174662841, "controls": [], "ops": [3, 3], "targets": [3, 4]}], "(3, 5)": [{"type": "ZZterm", "angle": 0.0218478164755578, "controls": [], "ops": [3, 3], "targets": [3, 5]}], "(3, 6)": [{"type": "ZZterm", "angle": 0.034488117453913, "controls": [], "ops": [3, 3], "targets": [3, 6]}], "(3, 7)": [{"type": "ZZterm", "angle": 0.0211581997452817, "controls": [], "ops": [3, 3], "targets": [3, 7]}], "(4, 5)": [{"type": "ZZterm", "angle": 0.0364278824128177, "controls": [], "ops": [3, 3], "targets": [4, 5]}], "(4, 6)": [{"type": "ZZterm", "angle": 0.0189446921622979, "controls": [], "ops": [3, 3], "targets": [4, 6]}], "(4, 7)": [{"type": "ZZterm", "angle": 0.0348483803492813, "controls": [], "ops": [3, 3], "targets": [4, 7]}], "(5, 6)": [{"type": "ZZterm", "angle": 0.0348483803492813, "controls": [], "ops": [3, 3], "targets": [5, 6]}], "(5, 7)": [{"type": "ZZterm", "angle": 0.0189446921622979, "controls": [], "ops": [3, 3], "targets": [5, 7]}], "(6, 7)": [{"type": "ZZterm", "angle": 0.0390546887319602, "controls": [], "ops": [3, 3], "targets": [6, 7]}], "(0, 1, 2, 3, 4)": [{"type": "PQterm+X", "angle": 0.000857380432775964, "controls": [], "ops": [1, 1, 3, 3, 3], "targets": [0, 4, 1, 2, 3]}, {"type": "PQterm+Y", "angle": 0.000857380432775964, "controls": [], "ops": [2, 2, 3, 3, 3], "targets": [0, 4, 1, 2, 3]}], "(0, 2, 3, 4)": [{"type": "PQQRterm+X", "angle": 0.0051100584061458, "controls": [], "ops": [1, 1, 3, 3], "targets": [0, 4, 2, 3], "qIdx": 1}, {"type": "PQQRterm+Y", "angle": 0.0051100584061458, "controls": [], "ops": [2, 2, 3, 3], "targets": [0, 4, 2, 3], "qIdx": 1}], "(0, 1, 3, 4)": [{"type": "PQQRterm+X", "angle": 0.00294850570393616, "controls": [], "ops": [1, 1, 3, 3], "targets": [0, 4, 1, 3], "qIdx": 2}, {"type": "PQQRterm+Y", "angle": 0.00294850570393616, "controls": [], "ops": [2, 2, 3, 3], "targets": [0, 4, 1, 3], "qIdx": 2}], "(0, 1, 2, 4)": [{"type": "PQQRterm+X", "angle": -0.00292830800363519, "controls": [], "ops": [1, 1, 3, 3], "targets": [0, 4, 1, 2], "qIdx": 3}, {"type": "PQQRterm+Y", "angle": -0.00292830800363519, "controls": [], "ops": [2, 2, 3, 3], "targets": [0, 4, 1, 2], "qIdx": 3}], "(0, 1, 2, 3, 4, 5)": [{"type": "PQQR_Parityterm+X", "angle": -0.00286164682264186, "controls": [], "ops": [1, 1, 3, 3, 3, 3], "targets": [0, 4, 1, 2, 3, 5], "qIdx": 5}, {"type": "PQQR_Parityterm+Y", "angle": -0.00286164682264186, "controls": [], "ops": [2, 2, 3, 3, 3, 3], "targets": [0, 4, 1, 2, 3, 5], "qIdx": 5}, {"type": "PQQR_Parityterm+X", "angle": 0.0051100584061458, "controls": [], "ops": [1, 1, 3, 3, 3, 3], "targets": [1, 5, 2, 3, 4, 0], "qIdx": 0}, {"type": "PQQR_Parityterm+Y", "angle": 0.0051100584061458, "controls": [], "ops": [2, 2, 3, 3, 3, 3], "targets": [1, 5, 2, 3, 4, 0], "qIdx": 0}, {"type": "0123term+0", "angle": 0.00587681370757135, "controls": [], "ops": [1, 1, 1, 1, 3, 3], "targets": [0, 2, 3, 5, 1, 4]}, {"type": "0123term+1", "angle": 0.00587681370757135, "controls": [], "ops": [1, 1, 2, 2, 3, 3], "targets": [0, 2, 3, 5, 1, 4]}, {"type": "0123term+4", "angle": 0.00587681370757135, "controls": [], "ops": [2, 2, 2, 2, 3, 3], "targets": [0, 2, 3, 5, 1, 4]}, {"type": "0123term+5", "angle": 0.00587681370757135, "controls": [], "ops": [2, 2, 1, 1, 3, 3], "targets": [0, 2, 3, 5, 1, 4]}], "(0, 1, 2, 3, 4, 6)": [{"type": "PQQR_Parityterm+X", "angle": 0.0016261420742314, "controls": [], "ops": [1, 1, 3, 3, 3, 3], "targets": [0, 4, 1, 2, 3, 6], "qIdx": 6}, {"type": "PQQR_Parityterm+Y", "angle": 0.0016261420742314, "controls": [], "ops": [2, 2, 3, 3, 3, 3], "targets": [0, 4, 1, 2, 3, 6], "qIdx": 6}], "(0, 1, 2, 3, 4, 7)": [{"type": "PQQR_Parityterm+X", "angle": 0.00550838042208126, "controls": [], "ops": [1, 1, 3, 3, 3, 3], "targets": [0, 4, 1, 2, 3, 7], "qIdx": 7}, {"type": "PQQR_Parityterm+Y", "angle": 0.00550838042208126, "controls": [], "ops": [2, 2, 3, 3, 3, 3], "targets": [0, 4, 1, 2, 3, 7], "qIdx": 7}], "(1, 2, 3, 4, 5)": [{"type": "PQterm+X", "angle": 0.000857380432775964, "controls": [], "ops": [1, 1, 3, 3, 3], "targets": [1, 5, 2, 3, 4]}, {"type": "PQterm+Y", "angle": 0.000857380432775964, "controls": [], "ops": [2, 2, 3, 3, 3], "targets": [1, 5, 2, 3, 4]}], "(1, 3, 4, 5)": [{"type": "PQQRterm+X", "angle": -0.00292830800363519, "controls": [], "ops": [1, 1, 3, 3], "targets": [1, 5, 3, 4], "qIdx": 2}, {"type": "PQQRterm+Y", "angle": -0.00292830800363519, "controls": [], "ops": [2, 2, 3, 3], "targets": [1, 5, 3, 4], "qIdx": 2}], "(1, 2, 4, 5)": [{"type": "PQQRterm+X", "angle": 0.00294850570393616, "controls": [], "ops": [1, 1, 3, 3], "targets": [1, 5, 2, 4], "qIdx": 3}, {"type": "PQQRterm+Y", "angle": 0.00294850570393616, "controls": [], "ops": [2, 2, 3, 3], "targets": [1, 5, 2, 4], "qIdx": 3}], "(1, 2, 3, 5)": [{"type": "PQQRterm+X", "angle": -0.00286164682264186, "controls": [], "ops": [1, 1, 3, 3], "targets": [1, 5, 2, 3], "qIdx": 4}, {"type": "PQQRterm+Y", "angle": -0.00286164682264186, "controls": [], "ops": [2, 2, 3, 3], "targets": [1, 5, 2, 3], "qIdx": 4}], "(1, 2, 3, 4, 5, 6)": [{"type": "PQQR_Parityterm+X", "angle": 0.00550838042208126, "controls": [], "ops": [1, 1, 3, 3, 3, 3], "targets": [1, 5, 2, 3, 4, 6], "qIdx": 6}, {"type": "PQQR_Parityterm+Y", "angle": 0.00550838042208126, "controls": [], "ops": [2, 2, 3, 3, 3, 3], "targets": [1, 5, 2, 3, 4, 6], "qIdx": 6}, {"type": "PQQR_Parityterm+X", "angle": -0.00524584759816922, "controls": [], "ops": [1, 1, 3, 3, 3, 3], "targets": [2, 6, 3, 4, 5, 1], "qIdx": 1}, {"type": "PQQR_Parityterm+Y", "angle": -0.00524584759816922, "controls": [], "ops": [2, 2, 3, 3, 3, 3], "targets": [2, 6, 3, 4, 5, 1], "qIdx": 1}, {"type": "0123term+0", "angle": -0.0150970914149642, "controls": [], "ops": [1, 1, 1, 1, 3, 3], "targets": [1, 3, 4, 6, 2, 5]}, {"type": "0123term+1", "angle": -0.0150970914149642, "controls": [], "ops": [1, 1, 2, 2, 3, 3], "targets": [1, 3, 4, 6, 2, 5]}, {"type": "0123term+4", "angle": -0.0150970914149642, "controls": [], "ops": [2, 2, 2, 2, 3, 3], "targets": [1, 3, 4, 6, 2, 5]}, {"type": "0123term+5", "angle": -0.0150970914149642, "controls": [], "ops": [2, 2, 1, 1, 3, 3], "targets": [1, 3, 4, 6, 2, 5]}], "(1, 2, 3, 4, 5, 7)": [{"type": "PQQR_Parityterm+X", "angle": 0.0016261420742314, "controls": [], "ops": [1, 1, 3, 3, 3, 3], "targets": [1, 5, 2, 3, 4, 7], "qIdx": 7}, {"type": "PQQR_Parityterm+Y", "angle": 0.0016261420742314, "controls": [], "ops": [2, 2, 3, 3, 3, 3], "targets": [1, 5, 2, 3, 4, 7], "qIdx": 7}], "(2, 3, 4, 5, 6)": [{"type": "PQterm+X", "angle": 0.00193828954888277, "controls": [], "ops": [1, 1, 3, 3, 3], "targets": [2, 6, 3, 4, 5]}, {"type": "PQterm+Y", "angle": 0.00193828954888277, "controls": [], "ops": [2, 2, 3, 3, 3], "targets": [2, 6, 3, 4, 5]}], "(0, 2, 3, 4, 5, 6)": [{"type": "PQQR_Parityterm+X", "angle": -0.00157577031348081, "controls": [], "ops": [1, 1, 3, 3, 3, 3], "targets": [2, 6, 3, 4, 5, 0], "qIdx": 0}, {"type": "PQQR_Parityterm+Y", "angle": -0.00157577031348081, "controls": [], "ops": [2, 2, 3, 3, 3, 3], "targets": [2, 6, 3, 4, 5, 0], "qIdx": 0}], "(2, 4, 5, 6)": [{"type": "PQQRterm+X", "angle": 0.0028985529531918, "controls": [], "ops": [1, 1, 3, 3], "targets": [2, 6, 4, 5], "qIdx": 3}, {"type": "PQQRterm+Y", "angle": 0.0028985529531918, "controls": [], "ops": [2, 2, 3, 3], "targets": [2, 6, 4, 5], "qIdx": 3}], "(2, 3, 5, 6)": [{"type": "PQQRterm+X", "angle": -0.00310653975629105, "controls": [], "ops": [1, 1, 3, 3], "targets": [2, 6, 3, 5], "qIdx": 4}, {"type": "PQQRterm+Y", "angle": -0.00310653975629105, "controls": [], "ops": [2, 2, 3, 3], "targets": [2, 6, 3, 5], "qIdx": 4}], "(2, 3, 4, 6)": [{"type": "PQQRterm+X", "angle": 0.0029822707444393, "controls": [], "ops": [1, 1, 3, 3], "targets": [2, 6, 3, 4], "qIdx": 5}, {"type": "PQQRterm+Y", "angle": 0.0029822707444393, "controls": [], "ops": [2, 2, 3, 3], "targets": [2, 6, 3, 4], "qIdx": 5}], "(2, 3, 4, 5, 6, 7)": [{"type": "PQQR_Parityterm+X", "angle": -0.00573708549548923, "controls": [], "ops": [1, 1, 3, 3, 3, 3], "targets": [2, 6, 3, 4, 5, 7], "qIdx": 7}, {"type": "PQQR_Parityterm+Y", "angle": -0.00573708549548923, "controls": [], "ops": [2, 2, 3, 3, 3, 3], "targets": [2, 6, 3, 4, 5, 7], "qIdx": 7}, {"type": "PQQR_Parityterm+X", "angle": 0.0028985529531918, "controls": [], "ops": [1, 1, 3, 3, 3, 3], "targets": [3, 7, 4, 5, 6, 2], "qIdx": 2}, {"type": "PQQR_Parityterm+Y", "angle": 0.0028985529531918, "controls": [], "ops": [2, 2, 3, 3, 3, 3], "targets": [3, 7, 4, 5, 6, 2], "qIdx": 2}, {"type": "0123term+0", "angle": -0.00608881050073035, "controls": [], "ops": [1, 1, 1, 1, 3, 3], "targets": [2, 4, 5, 7, 3, 6]}, {"type": "0123term+1", "angle": -0.00608881050073035, "controls": [], "ops": [1, 1, 2, 2, 3, 3], "targets": [2, 4, 5, 7, 3, 6]}, {"type": "0123term+4", "angle": -0.00608881050073035, "controls": [], "ops": [2, 2, 2, 2, 3, 3], "targets": [2, 4, 5, 7, 3, 6]}, {"type": "0123term+5", "angle": -0.00608881050073035, "controls": [], "ops": [2, 2, 1, 1, 3, 3], "targets": [2, 4, 5, 7, 3, 6]}], "(3, 4, 5, 6, 7)": [{"type": "PQterm+X", "angle": 0.00193828954888277, "controls": [], "ops": [1, 1, 3, 3, 3], "targets": [3, 7, 4, 5, 6]}, {"type": "PQterm+Y", "angle": 0.00193828954888277, "controls": [], "ops": [2, 2, 3, 3, 3], "targets": [3, 7, 4, 5, 6]}], "(0, 3, 4, 5, 6, 7)": [{"type": "PQQR_Parityterm+X", "angle": -0.00524584759816922, "controls": [], "ops": [1, 1, 3, 3, 3, 3], "targets": [3, 7, 4, 5, 6, 0], "qIdx": 0}, {"type": "PQQR_Parityterm+Y", "angle": -0.00524584759816922, "controls": [], "ops": [2, 2, 3, 3, 3, 3], "targets": [3, 7, 4, 5, 6, 0], "qIdx": 0}], "(1, 3, 4, 5, 6, 7)": [{"type": "PQQR_Parityterm+X", "angle": -0.00157577031348081, "controls": [], "ops": [1, 1, 3, 3, 3, 3], "targets": [3, 7, 4, 5, 6, 1], "qIdx": 1}, {"type": "PQQR_Parityterm+Y", "angle": -0.00157577031348081, "controls": [], "ops": [2, 2, 3, 3, 3, 3], "targets": [3, 7, 4, 5, 6, 1], "qIdx": 1}], "(3, 5, 6, 7)": [{"type": "PQQRterm+X", "angle": 0.0029822707444393, "controls": [], "ops": [1, 1, 3, 3], "targets": [3, 7, 5, 6], "qIdx": 4}, {"type": "PQQRterm+Y", "angle": 0.0029822707444393, "controls": [], "ops": [2, 2, 3, 3], "targets": [3, 7, 5, 6], "qIdx": 4}], "(3, 4, 6, 7)": [{"type": "PQQRterm+X", "angle": -0.00310653975629105, "controls": [], "ops": [1, 1, 3, 3], "targets": [3, 7, 4, 6], "qIdx": 5}, {"type": "PQQRterm+Y", "angle": -0.00310653975629105, "controls": [], "ops": [2, 2, 3, 3], "targets": [3, 7, 4, 6], "qIdx": 5}], "(3, 4, 5, 7)": [{"type": "PQQRterm+X", "angle": -0.00573708549548923, "controls": [], "ops": [1, 1, 3, 3], "targets": [3, 7, 4, 5], "qIdx": 6}, {"type": "PQQRterm+Y", "angle": -0.00573708549548923, "controls": [], "ops": [2, 2, 3, 3], "targets": [3, 7, 4, 5], "qIdx": 6}], "(0, 1, 2, 3)": [{"type": "0123term+1", "angle": -0.0145671825670679, "controls": [], "ops": [1, 1, 2, 2], "targets": [0, 1, 2, 3]}, {"type": "0123term+3", "angle": 0.0145671825670679, "controls": [], "ops": [2, 1, 1, 2], "targets": [0, 1, 2, 3]}, {"type": "0123term+5", "angle": -0.0145671825670679, "controls": [], "ops": [2, 2, 1, 1], "targets": [0, 1, 2, 3]}, {"type": "0123term+7", "angle": 0.0145671825670679, "controls": [], "ops": [1, 2, 2, 1], "targets": [0, 1, 2, 3]}], "(0, 1, 2, 3, 4, 5, 6, 7)": [{"type": "0123term+1", "angle": -0.00367007728468841, "controls": [], "ops": [1, 1, 2, 2, 3, 3, 3, 3], "targets": [0, 1, 2, 7, 3, 4, 5, 6]}, {"type": "0123term+3", "angle": 0.00367007728468841, "controls": [], "ops": [2, 1, 1, 2, 3, 3, 3, 3], "targets": [0, 1, 2, 7, 3, 4, 5, 6]}, {"type": "0123term+5", "angle": -0.00367007728468841, "controls": [], "ops": [2, 2, 1, 1, 3, 3, 3, 3], "targets": [0, 1, 2, 7, 3, 4, 5, 6]}, {"type": "0123term+7", "angle": 0.00367007728468841, "controls": [], "ops": [1, 2, 2, 1, 3, 3, 3, 3], "targets": [0, 1, 2, 7, 3, 4, 5, 6]}, {"type": "0123term+1", "angle": 0.0129075903423381, "controls": [], "ops": [1, 1, 2, 2, 3, 3, 3, 3], "targets": [0, 3, 4, 7, 1, 2, 5, 6]}, {"type": "0123term+3", "angle": -0.0129075903423381, "controls": [], "ops": [2, 1, 1, 2, 3, 3, 3, 3], "targets": [0, 3, 4, 7, 1, 2, 5, 6]}, {"type": "0123term+5", "angle": 0.0129075903423381, "controls": [], "ops": [2, 2, 1, 1, 3, 3, 3, 3], "targets": [0, 3, 4, 7, 1, 2, 5, 6]}, {"type": "0123term+7", "angle": -0.0129075903423381, "controls": [], "ops": [1, 2, 2, 1, 3, 3, 3, 3], "targets": [0, 3, 4, 7, 1, 2, 5, 6]}, {"type": "0123term+1", "angle": 0.00388223834784986, "controls": [], "ops": [1, 1, 2, 2, 3, 3, 3, 3], "targets": [0, 5, 6, 7, 1, 2, 3, 4]}, {"type": "0123term+3", "angle": -0.00388223834784986, "controls": [], "ops": [2, 1, 1, 2, 3, 3, 3, 3], "targets": [0, 5, 6, 7, 1, 2, 3, 4]}, {"type": "0123term+5", "angle": 0.00388223834784986, "controls": [], "ops": [2, 2, 1, 1, 3, 3, 3, 3], "targets": [0, 5, 6, 7, 1, 2, 3, 4]}, {"type": "0123term+7", "angle": -0.00388223834784986, "controls": [], "ops": [1, 2, 2, 1, 3, 3, 3, 3], "targets": [0, 5, 6, 7, 1, 2, 3, 4]}], "(0, 1, 3, 4, 5, 6)": [{"type": "0123term+0", "angle": -0.00367007728468841, "controls": [], "ops": [1, 1, 1, 1, 3, 3], "targets": [0, 1, 3, 6, 4, 5]}, {"type": "0123term+3", "angle": -0.00367007728468841, "controls": [], "ops": [2, 1, 1, 2, 3, 3], "targets": [0, 1, 3, 6, 4, 5]}, {"type": "0123term+4", "angle": -0.00367007728468841, "controls": [], "ops": [2, 2, 2, 2, 3, 3], "targets": [0, 1, 3, 6, 4, 5]}, {"type": "0123term+7", "angle": -0.00367007728468841, "controls": [], "ops": [1, 2, 2, 1, 3, 3], "targets": [0, 1, 3, 6, 4, 5]}], "(0, 1, 4, 5)": [{"type": "0123term+1", "angle": -0.0126311134282183, "controls": [], "ops": [1, 1, 2, 2], "targets": [0, 1, 4, 5]}, {"type": "0123term+3", "angle": 0.0126311134282183, "controls": [], "ops": [2, 1, 1, 2], "targets": [0, 1, 4, 5]}, {"type": "0123term+5", "angle": -0.0126311134282183, "controls": [], "ops": [2, 2, 1, 1], "targets": [0, 1, 4, 5]}, {"type": "0123term+7", "angle": 0.0126311134282183, "controls": [], "ops": [1, 2, 2, 1], "targets": [0, 1, 4, 5]}], "(0, 1, 6, 7)": [{"type": "0123term+1", "angle": -0.01255271173705, "controls": [], "ops": [1, 1, 2, 2], "targets": [0, 1, 6, 7]}, {"type": "0123term+3", "angle": 0.01255271173705, "controls": [], "ops": [2, 1, 1, 2], "targets": [0, 1, 6, 7]}, {"type": "0123term+5", "angle": -0.01255271173705, "controls": [], "ops": [2, 2, 1, 1], "targets": [0, 1, 6, 7]}, {"type": "0123term+7", "angle": 0.01255271173705, "controls": [], "ops": [1, 2, 2, 1], "targets": [0, 1, 6, 7]}], "(0, 1, 2, 4, 5, 6)": [{"type": "0123term+0", "angle": -0.00489018415286942, "controls": [], "ops": [1, 1, 1, 1, 3, 3], "targets": [0, 2, 4, 6, 1, 5]}, {"type": "0123term+1", "angle": -0.00218950107262611, "controls": [], "ops": [1, 1, 2, 2, 3, 3], "targets": [0, 2, 4, 6, 1, 5]}, {"type": "0123term+3", "angle": -0.00270068308024331, "controls": [], "ops": [2, 1, 1, 2, 3, 3], "targets": [0, 2, 4, 6, 1, 5]}, {"type": "0123term+4", "angle": -0.00489018415286942, "controls": [], "ops": [2, 2, 2, 2, 3, 3], "targets": [0, 2, 4, 6, 1, 5]}, {"type": "0123term+5", "angle": -0.00218950107262611, "controls": [], "ops": [2, 2, 1, 1, 3, 3], "targets": [0, 2, 4, 6, 1, 5]}, {"type": "0123term+7", "angle": -0.00270068308024331, "controls": [], "ops": [1, 2, 2, 1, 3, 3], "targets": [0, 2, 4, 6, 1, 5]}], "(0, 1, 2, 5, 6, 7)": [{"type": "0123term+0", "angle": -0.0150970914149642, "controls": [], "ops": [1, 1, 1, 1, 3, 3], "targets": [0, 2, 5, 7, 1, 6]}, {"type": "0123term+1", "angle": -0.0150970914149642, "controls": [], "ops": [1, 1, 2, 2, 3, 3], "targets": [0, 2, 5, 7, 1, 6]}, {"type": "0123term+4", "angle": -0.0150970914149642, "controls": [], "ops": [2, 2, 2, 2, 3, 3], "targets": [0, 2, 5, 7, 1, 6]}, {"type": "0123term+5", "angle": -0.0150970914149642, "controls": [], "ops": [2, 2, 1, 1, 3, 3], "targets": [0, 2, 5, 7, 1, 6]}], "(0, 1, 2, 3, 5, 6)": [{"type": "0123term+0", "angle": 0.0102069072620948, "controls": [], "ops": [1, 1, 1, 1, 3, 3], "targets": [0, 3, 5, 6, 1, 2]}, {"type": "0123term+3", "angle": 0.0102069072620948, "controls": [], "ops": [2, 1, 1, 2, 3, 3], "targets": [0, 3, 5, 6, 1, 2]}, {"type": "0123term+4", "angle": 0.0102069072620948, "controls": [], "ops": [2, 2, 2, 2, 3, 3], "targets": [0, 3, 5, 6, 1, 2]}, {"type": "0123term+7", "angle": 0.0102069072620948, "controls": [], "ops": [1, 2, 2, 1, 3, 3], "targets": [0, 3, 5, 6, 1, 2]}], "(1, 2, 3, 4)": [{"type": "0123term+1", "angle": -0.00587681370757135, "controls": [], "ops": [1, 1, 2, 2], "targets": [1, 2, 3, 4]}, {"type": "0123term+3", "angle": 0.00587681370757135, "controls": [], "ops": [2, 1, 1, 2], "targets": [1, 2, 3, 4]}, {"type": "0123term+5", "angle": -0.00587681370757135, "controls": [], "ops": [2, 2, 1, 1], "targets": [1, 2, 3, 4]}, {"type": "0123term+7", "angle": 0.00587681370757135, "controls": [], "ops": [1, 2, 2, 1], "targets": [1, 2, 3, 4]}], "(1, 2, 4, 5, 6, 7)": [{"type": "0123term+0", "angle": 0.0102069072620948, "controls": [], "ops": [1, 1, 1, 1, 3, 3], "targets": [1, 2, 4, 7, 5, 6]}, {"type": "0123term+3", "angle": 0.0102069072620948, "controls": [], "ops": [2, 1, 1, 2, 3, 3], "targets": [1, 2, 4, 7, 5, 6]}, {"type": "0123term+4", "angle": 0.0102069072620948, "controls": [], "ops": [2, 2, 2, 2, 3, 3], "targets": [1, 2, 4, 7, 5, 6]}, {"type": "0123term+7", "angle": 0.0102069072620948, "controls": [], "ops": [1, 2, 2, 1, 3, 3], "targets": [1, 2, 4, 7, 5, 6]}], "(1, 2, 5, 6)": [{"type": "0123term+1", "angle": 0.0129075903423381, "controls": [], "ops": [1, 1, 2, 2], "targets": [1, 2, 5, 6]}, {"type": "0123term+3", "angle": -0.0129075903423381, "controls": [], "ops": [2, 1, 1, 2], "targets": [1, 2, 5, 6]}, {"type": "0123term+5", "angle": 0.0129075903423381, "controls": [], "ops": [2, 2, 1, 1], "targets": [1, 2, 5, 6]}, {"type": "0123term+7", "angle": -0.0129075903423381, "controls": [], "ops": [1, 2, 2, 1], "targets": [1, 2, 5, 6]}], "(1, 2, 3, 5, 6, 7)": [{"type": "0123term+0", "angle": -0.00489018415286942, "controls": [], "ops": [1, 1, 1, 1, 3, 3], "targets": [1, 3, 5, 7, 2, 6]}, {"type": "0123term+1", "angle": -0.00218950107262611, "controls": [], "ops": [1, 1, 2, 2, 3, 3], "targets": [1, 3, 5, 7, 2, 6]}, {"type": "0123term+3", "angle": -0.00270068308024331, "controls": [], "ops": [2, 1, 1, 2, 3, 3], "targets": [1, 3, 5, 7, 2, 6]}, {"type": "0123term+4", "angle": -0.00489018415286942, "controls": [], "ops": [2, 2, 2, 2, 3, 3], "targets": [1, 3, 5, 7, 2, 6]}, {"type": "0123term+5", "angle": -0.00218950107262611, "controls": [], "ops": [2, 2, 1, 1, 3, 3], "targets": [1, 3, 5, 7, 2, 6]}, {"type": "0123term+7", "angle": -0.00270068308024331, "controls": [], "ops": [1, 2, 2, 1, 3, 3], "targets": [1, 3, 5, 7, 2, 6]}], "(1, 2, 3, 4, 6, 7)": [{"type": "0123term+0", "angle": 0.00388223834784986, "controls": [], "ops": [1, 1, 1, 1, 3, 3], "targets": [1, 4, 6, 7, 2, 3]}, {"type": "0123term+3", "angle": 0.00388223834784986, "controls": [], "ops": [2, 1, 1, 2, 3, 3], "targets": [1, 4, 6, 7, 2, 3]}, {"type": "0123term+4", "angle": 0.00388223834784986, "controls": [], "ops": [2, 2, 2, 2, 3, 3], "targets": [1, 4, 6, 7, 2, 3]}, {"type": "0123term+7", "angle": 0.00388223834784986, "controls": [], "ops": [1, 2, 2, 1, 3, 3], "targets": [1, 4, 6, 7, 2, 3]}], "(2, 3, 4, 5)": [{"type": "0123term+1", "angle": -0.0141416009907263, "controls": [], "ops": [1, 1, 2, 2], "targets": [2, 3, 4, 5]}, {"type": "0123term+3", "angle": 0.0141416009907263, "controls": [], "ops": [2, 1, 1, 2], "targets": [2, 3, 4, 5]}, {"type": "0123term+5", "angle": -0.0141416009907263, "controls": [], "ops": [2, 2, 1, 1], "targets": [2, 3, 4, 5]}, {"type": "0123term+7", "angle": 0.0141416009907263, "controls": [], "ops": [1, 2, 2, 1], "targets": [2, 3, 4, 5]}], "(2, 3, 6, 7)": [{"type": "0123term+1", "angle": -0.0133299177086312, "controls": [], "ops": [1, 1, 2, 2], "targets": [2, 3, 6, 7]}, {"type": "0123term+3", "angle": 0.0133299177086312, "controls": [], "ops": [2, 1, 1, 2], "targets": [2, 3, 6, 7]}, {"type": "0123term+5", "angle": -0.0133299177086312, "controls": [], "ops": [2, 2, 1, 1], "targets": [2, 3, 6, 7]}, {"type": "0123term+7", "angle": 0.0133299177086312, "controls": [], "ops": [1, 2, 2, 1], "targets": [2, 3, 6, 7]}], "(3, 4, 5, 6)": [{"type": "0123term+1", "angle": 0.00608881050073035, "controls": [], "ops": [1, 1, 2, 2], "targets": [3, 4, 5, 6]}, {"type": "0123term+3", "angle": -0.00608881050073035, "controls": [], "ops": [2, 1, 1, 2], "targets": [3, 4, 5, 6]}, {"type": "0123term+5", "angle": 0.00608881050073035, "controls": [], "ops": [2, 2, 1, 1], "targets": [3, 4, 5, 6]}, {"type": "0123term+7", "angle": -0.00608881050073035, "controls": [], "ops": [1, 2, 2, 1], "targets": [3, 4, 5, 6]}], "(4, 5, 6, 7)": [{"type": "0123term+1", "angle": -0.0159036881869834, "controls": [], "ops": [1, 1, 2, 2], "targets": [4, 5, 6, 7]}, {"type": "0123term+3", "angle": 0.0159036881869834, "controls": [], "ops": [2, 1, 1, 2], "targets": [4, 5, 6, 7]}, {"type": "0123term+5", "angle": -0.0159036881869834, "controls": [], "ops": [2, 2, 1, 1], "targets": [4, 5, 6, 7]}, {"type": "0123term+7", "angle": 0.0159036881869834, "controls": [], "ops": [1, 2, 2, 1], "targets": [4, 5, 6, 7]}]}
+{
+    "(0,)": [
+        {
+            "type": "Zterm",
+            "angle": 0.0350239283818972,
+            "controls": [],
+            "ops": [
+                3
+            ],
+            "targets": [
+                0
+            ]
+        }
+    ],
+    "(1,)": [
+        {
+            "type": "Zterm",
+            "angle": 0.0350239283818972,
+            "controls": [],
+            "ops": [
+                3
+            ],
+            "targets": [
+                1
+            ]
+        }
+    ],
+    "(2,)": [
+        {
+            "type": "Zterm",
+            "angle": 0.0215926228817552,
+            "controls": [],
+            "ops": [
+                3
+            ],
+            "targets": [
+                2
+            ]
+        }
+    ],
+    "(3,)": [
+        {
+            "type": "Zterm",
+            "angle": 0.0215926228817552,
+            "controls": [],
+            "ops": [
+                3
+            ],
+            "targets": [
+                3
+            ]
+        }
+    ],
+    "(4,)": [
+        {
+            "type": "Zterm",
+            "angle": 0.00868888052947445,
+            "controls": [],
+            "ops": [
+                3
+            ],
+            "targets": [
+                4
+            ]
+        }
+    ],
+    "(5,)": [
+        {
+            "type": "Zterm",
+            "angle": 0.00868888052947445,
+            "controls": [],
+            "ops": [
+                3
+            ],
+            "targets": [
+                5
+            ]
+        }
+    ],
+    "(6,)": [
+        {
+            "type": "Zterm",
+            "angle": -0.00507751095566078,
+            "controls": [],
+            "ops": [
+                3
+            ],
+            "targets": [
+                6
+            ]
+        }
+    ],
+    "(7,)": [
+        {
+            "type": "Zterm",
+            "angle": -0.00507751095566078,
+            "controls": [],
+            "ops": [
+                3
+            ],
+            "targets": [
+                7
+            ]
+        }
+    ],
+    "(0, 1)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0365335611443925,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                1
+            ]
+        }
+    ],
+    "(0, 2)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0190095511432644,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2
+            ]
+        }
+    ],
+    "(0, 3)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0335767337103323,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                3
+            ]
+        }
+    ],
+    "(0, 4)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0211601185953103,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4
+            ]
+        }
+    ],
+    "(0, 5)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0337912320235286,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                5
+            ]
+        }
+    ],
+    "(0, 6)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0249332320415341,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                6
+            ]
+        }
+    ],
+    "(0, 7)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0374859437785841,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                7
+            ]
+        }
+    ],
+    "(1, 2)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0335767337103323,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                2
+            ]
+        }
+    ],
+    "(1, 3)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0190095511432644,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                3
+            ]
+        }
+    ],
+    "(1, 4)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0337912320235286,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                4
+            ]
+        }
+    ],
+    "(1, 5)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0211601185953103,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5
+            ]
+        }
+    ],
+    "(1, 6)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0374859437785841,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                6
+            ]
+        }
+    ],
+    "(1, 7)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0249332320415341,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                7
+            ]
+        }
+    ],
+    "(2, 3)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0358334086739594,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                3
+            ]
+        }
+    ],
+    "(2, 4)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0218478164755578,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                4
+            ]
+        }
+    ],
+    "(2, 5)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0359894174662841,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                5
+            ]
+        }
+    ],
+    "(2, 6)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0211581997452817,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6
+            ]
+        }
+    ],
+    "(2, 7)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.034488117453913,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                7
+            ]
+        }
+    ],
+    "(3, 4)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0359894174662841,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                4
+            ]
+        }
+    ],
+    "(3, 5)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0218478164755578,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                5
+            ]
+        }
+    ],
+    "(3, 6)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.034488117453913,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                6
+            ]
+        }
+    ],
+    "(3, 7)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0211581997452817,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7
+            ]
+        }
+    ],
+    "(4, 5)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0364278824128177,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                4,
+                5
+            ]
+        }
+    ],
+    "(4, 6)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0189446921622979,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                4,
+                6
+            ]
+        }
+    ],
+    "(4, 7)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0348483803492813,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                4,
+                7
+            ]
+        }
+    ],
+    "(5, 6)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0348483803492813,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                5,
+                6
+            ]
+        }
+    ],
+    "(5, 7)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0189446921622979,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                5,
+                7
+            ]
+        }
+    ],
+    "(6, 7)": [
+        {
+            "type": "ZZterm",
+            "angle": 0.0390546887319602,
+            "controls": [],
+            "ops": [
+                3,
+                3
+            ],
+            "targets": [
+                6,
+                7
+            ]
+        }
+    ],
+    "(0, 1, 2, 3, 4)": [
+        {
+            "type": "PQterm+X",
+            "angle": 0.000857380432775964,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "type": "PQterm+Y",
+            "angle": 0.000857380432775964,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                1,
+                2,
+                3
+            ]
+        }
+    ],
+    "(0, 2, 3, 4)": [
+        {
+            "type": "PQQRterm+X",
+            "angle": 0.0051100584061458,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                2,
+                3
+            ],
+            "qIdx": 1
+        },
+        {
+            "type": "PQQRterm+Y",
+            "angle": 0.0051100584061458,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                2,
+                3
+            ],
+            "qIdx": 1
+        }
+    ],
+    "(0, 1, 3, 4)": [
+        {
+            "type": "PQQRterm+X",
+            "angle": 0.00294850570393616,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                1,
+                3
+            ],
+            "qIdx": 2
+        },
+        {
+            "type": "PQQRterm+Y",
+            "angle": 0.00294850570393616,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                1,
+                3
+            ],
+            "qIdx": 2
+        }
+    ],
+    "(0, 1, 2, 4)": [
+        {
+            "type": "PQQRterm+X",
+            "angle": -0.00292830800363519,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                1,
+                2
+            ],
+            "qIdx": 3
+        },
+        {
+            "type": "PQQRterm+Y",
+            "angle": -0.00292830800363519,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                1,
+                2
+            ],
+            "qIdx": 3
+        }
+    ],
+    "(0, 1, 2, 3, 4, 5)": [
+        {
+            "type": "PQQR_Parityterm+X",
+            "angle": -0.00286164682264186,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                1,
+                2,
+                3,
+                5
+            ],
+            "qIdx": 5
+        },
+        {
+            "type": "PQQR_Parityterm+Y",
+            "angle": -0.00286164682264186,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                1,
+                2,
+                3,
+                5
+            ],
+            "qIdx": 5
+        },
+        {
+            "type": "PQQR_Parityterm+X",
+            "angle": 0.0051100584061458,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                2,
+                3,
+                4,
+                0
+            ],
+            "qIdx": 0
+        },
+        {
+            "type": "PQQR_Parityterm+Y",
+            "angle": 0.0051100584061458,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                2,
+                3,
+                4,
+                0
+            ],
+            "qIdx": 0
+        },
+        {
+            "type": "0123term+0",
+            "angle": 0.00587681370757135,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                3,
+                5,
+                1,
+                4
+            ]
+        },
+        {
+            "type": "0123term+1",
+            "angle": 0.00587681370757135,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                3,
+                5,
+                1,
+                4
+            ]
+        },
+        {
+            "type": "0123term+4",
+            "angle": 0.00587681370757135,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                3,
+                5,
+                1,
+                4
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": 0.00587681370757135,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                3,
+                5,
+                1,
+                4
+            ]
+        }
+    ],
+    "(0, 1, 2, 3, 4, 6)": [
+        {
+            "type": "PQQR_Parityterm+X",
+            "angle": 0.0016261420742314,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                1,
+                2,
+                3,
+                6
+            ],
+            "qIdx": 6
+        },
+        {
+            "type": "PQQR_Parityterm+Y",
+            "angle": 0.0016261420742314,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                1,
+                2,
+                3,
+                6
+            ],
+            "qIdx": 6
+        }
+    ],
+    "(0, 1, 2, 3, 4, 7)": [
+        {
+            "type": "PQQR_Parityterm+X",
+            "angle": 0.00550838042208126,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                1,
+                2,
+                3,
+                7
+            ],
+            "qIdx": 7
+        },
+        {
+            "type": "PQQR_Parityterm+Y",
+            "angle": 0.00550838042208126,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                4,
+                1,
+                2,
+                3,
+                7
+            ],
+            "qIdx": 7
+        }
+    ],
+    "(1, 2, 3, 4, 5)": [
+        {
+            "type": "PQterm+X",
+            "angle": 0.000857380432775964,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "type": "PQterm+Y",
+            "angle": 0.000857380432775964,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                2,
+                3,
+                4
+            ]
+        }
+    ],
+    "(1, 3, 4, 5)": [
+        {
+            "type": "PQQRterm+X",
+            "angle": -0.00292830800363519,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                3,
+                4
+            ],
+            "qIdx": 2
+        },
+        {
+            "type": "PQQRterm+Y",
+            "angle": -0.00292830800363519,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                3,
+                4
+            ],
+            "qIdx": 2
+        }
+    ],
+    "(1, 2, 4, 5)": [
+        {
+            "type": "PQQRterm+X",
+            "angle": 0.00294850570393616,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                2,
+                4
+            ],
+            "qIdx": 3
+        },
+        {
+            "type": "PQQRterm+Y",
+            "angle": 0.00294850570393616,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                2,
+                4
+            ],
+            "qIdx": 3
+        }
+    ],
+    "(1, 2, 3, 5)": [
+        {
+            "type": "PQQRterm+X",
+            "angle": -0.00286164682264186,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                2,
+                3
+            ],
+            "qIdx": 4
+        },
+        {
+            "type": "PQQRterm+Y",
+            "angle": -0.00286164682264186,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                2,
+                3
+            ],
+            "qIdx": 4
+        }
+    ],
+    "(1, 2, 3, 4, 5, 6)": [
+        {
+            "type": "PQQR_Parityterm+X",
+            "angle": 0.00550838042208126,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                2,
+                3,
+                4,
+                6
+            ],
+            "qIdx": 6
+        },
+        {
+            "type": "PQQR_Parityterm+Y",
+            "angle": 0.00550838042208126,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                2,
+                3,
+                4,
+                6
+            ],
+            "qIdx": 6
+        },
+        {
+            "type": "PQQR_Parityterm+X",
+            "angle": -0.00524584759816922,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                3,
+                4,
+                5,
+                1
+            ],
+            "qIdx": 1
+        },
+        {
+            "type": "PQQR_Parityterm+Y",
+            "angle": -0.00524584759816922,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                3,
+                4,
+                5,
+                1
+            ],
+            "qIdx": 1
+        },
+        {
+            "type": "0123term+0",
+            "angle": -0.0150970914149642,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                3,
+                4,
+                6,
+                2,
+                5
+            ]
+        },
+        {
+            "type": "0123term+1",
+            "angle": -0.0150970914149642,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                3,
+                4,
+                6,
+                2,
+                5
+            ]
+        },
+        {
+            "type": "0123term+4",
+            "angle": -0.0150970914149642,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                3,
+                4,
+                6,
+                2,
+                5
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": -0.0150970914149642,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                3,
+                4,
+                6,
+                2,
+                5
+            ]
+        }
+    ],
+    "(1, 2, 3, 4, 5, 7)": [
+        {
+            "type": "PQQR_Parityterm+X",
+            "angle": 0.0016261420742314,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                2,
+                3,
+                4,
+                7
+            ],
+            "qIdx": 7
+        },
+        {
+            "type": "PQQR_Parityterm+Y",
+            "angle": 0.0016261420742314,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                5,
+                2,
+                3,
+                4,
+                7
+            ],
+            "qIdx": 7
+        }
+    ],
+    "(2, 3, 4, 5, 6)": [
+        {
+            "type": "PQterm+X",
+            "angle": 0.00193828954888277,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                3,
+                4,
+                5
+            ]
+        },
+        {
+            "type": "PQterm+Y",
+            "angle": 0.00193828954888277,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                3,
+                4,
+                5
+            ]
+        }
+    ],
+    "(0, 2, 3, 4, 5, 6)": [
+        {
+            "type": "PQQR_Parityterm+X",
+            "angle": -0.00157577031348081,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                3,
+                4,
+                5,
+                0
+            ],
+            "qIdx": 0
+        },
+        {
+            "type": "PQQR_Parityterm+Y",
+            "angle": -0.00157577031348081,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                3,
+                4,
+                5,
+                0
+            ],
+            "qIdx": 0
+        }
+    ],
+    "(2, 4, 5, 6)": [
+        {
+            "type": "PQQRterm+X",
+            "angle": 0.0028985529531918,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                4,
+                5
+            ],
+            "qIdx": 3
+        },
+        {
+            "type": "PQQRterm+Y",
+            "angle": 0.0028985529531918,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                4,
+                5
+            ],
+            "qIdx": 3
+        }
+    ],
+    "(2, 3, 5, 6)": [
+        {
+            "type": "PQQRterm+X",
+            "angle": -0.00310653975629105,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                3,
+                5
+            ],
+            "qIdx": 4
+        },
+        {
+            "type": "PQQRterm+Y",
+            "angle": -0.00310653975629105,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                3,
+                5
+            ],
+            "qIdx": 4
+        }
+    ],
+    "(2, 3, 4, 6)": [
+        {
+            "type": "PQQRterm+X",
+            "angle": 0.0029822707444393,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                3,
+                4
+            ],
+            "qIdx": 5
+        },
+        {
+            "type": "PQQRterm+Y",
+            "angle": 0.0029822707444393,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                3,
+                4
+            ],
+            "qIdx": 5
+        }
+    ],
+    "(2, 3, 4, 5, 6, 7)": [
+        {
+            "type": "PQQR_Parityterm+X",
+            "angle": -0.00573708549548923,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                3,
+                4,
+                5,
+                7
+            ],
+            "qIdx": 7
+        },
+        {
+            "type": "PQQR_Parityterm+Y",
+            "angle": -0.00573708549548923,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                6,
+                3,
+                4,
+                5,
+                7
+            ],
+            "qIdx": 7
+        },
+        {
+            "type": "PQQR_Parityterm+X",
+            "angle": 0.0028985529531918,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                4,
+                5,
+                6,
+                2
+            ],
+            "qIdx": 2
+        },
+        {
+            "type": "PQQR_Parityterm+Y",
+            "angle": 0.0028985529531918,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                4,
+                5,
+                6,
+                2
+            ],
+            "qIdx": 2
+        },
+        {
+            "type": "0123term+0",
+            "angle": -0.00608881050073035,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                4,
+                5,
+                7,
+                3,
+                6
+            ]
+        },
+        {
+            "type": "0123term+1",
+            "angle": -0.00608881050073035,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                4,
+                5,
+                7,
+                3,
+                6
+            ]
+        },
+        {
+            "type": "0123term+4",
+            "angle": -0.00608881050073035,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                4,
+                5,
+                7,
+                3,
+                6
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": -0.00608881050073035,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                2,
+                4,
+                5,
+                7,
+                3,
+                6
+            ]
+        }
+    ],
+    "(3, 4, 5, 6, 7)": [
+        {
+            "type": "PQterm+X",
+            "angle": 0.00193828954888277,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "PQterm+Y",
+            "angle": 0.00193828954888277,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                4,
+                5,
+                6
+            ]
+        }
+    ],
+    "(0, 3, 4, 5, 6, 7)": [
+        {
+            "type": "PQQR_Parityterm+X",
+            "angle": -0.00524584759816922,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                4,
+                5,
+                6,
+                0
+            ],
+            "qIdx": 0
+        },
+        {
+            "type": "PQQR_Parityterm+Y",
+            "angle": -0.00524584759816922,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                4,
+                5,
+                6,
+                0
+            ],
+            "qIdx": 0
+        }
+    ],
+    "(1, 3, 4, 5, 6, 7)": [
+        {
+            "type": "PQQR_Parityterm+X",
+            "angle": -0.00157577031348081,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                4,
+                5,
+                6,
+                1
+            ],
+            "qIdx": 1
+        },
+        {
+            "type": "PQQR_Parityterm+Y",
+            "angle": -0.00157577031348081,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                4,
+                5,
+                6,
+                1
+            ],
+            "qIdx": 1
+        }
+    ],
+    "(3, 5, 6, 7)": [
+        {
+            "type": "PQQRterm+X",
+            "angle": 0.0029822707444393,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                5,
+                6
+            ],
+            "qIdx": 4
+        },
+        {
+            "type": "PQQRterm+Y",
+            "angle": 0.0029822707444393,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                5,
+                6
+            ],
+            "qIdx": 4
+        }
+    ],
+    "(3, 4, 6, 7)": [
+        {
+            "type": "PQQRterm+X",
+            "angle": -0.00310653975629105,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                4,
+                6
+            ],
+            "qIdx": 5
+        },
+        {
+            "type": "PQQRterm+Y",
+            "angle": -0.00310653975629105,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                4,
+                6
+            ],
+            "qIdx": 5
+        }
+    ],
+    "(3, 4, 5, 7)": [
+        {
+            "type": "PQQRterm+X",
+            "angle": -0.00573708549548923,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                4,
+                5
+            ],
+            "qIdx": 6
+        },
+        {
+            "type": "PQQRterm+Y",
+            "angle": -0.00573708549548923,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                3,
+                7,
+                4,
+                5
+            ],
+            "qIdx": 6
+        }
+    ],
+    "(0, 1, 2, 3)": [
+        {
+            "type": "0123term+1",
+            "angle": -0.0145671825670679,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2
+            ],
+            "targets": [
+                0,
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": 0.0145671825670679,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2
+            ],
+            "targets": [
+                0,
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": -0.0145671825670679,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1
+            ],
+            "targets": [
+                0,
+                1,
+                2,
+                3
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": 0.0145671825670679,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1
+            ],
+            "targets": [
+                0,
+                1,
+                2,
+                3
+            ]
+        }
+    ],
+    "(0, 1, 2, 3, 4, 5, 6, 7)": [
+        {
+            "type": "0123term+1",
+            "angle": -0.00367007728468841,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                1,
+                2,
+                7,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": 0.00367007728468841,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                1,
+                2,
+                7,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": -0.00367007728468841,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                1,
+                2,
+                7,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": 0.00367007728468841,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                1,
+                2,
+                7,
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+1",
+            "angle": 0.0129075903423381,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                3,
+                4,
+                7,
+                1,
+                2,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": -0.0129075903423381,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                3,
+                4,
+                7,
+                1,
+                2,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": 0.0129075903423381,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                3,
+                4,
+                7,
+                1,
+                2,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": -0.0129075903423381,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                3,
+                4,
+                7,
+                1,
+                2,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+1",
+            "angle": 0.00388223834784986,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                5,
+                6,
+                7,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": -0.00388223834784986,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                5,
+                6,
+                7,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": 0.00388223834784986,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                5,
+                6,
+                7,
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": -0.00388223834784986,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1,
+                3,
+                3,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                5,
+                6,
+                7,
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    ],
+    "(0, 1, 3, 4, 5, 6)": [
+        {
+            "type": "0123term+0",
+            "angle": -0.00367007728468841,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                1,
+                3,
+                6,
+                4,
+                5
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": -0.00367007728468841,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                1,
+                3,
+                6,
+                4,
+                5
+            ]
+        },
+        {
+            "type": "0123term+4",
+            "angle": -0.00367007728468841,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                1,
+                3,
+                6,
+                4,
+                5
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": -0.00367007728468841,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                1,
+                3,
+                6,
+                4,
+                5
+            ]
+        }
+    ],
+    "(0, 1, 4, 5)": [
+        {
+            "type": "0123term+1",
+            "angle": -0.0126311134282183,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2
+            ],
+            "targets": [
+                0,
+                1,
+                4,
+                5
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": 0.0126311134282183,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2
+            ],
+            "targets": [
+                0,
+                1,
+                4,
+                5
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": -0.0126311134282183,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1
+            ],
+            "targets": [
+                0,
+                1,
+                4,
+                5
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": 0.0126311134282183,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1
+            ],
+            "targets": [
+                0,
+                1,
+                4,
+                5
+            ]
+        }
+    ],
+    "(0, 1, 6, 7)": [
+        {
+            "type": "0123term+1",
+            "angle": -0.01255271173705,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2
+            ],
+            "targets": [
+                0,
+                1,
+                6,
+                7
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": 0.01255271173705,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2
+            ],
+            "targets": [
+                0,
+                1,
+                6,
+                7
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": -0.01255271173705,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1
+            ],
+            "targets": [
+                0,
+                1,
+                6,
+                7
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": 0.01255271173705,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1
+            ],
+            "targets": [
+                0,
+                1,
+                6,
+                7
+            ]
+        }
+    ],
+    "(0, 1, 2, 4, 5, 6)": [
+        {
+            "type": "0123term+0",
+            "angle": -0.00489018415286942,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                4,
+                6,
+                1,
+                5
+            ]
+        },
+        {
+            "type": "0123term+1",
+            "angle": -0.00218950107262611,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                4,
+                6,
+                1,
+                5
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": -0.00270068308024331,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                4,
+                6,
+                1,
+                5
+            ]
+        },
+        {
+            "type": "0123term+4",
+            "angle": -0.00489018415286942,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                4,
+                6,
+                1,
+                5
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": -0.00218950107262611,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                4,
+                6,
+                1,
+                5
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": -0.00270068308024331,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                4,
+                6,
+                1,
+                5
+            ]
+        }
+    ],
+    "(0, 1, 2, 5, 6, 7)": [
+        {
+            "type": "0123term+0",
+            "angle": -0.0150970914149642,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                5,
+                7,
+                1,
+                6
+            ]
+        },
+        {
+            "type": "0123term+1",
+            "angle": -0.0150970914149642,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                5,
+                7,
+                1,
+                6
+            ]
+        },
+        {
+            "type": "0123term+4",
+            "angle": -0.0150970914149642,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                5,
+                7,
+                1,
+                6
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": -0.0150970914149642,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                2,
+                5,
+                7,
+                1,
+                6
+            ]
+        }
+    ],
+    "(0, 1, 2, 3, 5, 6)": [
+        {
+            "type": "0123term+0",
+            "angle": 0.0102069072620948,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                3,
+                5,
+                6,
+                1,
+                2
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": 0.0102069072620948,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                3,
+                5,
+                6,
+                1,
+                2
+            ]
+        },
+        {
+            "type": "0123term+4",
+            "angle": 0.0102069072620948,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                3,
+                5,
+                6,
+                1,
+                2
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": 0.0102069072620948,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                0,
+                3,
+                5,
+                6,
+                1,
+                2
+            ]
+        }
+    ],
+    "(1, 2, 3, 4)": [
+        {
+            "type": "0123term+1",
+            "angle": -0.00587681370757135,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2
+            ],
+            "targets": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": 0.00587681370757135,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2
+            ],
+            "targets": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": -0.00587681370757135,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1
+            ],
+            "targets": [
+                1,
+                2,
+                3,
+                4
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": 0.00587681370757135,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1
+            ],
+            "targets": [
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    ],
+    "(1, 2, 4, 5, 6, 7)": [
+        {
+            "type": "0123term+0",
+            "angle": 0.0102069072620948,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                2,
+                4,
+                7,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": 0.0102069072620948,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                2,
+                4,
+                7,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+4",
+            "angle": 0.0102069072620948,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                2,
+                4,
+                7,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": 0.0102069072620948,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                2,
+                4,
+                7,
+                5,
+                6
+            ]
+        }
+    ],
+    "(1, 2, 5, 6)": [
+        {
+            "type": "0123term+1",
+            "angle": 0.0129075903423381,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2
+            ],
+            "targets": [
+                1,
+                2,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": -0.0129075903423381,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2
+            ],
+            "targets": [
+                1,
+                2,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": 0.0129075903423381,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1
+            ],
+            "targets": [
+                1,
+                2,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": -0.0129075903423381,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1
+            ],
+            "targets": [
+                1,
+                2,
+                5,
+                6
+            ]
+        }
+    ],
+    "(1, 2, 3, 5, 6, 7)": [
+        {
+            "type": "0123term+0",
+            "angle": -0.00489018415286942,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                3,
+                5,
+                7,
+                2,
+                6
+            ]
+        },
+        {
+            "type": "0123term+1",
+            "angle": -0.00218950107262611,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                3,
+                5,
+                7,
+                2,
+                6
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": -0.00270068308024331,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                3,
+                5,
+                7,
+                2,
+                6
+            ]
+        },
+        {
+            "type": "0123term+4",
+            "angle": -0.00489018415286942,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                3,
+                5,
+                7,
+                2,
+                6
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": -0.00218950107262611,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                3,
+                5,
+                7,
+                2,
+                6
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": -0.00270068308024331,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                3,
+                5,
+                7,
+                2,
+                6
+            ]
+        }
+    ],
+    "(1, 2, 3, 4, 6, 7)": [
+        {
+            "type": "0123term+0",
+            "angle": 0.00388223834784986,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                1,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                4,
+                6,
+                7,
+                2,
+                3
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": 0.00388223834784986,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                4,
+                6,
+                7,
+                2,
+                3
+            ]
+        },
+        {
+            "type": "0123term+4",
+            "angle": 0.00388223834784986,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                2,
+                2,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                4,
+                6,
+                7,
+                2,
+                3
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": 0.00388223834784986,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1,
+                3,
+                3
+            ],
+            "targets": [
+                1,
+                4,
+                6,
+                7,
+                2,
+                3
+            ]
+        }
+    ],
+    "(2, 3, 4, 5)": [
+        {
+            "type": "0123term+1",
+            "angle": -0.0141416009907263,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2
+            ],
+            "targets": [
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": 0.0141416009907263,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2
+            ],
+            "targets": [
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": -0.0141416009907263,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1
+            ],
+            "targets": [
+                2,
+                3,
+                4,
+                5
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": 0.0141416009907263,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1
+            ],
+            "targets": [
+                2,
+                3,
+                4,
+                5
+            ]
+        }
+    ],
+    "(2, 3, 6, 7)": [
+        {
+            "type": "0123term+1",
+            "angle": -0.0133299177086312,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2
+            ],
+            "targets": [
+                2,
+                3,
+                6,
+                7
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": 0.0133299177086312,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2
+            ],
+            "targets": [
+                2,
+                3,
+                6,
+                7
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": -0.0133299177086312,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1
+            ],
+            "targets": [
+                2,
+                3,
+                6,
+                7
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": 0.0133299177086312,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1
+            ],
+            "targets": [
+                2,
+                3,
+                6,
+                7
+            ]
+        }
+    ],
+    "(3, 4, 5, 6)": [
+        {
+            "type": "0123term+1",
+            "angle": 0.00608881050073035,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2
+            ],
+            "targets": [
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": -0.00608881050073035,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2
+            ],
+            "targets": [
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": 0.00608881050073035,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1
+            ],
+            "targets": [
+                3,
+                4,
+                5,
+                6
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": -0.00608881050073035,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1
+            ],
+            "targets": [
+                3,
+                4,
+                5,
+                6
+            ]
+        }
+    ],
+    "(4, 5, 6, 7)": [
+        {
+            "type": "0123term+1",
+            "angle": -0.0159036881869834,
+            "controls": [],
+            "ops": [
+                1,
+                1,
+                2,
+                2
+            ],
+            "targets": [
+                4,
+                5,
+                6,
+                7
+            ]
+        },
+        {
+            "type": "0123term+3",
+            "angle": 0.0159036881869834,
+            "controls": [],
+            "ops": [
+                2,
+                1,
+                1,
+                2
+            ],
+            "targets": [
+                4,
+                5,
+                6,
+                7
+            ]
+        },
+        {
+            "type": "0123term+5",
+            "angle": -0.0159036881869834,
+            "controls": [],
+            "ops": [
+                2,
+                2,
+                1,
+                1
+            ],
+            "targets": [
+                4,
+                5,
+                6,
+                7
+            ]
+        },
+        {
+            "type": "0123term+7",
+            "angle": 0.0159036881869834,
+            "controls": [],
+            "ops": [
+                1,
+                2,
+                2,
+                1
+            ],
+            "targets": [
+                4,
+                5,
+                6,
+                7
+            ]
+        }
+    ]
+}

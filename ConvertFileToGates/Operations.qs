@@ -8,15 +8,6 @@
     open Microsoft.Quantum.Convert;
     open Microsoft.Quantum.Math;
     open Microsoft.Quantum.Arrays;
-    // open Microsoft.Quantum.Canon;
-    // open Microsoft.Quantum.Intrinsic;
-    // open Microsoft.Quantum.Arrays;
-    // open Microsoft.Quantum.Chemistry;
-    // open Microsoft.Quantum.Chemistry.JordanWigner;
-	// open Microsoft.Quantum.Simulation;	
-    // open Microsoft.Quantum.Characterization;
-    // open Microsoft.Quantum.Convert;
-    // open Microsoft.Quantum.Math;
 
     // This is a diagonstic methods and also experiment in generics
     operation AcceptArray<'T> (array : 'T[]) : Unit {
@@ -25,27 +16,21 @@
         }
     }
 
+    // converts type index in CompressedHamiltonian into a qubit gate
+    // input: index found in CompressedHamiltonian under "ops"
+    // output: Pauli gate to use
     function FindPauli (index : Int) : Pauli {
         let ops = [PauliI, PauliX, PauliY, PauliZ];
         // This should be modeled like the evolution set where the ops can be folded in
         return ops[index];
     }
 
-    operation OracleFromJSON (data : CompressedHamiltonian[], register : Qubit[]) : Unit {
-        body (...) {
-            for (index in 0..Length(data) - 1) {
-                ApplyTerm(index, data, register);
-            }
-        }
-        controlled auto;
-        adjoint auto;
-        controlled adjoint auto;
-    }
 
     // operation that takes in CompressedHamiltonian data and applies selected term
-    // index : index of data that should be applied
-    // data : array of CompressedHamiltonians to be applied
-    // register : FULL register of qubits on which to apply the exponentiated gates
+    // input: index, index of data that should be applied
+    // data, array of CompressedHamiltonians to be applied
+    // register, FULL register of qubits on which to apply the exponentiated gates
+    // output: applies the term onto the register. Should be controllable and adjointable
     operation ApplyTerm (index : Int, data : CompressedHamiltonian[], register : Qubit[]) : Unit is Ctl+Adj {
         body (...) {
             let gate_data = data[index];
@@ -57,6 +42,26 @@
         controlled adjoint auto;
     }
 
+
+    // converts a JSON into an oracle to be applied onto a register
+    // input: data, produced by Auxiliary, register: qubit register
+    // output: no output, simply applies gates to register
+    operation OracleFromJSON (data : CompressedHamiltonian[], register : Qubit[]) : Unit is Ctl+Adj {
+        body (...) {
+            for (index in 0..Length(data) - 1) {
+                ApplyTerm(index, data, register);
+            }
+        }
+        controlled auto;
+        adjoint auto;
+        controlled adjoint auto;
+    }
+
+
+    // operation modified from sample on Trotterization; allows for energy level estimate
+    // input: data, produced by Auxiliary class, nBitsPrecision, number of bits of precision
+    // for the energy level estimate
+    // output: (phase, energy)
     operation GetEnergyByTrotterization (data : CompleteHamiltonian, nBitsPrecision : Int) : (Double, Double) {
 
         // Decompress data:
@@ -87,49 +92,4 @@
         // We return both the estimated phase, and the estimated energy.
         return (estPhase, estEnergy);
     }
-
-    // operation ConvertToGates (termSpecs : CompressedGateForm, qubits : Qubit[]) : Unit {
-    //     let (termType, (target1, target2, target3, target4), angle) = termSpecs!;
-    //     if (termType == "Zterm") 
-    //     {
-    //         Exp([PauliZ], angle, [qubits[target1]]);
-    //     }
-    //     elif (termType == "ZZterm")
-    //     {
-    //         let qubitsZZ = Subarray([target1, target2], qubits);
-    //         Exp([PauliZ, PauliZ], angle, qubitsZZ);
-    //     }
-    //     elif (termType == "PQterm") 
-    //     {
-    //         let qubitsPQ = Subarray([target1, target2], qubits);
-    //         let qubitsJW = qubits[target1 + 1 .. target2 - 1];
-    //         let ops = [[PauliX, PauliX], [PauliY, PauliY]];
-            
-    //         for (idxOp in IndexRange(ops)) {
-    //             Exp(ops[idxOp] + ConstantArray(Length(qubitsJW), PauliZ), angle, (qubitsPQ + qubitsJW));
-    //         }
-    //     }
-    //     elif (termType == "PQQRterm") 
-    //     {
-    //         // targetInfo = (Int32.Parse(qubitInfo[1]), -1, -1, -1);
-    //         // FLAG TO DO 
-    //     }
-    //     else {
-    //         let qubitsPQ = Subarray([target1, target2], qubits);
-    //         let qubitsRS = Subarray([target3, target4], qubits);
-    //         let qubitsPQJW = qubits[target1 + 1 .. target2 - 1];
-    //         let qubitsRSJW = qubits[target3 + 1 .. target4 - 1];
-    //         let ops = [[PauliX, PauliX, PauliX, PauliX], [PauliX, PauliX, PauliY, PauliY], [PauliX, PauliY, PauliX, PauliY], [PauliY, PauliX, PauliX, PauliY], [PauliY, PauliY, PauliY, PauliY], [PauliY, PauliY, PauliX, PauliX], [PauliY, PauliX, PauliY, PauliX], [PauliX, PauliY, PauliY, PauliX]];
-    //         // let idxOp = termType[9];
-    //         // Exp(ops[idxOp] + ConstantArray(Length(qubitsPQJW) + Length(qubitsRSJW), PauliZ), angle, ((qubitsPQ + qubitsRS) + qubitsPQJW) + qubitsRSJW);
-    //     }
-    // }
-
-    // operation ApplyFromFile (nSpinOrbitals : Int, data : CompressedGateForm[]) : Unit {
-    //     using (qubits = Qubit[nSpinOrbitals]) {
-    //         for (index in 0..Length(data) - 1) {
-    //             ConvertToGates(data[index], qubits);
-    //         }   
-    //     }
-    // }
 }
