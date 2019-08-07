@@ -369,6 +369,33 @@
           "lib/netstandard1.0/_._": {}
         }
       },
+      "Microsoft.Quantum.Chemistry/0.7.1905.3109": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "2.1.1",
+          "Microsoft.Extensions.Logging.Console": "2.1.1",
+          "Microsoft.Extensions.Logging.Debug": "2.1.1",
+          "Microsoft.Quantum.Development.Kit": "0.7.1905.3109",
+          "Newtonsoft.Json": "12.0.1",
+          "Serilog.Extensions.Logging.File": "1.1.0",
+          "YamlDotNet": "6.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Quantum.Chemistry.DataModel.dll": {},
+          "lib/netstandard2.0/Microsoft.Quantum.Chemistry.Runtime.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Quantum.Chemistry.DataModel.dll": {},
+          "lib/netstandard2.0/Microsoft.Quantum.Chemistry.Runtime.dll": {}
+        },
+        "contentFiles": {
+          "contentFiles/any/netstandard2.0/Analysis/README.txt": {
+            "buildAction": "Content",
+            "codeLanguage": "any",
+            "copyToOutput": false
+          }
+        }
+      },
       "Microsoft.Quantum.Development.Kit/0.7.1905.3109": {
         "type": "package",
         "dependencies": {
@@ -415,6 +442,18 @@
             "assetType": "native",
             "rid": "win-x64"
           }
+        }
+      },
+      "Microsoft.Quantum.Standard/0.7.1905.3109": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Quantum.Development.Kit": "0.7.1905.3109"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Quantum.Standard.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Quantum.Standard.dll": {}
         }
       },
       "NETStandard.Library/2.0.3": {
@@ -1017,52 +1056,6 @@
         "runtime": {
           "lib/netstandard1.3/YamlDotNet.dll": {}
         }
-      },
-      "Microsoft.Quantum.Chemistry/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microsoft.Extensions.Logging": "2.1.1",
-          "Microsoft.Extensions.Logging.Console": "2.1.1",
-          "Microsoft.Extensions.Logging.Debug": "2.1.1",
-          "Microsoft.Quantum.Development.Kit": "0.7.1905.3109",
-          "Newtonsoft.Json": "12.0.1",
-          "Serilog.Extensions.Logging.File": "1.1.0",
-          "YamlDotNet": "6.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Microsoft.Quantum.Chemistry.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Microsoft.Quantum.Chemistry.dll": {}
-        }
-      },
-      "Microsoft.Quantum.Chemistry.Runtime/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microsoft.Quantum.Development.Kit": "0.7.1905.3109",
-          "Microsoft.Quantum.Standard": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Microsoft.Quantum.Chemistry.Runtime.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Microsoft.Quantum.Chemistry.Runtime.dll": {}
-        }
-      },
-      "Microsoft.Quantum.Standard/1.0.0": {
-        "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
-        "dependencies": {
-          "Microsoft.Quantum.Development.Kit": "0.7.1905.3109"
-        },
-        "compile": {
-          "bin/placeholder/Microsoft.Quantum.Standard.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Microsoft.Quantum.Standard.dll": {}
-        }
       }
     }
   },
@@ -1623,6 +1616,24 @@
         "version.txt"
       ]
     },
+    "Microsoft.Quantum.Chemistry/0.7.1905.3109": {
+      "sha512": "78/aetivgxP2JcxQ+wGVTLFLJqtDySU2ZiLR0kl9F9U5XmDh/fPrF4jy/WXu55/mt7ZRs0Z0LnWz5obBsdHEjQ==",
+      "type": "package",
+      "path": "microsoft.quantum.chemistry/0.7.1905.3109",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "content/Analysis/README.txt",
+        "contentFiles/any/netstandard2.0/Analysis/README.txt",
+        "lib/netstandard2.0/Microsoft.Quantum.Chemistry.DataModel.dll",
+        "lib/netstandard2.0/Microsoft.Quantum.Chemistry.DataModel.xml",
+        "lib/netstandard2.0/Microsoft.Quantum.Chemistry.Runtime.deps.json",
+        "lib/netstandard2.0/Microsoft.Quantum.Chemistry.Runtime.dll",
+        "lib/netstandard2.0/Microsoft.Quantum.Chemistry.Runtime.xml",
+        "microsoft.quantum.chemistry.0.7.1905.3109.nupkg.sha512",
+        "microsoft.quantum.chemistry.nuspec"
+      ]
+    },
     "Microsoft.Quantum.Development.Kit/0.7.1905.3109": {
       "sha512": "U67ZXG+BeeLvcSGZvLg44oSAwT+XogBgB0VclciEkxXYIyL6wjN4VA4/CoquKafkYrGBSA7LTpni3dKzuob8bg==",
       "type": "package",
@@ -1815,6 +1826,18 @@
         "runtimes/osx-x64/native/Microsoft.Quantum.Simulator.Runtime.dll",
         "runtimes/win-x64/native/Microsoft.Quantum.Simulator.Runtime.dll",
         "runtimes/win-x64/native/vcomp140.dll"
+      ]
+    },
+    "Microsoft.Quantum.Standard/0.7.1905.3109": {
+      "sha512": "uZqxDDsxMDsoiP76mz7KdgOvQoKeMNhaUFzv62K3kTYXxVBVzA41FjN+/EN7P6q/Lme3neDEUAcj3pQXRHxYTg==",
+      "type": "package",
+      "path": "microsoft.quantum.standard/0.7.1905.3109",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Quantum.Standard.dll",
+        "microsoft.quantum.standard.0.7.1905.3109.nupkg.sha512",
+        "microsoft.quantum.standard.nuspec"
       ]
     },
     "NETStandard.Library/2.0.3": {
@@ -4109,28 +4132,12 @@
         "yamldotnet.6.0.0.nupkg.sha512",
         "yamldotnet.nuspec"
       ]
-    },
-    "Microsoft.Quantum.Chemistry/1.0.0": {
-      "type": "project",
-      "path": "../../QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj",
-      "msbuildProject": "../../QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj"
-    },
-    "Microsoft.Quantum.Chemistry.Runtime/1.0.0": {
-      "type": "project",
-      "path": "../../QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj",
-      "msbuildProject": "../../QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj"
-    },
-    "Microsoft.Quantum.Standard/1.0.0": {
-      "type": "project",
-      "path": "../../QuantumLibraries/Standard/src/Standard.csproj",
-      "msbuildProject": "../../QuantumLibraries/Standard/src/Standard.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.1": [
       "Microsoft.NETCore.App >= 2.1.0",
-      "Microsoft.Quantum.Chemistry >= 1.0.0",
-      "Microsoft.Quantum.Chemistry.Runtime >= 1.0.0",
+      "Microsoft.Quantum.Chemistry >= 0.7.1905.3109",
       "Microsoft.Quantum.Development.Kit >= 0.7.1905.3109",
       "Microsoft.Quantum.Standard >= 0.7.1905.3109"
     ]
@@ -4162,17 +4169,7 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
-          "projectReferences": {
-            "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj": {
-              "projectPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj"
-            },
-            "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj": {
-              "projectPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj"
-            },
-            "/Users/kang828/Documents/GitHub/QuantumLibraries/Standard/src/Standard.csproj": {
-              "projectPath": "/Users/kang828/Documents/GitHub/QuantumLibraries/Standard/src/Standard.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -4189,6 +4186,10 @@
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
+          },
+          "Microsoft.Quantum.Chemistry": {
+            "target": "Package",
+            "version": "[0.7.1905.3109, )"
           },
           "Microsoft.Quantum.Development.Kit": {
             "target": "Package",

@@ -49,6 +49,7 @@ namespace ExtractTrotterGates
                 var problem = broombridge.ProblemDescriptions.Single();
 
                 Console.WriteLine("Preparing Q# data format");
+                Auxiliary.ToQSharpFormat(problem, inputState);
                 var qSharpData = problem.ToQSharpFormat(inputState);
 
                 // get the spin data and state data and dump to an auxiliary file

@@ -11,10 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Quantum.Standard" Version="0.7.1905.3109" />
-    <!-- <PackageReference Include="Microsoft.Quantum.Chemistry" Version="0.7.1905.3109" /> -->
-    <ProjectReference Include="/Users/kang828/Documents/GitHub/QuantumLibraries/Standard/src/Standard.csproj" />
-    <ProjectReference Include="/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/Runtime/Runtime.csproj" />
-    <ProjectReference Include="/Users/kang828/Documents/GitHub/QuantumLibraries/Chemistry/src/DataModel/DataModel.csproj" />
+    <PackageReference Include="Microsoft.Quantum.Chemistry" Version="0.7.1905.3109" />
     <PackageReference Include="Microsoft.Quantum.Development.Kit" Version="0.7.1905.3109" />
   </ItemGroup>
 
