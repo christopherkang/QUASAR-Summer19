@@ -126,12 +126,6 @@ namespace ExtractTrotterGates
             set;
         }
 
-        protected ICallable<String, QVoid> MicrosoftQuantumIntrinsicMessage
-        {
-            get;
-            set;
-        }
-
         protected Release Release
         {
             get;
@@ -160,12 +154,8 @@ namespace ExtractTrotterGates
                 try
                 {
 #line 72 "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/Operations.qs"
-                    MicrosoftQuantumIntrinsicMessage.Apply("----- BEGIN ORACLE WRITE -----");
-#line 73 "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/Operations.qs"
                     oracle.Apply(register);
-#line 74 "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/Operations.qs"
-                    MicrosoftQuantumIntrinsicMessage.Apply("----- END ORACLE WRITE -----");
-#line 75 "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/Operations.qs"
+#line 73 "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/Operations.qs"
                     MicrosoftQuantumIntrinsicResetAll.Apply(register);
                 }
 #line hidden
@@ -187,10 +177,6 @@ namespace ExtractTrotterGates
                 }
             }
 
-#line 77 "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/Operations.qs"
-            MicrosoftQuantumIntrinsicMessage.Apply(String.Format("nSpinOrbitals:int:{0}", nSpinOrbitals));
-#line 78 "/Users/kang828/Documents/GitHub/QUASAR-Summer19/ExtractTrotterGates/Operations.qs"
-            MicrosoftQuantumIntrinsicMessage.Apply(String.Format("energyOffset:float:{0}", energyOffset));
 #line hidden
             return QVoid.Instance;
         }
@@ -200,7 +186,6 @@ namespace ExtractTrotterGates
         {
             this.MicrosoftQuantumChemistryJordanWignerTrotterStepOracle = this.Factory.Get<ICallable<(Microsoft.Quantum.Chemistry.JordanWigner.JordanWignerEncodingData,Double,Int64), (Int64,(Double,IUnitary))>>(typeof(Microsoft.Quantum.Chemistry.JordanWigner.TrotterStepOracle));
             this.Allocate = this.Factory.Get<Allocate>(typeof(Microsoft.Quantum.Intrinsic.Allocate));
-            this.MicrosoftQuantumIntrinsicMessage = this.Factory.Get<ICallable<String, QVoid>>(typeof(Microsoft.Quantum.Intrinsic.Message));
             this.Release = this.Factory.Get<Release>(typeof(Microsoft.Quantum.Intrinsic.Release));
             this.MicrosoftQuantumIntrinsicResetAll = this.Factory.Get<ICallable<IQArray<Qubit>, QVoid>>(typeof(Microsoft.Quantum.Intrinsic.ResetAll));
         }

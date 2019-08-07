@@ -1,0 +1,4 @@
+trotterStep:float:0.4
+trotterOrder:int:1
+nSpinOrbitals:int:8
+energyOffset:float:-1.07259043376792

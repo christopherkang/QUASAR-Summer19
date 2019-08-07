@@ -69,13 +69,9 @@ namespace ExtractTrotterGates {
         let (nQubits, (rescaleFactor, oracle)) = TrotterStepOracle(qSharpData, trotterStepSize, trotterOrder);
         
         using (register = Qubit[nQubits]) {
-            Message("----- BEGIN ORACLE WRITE -----");
             oracle(register);
-            Message("----- END ORACLE WRITE -----");
             ResetAll(register);
         }
-        Message($"nSpinOrbitals:int:{nSpinOrbitals}");
-        Message($"energyOffset:float:{energyOffset}");
     }
 }
 

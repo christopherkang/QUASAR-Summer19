@@ -38,23 +38,26 @@ namespace ExtractTrotterGates
             FermionHamiltonian sourceHamiltonian,
             QubitEncoding encoding = QubitEncoding.JordanWigner)
         {
+            var lines = new List<String>();
             foreach (var termType in sourceHamiltonian.Terms)
             {
                 foreach (var term in termType.Value)
                 {
-                    Auxiliary.ToJordanWignerPauliTerms(term.Key, termType.Key, term.Value.Value);
+                    lines.Add(Auxiliary.ToJordanWignerPauliTerms(term.Key, termType.Key, term.Value.Value));
                 }
             }
+            System.IO.File.WriteAllLines("./_temp/_FermionTerms.txt", lines);
         }
 
-        public static void ToJordanWignerPauliTerms(
+        public static String ToJordanWignerPauliTerms(
             FermionTerm fermionTerm,
             TermType.Fermion termType,
             double coeff)
         {
             var seq = fermionTerm.Sequence.Select(o => o.Index).ToArray();
-            var string_output = $"{termType.ToString()} | {String.Join(",", seq.Select(p=>p.ToString()).ToArray())} | {coeff.ToString()}";
+            var string_output = $"{termType.ToString()} | {String.Join(",", seq.Select(p => p.ToString()).ToArray())} | {coeff.ToString()}";
             Console.WriteLine(string_output);
+            return string_output;
         }
     }
 }

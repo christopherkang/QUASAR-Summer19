@@ -40,6 +40,7 @@ namespace ExtractTrotterGates
                 int trotterOrder = Int16.Parse(args[4]);
 
                 Console.WriteLine($"Extracting the YAML from {YAMLPath}");
+                System.IO.Directory.CreateDirectory("./_temp");
 
                 #endregion
 
@@ -49,23 +50,33 @@ namespace ExtractTrotterGates
                 var problem = broombridge.ProblemDescriptions.Single();
 
                 Console.WriteLine("Preparing Q# data format");
-                Auxiliary.ToQSharpFormat(problem, inputState);
+
                 var qSharpData = problem.ToQSharpFormat(inputState);
 
                 // get the spin data and state data and dump to an auxiliary file
-                var (nElectrons, trash2, stateData, trash3) = qSharpData;
+                var (nSpinOrbitals, trash2, stateData, energyOffset) = qSharpData;
                 var (intinfo, datalist) = stateData;
 
                 #endregion
 
                 #region Extract relevant gates
+                // output the Fermion interaction list
+                Console.WriteLine("----- BEGIN ORACLE WRITE -----");
+                Auxiliary.ToQSharpFormat(problem, inputState);
+                Console.WriteLine("----- END ORACLE WRITE -----");
+
                 // Begin resource estimation (extract gate information)
                 ResourcesEstimator estimator = new ResourcesEstimator();
                 TargetedGateExtraction.Run(estimator, qSharpData, trotterStepSize, trotterOrder).Wait();
-                Console.WriteLine($"trotterStep:float:{trotterStepSize}");
-                Console.WriteLine($"trotterOrder:int:{trotterOrder}");
-                Console.WriteLine($"nElectrons:int:{nElectrons}");
-                Console.WriteLine($"----- END FILE -----");
+                #endregion
+
+                #region Output constant data
+                var constants = new List<String>();
+                constants.Add($"trotterStep:float:{trotterStepSize}");
+                constants.Add($"trotterOrder:int:{trotterOrder}");
+                constants.Add($"nSpinOrbitals:int:{nSpinOrbitals}");
+                constants.Add($"energyOffset:float:{energyOffset}");
+                System.IO.File.WriteAllLines("./_temp/_constants.txt", constants);
                 #endregion
 
                 #region Obtain state information
@@ -76,8 +87,7 @@ namespace ExtractTrotterGates
                     lines.Add(term.ToString());
                 }
 
-                System.IO.Directory.CreateDirectory("./temp");
-                System.IO.File.WriteAllLines("./temp/_tempState.txt", lines);
+                System.IO.File.WriteAllLines("./_temp/_stateData.txt", lines);
                 #endregion
             }
         }
