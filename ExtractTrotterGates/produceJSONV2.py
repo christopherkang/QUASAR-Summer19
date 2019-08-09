@@ -1,34 +1,5 @@
 import argparse
 import json
-from enum import Enum
-
-
-class Constant(Enum):
-    PAULI_TO_INT = {
-        "PauliI": 0,
-        "PauliX": 1,
-        "PauliY": 2,
-        "PauliZ": 3
-    }
-
-    OPS = {
-        "Zterm": ["PauliZ"],
-        "ZZterm": ["PauliZ", "PauliZ"],
-        "PQterm+X": ["PauliX", "PauliX"],
-        "PQterm+Y": ["PauliY", "PauliY"],
-        "PQQRterm+X": ["PauliX", "PauliX"],
-        "PQQRterm+Y": ["PauliY", "PauliY"],
-        "PQQR_Parityterm+X": ["PauliX", "PauliX"],
-        "PQQR_Parityterm+Y": ["PauliY", "PauliY"],
-        "0123term+0": ["PauliX", "PauliX", "PauliX", "PauliX"],
-        "0123term+1": ["PauliX", "PauliX", "PauliY", "PauliY"],
-        "0123term+2": ["PauliX", "PauliY", "PauliX", "PauliY"],
-        "0123term+3": ["PauliY", "PauliX", "PauliX", "PauliY"],
-        "0123term+4": ["PauliY", "PauliY", "PauliY", "PauliY"],
-        "0123term+5": ["PauliY", "PauliY", "PauliX", "PauliX"],
-        "0123term+6": ["PauliY", "PauliX", "PauliY", "PauliX"],
-        "0123term+7": ["PauliX", "PauliY", "PauliY", "PauliX"]
-    }
 
 
 def parse_line(line):
