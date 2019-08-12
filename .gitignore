@@ -1,4 +1,8 @@
 .DS_Store
 .vscode/
 workspace/
-OptimizeCircuit/
+bin/
+obj/
+*.csproj
+swap/
+Interaction Samples/

@@ -36,14 +36,15 @@ namespace ImportOptimizedFermions
                     #endregion
 
                     #region Convert to Q# Format
-                    
+                    var test = Auxiliary.ProduceLowLevelTerms(output);
+                    Console.WriteLine(test);
                     #endregion
 
                     #region Simulate Optimized Fermion Terms
-                    using (var qsim = new QuantumSimulator())
-                    {
-                        HelloQ.Run(qsim).Wait();
-                    }
+                    // using (var qsim = new QuantumSimulator())
+                    // {
+                    //     HelloQ.Run(qsim).Wait();
+                    // }
                     #endregion
                 }
             }
