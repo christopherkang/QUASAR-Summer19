@@ -39,7 +39,6 @@
         // mutable energyOffset = 0.0;
         for (i in 0..Length(fermionTerms) - 1) {
             let ((idxTermType, coeff), idxFermions) = fermionTerms[i]!;
-            // Message($"{idxTermType} | {idxFermions}");
             if (idxTermType[0] == -2) {
                 // SWAP
                 ApplySWAPS(fermionTerms[i], qubits);

@@ -10,7 +10,7 @@ then
     mkdir temp
     echo Saving a temp file to $directory"/temp/_temp.txt"
     dotnet run $1 $2 $3 $4 $5 > ./temp/_temp.txt
-    python3 produceJSON.py $directory"/temp" -o extracted_terms.json
+    python3 produceJSONV2.py $directory"/_temp" -o extracted_terms.json
     echo Finished term extraction. 
     echo JSON at $directory/extracted_terms.json 
 else

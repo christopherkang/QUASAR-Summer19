@@ -9,7 +9,7 @@ import ast
 # SWAP phase: [x_1, x_2, x_3] where the data in q_1, q_2, ... moves to x_1, x_2, ...
 # Interaction phase: [(x_1, x_2), (...)] where the program instructs (x_1, x_2) to interact
 
-"""
+
 parser = argparse.ArgumentParser(
     description='Reconstruct JSON file from optimizations')
 
@@ -19,15 +19,15 @@ parser.add_argument(
 args = parser.parse_args()
 import_path = args.filepath
 optimization_path = args.optimizations
-"""
+
 
 # import term data from JSON
 # import_path = "extracted_terms.json"
 # optimization_path = "optimizations.txt"
 out_path = "reconstructed.json"
 
-import_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/OptimizeCircuit/swap/test.json"
-optimization_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/OptimizeCircuit/Interaction Samples/sample_interaction_file_7.txt"
+# import_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/OptimizeCircuit/swap/test.json"
+# optimization_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/OptimizeCircuit/Interaction Samples/sample_interaction_file_7.txt"
 
 
 # categorize the term data with collections.defaultdict
