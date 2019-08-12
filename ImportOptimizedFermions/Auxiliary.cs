@@ -12,6 +12,15 @@ namespace ImportOptimizedFermions
 {
     public static class Auxiliary
     {
+        public static PackagedHamiltonian ProduceCompleteHamiltonian(
+            JObject OptimizedHamiltonian
+            )
+        {
+            var statePrepData = PrepareStatePrepData(OptimizedHamiltonian);
+            var fermionTerms = ProduceLowLevelTerms(OptimizedHamiltonian);
+            var constantValues = PrepareConstantValues(OptimizedHamiltonian);
+            return new PackagedHamiltonian((constantValues, fermionTerms, statePrepData));
+        }
         public static QArray<GeneratorIndex> ProduceLowLevelTerms(
             JObject OptimizedHamiltonian
             )
@@ -63,8 +72,7 @@ namespace ImportOptimizedFermions
                 }
                 else if (termType == "PQQR")
                 {
-
-
+                    // Console.WriteLine("[{0}]", string.Join(", ", targets));
                     var multiplier = 1.0;
                     if (targets.First() == targets.Last())
                     {
@@ -81,6 +89,14 @@ namespace ImportOptimizedFermions
                         targets[2] = targets[1];
                         multiplier = -1.0;
                     }
+                    // FLAG - SHOULD THIS DO THIS?????????
+                    if (targets[0] > targets[3])
+                    {
+                        var lowerBound = targets[3];
+                        targets[3] = targets[0];
+                        targets[0] = lowerBound;
+                    }
+                    // Console.WriteLine("[{0}]", string.Join(", ", targets));
 
                     // add a PQQR and PQ term
                     outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { 2 }), new QArray<Double>(-0.125 * multiplier * angle)), new QArray<Int64>(targets))));
@@ -148,6 +164,34 @@ namespace ImportOptimizedFermions
             //v0123.Add(0.0);
 
             return (pqrsSorted, v0123);
+        }
+
+        public static HamiltonianConstants PrepareConstantValues(
+            JObject OptimizedHamiltonian
+            )
+        {
+            var constants = OptimizedHamiltonian["constants"];
+            var nSpinOrbitals = constants["nSpinOrbitals"].ToObject<long>();
+            var energyOffset = constants["energyOffset"].ToObject<double>();
+            var trotterStep = constants["trotterStep"].ToObject<double>();
+            var trotterOrder = constants["trotterOrder"].ToObject<long>();
+            return new HamiltonianConstants((nSpinOrbitals, energyOffset, trotterStep, trotterOrder));
+        }
+
+        public static StatePrepData PrepareStatePrepData(
+            JObject OptimizedHamiltonian
+            )
+        {
+            var stateData = OptimizedHamiltonian["statePrepData"];
+            var intConst = stateData["int"].ToObject<long>();
+            var termList = new List<JordanWignerInputState>();
+            foreach (var term in stateData["terms"]) {
+                var doublePair = term["tuple"].ToObject<double[]>();
+                var intArray = term["array"].ToObject<long[]>();
+                termList.Add(new JordanWignerInputState(((doublePair[0], doublePair[1]), new QArray<Int64>(intArray.ToArray()))));
+            }
+            var convertedTerms = new QArray<JordanWignerInputState>(termList.ToArray());
+            return new StatePrepData((intConst, convertedTerms));
         }
     }
 }

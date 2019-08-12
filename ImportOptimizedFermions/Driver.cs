@@ -36,15 +36,17 @@ namespace ImportOptimizedFermions
                     #endregion
 
                     #region Convert to Q# Format
-                    var test = Auxiliary.ProduceLowLevelTerms(output);
-                    Console.WriteLine(test);
+                    // var test = Auxiliary.ProduceLowLevelTerms(output);
+                    // Console.WriteLine(test);
+                    var data = Auxiliary.ProduceCompleteHamiltonian(output);
                     #endregion
 
                     #region Simulate Optimized Fermion Terms
-                    // using (var qsim = new QuantumSimulator())
-                    // {
-                    //     HelloQ.Run(qsim).Wait();
-                    // }
+                    using (var qsim = new QuantumSimulator())
+                    {
+                        var (energy, phase) = EstimateEnergyLevel.Run(qsim, data, 7).Result;
+                        Console.WriteLine($"energy is: {energy}");
+                    }
                     #endregion
                 }
             }
