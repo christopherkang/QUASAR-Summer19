@@ -1,12 +1,12 @@
 YAML Path: /Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.100.yaml
-Predicted energy: -1.94973090971047
-Predicted energy: -1.39749782607164
-Predicted energy: -1.39749782607164
-Predicted energy: -1.34870697558734
-Predicted energy: -1.39749782607164
-Predicted energy: -1.93161967498388
+Predicted energy: 1.16702151654512
+Predicted energy: 6.45648380790284
+Predicted energy: -6.67439173639825
+Predicted energy: 3.7929000906773
+Predicted energy: 1.27717159854485
+Predicted energy: -3.98715393075064
 Predicted energy: -1.31802735982962
-Predicted energy: -1.91350844025729
-Predicted energy: -1.31802735982962
-Predicted energy: -1.91350844025729
-Average predicted energy: -1.58856226386704
+Predicted energy: -6.61303250488282
+Predicted energy: 6.44391542687172
+Predicted energy: 3.77478885595071
+Average predicted energy: 0.43196757646312

@@ -12,6 +12,9 @@ namespace ImportOptimizedFermions
 {
     public static class Auxiliary
     {
+        // Produce the completed Hamiltonian given JSON
+        // Input: JObject containing JSON
+        // Output: Packaged Hamiltonian data
         public static PackagedHamiltonian ProduceCompleteHamiltonian(
             JObject OptimizedHamiltonian
             )
@@ -21,6 +24,11 @@ namespace ImportOptimizedFermions
             var constantValues = PrepareConstantValues(OptimizedHamiltonian);
             return new PackagedHamiltonian((constantValues, fermionTerms, statePrepData));
         }
+        
+        // Convert the JSON fermion terms into GeneratorIndex[] that can be interpreted in Q#
+        // Input: JObject containing JSON
+        // Output: QArray<GeneratorIndex>
+        // Note: Much of this code has repurposed from Chemistry/src/DataModel/Fermion/JordanWignerEncoding.cs
         public static QArray<GeneratorIndex> ProduceLowLevelTerms(
             JObject OptimizedHamiltonian
             )
@@ -121,6 +129,9 @@ namespace ImportOptimizedFermions
             }
             return new QArray<GeneratorIndex>(outData.ToArray());
         }
+
+        // Helper method for ProduceLowLevelTerms
+        // Identifies Hpqrs permutation and gives appropriate coefficients
         public static (List<long>, double[]) IdentifyHpqrsPermutation((List<long>, long[], double) term)
         {
             //We only consider permutations pqrs || psqr || prsq || qprs || spqr || prqs
@@ -166,6 +177,9 @@ namespace ImportOptimizedFermions
             return (pqrsSorted, v0123);
         }
 
+        // Extracts the constant values
+        // Input: JObject containing JSON
+        // Output: Tuple of constants (HamiltonianConstants)
         public static HamiltonianConstants PrepareConstantValues(
             JObject OptimizedHamiltonian
             )
@@ -178,6 +192,9 @@ namespace ImportOptimizedFermions
             return new HamiltonianConstants((nSpinOrbitals, energyOffset, trotterStep, trotterOrder));
         }
 
+        // Extracts state prep data
+        // Input: JObject containing JSON
+        // Output: StatePrepData format that can be used with PrepareTrialState
         public static StatePrepData PrepareStatePrepData(
             JObject OptimizedHamiltonian
             )

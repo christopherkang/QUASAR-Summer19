@@ -25,6 +25,15 @@ This folder contains a C#/Q# file to produce the necessary Trotter gates and a P
 
 This folder describes the format specification of the intermediate JSON file.
 
+### ImportOptimizedFermions
+
+Input: Optimized JSON file
+
+Output: Energy level estimates
+
+This folder contains a C#/Q# file to ingest the optimizations and produce energy level estimates from it.
+
+
 ### OptimizeCircuit
 
 Input: JSON file
