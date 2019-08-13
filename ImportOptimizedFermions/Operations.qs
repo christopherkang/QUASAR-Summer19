@@ -28,7 +28,7 @@
 
         let estPhase = EstimateEnergy(nSpinOrbitals, statePrep, oracle, phaseEstAlgorithm);
         let energyLevel = estPhase * rescaleFactor + energyOffset;
-        return (energyLevel, estPhase);
+        return (estPhase, energyLevel);
     }
 
     operation ApplyFermionTerms (fermionTerms : GeneratorIndex[], trotterStep : Double, qubits : Qubit[]) : Unit is Adj+Ctl {

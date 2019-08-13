@@ -106,7 +106,6 @@ with open(optimization_path, "r") as interaction_file:
             # parse the interactions
             # Iteration  1 : [(5, 4), (1, 2), (6, 7)]
             interaction_list = line.split(" : ")[1]
-            print(interaction_list)
             interaction_list = ast.literal_eval(interaction_list)
 
             # convert the interaction list back to spin orbital numberings
@@ -125,8 +124,6 @@ with open(optimization_path, "r") as interaction_file:
                 # pull the relevant terms
                 relevant_terms = categorized_interactions.pop(str(
                     tuple(sorted_renumbered_terms)))
-
-                print(str(tuple(sorted_renumbered_terms)))
 
                 for term in relevant_terms:
                     # relabel their targets to align with the renumbered qubits
@@ -154,7 +151,6 @@ with open(optimization_path, "r") as interaction_file:
 
             # parse the line
             swap_patterns = ast.literal_eval(line)
-            print(swap_patterns)
 
             # update the swapped qubits
             for update_pattern in swap_patterns:
@@ -175,7 +171,6 @@ with open(optimization_path, "r") as interaction_file:
 
             # ensure that all elements of the ordering are unique
             assert len(set(spin_order)) == len(spin_order)
-    print(categorized_interactions)
     while categorized_interactions:
         # get the term
         terms = categorized_interactions.popitem()[1]
@@ -185,9 +180,6 @@ with open(optimization_path, "r") as interaction_file:
                 map(lambda x: spin_order.index(x), single_body["targets"]))
 
             new_term_list.append(single_body)
-    # for k in categorized_interactions:
-    #     categorized_interactions[k]["target"]
-    #     new_term_list.extend(categorized_interactions[k])
 
 
 output_json["terms"] = new_term_list

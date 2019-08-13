@@ -1,11 +1,20 @@
-Extracting the YAML from /Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/Broombridge_v0.2/H2_sto-3g.yaml
+Extracting the YAML from /Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.100.yaml
 Input state: |E1>
 Precision: 7
 Trotter step size: 0.4
 Trotter order: 1
-Number of samples: 1
+Number of samples: 10
 Preparing Q# data format
 ----- Begin simulation -----
--1.14194136621873
+-1.91350842772663
+-1.39749782123014
+-1.39749782123014
+-1.34870697147288
+-1.39749782123014
+-1.93161966218334
+-1.31802735617233
+-1.90094004688279
+-1.31802735617233
+-1.91350842772663
 ----- End simulation -----
-Average energy estimate: -1.14194136621873
+Average energy estimate: -1.58368317120273

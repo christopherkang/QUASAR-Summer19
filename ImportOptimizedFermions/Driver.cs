@@ -42,10 +42,16 @@ namespace ImportOptimizedFermions
                     #endregion
 
                     #region Simulate Optimized Fermion Terms
-                    using (var qsim = new QuantumSimulator())
+                    using (var qsim = new QuantumSimulator(randomNumberGeneratorSeed: 42))
                     {
-                        var (energy, phase) = EstimateEnergyLevel.Run(qsim, data, 7).Result;
-                        Console.WriteLine($"energy is: {energy}");
+                        var runningSum = 0.0;
+                        for (int i = 0; i < numberOfSamples; i++)
+                        {
+                            var (phaseEst, energyEst) = EstimateEnergyLevel.Run(qsim, data, nBitsPrecision).Result;
+                            runningSum += energyEst;
+                            Console.WriteLine($"Predicted energy: {energyEst}");
+                        }
+                        Console.WriteLine($"Average predicted energy: {runningSum / (float)numberOfSamples}");
                     }
                     #endregion
                 }

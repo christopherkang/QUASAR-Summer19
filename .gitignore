@@ -6,3 +6,5 @@ obj/
 *.csproj
 swap/
 Interaction Samples/
+_temp/
+temp/

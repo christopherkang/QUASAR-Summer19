@@ -53,7 +53,7 @@ namespace ProduceSampleEnergy
                 var qSharpData = problem.ToQSharpFormat(inputState);
 
                 Console.WriteLine("----- Begin simulation -----");
-                using (var qsim = new QuantumSimulator())
+                using (var qsim = new QuantumSimulator(randomNumberGeneratorSeed: 42))
                 {
                     // HelloQ.Run(qsim).Wait();
                     var runningSum = 0.0;
