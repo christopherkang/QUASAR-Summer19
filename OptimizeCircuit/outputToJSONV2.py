@@ -141,9 +141,15 @@ with open(optimization_path, "r") as interaction_file:
             pass
         elif "Time" in line:
             pass
+        elif "Bringing" in line:
+            pass
+        elif "{" in line:
+            pass
         elif not line:
             pass
         else:
+            print(spin_order)
+
             # [(0, 1), (2, 3)]
             # input: list of tuples with two adjacent numbers describing the swaps that need to occur
             # output: update the qubit order
@@ -171,6 +177,7 @@ with open(optimization_path, "r") as interaction_file:
 
             # ensure that all elements of the ordering are unique
             assert len(set(spin_order)) == len(spin_order)
+    assert spin_order == list(range(0, number_of_qubits))
     while categorized_interactions:
         # get the term
         terms = categorized_interactions.popitem()[1]

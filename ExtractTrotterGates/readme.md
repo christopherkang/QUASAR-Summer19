@@ -2,10 +2,6 @@
 
 ## Written by Christopher Kang, Mentor Sriram Krishnamoorthy @ PNNL, Components from Microsoft's Q# Samples
 
-## Prerequisites
-
-Ensure the modified `JordanWignerEvolutionSet.qs` file has overwritten the local copy, then ensure the `MolecularHydrogen.csproj` file is pointing to the local Q# Chem library implementation.
-
 ## Usage
 
 In order to extract the Hamiltonian terms in the supported JSON format, use the `extract_gates.sh` script. This will first run Q# to obtain the gates / state prep data, then write the gates and state prep data to file. A Python script then converts this to the final JSON.
@@ -15,5 +11,4 @@ In order to extract the Hamiltonian terms in the supported JSON format, use the 
 In order to support the pipeline, a number of new components had to be written and integrated:
 
 - A modified Q#/.NET project to dump the raw gates and other metadata
-- Rewritten `JordanWignerEvolutionSet.qs` to extract the terms
-- Python file to convert the dumped information into the standardized JSON format
+- Python file (`produceJSONV2.py`) to convert the dumped information into the standardized JSON format
