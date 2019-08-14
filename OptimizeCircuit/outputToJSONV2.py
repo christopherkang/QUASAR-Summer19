@@ -17,8 +17,8 @@ parser.add_argument("filepath", help="path to input json", type=str)
 parser.add_argument(
     "optimizations", help="path to input optimizations", type=str)
 args = parser.parse_args()
-import_path = args.filepath
-optimization_path = args.optimizations
+import_json_path = args.filepath
+optimization_file_path = args.optimizations
 
 
 # import term data from JSON
@@ -42,7 +42,6 @@ def prepare_interaction_categories(file_path):
     """
     interaction_categories = collections.defaultdict(list)
     with open(file_path) as json_file:
-
         # load json file + the data terms
         data = json.load(json_file)
         terms = data["terms"]
@@ -79,117 +78,139 @@ def retrieve_auxiliary_data(file_path):
     return constants, state_prep_data
 
 
-hamiltonian_constants, state_prep_data = retrieve_auxiliary_data(import_path)
-number_of_qubits = hamiltonian_constants["nSpinOrbitals"]
+def parse_iteration_line(line_text, qubit_orbitals, categorized_interactions):
+    """Parses a line with interactions.
 
-output_json = {
-    "constants": hamiltonian_constants,
-    "statePrepData": state_prep_data
-}
+    Arguments:
+        line_text {string} -- Iteration information
+        In the form: "Iteration 1 : [(5, 4), (1, 2), (6, 7)]
+        qubit_orbitals {array of ints} -- qubit at index n has orbital {value}
+        categorized_interactions {collections defaultdict} -- categorized terms
+
+    Returns:
+        list of dicts -- array of JSON terms with renumbered targets
+    """
+    interaction_list = line_text.split(" : ")[1]
+    interaction_list = ast.literal_eval(interaction_list)
+
+    output_list_of_terms = []
+
+    # convert the interaction list back to spin orbital numberings
+    for interaction_term in interaction_list:
+        # we now have a tuple; each of these needs to be converted
+        # relabel the qubits with their spin orbitals
+        renumbered_terms = list(
+            map(lambda x: qubit_orbitals[x], interaction_term))
+
+        # pull this type of term from the categorized term list
+        sorted_renumbered_terms = renumbered_terms.copy()
+        sorted_renumbered_terms.sort()
+
+        # pull the relevant terms
+        relevant_terms = categorized_interactions.pop(str(
+            tuple(sorted_renumbered_terms)))
+
+        for term in relevant_terms:
+            # relabel their targets to align with the renumbered qubits
+            term['orbitals'] = term['targets']
+
+            # these are the new qubit targets that need to be interacted on
+            term['targets'] = list(
+                map(lambda x: qubit_orbitals.index(x), term['targets']))
+
+        return relevant_terms
 
 
-# categories + their terms
-categorized_interactions = prepare_interaction_categories(import_path)
-# print(categorized_interactions)
+def parse_swap_line(swap_pattern, spin_order):
+    # [(0, 1), (2, 3)]
+    # input: list of tuples with two adjacent numbers describing the swaps that need to occur
+    # output: update the qubit order
+    # do work on the SWAPs
 
-# go through the interactions and swaps and relabel the information
-with open(optimization_path, "r") as interaction_file:
-    # this represents the order of the original spins in the qubits
-    spin_order = list(range(0, number_of_qubits))
+    swap_terms_to_add = []
 
-    # new terms to be used
-    new_term_list = []
+    # parse the line
+    swap_patterns = ast.literal_eval(swap_pattern)
+    print(swap_patterns)
 
-    for line in interaction_file:
-        line = line.rstrip()
-        if "Iteration" in line:
-            # parse the interactions
-            # Iteration  1 : [(5, 4), (1, 2), (6, 7)]
-            interaction_list = line.split(" : ")[1]
-            interaction_list = ast.literal_eval(interaction_list)
+    # update the swapped qubits
+    for update_pattern in swap_patterns:
+        # print(update_pattern)
+        swap_template = {
+            "type": "SWAP",
+            "angle": 0,
+            "controls": [],
+            "ops": [],
+            "targets": []
+        }
+        # 4, 3, 2, 1, 0 -> want to swap 2nd, 3rd qubits (2, 1)
+        qubit1 = update_pattern[0]
+        qubit2 = update_pattern[1]
+        spin_order[qubit1], spin_order[qubit2] = spin_order[qubit2], spin_order[qubit1]
+        swap_template['targets'] = [qubit1, qubit2]
 
-            # convert the interaction list back to spin orbital numberings
-            for interaction_term in interaction_list:
-                # we now have a tuple; each of these needs to be converted
-                # we need an array where we give it a qubit id and it returns the original spin orbital
+        swap_terms_to_add.append(swap_template)
 
-                # relabel the qubits with their spin orbitals
-                renumbered_terms = list(
-                    map(lambda x: spin_order[x], interaction_term))
+    # ensure that all elements of the ordering are unique
+    assert len(set(spin_order)) == len(spin_order)
+    return swap_terms_to_add
 
-                # pull this type of term from the categorized term list
-                sorted_renumbered_terms = renumbered_terms.copy()
-                sorted_renumbered_terms.sort()
 
-                # pull the relevant terms
-                relevant_terms = categorized_interactions.pop(str(
-                    tuple(sorted_renumbered_terms)))
+def produce_json(import_path, optimization_path):
+    hamiltonian_constants, state_prep_data = retrieve_auxiliary_data(
+        import_path)
+    number_of_qubits = hamiltonian_constants["nSpinOrbitals"]
 
-                for term in relevant_terms:
-                    # relabel their targets to align with the renumbered qubits
+    output_json = {
+        "constants": hamiltonian_constants,
+        "statePrepData": state_prep_data
+    }
 
-                    # these were the original orbitals being interacted on
-                    term['orbitals'] = term['targets']
+    # categories + their terms
+    categorized_interactions = prepare_interaction_categories(import_path)
 
-                    # these are the new qubit targets that need to be interacted on
-                    term['targets'] = list(
-                        map(lambda x: spin_order.index(x), term['targets']))
+    ignore_line_symbols = ["Number", "Time", "Bringing", "{"]
 
+    # go through the interactions and swaps and relabel the information
+    with open(optimization_path, "r") as interaction_file:
+        # this represents the order of the original spins in the qubits
+        spin_order = list(range(0, number_of_qubits))
+
+        # new terms to be used
+        new_term_list = []
+
+        for line in interaction_file:
+            line = line.rstrip()
+            if "Iteration" in line:
                 # add them to our list
-                new_term_list.extend(relevant_terms)
-        elif "Number" in line:
-            pass
-        elif "Time" in line:
-            pass
-        elif "Bringing" in line:
-            pass
-        elif "{" in line:
-            pass
-        elif not line:
-            pass
-        else:
-            print(spin_order)
+                new_term_list.extend(parse_iteration_line(
+                    line, spin_order, categorized_interactions))
+            elif any(symbol in line for symbol in ignore_line_symbols):
+                pass
+            elif not line:
+                pass
+            else:
+                # print(spin_order)
+                # print(line)
+                new_term_list.extend(parse_swap_line(line, spin_order))
 
-            # [(0, 1), (2, 3)]
-            # input: list of tuples with two adjacent numbers describing the swaps that need to occur
-            # output: update the qubit order
-            # do work on the SWAPs
+        assert spin_order == list(range(0, number_of_qubits))
+        while categorized_interactions:
+            # get the term
+            terms = categorized_interactions.popitem()[1]
+            for single_body in terms:
+                # rename the qubit targets
+                single_body["targets"] = list(
+                    map(lambda x: spin_order.index(x), single_body["targets"]))
 
-            # parse the line
-            swap_patterns = ast.literal_eval(line)
+                new_term_list.append(single_body)
 
-            # update the swapped qubits
-            for update_pattern in swap_patterns:
-                swap_template = {
-                    "type": "SWAP",
-                    "angle": 0,
-                    "controls": [],
-                    "ops": [],
-                    "targets": []
-                }
-                # 4, 3, 2, 1, 0 -> want to swap 2nd, 3rd qubits (2, 1)
-                qubit1 = update_pattern[0]
-                qubit2 = update_pattern[1]
-                spin_order[qubit1], spin_order[qubit2] = spin_order[qubit2], spin_order[qubit1]
-                swap_template['targets'] = [qubit1, qubit2]
+    output_json["terms"] = new_term_list
 
-                new_term_list.append(swap_template)
-
-            # ensure that all elements of the ordering are unique
-            assert len(set(spin_order)) == len(spin_order)
-    assert spin_order == list(range(0, number_of_qubits))
-    while categorized_interactions:
-        # get the term
-        terms = categorized_interactions.popitem()[1]
-        for single_body in terms:
-            # rename the qubit targets
-            single_body["targets"] = list(
-                map(lambda x: spin_order.index(x), single_body["targets"]))
-
-            new_term_list.append(single_body)
+    return output_json
 
 
-output_json["terms"] = new_term_list
-
-with open(out_path, 'w') as out_file:
-    json.dump(output_json, out_file)
+if __name__ == "__main__":
+    final_json = produce_json(import_json_path, optimization_file_path)
+    with open(out_path, 'w') as out_file:
+        json.dump(final_json, out_file)

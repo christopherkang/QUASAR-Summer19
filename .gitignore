@@ -8,3 +8,5 @@ swap/
 Interaction Samples/
 _temp/
 temp/
+.pytest_cache/
+*.pyc
