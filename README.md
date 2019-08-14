@@ -5,14 +5,6 @@ Warning: This work may need to be kept private and/or scrubbed before use, as it
 
 ## Components
 
-### ConvertFileToGates
-
-Input: JSON file (potentially optimized)
-
-Output: Energy level estimate
-
-This C#/Q# project converts the created JSON format into an energy level estimate. In the pipeline, it is used after optimizations to produce an updated energy level estimate.
-
 ### ExtractTrotterGates
 
 Input: YAML file
@@ -32,7 +24,6 @@ Input: Optimized JSON file
 Output: Energy level estimates
 
 This folder contains a C#/Q# file to ingest the optimizations and produce energy level estimates from it.
-
 
 ### OptimizeCircuit
 
