@@ -48,9 +48,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     cd ../OptimizeCircuit/swap
 
     python3 QMap.py ../../TestPipeline/_temp/extracted_terms.json 2 1D > interaction_file.txt
+    cp interaction_file.txt ../../TestPipeline/_temp/
     # /OptimizeCircuit
     cd ..
-    python3 outputToJSONV2.py ../TestPipeline/_temp/extracted_terms.json ./swap/interaction_file.txt
+    python3 outputToJSONV2.py ../TestPipeline/_temp/extracted_terms.json ../TestPipeline/_temp/interaction_file.txt
     cp ./reconstructed.json ../TestPipeline/_temp/
     cd .. # in QUASAR
 
