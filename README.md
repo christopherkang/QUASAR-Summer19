@@ -5,7 +5,15 @@ Warning: This work may need to be kept private and/or scrubbed before use, as it
 
 ## Components
 
-### ExtractTrotterGates
+### 1ProduceSampleEnergy
+
+Input: YAML file
+
+Output: Energy level estimates
+
+This folder has a C#/Q# project which serves as the control estimates for the energy level via Trotterization. There are no additional optimizations applied, and the code is almost entirely taken from the sample provided by Microsoft.
+
+### 2ExtractTrotterGates
 
 Input: YAML file
 
@@ -13,19 +21,7 @@ Output: JSON file
 
 This folder contains a C#/Q# file to produce the necessary Trotter gates and a Python script to convert the output to JSON (`produceJSON.py`). See the `README.md` for requirements.
 
-### Format
-
-This folder describes the format specification of the intermediate JSON file.
-
-### ImportOptimizedFermions
-
-Input: Optimized JSON file
-
-Output: Energy level estimates
-
-This folder contains a C#/Q# file to ingest the optimizations and produce energy level estimates from it.
-
-### OptimizeCircuit
+### 3OptimizeCircuit
 
 Input: JSON file
 
@@ -33,13 +29,17 @@ Output: JSON file
 
 This folder applies a variety of optimizations onto the Trotter gate set. These optimizations may be described in Khan, et. al.
 
-### ProduceSampleEnergy
+### 4ImportOptimizedFermions
 
-Input: YAML file
+Input: Optimized JSON file
 
 Output: Energy level estimates
 
-This folder has a C#/Q# project which serves as the control estimates for the energy level via Trotterization. There are no additional optimizations applied, and the code is almost entirely taken from the sample provided by Microsoft.
+This folder contains a C#/Q# file to ingest the optimizations and produce energy level estimates from it.
+
+### Format
+
+This folder describes the format specification of the intermediate JSON file.
 
 ### TestPipeline
 
