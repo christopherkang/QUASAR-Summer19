@@ -69,7 +69,8 @@ namespace ProduceSampleEnergy
 
                 ResourcesEstimator estimator = new ResourcesEstimator();
                 GetEnergyByTrotterization.Run(estimator, qSharpData, nBitsPrecision, trotterStepSize, trotterOrder).Wait();
-                System.IO.File.WriteAllLines("./temp/_costEstimate.txt", new []{estimator.ToTSV()});
+                System.IO.Directory.CreateDirectory("_temp");
+                System.IO.File.WriteAllLines("./_temp/_costEstimate.txt", new []{estimator.ToTSV()});
             }
         }
     }
