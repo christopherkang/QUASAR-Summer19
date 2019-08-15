@@ -27,7 +27,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     mkdir "_temp"
 
     # ----- STEP 1 - Produce a sample energy estimate
-    cd ../ProduceSampleEnergy
+    cd ../1ProduceSampleEnergy
 
     # arguments: path, state label, precision, step size, order, number of samples
     echo "RUNNING: dotnet run $CMD_ARGS $SAMPLE_SIZE >./_temp/_sampled_reference_energy.txt"
@@ -36,20 +36,20 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
     # ----- STEP 2 - Produce the JSON file
     echo "RUNNING: ./extract_gates.sh $CMD_ARGS"
-    cd ../ExtractTrotterGates
+    cd ../2ExtractTrotterGates
     ./extract_gates.sh $CMD_ARGS
     cd ../TestPipeline
     echo "MOVING FILES TO ./_test/"
     echo $(pwd)
-    cp ../ExtractTrotterGates/extracted_terms.json ./_temp/
+    cp ../2ExtractTrotterGates/extracted_terms.json ./_temp/
 
     # ----- STEP 3 - (optional) Process the terms
     echo "Begin processing terms"
-    cd ../OptimizeCircuit/swap
+    cd ../3OptimizeCircuit/swap
 
     python3 QMap.py ../../TestPipeline/_temp/extracted_terms.json 2 1D > interaction_file.txt
     cp interaction_file.txt ../../TestPipeline/_temp/
-    # /OptimizeCircuit
+    # /3OptimizeCircuit
     cd ..
     python3 outputToJSONV2.py ../TestPipeline/_temp/extracted_terms.json ../TestPipeline/_temp/interaction_file.txt
     cp ./reconstructed.json ../TestPipeline/_temp/
@@ -57,7 +57,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
     # ----- STEP 4 - Ingest the JSON file
     echo "Begin ingesting the JSON file"
-    cd ./ImportOptimizedFermions 
+    cd ./4ImportOptimizedFermions 
     echo "YAML Path: $YAML_PATH" > ../TestPipeline/_temp/_sampled_optimized_energy.txt
     echo "RUNNING: dotnet run ./extracted_terms.json $SAMPLE_SIZE >./_temp/_sampled_optimized_energy.txt"
     dotnet run ../TestPipeline/_temp/reconstructed.json $SAMPLE_SIZE $PRECISION >>../TestPipeline/_temp/_sampled_optimized_energy.txt
