@@ -1,3 +1,0 @@
-trotterStep:float:0.4
-trotterOrder:int:1
-nElectrons:int:8

@@ -1,6 +1,6 @@
 .DS_Store
 .vscode/
-workspace/
+.workspace/
 bin/
 obj/
 *.csproj
@@ -10,3 +10,4 @@ _temp/
 temp/
 .pytest_cache/
 *.pyc
+__pycache__

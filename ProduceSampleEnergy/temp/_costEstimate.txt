@@ -1,9 +1,0 @@
-Metric         	Sum            
-CNOT           	2638976
-QubitClifford  	1494076
-R              	572764
-Measure        	321
-T              	0
-Depth          	0
-Width          	9
-BorrowedWidth  	0
