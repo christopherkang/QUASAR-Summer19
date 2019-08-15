@@ -25,6 +25,7 @@ def test_check_max_inputs():
 
 
 def _verify_swap_pattern(path_to_check):
+    # helper method
     ignore_line_symbols = ["Number", "Time", "Bringing", "{", "Iteration"]
     number_of_qubits = 8
     order = auxiliary.SpinOrder(number_of_qubits)
@@ -42,5 +43,22 @@ def _verify_swap_pattern(path_to_check):
 
 
 def test_verify_swap_pattern():
+    # Verify that the SWAPs eventually yield 0, 1, 2, ...
     path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/UnitTests/test2.txt"
     _verify_swap_pattern(path_to_check)
+
+
+def test_swap_directly():
+    # Verify that the swaps made by outputToJSONV2 are correct
+    path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/UnitTests/verify.txt"
+    order = auxiliary.SpinOrder(8)
+    with open(path_to_check) as f:
+        isAssert = True
+        for line in f:
+            line = line.rstrip()
+            if isAssert:
+                assert order.return_order() == ast.literal_eval(line)
+                print(line)
+            else:
+                print(order.update(ast.literal_eval(line)))
+            isAssert = not isAssert

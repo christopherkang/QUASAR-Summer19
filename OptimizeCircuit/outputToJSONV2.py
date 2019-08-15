@@ -131,7 +131,6 @@ def parse_swap_line(swap_pattern, spin_order):
 
     # parse the line
     swap_patterns = ast.literal_eval(swap_pattern)
-    print(swap_patterns)
 
     # update the swapped qubits
     for update_pattern in swap_patterns:
@@ -156,7 +155,7 @@ def parse_swap_line(swap_pattern, spin_order):
     return swap_terms_to_add
 
 
-def produce_json(import_path, optimization_path):
+def produce_json(import_path, optimization_path, print_swaps=False, print_spin_order=False):
     hamiltonian_constants, state_prep_data = retrieve_auxiliary_data(
         import_path)
     number_of_qubits = hamiltonian_constants["nSpinOrbitals"]
@@ -190,8 +189,10 @@ def produce_json(import_path, optimization_path):
             elif not line:
                 pass
             else:
-                # print(spin_order)
-                # print(line)
+                if print_spin_order:
+                    print(spin_order)
+                if print_swaps:
+                    print(line)
                 new_term_list.extend(parse_swap_line(line, spin_order))
 
         assert spin_order == list(range(0, number_of_qubits))
@@ -211,6 +212,7 @@ def produce_json(import_path, optimization_path):
 
 
 if __name__ == "__main__":
-    final_json = produce_json(import_json_path, optimization_file_path)
+    final_json = produce_json(
+        import_json_path, optimization_file_path, print_swaps=True, print_spin_order=True)
     with open(out_path, 'w') as out_file:
         json.dump(final_json, out_file)
