@@ -213,6 +213,6 @@ def produce_json(import_path, optimization_path, print_swaps=False, print_spin_o
 
 if __name__ == "__main__":
     final_json = produce_json(
-        import_json_path, optimization_file_path, print_swaps=True, print_spin_order=True)
+        import_json_path, optimization_file_path, print_swaps=False, print_spin_order=False)
     with open(out_path, 'w') as out_file:
         json.dump(final_json, out_file)

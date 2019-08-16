@@ -39,7 +39,7 @@ def parse_line(line):
     out_dict["angle"] = float(line_terms[2])
 
     # the number of operations should match the number of target and parity qubits
-    print(f"{out_dict['type']} | {out_dict['ops']} | {out_dict['targets']}")
+    # print(f"{out_dict['type']} | {out_dict['ops']} | {out_dict['targets']}")
     return out_dict
 
 
@@ -66,19 +66,17 @@ if args.outpath:
     assert len(args.outpath) > 5, "Must have a named file"
     outpath = args.outpath
 
-print(f"Outputting file to {outpath}")
-
 # parse the fermion term file
 with open(path + "/_FermionTerms.txt") as f:
     for line in f:
-        print(line)
+        # print(line)
         terms.append(parse_line(line.rstrip()))
 
 # parse the constants data file
 with open(path + "/_constants.txt") as f:
     for line in f:
         keyValuePair = line.rstrip().split(":")
-        print(keyValuePair)
+        # print(keyValuePair)
         constants[keyValuePair[0]] = eval(
             keyValuePair[1] + f"({keyValuePair[2]})")
 

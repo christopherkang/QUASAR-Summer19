@@ -38,8 +38,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
     cd ../2ExtractTrotterGates
     mkdir _temp
-    dotnet run $CMD_ARGS > ./_temp/_temp.txt
-    python3 produceJSONV2.py /_temp -o extracted_terms.json
+    dotnet run $CMD_ARGS > ./_temp/log.txt
+    python3 produceJSONV2.py ./_temp -o extracted_terms.json
     cp extracted_terms.json ../TestPipeline/_temp
     echo Finished term extraction.
     echo JSON at $directory/extracted_terms.json 

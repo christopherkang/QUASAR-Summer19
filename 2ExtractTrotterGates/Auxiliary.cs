@@ -56,7 +56,7 @@ namespace ExtractTrotterGates
         {
             var seq = fermionTerm.Sequence.Select(o => o.Index).ToArray();
             var string_output = $"{termType.ToString()} | {String.Join(",", seq.Select(p => p.ToString()).ToArray())} | {coeff.ToString()}";
-            Console.WriteLine(string_output);
+            // Console.WriteLine(string_output);
             return string_output;
         }
     }

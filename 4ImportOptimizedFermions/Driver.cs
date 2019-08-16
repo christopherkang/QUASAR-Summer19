@@ -54,6 +54,13 @@ namespace ImportOptimizedFermions
                         Console.WriteLine($"Average predicted energy: {runningSum / (float)numberOfSamples}");
                     }
                     #endregion
+
+                    #region Produce Cost Estimates
+                    ResourcesEstimator estimator = new ResourcesEstimator();
+                    EstimateEnergyLevel.Run(estimator, data, nBitsPrecision).Wait();
+                    System.IO.Directory.CreateDirectory("_temp");
+                    System.IO.File.WriteAllLines("./_temp/_costEstimate.txt", new []{estimator.ToTSV()});
+                    #endregion
                 }
             }
 
