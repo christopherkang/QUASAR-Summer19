@@ -16,9 +16,11 @@ SAMPLE_SIZE="1"
 
 CMD_ARGS="$YAML_PATH $INPUT_STATE $PRECISION $TROTTER_STEP $TROTTER_ORDER"
 
+echo
 echo "Reading YAML at $YAML_PATH and state $INPUT_STATE"
-echo "Using $PRECISION bits of precision, stepsize=$TROTTER_STEP, order=$TROTTER_ORDER"
+echo "Using $PRECISION bits of precision, stepSize=$TROTTER_STEP, order=$TROTTER_ORDER"
 echo "Sample size = $SAMPLE_SIZE"
+echo
 read -p "Confirm? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
@@ -31,10 +33,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
     # arguments: path, state label, precision, step size, order, number of samples
     echo "RUNNING: dotnet run $CMD_ARGS $SAMPLE_SIZE >./_temp/_sampled_reference_energy.txt"
+    echo
     dotnet run $CMD_ARGS $SAMPLE_SIZE >../TestPipeline/_temp/_sampled_reference_energy.txt
 
     # ----- STEP 2 - Produce the JSON file
     echo "RUNNING: ./extract_gates.sh $CMD_ARGS"
+    echo
 
     cd ../2ExtractTrotterGates
     mkdir _temp
@@ -43,9 +47,11 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     cp extracted_terms.json ../TestPipeline/_temp
     echo Finished term extraction.
     echo JSON at $directory/extracted_terms.json 
+    echo
 
     # ----- STEP 3 - (optional) Process the terms
-    echo "Begin processing terms"
+    echo "RUNNING: Python optimization script"
+    echo
     cd ../3OptimizeCircuit/swap
 
     python3 QMap.py ../../TestPipeline/_temp/extracted_terms.json 2 1D > interaction_file.txt
@@ -59,7 +65,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     # in QUASAR
 
     # ----- STEP 4 - Ingest the JSON file
-    echo "Begin ingesting the JSON file"
+    echo "RUNNING: JSON ingestion"
+    echo
     cd ./4ImportOptimizedFermions 
     echo "YAML Path: $YAML_PATH" > ../TestPipeline/_temp/_sampled_optimized_energy.txt
     echo "RUNNING: dotnet run ./extracted_terms.json $SAMPLE_SIZE >./_temp/_sampled_optimized_energy.txt"

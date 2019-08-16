@@ -66,8 +66,9 @@ namespace ExtractTrotterGates
                 Console.WriteLine("----- END ORACLE WRITE -----");
 
                 // Begin resource estimation (extract gate information)
-                ResourcesEstimator estimator = new ResourcesEstimator();
-                TargetedGateExtraction.Run(estimator, qSharpData, trotterStepSize, trotterOrder).Wait();
+                // ResourcesEstimator estimator = new ResourcesEstimator();
+                // TargetedGateExtraction.Run(estimator, qSharpData, trotterStepSize, trotterOrder).Wait();
+                // GetEnergyByTrotterization.Run(estimator, nBitsPrecision, qSharpData, trotterStepSize, trotterOrder).Wait();
                 #endregion
 
                 #region Output constant data
