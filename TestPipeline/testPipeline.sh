@@ -69,8 +69,11 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo
     cd ./4ImportOptimizedFermions 
     echo "YAML Path: $YAML_PATH" > ../TestPipeline/_temp/_sampled_optimized_energy.txt
-    echo "RUNNING: dotnet run ./extracted_terms.json $SAMPLE_SIZE >./_temp/_sampled_optimized_energy.txt"
+    echo "RUNNING: dotnet run ./reconstructed.json $SAMPLE_SIZE >./_temp/_sampled_optimized_energy.txt"
     dotnet run ../TestPipeline/_temp/reconstructed.json $SAMPLE_SIZE $PRECISION >>../TestPipeline/_temp/_sampled_optimized_energy.txt
+    echo
+
+    echo "Finished - See _temp for outputs."
 else
     echo Exiting from user cancellation.
 fi
