@@ -6,7 +6,7 @@ obj/
 *.csproj
 swap/
 Interaction Samples/
-_temp/
+_temp*/
 temp/
 .pytest_cache/
 *.pyc

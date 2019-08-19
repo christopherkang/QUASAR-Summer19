@@ -105,10 +105,14 @@ def parse_iteration_line(line_text, qubit_orbitals, categorized_interactions):
         # pull this type of term from the categorized term list
         sorted_renumbered_terms = renumbered_terms.copy()
         sorted_renumbered_terms.sort()
+        print(sorted_renumbered_terms)
 
         # pull the relevant terms
         relevant_terms = categorized_interactions.pop(str(
             tuple(sorted_renumbered_terms)))
+
+        # we are extracting lists
+        # assert len(relevant_terms) < 2, "test"
 
         for term in relevant_terms:
             # relabel their targets to align with the renumbered qubits
