@@ -17,3 +17,4 @@ while True:
         swap_list = input("swaps? ")
         swap_list = ast.literal_eval(swap_list)
         print(f"New order: {spin_order.update(swap_list)}")
+        print()

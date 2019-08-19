@@ -40,6 +40,7 @@
         // for each fermion
         for (i in 0..Length(fermionTerms) - 1) {
             let ((idxTermType, coeff), idxFermions) = fermionTerms[i]!;
+            // Message($"{idxTermType}, {coeff}, {idxFermions}");
             if (idxTermType[0] == -2) {
                 // SWAP
                 ApplySWAPS(fermionTerms[i], qubits);

@@ -42,11 +42,13 @@ namespace ImportOptimizedFermions
                 var angle = term["angle"].ToObject<double>();
                 if (termType == "Identity")
                 {
+                    // add an Identity
                     outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { -1 }), new QArray<Double>(angle)), new QArray<Int64>(targets))));
 
                 }
                 else if (termType == "SWAP")
                 {
+                    // add a SWAP
                     outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { -2 }), new QArray<Double>(-1.0)), new QArray<Int64>(targets))));
                 }
 

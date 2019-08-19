@@ -44,13 +44,17 @@ def _verify_swap_pattern(path_to_check):
 
 def test_verify_swap_pattern():
     # Verify that the SWAPs eventually yield 0, 1, 2, ...
-    path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/UnitTests/test2.txt"
+    path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/UnitTests/debug.txt"
     _verify_swap_pattern(path_to_check)
 
 
 def test_swap_directly():
     # Verify that the swaps made by outputToJSONV2 are correct
-    path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/UnitTests/verify.txt"
+    # assumes of input format of
+    # [spin positions]
+    # (swaps)
+    # ...
+    path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/UnitTests/debug.txt"
     order = auxiliary.SpinOrder(8)
     with open(path_to_check) as f:
         isAssert = True
