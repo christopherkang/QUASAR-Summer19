@@ -61,6 +61,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     python3 outputToJSONV2.py ../TestPipeline/_temp/extracted_terms.json ../TestPipeline/_temp/interaction_file.txt
     cp ./reconstructed.json ../TestPipeline/_temp/
 
+    python3 produce_rounds.py ../TestPipeline/_temp/reconstructed.json
+    cp ./rounds.json ../TestPipeline/_temp
+
     cd .. 
     # in QUASAR
 

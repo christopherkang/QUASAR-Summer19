@@ -55,7 +55,6 @@ def prepare_interaction_categories(file_path):
             # the id will be the str / tuple version of the array
             # FLAG - changed to str / tuple / set; originally was str / tuple
             target_id = str(tuple(set(targets)))
-            # print(term_data["targets"])
 
             # flag - will this consider [1, 2] and [2, 1] as the same? let's have it autosort for the EXP
             interaction_categories[target_id].append(term_data)
@@ -93,6 +92,8 @@ def parse_iteration_line(line_text, qubit_orbitals, categorized_interactions):
     interaction_list = line_text.split(" : ")[1]
     interaction_list = ast.literal_eval(interaction_list)
 
+    terms_to_keep = []
+
     # convert the interaction list back to spin orbital numberings
     for interaction_term in interaction_list:
         # we now have a tuple; each of these needs to be converted
@@ -103,7 +104,6 @@ def parse_iteration_line(line_text, qubit_orbitals, categorized_interactions):
         # pull this type of term from the categorized term list
         sorted_renumbered_terms = renumbered_terms.copy()
         sorted_renumbered_terms.sort()
-        print(sorted_renumbered_terms)
 
         # pull the relevant terms
         relevant_terms = categorized_interactions.pop(str(
@@ -120,7 +120,9 @@ def parse_iteration_line(line_text, qubit_orbitals, categorized_interactions):
             term['targets'] = list(
                 map(lambda x: qubit_orbitals.index(x), term['targets']))
 
-        return relevant_terms
+        terms_to_keep.extend(relevant_terms)
+
+    return terms_to_keep
 
 
 def parse_swap_line(swap_pattern, spin_order):
@@ -136,7 +138,6 @@ def parse_swap_line(swap_pattern, spin_order):
 
     # update the swapped qubits
     for update_pattern in swap_patterns:
-        # print(update_pattern)
         swap_template = {
             "type": "SWAP",
             "angle": 0,
