@@ -37,9 +37,12 @@ namespace ImportOptimizedFermions
             var outData = new List<GeneratorIndex>();
             foreach (var term in termList)
             {
+                // extract relevant information
                 var targets = term["targets"].ToObject<long[]>();
                 var termType = term["type"].ToObject<string>();
                 var angle = term["angle"].ToObject<double>();
+
+                // decide on how to split the term based on its type
                 if (termType == "Identity")
                 {
                     // add an Identity

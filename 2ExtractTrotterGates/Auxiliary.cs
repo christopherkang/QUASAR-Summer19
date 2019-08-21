@@ -20,6 +20,9 @@ namespace ExtractTrotterGates
 {
     public static class Auxiliary
     {
+        // Takes in a standard Q# format and outputs interpretable data to text
+        // Input: Problem, state, indexConvention (default), qubitEncoding (default)
+        // Output: No output, see ToPauliHamiltonian for generated filed
         public static void ToQSharpFormat(
             ProblemDescription problem,
             string state = "",
@@ -34,6 +37,9 @@ namespace ExtractTrotterGates
             Auxiliary.ToPauliHamiltonian(fermionHamiltonian, qubitEncoding);
         }
 
+        // Creates the file with fermion terms
+        // Input: FermionHamiltonian, encoding type (default)
+        // Output: Writes the fermion terms to a file
         public static void ToPauliHamiltonian(
             FermionHamiltonian sourceHamiltonian,
             QubitEncoding encoding = QubitEncoding.JordanWigner)
@@ -48,6 +54,10 @@ namespace ExtractTrotterGates
             }
             System.IO.File.WriteAllLines("./_temp/_FermionTerms.txt", lines);
         }
+
+        // Extracts the JW terms from the Hamiltonian
+        // Input: Individual fermionTerm, type of the term, coefficient
+        // Output: String describing the term information
 
         public static String ToJordanWignerPauliTerms(
             FermionTerm fermionTerm,

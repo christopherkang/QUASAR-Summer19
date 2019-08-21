@@ -18,16 +18,21 @@ namespace ImportOptimizedFermions
             }
             else
             {
+                // Extract important command line arguments
                 string JSONPath = args[0];
                 int numberOfSamples = Int16.Parse(args[1]);
                 var nBitsPrecision = Int64.Parse(args[2]);
+
                 if (File.Exists(JSONPath))
                 {
                     #region Extract Fermion Terms
                     string raw_JSON = System.IO.File.ReadAllText(JSONPath);
                     var output = JObject.Parse(raw_JSON);
+
+                    // get the constants specifically
                     var constants = output["constants"];
 
+                    // get important constants
                     float trotterStepSize = (float)constants["trotterStep"];
                     double rescaleFactor = 1.0 / trotterStepSize;
                     float energyOffset = (float)constants["energyOffset"];
@@ -44,13 +49,18 @@ namespace ImportOptimizedFermions
                     #region Simulate Optimized Fermion Terms
                     using (var qsim = new QuantumSimulator(randomNumberGeneratorSeed: 42))
                     {
+                        // keep track of the running total of the energy to produce the average energy amount
                         var runningSum = 0.0;
+
+                        // iterate over the sample size
                         for (int i = 0; i < numberOfSamples; i++)
                         {
                             var (phaseEst, energyEst) = EstimateEnergyLevel.Run(qsim, data, nBitsPrecision).Result;
                             runningSum += energyEst;
                             Console.WriteLine($"Predicted energy: {energyEst}");
                         }
+
+                        // Output to stdout
                         Console.WriteLine($"Average predicted energy: {runningSum / (float)numberOfSamples}");
                     }
                     #endregion

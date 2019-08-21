@@ -93,8 +93,6 @@ def parse_iteration_line(line_text, qubit_orbitals, categorized_interactions):
     interaction_list = line_text.split(" : ")[1]
     interaction_list = ast.literal_eval(interaction_list)
 
-    output_list_of_terms = []
-
     # convert the interaction list back to spin orbital numberings
     for interaction_term in interaction_list:
         # we now have a tuple; each of these needs to be converted
@@ -144,13 +142,19 @@ def parse_swap_line(swap_pattern, spin_order):
             "angle": 0,
             "controls": [],
             "ops": [],
-            "targets": []
+            "targets": [],
+            "orbitals": []
         }
         # 4, 3, 2, 1, 0 -> want to swap 2nd, 3rd qubits (2, 1)
         qubit1 = update_pattern[0]
         qubit2 = update_pattern[1]
         spin_order[qubit1], spin_order[qubit2] = spin_order[qubit2], spin_order[qubit1]
         swap_template['targets'] = [qubit1, qubit2]
+
+        sorted_orbitals = [spin_order[qubit1], spin_order[qubit2]]
+        sorted_orbitals.sort()
+
+        swap_template['orbitals'] = sorted_orbitals
 
         swap_terms_to_add.append(swap_template)
 
@@ -204,6 +208,8 @@ def produce_json(import_path, optimization_path, print_swaps=False, print_spin_o
             # get the term
             terms = categorized_interactions.popitem()[1]
             for single_body in terms:
+                single_body["orbitals"] = single_body["targets"]
+
                 # rename the qubit targets
                 single_body["targets"] = list(
                     map(lambda x: spin_order.index(x), single_body["targets"]))

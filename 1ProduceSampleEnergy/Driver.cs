@@ -9,6 +9,7 @@ using System.Linq;
 
 using Microsoft.Quantum.Simulation.Core;
 using Microsoft.Quantum.Simulation.Simulators;
+using Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators;
 
 namespace ProduceSampleEnergy
 {
@@ -17,12 +18,12 @@ namespace ProduceSampleEnergy
         static void Main(string[] args)
         {
             // This is the name of the file we want to load
-            if (args.Length < 6) 
+            if (args.Length < 6)
             {
                 Console.WriteLine("Too few parameters provided!");
                 Console.WriteLine("Must provide the path to the YAML, input state label, precision, step size, trotter order, and sample size");
             }
-            else 
+            else
             {
                 string YAMLPath = args[0];
                 string inputState = $"|{args[1]}>";

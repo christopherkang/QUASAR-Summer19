@@ -46,8 +46,8 @@ with open(path) as f:
         gate_info = term_data[gate_index]
         term_name = gate_info["type"]
         angle = gate_info["angle"]
-        ops = gate_info["ops"]
         targets = gate_info["targets"]
+        orbitals = gate_info["orbitals"]
 
         # need to check if the target qubit has already been occupied
         if set(targets).intersection(occupied_qubits):
@@ -78,10 +78,10 @@ with open(path) as f:
             qubit_info = {
                 "type": term_name,
                 "targets": targets,
-                "op": ops[qubit_id],
                 "angle": angle,
                 "gate_id": gate_index,
-                "qubit_id": targets[qubit_id]
+                "qubit_id": targets[qubit_id],
+                "orbitals": orbitals
             }
 
             # add it to the dict to be sent out
