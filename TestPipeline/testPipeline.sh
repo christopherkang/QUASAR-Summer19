@@ -3,8 +3,8 @@
 # Assumptions - placed in cloned Github directory with file structure intact
 
 # STEP 0 - Setup
-YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.100.yaml"
-# YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/Broombridge_v0.2/H2_sto-3g.yaml"
+# YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.100.yaml"
+YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/Broombridge_v0.2/H2_sto-3g.yaml"
 INPUT_STATE="E1"
 PRECISION="7"
 TROTTER_STEP="0.4"
@@ -24,6 +24,17 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "Abbreviated prompts enabled."
     # do dangerous stuff
     mkdir "_temp"
+
+
+    # add a parameter logfile
+    echo "Parameters Logfile" > ./_temp/logfile.txt
+    echo "YAML: $YAML_PATH" >> ./_temp/logfile.txt
+    echo "Input state: $INPUT_STATE" >> ./_temp/logfile.txt
+    echo "Precision: $PRECISION" >> ./_temp/logfile.txt
+    echo "Trotter_step: $TROTTER_STEP" >> ./_temp/logfile.txt
+    echo "Trotter_order: $TROTTER_ORDER" >> ./_temp/logfile.txt
+    echo "Sample_size: $SAMPLE_SIZE" >> ./_temp/logfile.txt
+    echo "Run time: `date`" >> ./_temp/logfile.txt
 
     # ----- STEP 1 - Produce a sample energy estimate
     cd ../1ProduceSampleEnergy

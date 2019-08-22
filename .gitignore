@@ -11,3 +11,4 @@ temp/
 .pytest_cache/
 *.pyc
 __pycache__
+_data*/
