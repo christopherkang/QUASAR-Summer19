@@ -4,12 +4,13 @@
 
 # STEP 0 - Setup
 # YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.100.yaml"
-YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/Broombridge_v0.2/H2_sto-3g.yaml"
+# YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/Broombridge_v0.2/H2_sto-3g.yaml"
+YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/LiH+_FCI_sto_3g/lih_sto-3g_fci_doublet.yaml"
 INPUT_STATE="E1"
 PRECISION="7"
 TROTTER_STEP="0.4"
 TROTTER_ORDER="1"
-SAMPLE_SIZE="0"
+SAMPLE_SIZE="10"
 
 CMD_ARGS="$YAML_PATH $INPUT_STATE $PRECISION $TROTTER_STEP $TROTTER_ORDER"
 
