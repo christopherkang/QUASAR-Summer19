@@ -9,7 +9,7 @@ INPUT_STATE="E1"
 PRECISION="7"
 TROTTER_STEP="0.4"
 TROTTER_ORDER="1"
-SAMPLE_SIZE="100"
+SAMPLE_SIZE="0"
 
 CMD_ARGS="$YAML_PATH $INPUT_STATE $PRECISION $TROTTER_STEP $TROTTER_ORDER"
 
@@ -43,7 +43,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "RUNNING: dotnet run $CMD_ARGS $SAMPLE_SIZE >./_temp/_sampled_reference_energy.txt"
     echo
     dotnet run $CMD_ARGS $SAMPLE_SIZE >../TestPipeline/_temp/_sampled_reference_energy.txt
-    cp ./_costEstimate.txt ../TestPipeline/_temp
+    cp ./_temp/_costEstimateReference.txt ../TestPipeline/_temp
 
     # ----- STEP 2 - Produce the JSON file
     echo "RUNNING: ./extract_gates.sh $CMD_ARGS"
@@ -85,9 +85,9 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     dotnet run ../TestPipeline/_temp/reconstructed.json $SAMPLE_SIZE $PRECISION >>../TestPipeline/_temp/_sampled_optimized_energy.txt
     echo
 
-    cp ./_costEstimate.txt ../TestPipeline/_temp
+    cp ./_temp/_costEstimateOptimized.txt ../TestPipeline/_temp
 
     echo "Finished - See _temp for outputs."
 else
-    echo Exiting from user cancellation.
+    echo "Exiting from user cancellation."
 fi
