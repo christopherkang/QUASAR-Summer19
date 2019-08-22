@@ -43,6 +43,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "RUNNING: dotnet run $CMD_ARGS $SAMPLE_SIZE >./_temp/_sampled_reference_energy.txt"
     echo
     dotnet run $CMD_ARGS $SAMPLE_SIZE >../TestPipeline/_temp/_sampled_reference_energy.txt
+    cp ./_costEstimate.txt ../TestPipeline/_temp
 
     # ----- STEP 2 - Produce the JSON file
     echo "RUNNING: ./extract_gates.sh $CMD_ARGS"
@@ -83,6 +84,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "RUNNING: dotnet run ./reconstructed.json $SAMPLE_SIZE >./_temp/_sampled_optimized_energy.txt"
     dotnet run ../TestPipeline/_temp/reconstructed.json $SAMPLE_SIZE $PRECISION >>../TestPipeline/_temp/_sampled_optimized_energy.txt
     echo
+
+    cp ./_costEstimate.txt ../TestPipeline/_temp
 
     echo "Finished - See _temp for outputs."
 else
