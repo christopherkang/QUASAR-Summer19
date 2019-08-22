@@ -2,6 +2,17 @@
 import json
 
 
+def _equal_ignore_order(a, b):
+    """ Use only when elements are neither hashable nor sortable! """
+    unmatched = b
+    for element in a:
+        try:
+            unmatched.remove(element)
+        except ValueError:
+            return False
+    return not unmatched
+
+
 def test_input_json_matches_optimized():
     input_json_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_temp/extracted_terms.json"
     optimized_json_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_temp/reconstructed.json"
@@ -23,15 +34,18 @@ def test_input_json_matches_optimized():
 
     non_trivial_term_count = 0
 
+    non_trivial_term_list = []
+
     for term in optimized_terms:
         if term["type"] == "SWAP":
             pass
         else:
             non_trivial_term_count += 1
+            non_trivial_term_list.append(term)
 
     assert len(input_terms) == non_trivial_term_count, "# of terms do not match"
 
-    # assert not input_terms, "Mismatch between input and optimized terms"
+    assert _equal_ignore_order(input_terms, non_trivial_term_list)
 
     input_json_file.close()
     optimized_json_file.close()
