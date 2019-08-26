@@ -40,7 +40,6 @@
         let oracle = ApplyFermionTerms(fermionTerms, trotterStep, _);
         using (register = Qubit[nSpinOrbitals]) {
             oracle(register);
-            ResetAll(register);
         }
     }
 

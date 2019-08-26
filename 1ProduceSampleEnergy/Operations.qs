@@ -48,8 +48,6 @@
 
             // apply oracle
             oracle(register);
-
-            ResetAll(register);
         }
     }
 }
