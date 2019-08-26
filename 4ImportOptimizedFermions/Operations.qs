@@ -31,6 +31,19 @@
         return (estPhase, energyLevel);
     }
 
+    operation ApplyTrotterOracleOnce(data : PackagedHamiltonian) : Unit {
+        // Apply the Trotter oracle once for resource estimation
+        let (constants, fermionTerms, statePrepData) = data!;
+        let (nSpinOrbitals, energyOffset, trotterStep, trotterOrder) = constants!;
+
+        // prep and apply oracle
+        let oracle = ApplyFermionTerms(fermionTerms, trotterStep, _);
+        using (register = Qubit[nSpinOrbitals]) {
+            oracle(register);
+            ResetAll(register);
+        }
+    }
+
     // Apply fermion terms described in an array
     // Input: GeneratorIndex[] - array of terms + SWAPS to apply
     // trotterStep - step size to use 

@@ -56,7 +56,6 @@ def prepare_interaction_categories(file_path):
             # FLAG - changed to str / tuple / set; originally was str / tuple
             target_id = str(tuple(set(targets)))
 
-            # flag - will this consider [1, 2] and [2, 1] as the same? let's have it autosort for the EXP
             interaction_categories[target_id].append(term_data)
     return interaction_categories
 
@@ -96,6 +95,7 @@ def parse_iteration_line(line_text, qubit_orbitals, categorized_interactions):
 
     # convert the interaction list back to spin orbital numberings
     for interaction_term in interaction_list:
+        print(interaction_term)
         # we now have a tuple; each of these needs to be converted
         # relabel the qubits with their spin orbitals
         renumbered_terms = list(
@@ -188,7 +188,9 @@ def produce_json(import_path, optimization_path, print_swaps=False, print_spin_o
         new_term_list = []
 
         for line in interaction_file:
+            print(spin_order)
             line = line.rstrip()
+            print(line)
             if "Iteration" in line:
                 # add them to our list
                 new_term_list.extend(parse_iteration_line(

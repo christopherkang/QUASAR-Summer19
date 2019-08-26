@@ -37,4 +37,19 @@
         // We return both the estimated phase, and the estimated energy.
         return (estPhase, estEnergy);
     }
+
+    operation ApplyTrotterOracleOnce(qSharpData : JordanWignerEncodingData, trotterStepSize : Double, trotterOrder : Int) : Unit {
+        // applies a single iteration of the Trotter oracle for resource estimation purposes
+
+        let (nSpinOrbitals, fermionTermData, statePrepData, energyOffset) = qSharpData!;
+        using (register = Qubit[nSpinOrbitals]) {
+            // prepare trotter oracle
+            let (nQubits, (rescaleFactor, oracle)) = TrotterStepOracle(qSharpData, trotterStepSize, trotterOrder);
+
+            // apply oracle
+            oracle(register);
+
+            ResetAll(register);
+        }
+    }
 }

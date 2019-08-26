@@ -67,9 +67,9 @@ namespace ImportOptimizedFermions
 
                     #region Produce Cost Estimates
                     ResourcesEstimator estimator = new ResourcesEstimator();
-                    EstimateEnergyLevel.Run(estimator, data, nBitsPrecision).Wait();
+                    ApplyTrotterOracleOnce.Run(estimator, data).Wait();
                     System.IO.Directory.CreateDirectory("_temp");
-                    System.IO.File.WriteAllLines("./_temp/_costEstimateOptimized.txt", new []{estimator.ToTSV()});
+                    System.IO.File.WriteAllLines("./_temp/_costEstimateOptimized.txt", new[] { estimator.ToTSV() });
                     #endregion
                 }
             }

@@ -1,0 +1,11 @@
+Predicted energy: -7.56293751659981
+Predicted energy: -7.56293751659981
+Predicted energy: -7.53225790084209
+Predicted energy: -7.57550589763093
+Predicted energy: -7.5141466661155
+Predicted energy: -7.53225790084209
+Predicted energy: -7.53225790084209
+Predicted energy: -7.55036913556869
+Predicted energy: -7.53225790084209
+Predicted energy: -7.56293751659981
+Average predicted energy: -7.54578658524829

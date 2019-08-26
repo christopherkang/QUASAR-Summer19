@@ -69,7 +69,7 @@ namespace ProduceSampleEnergy
                 }
 
                 ResourcesEstimator estimator = new ResourcesEstimator();
-                GetEnergyByTrotterization.Run(estimator, qSharpData, nBitsPrecision, trotterStepSize, trotterOrder).Wait();
+                ApplyTrotterOracleOnce.Run(estimator, qSharpData, trotterStepSize, trotterOrder).Wait();
                 System.IO.Directory.CreateDirectory("_temp");
                 System.IO.File.WriteAllLines("./_temp/_costEstimateReference.txt", new []{estimator.ToTSV()});
             }
