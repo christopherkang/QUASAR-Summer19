@@ -4,8 +4,8 @@
 
 # STEP 0 - Setup
 # YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.100.yaml"
-# YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/Broombridge_v0.2/H2_sto-3g.yaml"
-YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/LiH_sto3g_FCI/lih_sto-3g_fci_0.800.yaml"
+YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/Broombridge_v0.2/H2_sto-3g.yaml"
+# YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/LiH_sto3g_FCI/lih_sto-3g_fci_0.800.yaml"
 INPUT_STATE="E1"
 PRECISION="7"
 TROTTER_STEP="0.4"
@@ -23,8 +23,8 @@ read -p "Confirm? [Y/n] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "Abbreviated prompts enabled."
-    # do dangerous stuff
-    mkdir "_temp"
+    # do dangerous stuff - cleans out previous temp folder
+    rm -r _temp; mkdir _temp
 
 
     # add a parameter logfile
@@ -44,7 +44,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "RUNNING: dotnet run $CMD_ARGS $SAMPLE_SIZE >./_temp/_sampled_reference_energy.txt"
     echo
     dotnet run $CMD_ARGS $SAMPLE_SIZE >../TestPipeline/_temp/_sampled_reference_energy.txt
-    cp ./_temp/_costEstimateReference.txt ../TestPipeline/_temp
+    cp ./_temp/_costEstimateReference.csv ../TestPipeline/_temp
 
     # ----- STEP 2 - Produce the JSON file
     echo "RUNNING: ./extract_gates.sh $CMD_ARGS"
@@ -68,8 +68,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     cp interaction_file.txt ../../TestPipeline/_temp/
 
     cd ..
-    python3 outputToJSONV2.py ../TestPipeline/_temp/extracted_terms.json ../TestPipeline/_temp/interaction_file.txt
-    cp ./reconstructed.json ../TestPipeline/_temp/
+    python3 outputToJSONV3.py ../TestPipeline/_temp/extracted_terms.json ../TestPipeline/_temp/interaction_file.txt ../TestPipeline/_temp/reconstructed.json
+    # cp ./reconstructed.json ../TestPipeline/_temp/
 
     python3 produce_rounds.py ../TestPipeline/_temp/reconstructed.json
     cp ./rounds.json ../TestPipeline/_temp
@@ -86,7 +86,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     dotnet run ../TestPipeline/_temp/reconstructed.json $SAMPLE_SIZE $PRECISION >>../TestPipeline/_temp/_sampled_optimized_energy.txt
     echo
 
-    cp ./_temp/_costEstimateOptimized.txt ../TestPipeline/_temp
+    cp ./_temp/_costEstimateOptimized.csv ../TestPipeline/_temp
 
     echo "Finished - See _temp for outputs."
 else
