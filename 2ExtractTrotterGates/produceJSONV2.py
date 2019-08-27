@@ -24,7 +24,8 @@ def parse_line(line):
         "angle": 0,
         "controls": [],
         "ops": [],
-        "targets": []
+        "targets": [],
+        "spins": []
     }
 
     # extract the qubit targets, and convert them to integers
@@ -35,8 +36,10 @@ def parse_line(line):
 
     out_dict["targets"] = list(qubit_targets)
 
+    out_dict["spins"] = list(line_terms[2].split(","))
+
     # also adds angle data to the dict
-    out_dict["angle"] = float(line_terms[2])
+    out_dict["angle"] = float(line_terms[3])
 
     # the number of operations should match the number of target and parity qubits
     # print(f"{out_dict['type']} | {out_dict['ops']} | {out_dict['targets']}")

@@ -15,6 +15,8 @@ using QSharpFormat = Microsoft.Quantum.Chemistry.QSharpFormat;
 using Microsoft.Quantum.Chemistry.JordanWigner;
 using Microsoft.Quantum.Chemistry.Generic;
 using Microsoft.Quantum.Chemistry;
+using System.Reflection;
+using System.Reflection.Emit;
 
 namespace ExtractTrotterGates
 {
@@ -64,8 +66,10 @@ namespace ExtractTrotterGates
             TermType.Fermion termType,
             double coeff)
         {
+            // Console.WriteLine(fermionTerm.ToString());
+            // Console.WriteLine();
             var seq = fermionTerm.Sequence.Select(o => o.Index).ToArray();
-            var string_output = $"{termType.ToString()} | {String.Join(",", seq.Select(p => p.ToString()).ToArray())} | {coeff.ToString()}";
+            var string_output = $"{termType.ToString()} | {String.Join(",", seq.Select(p => p.ToString()).ToArray())} | {string.Join(",", fermionTerm.Sequence)} | {coeff.ToString()}";
             // Console.WriteLine(string_output);
             return string_output;
         }

@@ -7,11 +7,62 @@ using Newtonsoft.Json.Linq;
 using Microsoft.Quantum.Simulation.Core;
 using Microsoft.Quantum.Simulation;
 using Microsoft.Quantum.Chemistry.JordanWigner;
+using Microsoft.Quantum.Chemistry.Paulis;
+using Microsoft.Quantum.Chemistry.Fermion;
 
 namespace ImportOptimizedFermions
 {
     public static class Auxiliary
     {
+        // 
+        public static PauliHamiltonian CallQSharpPipeline(
+            JObject OptimizedHamiltonian
+        )
+        {
+            // Calls the typical QSharp pipeline
+
+            // convert
+            var interactionList = OptimizedHamiltonian["terms"]["interactions"];
+
+            foreach (var interaction in interactionList)
+            {
+                var (term, type, coeff) = ConvertToFermionFormat(OptimizedHamiltonian);
+            }
+
+            // call typical Q# pipeline
+        }
+
+        // Produce a format of fermions to be used in the typical Q# pathway
+        // Input: JObject containing the JSON
+        // Output: Fermion data to be used immediately in the pipeline
+        public static (FermionTerm, TermType.Fermion, double) ConvertToFermionFormat(
+            JObject interaction
+        )
+        {
+            // extract only the fermionic interactions
+            var type = interaction["type"];
+            switch (type)
+            {
+                case "Identity":
+                    return TermType.Fermion.Identity;
+
+                case TermType.Fermion.PP:
+                    return;
+
+                case TermType.Fermion.PQ:
+                    return;
+
+                case TermType.Fermion.PQQP:
+                    return;
+
+                case TermType.Fermion.PQQR:
+                    return;
+                case TermType.Fermion.PQRS:
+                    return;
+                default:
+                    throw new System.NotImplementedException();
+            }
+        }
         // Produce the completed Hamiltonian given JSON
         // Input: JObject containing JSON
         // Output: Packaged Hamiltonian data
@@ -24,7 +75,7 @@ namespace ImportOptimizedFermions
             var constantValues = PrepareConstantValues(OptimizedHamiltonian);
             return new PackagedHamiltonian((constantValues, fermionTerms, statePrepData));
         }
-        
+
         // Convert the JSON fermion terms into GeneratorIndex[] that can be interpreted in Q#
         // Input: JObject containing JSON
         // Output: QArray<GeneratorIndex>
@@ -124,7 +175,7 @@ namespace ImportOptimizedFermions
                     var pqrsSorted = targets.ToList();
                     pqrsSorted.Sort();
                     var (newTerm, newCoeff) = IdentifyHpqrsPermutation((pqrsSorted, targets, angle));
-                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] {3}), new QArray<Double>(newCoeff)), new QArray<Int64>(newTerm))));
+                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { 3 }), new QArray<Double>(newCoeff)), new QArray<Int64>(newTerm))));
                 }
                 else
                 {
@@ -207,7 +258,8 @@ namespace ImportOptimizedFermions
             var stateData = OptimizedHamiltonian["statePrepData"];
             var intConst = stateData["int"].ToObject<long>();
             var termList = new List<JordanWignerInputState>();
-            foreach (var term in stateData["terms"]) {
+            foreach (var term in stateData["terms"])
+            {
                 var doublePair = term["tuple"].ToObject<double[]>();
                 var intArray = term["array"].ToObject<long[]>();
                 termList.Add(new JordanWignerInputState(((doublePair[0], doublePair[1]), new QArray<Int64>(intArray.ToArray()))));
