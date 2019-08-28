@@ -45,7 +45,8 @@ namespace ImportOptimizedFermions
                     #region Convert to Q# Format
                     // var test = Auxiliary.ProduceLowLevelTerms(output);
                     // Console.WriteLine(test);
-                    var data = Auxiliary.ProduceCompleteHamiltonian(output);
+                    // var data = Auxiliary.ProduceCompleteHamiltonian(output);
+                    // var qSharpData = Auxiliary.CreateQSharpFormat(output);
                     #endregion
 
                     #region Simulate Optimized Fermion Terms

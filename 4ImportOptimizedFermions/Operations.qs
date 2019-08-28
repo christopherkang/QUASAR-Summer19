@@ -9,16 +9,10 @@
     open Microsoft.Quantum.Math;
     open Microsoft.Quantum.Diagnostics;
 
-    // Produce a Fermionic SWAP enhanced Hamiltonian energy level estimate
-    // Input: PackagedHamiltonian format describing applicable Fermionic terms + swaps
-    // nBitsPrecision - number of bits of precision to use with QPE
-    // Output: estimated phase and estimated energy
-    operation EstimateEnergyLevel(data : PackagedHamiltonian, nBitsPrecision : Int) : (Double, Double) {
-        // unpack the data
-        let (constants, fermionTerms, statePrepData) = data!;
-        let (nSpinOrbitals, energyOffset, trotterStep, trotterOrder) = constants!;
-
-        let oracle = ApplyFermionTerms(fermionTerms, trotterStep, _);
+    operation EstimateEnergyLevel(data : CompressedHamiltonian, nBitsPrecision : Int) : (Double, Double) {
+        //
+        
+        let oracle = ApplyHamiltonianTerm(data, _);
         let rescaleFactor = 1.0 / trotterStep;
         
         let stateData = (statePrepData!);
@@ -29,7 +23,77 @@
         let estPhase = EstimateEnergy(nSpinOrbitals, statePrep, oracle, phaseEstAlgorithm);
         let energyLevel = estPhase * rescaleFactor + energyOffset;
         return (estPhase, energyLevel);
+
+
+        return estPhase * rescaleFactor + energyOffset;
     }
+
+    // Applies all of the SWAPs and Interaction Rounds, then brings the qubits back 
+    // to their original orientation (canonical form)
+    operation ApplyHamiltonianTerm(data : CompressedHamiltonian, register : Qubit[]) : Unit {
+        //
+        let (swapList, interactionList) = data!;
+        let iterationLength = Length(interactionList);
+
+        for (index in 0..iterationLength - 1) {
+            ApplySWAPRound(swapList[round], register);
+            ApplyInteractionRound(interactionList[index], trotterStepSize, trotterOrder, register);
+        }
+
+        ApplySWAPRound(swapList[interactionList], register);
+    }
+
+    // Applies an entire round of SWAPS onto a register
+    operation ApplySWAPRound(data : SWAPRound, register : Qubit[]) : Unit {
+        let numberOfSWAPSeries = Length(data);
+        
+        for (index in 0..numberOfSWAPSeries - 1) {
+            ApplySWAPSeries(data[index], register);
+        }
+    }
+
+    // Applies the SWAPSeries onto a register
+    operation ApplySWAPSeries(data : SWAPSeries, register : Qubit[]) : Unit {
+        let (qubitsLeft, qubitsRight) = data!;
+        let numberOfSWAPs = Length(qubitsLeft);
+
+        for (index in 0..numberOfSWAPs - 1) {
+            FermionicSWAP(register[qubitsLeft[index]], register[qubitsRight[index]]);
+        }
+    }
+
+    // Applies a single round of the interactions
+    // Input: JWED, trotter step size, order, and the qubit register
+    // Output: Unit
+    operation ApplyInteractionRound(data : JordanWignerEncodingData, trotterStepSize : Double, trotterOrder : Int, register : Qubit[]) : Unit {
+        let (nSpinOrbitals, fermionTermData, statePrepData, energyOffset) = qSharpData!;
+
+        let (nQubits, (rescaleFactor, oracle)) = TrotterStepOracle(qSharpData, trotterStepSize, trotterOrder);
+
+        oracle(register);
+    }
+
+    // Produce a Fermionic SWAP enhanced Hamiltonian energy level estimate
+    // Input: PackagedHamiltonian format describing applicable Fermionic terms + swaps
+    // nBitsPrecision - number of bits of precision to use with QPE
+    // Output: estimated phase and estimated energy
+    // operation EstimateEnergyLevel(data : PackagedHamiltonian, nBitsPrecision : Int) : (Double, Double) {
+    //     // unpack the data
+    //     let (constants, fermionTerms, statePrepData) = data!;
+    //     let (nSpinOrbitals, energyOffset, trotterStep, trotterOrder) = constants!;
+
+    //     let oracle = ApplyFermionTerms(fermionTerms, trotterStep, _);
+    //     let rescaleFactor = 1.0 / trotterStep;
+        
+    //     let stateData = (statePrepData!);
+    //     let statePrep = PrepareTrialState(stateData, _);
+
+    //     let phaseEstAlgorithm = RobustPhaseEstimation(nBitsPrecision, _, _);
+
+    //     let estPhase = EstimateEnergy(nSpinOrbitals, statePrep, oracle, phaseEstAlgorithm);
+    //     let energyLevel = estPhase * rescaleFactor + energyOffset;
+    //     return (estPhase, energyLevel);
+    // }
 
     operation ApplyTrotterOracleOnce(data : PackagedHamiltonian) : Unit {
         // Apply the Trotter oracle once for resource estimation

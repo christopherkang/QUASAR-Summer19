@@ -67,7 +67,6 @@ namespace ExtractTrotterGates
             double coeff)
         {
             // Console.WriteLine(fermionTerm.ToString());
-            // Console.WriteLine();
             var seq = fermionTerm.Sequence.Select(o => o.Index).ToArray();
             var string_output = $"{termType.ToString()} | {String.Join(",", seq.Select(p => p.ToString()).ToArray())} | {string.Join(",", fermionTerm.Sequence)} | {coeff.ToString()}";
             // Console.WriteLine(string_output);

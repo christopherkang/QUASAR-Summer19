@@ -17,4 +17,13 @@ namespace ImportOptimizedFermions
 
     // Hamiltonian wrapped up
     newtype PackagedHamiltonian = (HamiltonianConstants, GeneratorIndex[], StatePrepData);
+
+    newtype CompressedHamiltonian = (SWAPRound[], JordanWignerEncodingData[]);
+
+    // Series of SWAPS to be applied; the qubits to be swapped should be popped off the top
+    // These SWAPs should be able to be applied simultaneously; i.e. none use the same qubits
+    newtype SWAPSeries = (Int[], Int[]);
+
+    // Rounds of SWAPs to be applied. SWAPRound and Interaction should be applied in an alternating fashion
+    newtype SWAPRound = SWAPSeries[];
 }

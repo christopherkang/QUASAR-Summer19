@@ -6,30 +6,173 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Microsoft.Quantum.Simulation.Core;
 using Microsoft.Quantum.Simulation;
+using Microsoft.Quantum.Chemistry;
+using Microsoft.Quantum.Chemistry.Generic;
 using Microsoft.Quantum.Chemistry.JordanWigner;
 using Microsoft.Quantum.Chemistry.Paulis;
 using Microsoft.Quantum.Chemistry.Fermion;
+using Microsoft.Quantum.Chemistry.LadderOperators;
+using QSharpFormat = Microsoft.Quantum.Chemistry.QSharpFormat;
 
 namespace ImportOptimizedFermions
 {
+    using static Microsoft.Quantum.Chemistry.Extensions;
+    using static Microsoft.Quantum.Chemistry.QSharpFormat.Convert;
+
     public static class Auxiliary
     {
-        // 
-        public static PauliHamiltonian CallQSharpPipeline(
+        // Produces all information necessary for the Q# code
+        // Input: JSON file
+        // Output: SWAPs and JWED to be used. JWED goes to the TrotterStepOracle, whereas SWAPs
+        // have a custom implementation
+        public static (QArray<SWAPRound>, QArray<JordanWignerEncodingData>) ProduceTotalRounds(
             JObject OptimizedHamiltonian
         )
         {
-            // Calls the typical QSharp pipeline
+            var swaps = ProduceAllSWAPRounds(OptimizedHamiltonian);
+            var interactions = ProduceAllJWED(OptimizedHamiltonian);
 
-            // convert
-            var interactionList = OptimizedHamiltonian["terms"]["interactions"];
+            return (swaps, interactions);
+        }
 
+        // Produces all the necessary SWAP rounds
+        // Input: JSON containing Hamiltonian
+        // Output: Array of SWAPRounds
+        public static QArray<SWAPRound> ProduceAllSWAPRounds(
+            JObject OptimizedHamiltonian
+        )
+        {
+            var swapData = OptimizedHamiltonian["terms"]["swaps"];
+            List<SWAPRound> swaps = new List<SWAPRound>();
+            for (int swapIndex = 0; swapIndex < swapData.Count(); swapIndex++)
+            {
+                swaps.Add(ProduceSWAPRound(OptimizedHamiltonian, swapIndex));
+            }
+            return new QArray<SWAPRound>(swaps);
+        }
+
+        // Produce a SWAPRound describing the FermionicSWAPs to be applied
+        // Input: JSON with the Hamiltonian, index of SWAP to be used
+        // Output: SWAPRound describing that iteration of the Hamiltonian
+        public static SWAPRound ProduceSWAPRound(
+            JObject OptimizedHamiltonian,
+            int index
+        )
+        {
+            var swapData = OptimizedHamiltonian["terms"]["swaps"][index];
+            List<SWAPSeries> series = new List<SWAPSeries>();
+            foreach (var swapIter in swapData)
+            {
+                // we'll have data in the form: [{swap info...}, ...]
+                // we need to take this array of dicts and turn it into a SWAPSeries
+                List<long> qubitLeft = new List<long>();
+                List<long> qubitRight = new List<long>();
+                foreach (var swap in swapIter)
+                {
+                    // now, we have a single {swap}
+                    // let's add it to our list
+                    qubitLeft.Add((long)swap["targets"][0]);
+                    qubitRight.Add((long)swap["targets"][1]);
+                }
+                series.Add(new SWAPSeries((new QArray<long>(qubitLeft), new QArray<long>(qubitRight))));
+            }
+            return new SWAPRound((new QArray<SWAPSeries>(series)));
+        }
+        public static QArray<JordanWignerEncodingData> ProduceAllJWED(
+            JObject OptimizedHamiltonian
+        )
+        {
+            // pull the number of interaction rounds we have
+            int numberOfInteractionRounds = (int)OptimizedHamiltonian["terms"]["interactions"];
+            List<JordanWignerEncodingData> allRounds = new List<JordanWignerEncodingData>();
+
+            for (int interactionIndex = 0; interactionIndex < numberOfInteractionRounds; interactionIndex++)
+            {
+                allRounds.Add(ConvertOneToJWED(OptimizedHamiltonian, interactionIndex));
+            }
+
+            return new QArray<JordanWignerEncodingData>(allRounds);
+        }
+
+
+        // Creates the typical JordanWignerEncodingData given the JSON input + the index of the interaction to use
+        // Input: full JSON, index of interaction to use
+        // Output: JordanWignerEncodingData to use with Q#
+        public static JordanWignerEncodingData ConvertOneToJWED(
+            JObject OptimizedHamiltonian,
+            int index
+        )
+        {
+            // begin initial converstion to Q# files
+            PauliHamiltonian hamiltonianQSharpFormat = CallQSharpPipeline(OptimizedHamiltonian, index);
+            var inputState = CreateJWInputState(OptimizedHamiltonian);
+
+            // convert to refined Q# format
+            var pauliHamiltonianQSharpFormat = hamiltonianQSharpFormat.ToQSharpFormat();
+
+            return QSharpFormat.Convert.ToQSharpFormat(pauliHamiltonianQSharpFormat, inputState);
+        }
+
+        // Create the JW Input State from the JSON
+        // Input: Hamiltonian JSON
+        // Output: JWInputState for use in the typical Q# pipeline
+        public static (Int64, QArray<JordanWignerInputState>) CreateJWInputState(
+            JObject OptimizedHamiltonian
+        )
+        {
+            // extract the data
+            var stateData = OptimizedHamiltonian["statePrepData"]["terms"];
+            long intVal = (long)OptimizedHamiltonian["statePrepData"]["int"];
+            List<JordanWignerInputState> stateList = new List<JordanWignerInputState>();
+            foreach (var stateTerm in stateData)
+            {
+                var tuple = ((double)stateTerm["tuple"][0], (double)stateTerm["tuple"][1]);
+                var intArray = stateTerm["array"].ToObject<long[]>();
+                stateList.Add(new JordanWignerInputState((tuple, new QArray<long>(intArray))));
+            }
+
+            return (intVal, new QArray<JordanWignerInputState>(stateList));
+        }
+
+
+
+        // Converts JSON to data format with existing Q# pipeline
+        // Input: JSON file
+        // Output: PauliHamiltonian for later use in Q# pipeline
+        public static PauliHamiltonian CallQSharpPipeline(
+            JObject OptimizedHamiltonian,
+            int index
+        )
+        {
+            // make Hamiltonian to be output
+            var hamiltonian = new PauliHamiltonian();
+
+            // Pull the interactions from a specific round
+            var interactionList = OptimizedHamiltonian["terms"]["interactions"][index];
+
+            // make the conversion function
+            Func<FermionTerm, TermType.Fermion, double, IEnumerable<(PauliTerm, PauliTermValue)>> conversion =
+                (fermionTerm, termType, coeff)
+                => (fermionTerm.ToJordanWignerPauliTerms(termType, coeff));
+
+            // pull the interactions and parse them into the PauliHamiltonian format
             foreach (var interaction in interactionList)
             {
                 var (term, type, coeff) = ConvertToFermionFormat(OptimizedHamiltonian);
+                hamiltonian.AddRange(conversion(term, type, coeff));
             }
 
-            // call typical Q# pipeline
+            // assume that the indices are simply an ascending 0-indexed list
+            List<int> indices = new List<int>();
+            for (int i = 0; i < interactionList.Count(); i++)
+            {
+                indices.Add(i);
+            }
+
+            hamiltonian.SystemIndices = new HashSet<int>(indices);
+
+            // hamiltonian.SystemIndices = new HashSet<int>(sourceHamiltonian.SystemIndices.ToList());
+            return hamiltonian;
         }
 
         // Produce a format of fermions to be used in the typical Q# pathway
@@ -40,29 +183,49 @@ namespace ImportOptimizedFermions
         )
         {
             // extract only the fermionic interactions
-            var type = interaction["type"];
+            string type = (string)interaction["type"];
+            double angle = (double)interaction["angle"];
+            TermType.Fermion termType;
+
+            // create the new ladder sequence
+            var ladderSpins = interaction["targets"].ToObject<int[]>();
+
+            var ladderSeq = ladderSpins.ToLadderSequence();
+            FermionTerm convertedTerm = new FermionTerm(ladderSeq);
+
             switch (type)
             {
                 case "Identity":
-                    return TermType.Fermion.Identity;
+                    termType = TermType.Fermion.Identity;
+                    break;
 
-                case TermType.Fermion.PP:
-                    return;
+                case "PP":
+                    termType = TermType.Fermion.PP;
+                    break;
 
-                case TermType.Fermion.PQ:
-                    return;
+                case "PQ":
+                    termType = TermType.Fermion.PQ;
+                    break;
 
-                case TermType.Fermion.PQQP:
-                    return;
+                case "PQQP":
+                    termType = TermType.Fermion.PQQP;
+                    break;
 
-                case TermType.Fermion.PQQR:
-                    return;
-                case TermType.Fermion.PQRS:
-                    return;
+                case "PQQR":
+                    termType = TermType.Fermion.PQQR;
+                    break;
+
+                case "PQRS":
+                    termType = TermType.Fermion.PQRS;
+                    break;
+
                 default:
                     throw new System.NotImplementedException();
             }
+
+            return (convertedTerm, termType, angle);
         }
+
         // Produce the completed Hamiltonian given JSON
         // Input: JObject containing JSON
         // Output: Packaged Hamiltonian data
