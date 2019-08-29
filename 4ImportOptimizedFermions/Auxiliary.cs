@@ -21,6 +21,16 @@ namespace ImportOptimizedFermions
 
     public static class Auxiliary
     {
+        public static CompleteHamiltonian ProduceCompleteHamiltonian(
+            JObject OptimizedHamiltonian
+        )
+        {
+            // if this breaks see other method with the same name
+            var constants = PrepareConstantValues(OptimizedHamiltonian);
+            var stateData = new StatePrepData(CreateJWInputState(OptimizedHamiltonian));
+            var (swaps, JWEDData) = ProduceTotalRounds(OptimizedHamiltonian);
+            return new CompleteHamiltonian((constants, stateData, swaps, JWEDData));
+        }
         // Produces all information necessary for the Q# code
         // Input: JSON file
         // Output: SWAPs and JWED to be used. JWED goes to the TrotterStepOracle, whereas SWAPs
@@ -83,7 +93,7 @@ namespace ImportOptimizedFermions
         )
         {
             // pull the number of interaction rounds we have
-            int numberOfInteractionRounds = (int)OptimizedHamiltonian["terms"]["interactions"];
+            int numberOfInteractionRounds = OptimizedHamiltonian["terms"]["interactions"].Count();
             List<JordanWignerEncodingData> allRounds = new List<JordanWignerEncodingData>();
 
             for (int interactionIndex = 0; interactionIndex < numberOfInteractionRounds; interactionIndex++)
@@ -158,8 +168,11 @@ namespace ImportOptimizedFermions
             // pull the interactions and parse them into the PauliHamiltonian format
             foreach (var interaction in interactionList)
             {
-                var (term, type, coeff) = ConvertToFermionFormat(OptimizedHamiltonian);
-                hamiltonian.AddRange(conversion(term, type, coeff));
+                if ((string)interaction["type"] != "Identity")
+                {
+                    var (term, type, coeff) = ConvertToFermionFormat(interaction);
+                    hamiltonian.AddRange(conversion(term, type, coeff));
+                }
             }
 
             // assume that the indices are simply an ascending 0-indexed list
@@ -179,7 +192,7 @@ namespace ImportOptimizedFermions
         // Input: JObject containing the JSON
         // Output: Fermion data to be used immediately in the pipeline
         public static (FermionTerm, TermType.Fermion, double) ConvertToFermionFormat(
-            JObject interaction
+            JToken interaction
         )
         {
             // extract only the fermionic interactions
@@ -229,15 +242,15 @@ namespace ImportOptimizedFermions
         // Produce the completed Hamiltonian given JSON
         // Input: JObject containing JSON
         // Output: Packaged Hamiltonian data
-        public static PackagedHamiltonian ProduceCompleteHamiltonian(
-            JObject OptimizedHamiltonian
-            )
-        {
-            var statePrepData = PrepareStatePrepData(OptimizedHamiltonian);
-            var fermionTerms = ProduceLowLevelTerms(OptimizedHamiltonian);
-            var constantValues = PrepareConstantValues(OptimizedHamiltonian);
-            return new PackagedHamiltonian((constantValues, fermionTerms, statePrepData));
-        }
+        // public static PackagedHamiltonian ProduceCompleteHamiltonian(
+        //     JObject OptimizedHamiltonian
+        //     )
+        // {
+        //     var statePrepData = PrepareStatePrepData(OptimizedHamiltonian);
+        //     var fermionTerms = ProduceLowLevelTerms(OptimizedHamiltonian);
+        //     var constantValues = PrepareConstantValues(OptimizedHamiltonian);
+        //     return new PackagedHamiltonian((constantValues, fermionTerms, statePrepData));
+        // }
 
         // Convert the JSON fermion terms into GeneratorIndex[] that can be interpreted in Q#
         // Input: JObject containing JSON

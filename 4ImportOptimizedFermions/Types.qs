@@ -7,18 +7,15 @@ namespace ImportOptimizedFermions
     open Microsoft.Quantum.Arrays;
     open Microsoft.Quantum.Chemistry.JordanWigner;
 
+    //
+    newtype CompleteHamiltonian = (HamiltonianConstants, StatePrepData, SWAPRound[], JordanWignerEncodingData[]);
+
     // State prep data as described in the JSON
     // Tuple / Int[] / Int
     newtype StatePrepData = (Int, JordanWignerInputState[]);
 
-    // Constants
     // nSpinOrbitals, energyOffset, trotterStep, trotterOrder
     newtype HamiltonianConstants = (Int, Double, Double, Int);
-
-    // Hamiltonian wrapped up
-    newtype PackagedHamiltonian = (HamiltonianConstants, GeneratorIndex[], StatePrepData);
-
-    newtype CompressedHamiltonian = (SWAPRound[], JordanWignerEncodingData[]);
 
     // Series of SWAPS to be applied; the qubits to be swapped should be popped off the top
     // These SWAPs should be able to be applied simultaneously; i.e. none use the same qubits

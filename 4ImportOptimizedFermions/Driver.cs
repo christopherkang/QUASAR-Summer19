@@ -47,25 +47,26 @@ namespace ImportOptimizedFermions
                     // Console.WriteLine(test);
                     // var data = Auxiliary.ProduceCompleteHamiltonian(output);
                     // var qSharpData = Auxiliary.CreateQSharpFormat(output);
+                    var data = Auxiliary.ProduceCompleteHamiltonian(output);
                     #endregion
 
                     #region Simulate Optimized Fermion Terms
-                    using (var qsim = new QuantumSimulator(randomNumberGeneratorSeed: 42))
-                    {
-                        // keep track of the running total of the energy to produce the average energy amount
-                        var runningSum = 0.0;
+                    // using (var qsim = new QuantumSimulator(randomNumberGeneratorSeed: 42))
+                    // {
+                    //     // keep track of the running total of the energy to produce the average energy amount
+                    //     var runningSum = 0.0;
 
-                        // iterate over the sample size
-                        for (int i = 0; i < numberOfSamples; i++)
-                        {
-                            var (phaseEst, energyEst) = EstimateEnergyLevel.Run(qsim, data, nBitsPrecision).Result;
-                            runningSum += energyEst;
-                            Console.WriteLine($"Predicted energy: {energyEst}");
-                        }
+                    //     // iterate over the sample size
+                    //     for (int i = 0; i < numberOfSamples; i++)
+                    //     {
+                    //         var (phaseEst, energyEst) = EstimateEnergyLevel.Run(qsim, data, nBitsPrecision).Result;
+                    //         runningSum += energyEst;
+                    //         Console.WriteLine($"Predicted energy: {energyEst}");
+                    //     }
 
-                        // Output to stdout
-                        Console.WriteLine($"Average predicted energy: {runningSum / (float)numberOfSamples}");
-                    }
+                    //     // Output to stdout
+                    //     Console.WriteLine($"Average predicted energy: {runningSum / (float)numberOfSamples}");
+                    // }
                     #endregion
 
                     #region Produce Cost Estimates

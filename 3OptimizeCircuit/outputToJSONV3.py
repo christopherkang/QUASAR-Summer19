@@ -183,6 +183,9 @@ def produce_json(import_path, optimization_path, print_swaps=False, print_spin_o
         new_swap_term_list = []
         new_single_body_list = []
 
+        # swap series to accumulate the SWAPs into rounds.
+        temp_swap_list = []
+
         for line in interaction_file:
             print(spin_order)
             line = line.rstrip()
@@ -191,6 +194,10 @@ def produce_json(import_path, optimization_path, print_swaps=False, print_spin_o
                 # add them to our list
                 new_interaction_term_list.append(parse_iteration_line(
                     line, spin_order, categorized_interactions))
+
+                # push the new swap list
+                new_swap_term_list.append(temp_swap_list)
+                temp_swap_list = []
             elif any(symbol in line for symbol in ignore_line_symbols):
                 pass
             elif not line:
@@ -200,7 +207,10 @@ def produce_json(import_path, optimization_path, print_swaps=False, print_spin_o
                     print(spin_order)
                 if print_swaps:
                     print(line)
-                new_swap_term_list.append(parse_swap_line(line, spin_order))
+                temp_swap_list.append(parse_swap_line(line, spin_order))
+
+        # push last row of SWAPs
+        new_swap_term_list.append(temp_swap_list)
 
         assert spin_order == list(range(0, number_of_qubits))
         while categorized_interactions:
@@ -215,10 +225,11 @@ def produce_json(import_path, optimization_path, print_swaps=False, print_spin_o
 
                 new_single_body_list.append(single_body)
 
+        new_interaction_term_list.append(new_single_body_list)
+
     output_json["terms"] = {
         "swaps": new_swap_term_list,
-        "interactions": new_interaction_term_list,
-        "single-body": new_single_body_list
+        "interactions": new_interaction_term_list
     }
 
     return output_json

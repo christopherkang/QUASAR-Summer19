@@ -44,8 +44,30 @@ def _verify_swap_pattern(path_to_check):
 
 def test_verify_swap_pattern():
     # Verify that the SWAPs eventually yield 0, 1, 2, ...
-    path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_temp/interaction_file.txt"
+    # path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_temp/interaction_file.txt"
+    path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_data_firstGood/interaction_file.txt"
     _verify_swap_pattern(path_to_check)
+
+
+def test_verify_interaction_number_matches():
+    # verify that the number of unique interactions matches the actual number
+    path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_data_firstGood/interaction_file.txt"
+    with open(path_to_check) as f:
+        number_of_unique_interactions = 0
+        running_total_of_interactions = 0
+        for line in f:
+            line = line.rstrip()
+            if "Number of Unique Interactions:" in line:
+                raw_line = line.split(":  ")[1]
+                number_of_unique_interactions = ast.literal_eval(raw_line)
+            elif "Iteration" in line:
+                raw_line = line.split(" : ")[1]
+                interactions = ast.literal_eval(raw_line)
+                print(interactions)
+                running_total_of_interactions += len(interactions)
+
+    print(number_of_unique_interactions)
+    assert number_of_unique_interactions == running_total_of_interactions, "The number of interactions is unverified"
 
 
 """

@@ -9,51 +9,60 @@
     open Microsoft.Quantum.Math;
     open Microsoft.Quantum.Diagnostics;
 
-    operation EstimateEnergyLevel(data : CompressedHamiltonian, nBitsPrecision : Int) : (Double, Double) {
-        //
+    operation EstimateEnergyLevel(data : CompleteHamiltonian, nBitsPrecision : Int) : (Double, Double) {
+        let (constants, statePrepData, swapTerms, interactionTerms) = data!;
+        let (nSpinOrbitals, energyOffset, trotterStep, trotterOrder) = constants!;
         
-        let oracle = ApplyHamiltonianTerm(data, _);
+        // Get crucial constants
         let rescaleFactor = 1.0 / trotterStep;
-        
-        let stateData = (statePrepData!);
-        let statePrep = PrepareTrialState(stateData, _);
 
+        // Get combined oracle
+        let oracle = ApplyHamiltonianTerm(swapTerms, interactionTerms, constants, _);
+
+        let stateData = (statePrepData!);
+
+        // Prep important unitaries
+        let statePrep = PrepareTrialState(stateData, _);
         let phaseEstAlgorithm = RobustPhaseEstimation(nBitsPrecision, _, _);
 
+        // Estimate energy
         let estPhase = EstimateEnergy(nSpinOrbitals, statePrep, oracle, phaseEstAlgorithm);
         let energyLevel = estPhase * rescaleFactor + energyOffset;
+
         return (estPhase, energyLevel);
-
-
-        return estPhase * rescaleFactor + energyOffset;
     }
 
     // Applies all of the SWAPs and Interaction Rounds, then brings the qubits back 
     // to their original orientation (canonical form)
-    operation ApplyHamiltonianTerm(data : CompressedHamiltonian, register : Qubit[]) : Unit {
-        //
-        let (swapList, interactionList) = data!;
+    operation ApplyHamiltonianTerm(swapList : SWAPRound[], interactionList : JordanWignerEncodingData[], constants : HamiltonianConstants, register : Qubit[]) : Unit is Adj+Ctl {
         let iterationLength = Length(interactionList);
 
-        for (index in 0..iterationLength - 1) {
-            ApplySWAPRound(swapList[round], register);
-            ApplyInteractionRound(interactionList[index], trotterStepSize, trotterOrder, register);
-        }
+        let (nSpinOrbitals, energyOffset, trotterStep, trotterOrder) = constants!;
 
-        ApplySWAPRound(swapList[interactionList], register);
+        EqualityFactI(Length(swapList), Length(interactionList), "The rounds of swaps and interactions do not match");
+
+        // We'll apply all of the SWAPs and Interaction, alternating
+        for (round in 0..iterationLength - 1) {
+            Message($"{round}");
+            ApplySWAPRound(swapList[round], register);
+            Message($"interaction: {round}");
+            ApplyInteractionRound(interactionList[round], trotterStep, trotterOrder, register);
+        }
     }
 
     // Applies an entire round of SWAPS onto a register
-    operation ApplySWAPRound(data : SWAPRound, register : Qubit[]) : Unit {
-        let numberOfSWAPSeries = Length(data);
+    operation ApplySWAPRound(data : SWAPRound, register : Qubit[]) : Unit is Adj+Ctl {
+        let series = data!;
+        let numberOfSWAPSeries = Length(series);
         
         for (index in 0..numberOfSWAPSeries - 1) {
-            ApplySWAPSeries(data[index], register);
+            ApplySWAPSeries(series[index], register);
+            Message($"SWAP: {index}");
         }
     }
 
     // Applies the SWAPSeries onto a register
-    operation ApplySWAPSeries(data : SWAPSeries, register : Qubit[]) : Unit {
+    operation ApplySWAPSeries(data : SWAPSeries, register : Qubit[]) : Unit is Adj+Ctl {
         let (qubitsLeft, qubitsRight) = data!;
         let numberOfSWAPs = Length(qubitsLeft);
 
@@ -65,10 +74,10 @@
     // Applies a single round of the interactions
     // Input: JWED, trotter step size, order, and the qubit register
     // Output: Unit
-    operation ApplyInteractionRound(data : JordanWignerEncodingData, trotterStepSize : Double, trotterOrder : Int, register : Qubit[]) : Unit {
-        let (nSpinOrbitals, fermionTermData, statePrepData, energyOffset) = qSharpData!;
+    operation ApplyInteractionRound(data : JordanWignerEncodingData, trotterStepSize : Double, trotterOrder : Int, register : Qubit[]) : Unit is Adj+Ctl {
+        let (nSpinOrbitals, fermionTermData, statePrepData, energyOffset) = data!;
 
-        let (nQubits, (rescaleFactor, oracle)) = TrotterStepOracle(qSharpData, trotterStepSize, trotterOrder);
+        let (nQubits, (rescaleFactor, oracle)) = TrotterStepOracle(data, trotterStepSize, trotterOrder);
 
         oracle(register);
     }
@@ -95,13 +104,13 @@
     //     return (estPhase, energyLevel);
     // }
 
-    operation ApplyTrotterOracleOnce(data : PackagedHamiltonian) : Unit {
+    operation ApplyTrotterOracleOnce(data : CompleteHamiltonian) : Unit {
         // Apply the Trotter oracle once for resource estimation
-        let (constants, fermionTerms, statePrepData) = data!;
+        let (constants, statePrepData, swapTerms, interactionTerms) = data!;
         let (nSpinOrbitals, energyOffset, trotterStep, trotterOrder) = constants!;
 
         // prep and apply oracle
-        let oracle = ApplyFermionTerms(fermionTerms, trotterStep, _);
+        let oracle = ApplyHamiltonianTerm(swapTerms, interactionTerms, constants, _);
         using (register = Qubit[nSpinOrbitals]) {
             oracle(register);
         }
