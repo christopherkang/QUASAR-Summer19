@@ -77,6 +77,13 @@
     operation ApplyInteractionRound(data : JordanWignerEncodingData, trotterStepSize : Double, trotterOrder : Int, register : Qubit[]) : Unit is Adj+Ctl {
         let (nSpinOrbitals, fermionTermData, statePrepData, energyOffset) = data!;
 
+        let (h1, h2, h3, h4) = data!;
+
+        Message($"{h1}");
+        Message($"{h2}");
+        Message($"{h3}");
+        Message($"{h4}");
+
         let (nQubits, (rescaleFactor, oracle)) = TrotterStepOracle(data, trotterStepSize, trotterOrder);
 
         oracle(register);

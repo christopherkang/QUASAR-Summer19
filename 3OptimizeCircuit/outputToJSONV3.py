@@ -202,12 +202,14 @@ def produce_json(import_path, optimization_path, print_swaps=False, print_spin_o
                 pass
             elif not line:
                 pass
-            else:
+            elif "SWAP : " in line:
+                stripped_line = line.split(" : ")[1]
                 if print_spin_order:
                     print(spin_order)
                 if print_swaps:
                     print(line)
-                temp_swap_list.append(parse_swap_line(line, spin_order))
+                temp_swap_list.append(
+                    parse_swap_line(stripped_line, spin_order))
 
         # push last row of SWAPs
         new_swap_term_list.append(temp_swap_list)
