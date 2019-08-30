@@ -44,11 +44,10 @@ def prepare_interaction_categories(file_path):
         for term_data in terms:
             # add it to the interaction category
             targets = term_data["targets"].copy()
-            targets.sort()
 
             # the id will be the str / tuple version of the array
             # FLAG - changed to str / tuple / set; originally was str / tuple
-            target_id = str(tuple(set(targets)))
+            target_id = str(tuple(sorted(set(targets))))
 
             interaction_categories[target_id].append(term_data)
     return interaction_categories

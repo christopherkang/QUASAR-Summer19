@@ -1,9 +1,15 @@
 import ast
 import auxiliary
+import json
 
 # path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/3OptimizeCircuit/swap/test.txt"
-path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/3OptimizeCircuit/swap/big.txt"
+# path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/3OptimizeCircuit/swap/interaction_file.txt"
+path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_data_failed_round/interaction_file.txt"
+json_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_data_failed_round/extracted_terms.json"
 max_qubit_number = 12
+
+
+ignore_line_symbols = ["Number", "Time", "Bringing", "{"]
 
 
 def tests_are_working():
@@ -12,7 +18,6 @@ def tests_are_working():
 
 def test_check_max_inputs():
     # verify that the largest qubits to be swapped are less than our max and at least 0
-    ignore_line_symbols = ["Number", "Time", "Bringing", "{", "Iteration"]
     with open(path_to_check) as f:
         for line in f:
             line = line.rstrip()
@@ -30,7 +35,6 @@ def test_check_max_inputs():
 
 
 def test_verify_swap_pattern():
-    ignore_line_symbols = ["Number", "Time", "Bringing", "{", "Iteration"]
     order = auxiliary.SpinOrder(max_qubit_number)
     with open(path_to_check) as f:
         for line in f:
@@ -71,6 +75,47 @@ def test_verify_interaction_number_matches():
 
     print(number_of_unique_interactions)
     assert number_of_unique_interactions == running_total_of_interactions, "The number of interactions is unverified"
+
+
+def test_all_interactions_are_valid():
+    # verify that the interactions are actually on valid qubits
+    order = auxiliary.SpinOrder(max_qubit_number)
+    with open(json_path) as json_file:
+        original_json = json.load(json_file)
+        original_gates = original_json["terms"]
+        with open(path_to_check) as f:
+            for line in f:
+                line = line.rstrip()
+                if any(symbol in line for symbol in ignore_line_symbols):
+                    pass
+                elif not line:
+                    pass
+                elif "SWAP" in line:
+                    stripped = line.split(" : ")[1]
+                    swap_list = ast.literal_eval(stripped)
+                    order.update(swap_list)
+                    # print(order.update(swap_list))
+                elif "Orbital position" in line:
+                    stripped = line.split(":  ")[1]
+                    dict_list = ast.literal_eval(stripped)
+                    swap_list = list(dict_list.values())
+                    assert swap_list == order.return_order(), "There was a mismatch before the end"
+                elif "Iteration" in line:
+                    stripped = line.split(" : ")[1]
+                    interaction_list = ast.literal_eval(stripped)
+                    for interaction in interaction_list:
+                        spin_order = order.return_order()
+                        reordered_interaction = list(
+                            map(lambda x: spin_order[x], interaction))
+                        matching_gates = filter(
+                            lambda gate: sorted(set(gate["targets"])) == sorted(set(reordered_interaction)), original_gates)
+
+                        avail_gates = list(matching_gates)
+
+                        print(f"{interaction} | {reordered_interaction}")
+                        print(avail_gates)
+
+                        assert avail_gates, "There are no matching gates"
 
 
 """
