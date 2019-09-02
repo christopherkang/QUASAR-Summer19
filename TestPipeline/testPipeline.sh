@@ -87,6 +87,10 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo
 
     cp ./_temp/_costEstimateOptimized.csv ../TestPipeline/_temp
+    
+    echo "Beginning validation and unit tests"
+    cd ../5ValidationTests
+    pytest
 
     echo "Finished - See _temp for outputs."
 else
