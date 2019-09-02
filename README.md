@@ -37,6 +37,18 @@ Output: Energy level estimates
 
 This folder contains a C#/Q# file to ingest the optimizations and produce energy level estimates from it.
 
+### 5ValidationTests
+
+Input: All aspects of the pipeline
+
+Output: Pytest output
+
+This folder contains a series of validation tests for the pipeline's output and unit tests for the pipeline's components. The following outputs are checked in the validation testing:
+
+- Extracted interaction JSON
+- Interaction / swap optimizations
+- Optimized JSON
+
 ### Format
 
 This folder describes the format specification of the intermediate JSON file.
@@ -53,9 +65,6 @@ This folder has a shell script which executes the other folders in the following
 2. `ExtractTrotterGates`, providing a JSON file describing the Trotter steps
 3. `OptimizeCircuit`, applying any optimizations selected on the JSON file
 4. `ConvertFileToGates`, reingesting the optimized JSON to provide an energy level estimate
+5. `ValidationTests`, checking all outputs and the validity of the pipeline components
 
 Two files, `_sampled_optimized_energy.txt` and `_sampled_reference_energy.txt` are outputted in the `./_temp` folder, where the outputs with/wo optimizations can be compared.
-
-### UnitTests (_In Progress_)
-
-This folder will contain unit tests in the future.
