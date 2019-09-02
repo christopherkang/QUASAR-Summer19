@@ -2,10 +2,14 @@ import ast
 import auxiliary
 import json
 
-# path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/3OptimizeCircuit/swap/test.txt"
-# path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/3OptimizeCircuit/swap/interaction_file.txt"
-path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_data_failed_round/interaction_file.txt"
-json_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_data_failed_round/extracted_terms.json"
+# interaction_file_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/3OptimizeCircuit/swap/test.txt"
+# interaction_file_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/3OptimizeCircuit/swap/interaction_file.txt"
+# interaction_file_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_data_failed_round/interaction_file.txt"
+# json_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_data_failed_round/extracted_terms.json"
+
+interaction_file_path = auxiliary.interaction_file_path
+input_json_path = auxiliary.input_json_path
+
 max_qubit_number = 12
 
 
@@ -18,7 +22,7 @@ def tests_are_working():
 
 def test_check_max_inputs():
     # verify that the largest qubits to be swapped are less than our max and at least 0
-    with open(path_to_check) as f:
+    with open(interaction_file_path) as f:
         for line in f:
             line = line.rstrip()
             if any(symbol in line for symbol in ignore_line_symbols):
@@ -36,7 +40,7 @@ def test_check_max_inputs():
 
 def test_verify_swap_pattern():
     order = auxiliary.SpinOrder(max_qubit_number)
-    with open(path_to_check) as f:
+    with open(interaction_file_path) as f:
         for line in f:
             line = line.rstrip()
             if any(symbol in line for symbol in ignore_line_symbols):
@@ -59,7 +63,7 @@ def test_verify_swap_pattern():
 
 def test_verify_interaction_number_matches():
     # verify that the number of unique interactions matches the actual number
-    with open(path_to_check) as f:
+    with open(interaction_file_path) as f:
         number_of_unique_interactions = 0
         running_total_of_interactions = 0
         for line in f:
@@ -80,10 +84,10 @@ def test_verify_interaction_number_matches():
 def test_all_interactions_are_valid():
     # verify that the interactions are actually on valid qubits
     order = auxiliary.SpinOrder(max_qubit_number)
-    with open(json_path) as json_file:
+    with open(input_json_path) as json_file:
         original_json = json.load(json_file)
         original_gates = original_json["terms"]
-        with open(path_to_check) as f:
+        with open(interaction_file_path) as f:
             for line in f:
                 line = line.rstrip()
                 if any(symbol in line for symbol in ignore_line_symbols):
@@ -116,25 +120,3 @@ def test_all_interactions_are_valid():
                         print(avail_gates)
 
                         assert avail_gates, "There are no matching gates"
-
-
-"""
-def test_swap_directly():
-    # Verify that the swaps made by outputToJSONV2 are correct
-    # assumes of input format of
-    # [spin positions]
-    # (swaps)
-    # ...
-    path_to_check = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_temp/interaction_file.txt"
-    order = auxiliary.SpinOrder(8)
-    with open(path_to_check) as f:
-        isAssert = True
-        for line in f:
-            line = line.rstrip()
-            if isAssert:
-                assert order.return_order() == ast.literal_eval(line)
-                print(line)
-            else:
-                print(order.update(ast.literal_eval(line)))
-            isAssert = not isAssert
-"""
