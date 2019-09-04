@@ -73,7 +73,10 @@ if args.outpath:
 with open(path + "/_FermionTerms.txt") as f:
     for line in f:
         # print(line)
-        terms.append(parse_line(line.rstrip()))
+        if "Identity" in line:
+            pass
+        else:
+            terms.append(parse_line(line.rstrip()))
 
 # parse the constants data file
 with open(path + "/_constants.txt") as f:

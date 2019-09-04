@@ -220,6 +220,9 @@ def produce_json(import_path, optimization_path, print_swaps=False, print_spin_o
             for single_body in terms:
                 single_body["orbitals"] = single_body["targets"]
 
+                assert len(
+                    single_body["orbitals"]) == 2, "Single body terms are not single bodies!!"
+
                 # rename the qubit targets
                 single_body["targets"] = list(
                     map(lambda x: spin_order.index(x), single_body["targets"]))

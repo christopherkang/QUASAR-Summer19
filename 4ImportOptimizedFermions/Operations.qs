@@ -43,9 +43,9 @@
 
         // We'll apply all of the SWAPs and Interaction, alternating
         for (round in 0..iterationLength - 1) {
-            Message($"{round}");
+            // Message($"{round}");
             ApplySWAPRound(swapList[round], register);
-            Message($"interaction: {round}");
+            // Message($"interaction: {round}");
             ApplyInteractionRound(interactionList[round], trotterStep, trotterOrder, register);
         }
     }
@@ -57,7 +57,7 @@
         
         for (index in 0..numberOfSWAPSeries - 1) {
             ApplySWAPSeries(series[index], register);
-            Message($"SWAP: {index}");
+            // Message($"SWAP: {index}");
         }
     }
 
@@ -79,10 +79,10 @@
 
         let (h1, h2, h3, h4) = data!;
 
-        Message($"{h1}");
-        Message($"{h2}");
-        Message($"{h3}");
-        Message($"{h4}");
+        // Message($"{h1}");
+        // Message($"{h2}");
+        // Message($"{h3}");
+        // Message($"{h4}");
 
         let (nQubits, (rescaleFactor, oracle)) = TrotterStepOracle(data, trotterStepSize, trotterOrder);
 
