@@ -1,3 +1,4 @@
+import sys
 
 
 def tests_are_working():
