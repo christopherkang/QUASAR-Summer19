@@ -8,9 +8,9 @@ Warning: This work may need to be kept private and/or scrubbed before use, as it
 1. Clone this repo. If you want to use Microsoft's YAML files, also clone [this folder](https://github.com/microsoft/Quantum/tree/master/Chemistry/IntegralData/YAML) in Microsoft/Quantum
 2. Install all Python requirements with the `spec.yml` file provided.
 3. Install [Microsoft's QDK](https://docs.microsoft.com/en-us/quantum/install-guide/csharp?view=qsharp-preview)
-4. Go to /TestPipeline/testPipeline.sh, and edit the top of the script so it has the correct parameters.
+4. Go to `/TestPipeline/testPipeline.sh`, and edit the top of the script so it has the correct parameters.
 5. Run the script - you may need to give proper permissions. [Additionally, if you are Windows, you may need to run the commands in the shell script manually.]
-6. Find results in /TestPipeline/_temp
+6. Find results in `/TestPipeline/_temp`
 
 ## Components
 
