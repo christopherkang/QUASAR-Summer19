@@ -57,7 +57,14 @@ This folder describes the format specification of the intermediate JSON file.
 
 Input: YAML file, parameters
 
-Output: Two text files comparing energy level estimates with/wo optimizations
+Output:
+
+- Two text files comparing energy level estimates with/wo optimizations (`_sampled_reference_energy.txt`, `_sampled_optimized_energy.txt`)
+- Two CSVs with resource estimates (`_costEstimateReference.csv`, `_costEstimateOptimized.csv`)
+- The raw extracted Hamiltonian (`extracted_terms.json`)
+- The optimizations to be applied (`interaction_file.txt`)
+- The optimized JSON (`reconstructed.json`)
+- The logfile describing all key parameters (`logfile.txt`)
 
 This folder has a shell script which executes the other folders in the following order:
 
