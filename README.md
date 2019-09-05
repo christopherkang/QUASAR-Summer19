@@ -1,5 +1,7 @@
 # QUASAR-Summer19
 
+## Christopher Kang | Sriram Krishnamoorthy @ PNNL
+
 Collection of summer projects for my internship at PNNL over the summer of 2019.
 Warning: This work may need to be kept private and/or scrubbed before use, as it contains PNNL sensitive information (network username).
 
@@ -69,7 +71,7 @@ Input: YAML file, parameters
 Output:
 
 - Two text files comparing energy level estimates with/wo optimizations (`_sampled_reference_energy.txt`, `_sampled_optimized_energy.txt`)
-- Two CSVs with resource estimates (`_costEstimateReference.csv`, `_costEstimateOptimized.csv`)
+- Two CSVs with resource estimates (`./ReferenceCostEstimates`, `./OptimizedCostEstimates`)
 - The raw extracted Hamiltonian (`extracted_terms.json`)
 - The optimizations to be applied (`interaction_file.txt`)
 - The optimized JSON (`reconstructed.json`)

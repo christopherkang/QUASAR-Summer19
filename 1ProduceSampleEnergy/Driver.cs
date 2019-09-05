@@ -1,11 +1,12 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
 
 using Microsoft.Quantum.Chemistry;
-using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
 using Microsoft.Quantum.Chemistry.Broombridge;
+using Microsoft.Quantum.Chemistry.OrbitalIntegrals;
 
 using Microsoft.Extensions.Logging;
-using System.Linq;
 
 using Microsoft.Quantum.Simulation.Core;
 using Microsoft.Quantum.Simulation.Simulators;
@@ -73,7 +74,16 @@ namespace ProduceSampleEnergy
                 QCTraceSimulator estimator = new QCTraceSimulator(config);
                 ApplyTrotterOracleOnce.Run(estimator, qSharpData, trotterStepSize, trotterOrder).Wait();
                 System.IO.Directory.CreateDirectory("_temp");
-                System.IO.File.WriteAllLines("./_temp/_costEstimateReference.csv",estimator.ToCSV().Select(x => x.Key + " " + x.Value).ToArray());
+                // var csvData = estimator.ToCSV();
+                // var csvStringData = String.Join(Environment.NewLine, csvData.Select(d => $"{d.Key};{d.Value};"));
+                // System.IO.File.WriteAllText("./_temp/_costEstimateReference.csv", csvStringData);
+
+                foreach (var collectedData in estimator.ToCSV())
+                {
+                    File.WriteAllText(
+                        Path.Combine("./_temp/", $"CCNOTCircuitsMetrics.{collectedData.Key}.csv"),
+                        collectedData.Value);
+                }
             }
         }
     }

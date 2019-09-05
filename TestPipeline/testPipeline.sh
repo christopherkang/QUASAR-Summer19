@@ -44,7 +44,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     echo "RUNNING: dotnet run $CMD_ARGS $SAMPLE_SIZE >./_temp/_sampled_reference_energy.txt"
     echo
     dotnet run $CMD_ARGS $SAMPLE_SIZE >../TestPipeline/_temp/_sampled_reference_energy.txt
-    cp ./_temp/_costEstimateReference.csv ../TestPipeline/_temp
+    mkdir ../TestPipeline/_temp/ReferenceCostEstimates
+    cp -r ./_temp/ ../TestPipeline/_temp/ReferenceCostEstimates
 
     # ----- STEP 2 - Produce the JSON file
     echo "RUNNING: ./extract_gates.sh $CMD_ARGS"
@@ -86,7 +87,8 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     dotnet run ../TestPipeline/_temp/reconstructed.json $SAMPLE_SIZE $PRECISION >>../TestPipeline/_temp/_sampled_optimized_energy.txt
     echo
 
-    cp ./_temp/_costEstimateOptimized.csv ../TestPipeline/_temp
+    mkdir ../TestPipeline/_temp/OptimizedCostEstimates
+    cp -r ./_temp/ ../TestPipeline/_temp/OptimizedCostEstimates
     
     echo "Beginning validation and unit tests"
     cd ../5ValidationTests

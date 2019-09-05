@@ -1,9 +1,10 @@
 ﻿using System;
-using System.Linq;
-using System.IO;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 
 using Newtonsoft.Json.Linq;
+
 using Microsoft.Quantum.Simulation.Core;
 using Microsoft.Quantum.Simulation.Simulators;
 using Microsoft.Quantum.Simulation.Simulators.QCTraceSimulators;
@@ -75,7 +76,13 @@ namespace ImportOptimizedFermions
                     QCTraceSimulator estimator = new QCTraceSimulator(config);
                     ApplyTrotterOracleOnce.Run(estimator, data).Wait();
                     System.IO.Directory.CreateDirectory("_temp");
-                    System.IO.File.WriteAllLines("./_temp/_costEstimateOptimized.csv",estimator.ToCSV().Select(x => x.Key + " " + x.Value).ToArray());
+                    // System.IO.File.WriteAllLines("./_temp/_costEstimateOptimized.csv",estimator.ToCSV().Select(x => x.Key + " " + x.Value).ToArray());
+                    foreach (var collectedData in estimator.ToCSV())
+                    {
+                        File.WriteAllText(
+                            Path.Combine("./_temp/", $"CCNOTCircuitsMetrics.{collectedData.Key}.csv"),
+                            collectedData.Value);
+                    }
                     #endregion
                 }
             }
