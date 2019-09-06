@@ -26,23 +26,25 @@ namespace ImportOptimizedFermions
         )
         {
             // if this breaks see other method with the same name
-            var constants = PrepareConstantValues(OptimizedHamiltonian);
             var stateData = new StatePrepData(CreateJWInputState(OptimizedHamiltonian));
-            var (swaps, JWEDData) = ProduceTotalRounds(OptimizedHamiltonian);
+            var (swaps, JWEDData, newEnergyOffset) = ProduceTotalRounds(OptimizedHamiltonian);
+
+            // the new energy offset is factored in here
+            var constants = PrepareConstantValues(OptimizedHamiltonian, newEnergyOffset);
             return new CompleteHamiltonian((constants, stateData, swaps, JWEDData));
         }
         // Produces all information necessary for the Q# code
         // Input: JSON file
         // Output: SWAPs and JWED to be used. JWED goes to the TrotterStepOracle, whereas SWAPs
         // have a custom implementation
-        public static (QArray<SWAPRound>, QArray<JordanWignerEncodingData>) ProduceTotalRounds(
+        public static (QArray<SWAPRound>, QArray<JordanWignerEncodingData>, Double) ProduceTotalRounds(
             JObject OptimizedHamiltonian
         )
         {
             var swaps = ProduceAllSWAPRounds(OptimizedHamiltonian);
-            var interactions = ProduceAllJWED(OptimizedHamiltonian);
+            var (interactions, newEnergyOffset) = ProduceAllJWED(OptimizedHamiltonian);
 
-            return (swaps, interactions);
+            return (swaps, interactions, newEnergyOffset);
         }
 
         // Produces all the necessary SWAP rounds
@@ -88,7 +90,7 @@ namespace ImportOptimizedFermions
             }
             return new SWAPRound((new QArray<SWAPSeries>(series)));
         }
-        public static QArray<JordanWignerEncodingData> ProduceAllJWED(
+        public static (QArray<JordanWignerEncodingData>, Double) ProduceAllJWED(
             JObject OptimizedHamiltonian
         )
         {
@@ -96,12 +98,20 @@ namespace ImportOptimizedFermions
             int numberOfInteractionRounds = OptimizedHamiltonian["terms"]["interactions"].Count();
             List<JordanWignerEncodingData> allRounds = new List<JordanWignerEncodingData>();
 
+            // We also need to calculate a new energy offset
+            double newEnergyOffset = 0;
+
             for (int interactionIndex = 0; interactionIndex < numberOfInteractionRounds; interactionIndex++)
             {
-                allRounds.Add(ConvertOneToJWED(OptimizedHamiltonian, interactionIndex));
+                var converted = ConvertOneToJWED(OptimizedHamiltonian, interactionIndex);
+                allRounds.Add(converted);
+                var (trash1, trash2, trash3, energyOffset) = converted;
+                newEnergyOffset += energyOffset;
             }
 
-            return new QArray<JordanWignerEncodingData>(allRounds);
+            Console.WriteLine(newEnergyOffset);
+
+            return (new QArray<JordanWignerEncodingData>(allRounds), newEnergyOffset);
         }
 
 
@@ -119,6 +129,7 @@ namespace ImportOptimizedFermions
 
             // convert to refined Q# format
             var pauliHamiltonianQSharpFormat = hamiltonianQSharpFormat.ToQSharpFormat();
+            var (energyOffset, trash, trash2) = pauliHamiltonianQSharpFormat;
 
             return QSharpFormat.Convert.ToQSharpFormat(pauliHamiltonianQSharpFormat, inputState);
         }
@@ -168,11 +179,16 @@ namespace ImportOptimizedFermions
             // pull the interactions and parse them into the PauliHamiltonian format
             foreach (var interaction in interactionList)
             {
-                if ((string)interaction["type"] != "Identity")
-                {
-                    var (term, type, coeff) = ConvertToFermionFormat(interaction);
-                    hamiltonian.AddRange(conversion(term, type, coeff));
-                }
+                var (term, type, coeff) = ConvertToFermionFormat(interaction);
+                hamiltonian.AddRange(conversion(term, type, coeff));
+                // if ((string)interaction["type"] == "Identity")
+                // {
+                //     // We need to still add the term if it's an identity term
+                //     hamiltonian.
+                // } else {
+                //     var (term, type, coeff) = ConvertToFermionFormat(interaction);
+                //     hamiltonian.AddRange(conversion(term, type, coeff));
+                // }
             }
 
             // assume that the indices are simply an ascending 0-indexed list
@@ -203,13 +219,11 @@ namespace ImportOptimizedFermions
             // create the new ladder sequence
             var ladderSpins = interaction["targets"].ToObject<int[]>();
 
-            var ladderSeq = ladderSpins.ToLadderSequence();
-            FermionTerm convertedTerm = new FermionTerm(ladderSeq);
-
             switch (type)
             {
                 case "Identity":
                     termType = TermType.Fermion.Identity;
+                    ladderSpins = new int[0];
                     break;
 
                 case "PP":
@@ -226,6 +240,73 @@ namespace ImportOptimizedFermions
 
                 case "PQQR":
                     termType = TermType.Fermion.PQQR;
+                    // Console.WriteLine("[{0}]", string.Join(", ", ladderSpins));
+
+                    var p = -1;
+                    var q = -1;
+                    var r = -1;
+
+                    if (ladderSpins[0] == ladderSpins[1]) {
+                        // we are in QQPR, need to see if P, R should be switched
+                        p = ladderSpins[2];
+                        q = ladderSpins[0];
+                        r = ladderSpins[3];
+
+                    } else if (ladderSpins[0] == ladderSpins[2]) {
+                        // we are in QPQR
+
+                        p = ladderSpins[1];
+                        q = ladderSpins[0];
+                        r = ladderSpins[3];
+                        angle = angle * -1.0;
+
+                    } else if (ladderSpins[0] == ladderSpins[3]) {
+                        // we are in QPRQ
+                        p = ladderSpins[1];
+                        q = ladderSpins[0];
+                        r = ladderSpins[2];
+
+                    } else if (ladderSpins[1] == ladderSpins[2]) {
+                        // we are in pqqr
+
+                        p = ladderSpins[0];
+                        q = ladderSpins[1];
+                        r = ladderSpins[3];
+
+                    } else if (ladderSpins[1] == ladderSpins[3]) {
+                        // we are in pqrq
+
+                        p = ladderSpins[0];
+                        q = ladderSpins[1];
+                        r = ladderSpins[2];
+                        angle = angle * -1.0;
+
+                    } else if (ladderSpins[2] == ladderSpins[3]) {
+                        // we are in prqq
+
+                        p = ladderSpins[0];
+                        q = ladderSpins[2];
+                        r = ladderSpins[1];
+
+                    } else {
+                        Console.WriteLine("wtf!!!");
+                    }
+
+                    // rename the terms now 
+                    if (p < r) {
+                        ladderSpins[0] = p;
+                        ladderSpins[3] = r;
+                    } else {
+                        ladderSpins[0] = r;
+                        ladderSpins[3] = p;
+                        angle = angle * -1.0;
+                    }
+
+                    ladderSpins[1] = q;
+                    ladderSpins[2] = q;
+
+                    // Console.WriteLine("[{0}]", string.Join(", ", ladderSpins));
+
                     break;
 
                 case "PQRS":
@@ -235,6 +316,9 @@ namespace ImportOptimizedFermions
                 default:
                     throw new System.NotImplementedException();
             }
+
+            var ladderSeq = ladderSpins.ToLadderSequence();
+            FermionTerm convertedTerm = new FermionTerm(ladderSeq);
 
             return (convertedTerm, termType, angle);
         }
@@ -413,12 +497,13 @@ namespace ImportOptimizedFermions
         // Input: JObject containing JSON
         // Output: Tuple of constants (HamiltonianConstants)
         public static HamiltonianConstants PrepareConstantValues(
-            JObject OptimizedHamiltonian
+            JObject OptimizedHamiltonian, Double newEnergyOffset
             )
         {
             var constants = OptimizedHamiltonian["constants"];
             var nSpinOrbitals = constants["nSpinOrbitals"].ToObject<long>();
-            var energyOffset = constants["energyOffset"].ToObject<double>();
+            // var energyOffset = constants["energyOffset"].ToObject<double>();
+            var energyOffset = newEnergyOffset;
             var trotterStep = constants["trotterStep"].ToObject<double>();
             var trotterOrder = constants["trotterOrder"].ToObject<long>();
             return new HamiltonianConstants((nSpinOrbitals, energyOffset, trotterStep, trotterOrder));

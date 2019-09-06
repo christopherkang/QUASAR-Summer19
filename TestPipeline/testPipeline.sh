@@ -3,14 +3,14 @@
 # Assumptions - placed in cloned Github directory with file structure intact
 
 # STEP 0 - Setup
-# YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.100.yaml"
-YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/Broombridge_v0.2/H2_sto-3g.yaml"
+YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/H4/h4_sto6g_0.100.yaml"
+# YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/Broombridge_v0.2/H2_sto-3g.yaml"
 # YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/YAML/LiH_sto3g_FCI/lih_sto-3g_fci_0.800.yaml"
 INPUT_STATE="E1"
 PRECISION="7"
 TROTTER_STEP="0.4"
 TROTTER_ORDER="1"
-SAMPLE_SIZE="0"
+SAMPLE_SIZE="10"
 
 CMD_ARGS="$YAML_PATH $INPUT_STATE $PRECISION $TROTTER_STEP $TROTTER_ORDER"
 
@@ -72,7 +72,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
     python3 outputToJSONV3.py ../TestPipeline/_temp/extracted_terms.json ../TestPipeline/_temp/interaction_file.txt ../TestPipeline/_temp/reconstructed.json
     # cp ./reconstructed.json ../TestPipeline/_temp/
 
-    python3 produce_rounds.py ../TestPipeline/_temp/reconstructed.json
+    python3 produce_roundsV2.py ../TestPipeline/_temp/reconstructed.json
     cp ./rounds.json ../TestPipeline/_temp
 
     cd .. 
