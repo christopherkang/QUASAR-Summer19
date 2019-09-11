@@ -4,7 +4,6 @@
 .workspace/
 bin/
 obj/
-*.csproj
 swap/
 Interaction Samples/
 _temp*/

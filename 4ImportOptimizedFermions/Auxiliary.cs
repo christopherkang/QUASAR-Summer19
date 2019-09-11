@@ -109,7 +109,7 @@ namespace ImportOptimizedFermions
                 newEnergyOffset += energyOffset;
             }
 
-            Console.WriteLine(newEnergyOffset);
+            // Console.WriteLine(newEnergyOffset);
 
             return (new QArray<JordanWignerEncodingData>(allRounds), newEnergyOffset);
         }
@@ -214,6 +214,10 @@ namespace ImportOptimizedFermions
             // extract only the fermionic interactions
             string type = (string)interaction["type"];
             double angle = (double)interaction["angle"];
+            var p = -1;
+            var q = -1;
+            var r = -1;
+            var s = -1;
             TermType.Fermion termType;
 
             // create the new ladder sequence
@@ -240,19 +244,23 @@ namespace ImportOptimizedFermions
 
                 case "PQQR":
                     termType = TermType.Fermion.PQQR;
-                    // Console.WriteLine("[{0}]", string.Join(", ", ladderSpins));
+                    Console.WriteLine("[{0}]", string.Join(", ", ladderSpins));
+                    Console.WriteLine($"{angle}");
 
-                    var p = -1;
-                    var q = -1;
-                    var r = -1;
+                    p = -1;
+                    q = -1;
+                    r = -1;
 
-                    if (ladderSpins[0] == ladderSpins[1]) {
+                    if (ladderSpins[0] == ladderSpins[1])
+                    {
                         // we are in QQPR, need to see if P, R should be switched
                         p = ladderSpins[2];
                         q = ladderSpins[0];
                         r = ladderSpins[3];
 
-                    } else if (ladderSpins[0] == ladderSpins[2]) {
+                    }
+                    else if (ladderSpins[0] == ladderSpins[2])
+                    {
                         // we are in QPQR
 
                         p = ladderSpins[1];
@@ -260,20 +268,26 @@ namespace ImportOptimizedFermions
                         r = ladderSpins[3];
                         angle = angle * -1.0;
 
-                    } else if (ladderSpins[0] == ladderSpins[3]) {
+                    }
+                    else if (ladderSpins[0] == ladderSpins[3])
+                    {
                         // we are in QPRQ
                         p = ladderSpins[1];
                         q = ladderSpins[0];
                         r = ladderSpins[2];
 
-                    } else if (ladderSpins[1] == ladderSpins[2]) {
-                        // we are in pqqr
+                    }
+                    else if (ladderSpins[1] == ladderSpins[2])
+                    {
+                        // we are in PQQR
 
                         p = ladderSpins[0];
                         q = ladderSpins[1];
                         r = ladderSpins[3];
 
-                    } else if (ladderSpins[1] == ladderSpins[3]) {
+                    }
+                    else if (ladderSpins[1] == ladderSpins[3])
+                    {
                         // we are in pqrq
 
                         p = ladderSpins[0];
@@ -281,22 +295,29 @@ namespace ImportOptimizedFermions
                         r = ladderSpins[2];
                         angle = angle * -1.0;
 
-                    } else if (ladderSpins[2] == ladderSpins[3]) {
+                    }
+                    else if (ladderSpins[2] == ladderSpins[3])
+                    {
                         // we are in prqq
 
                         p = ladderSpins[0];
                         q = ladderSpins[2];
                         r = ladderSpins[1];
 
-                    } else {
-                        Console.WriteLine("wtf!!!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Unknown PQQR Permutation");
                     }
 
                     // rename the terms now 
-                    if (p < r) {
+                    if (p < r)
+                    {
                         ladderSpins[0] = p;
                         ladderSpins[3] = r;
-                    } else {
+                    }
+                    else
+                    {
                         ladderSpins[0] = r;
                         ladderSpins[3] = p;
                         angle = angle * -1.0;
@@ -305,12 +326,90 @@ namespace ImportOptimizedFermions
                     ladderSpins[1] = q;
                     ladderSpins[2] = q;
 
-                    // Console.WriteLine("[{0}]", string.Join(", ", ladderSpins));
+                    Console.WriteLine("[{0}]", string.Join(", ", ladderSpins));
+                    Console.WriteLine($"{angle}");
 
                     break;
 
                 case "PQRS":
                     termType = TermType.Fermion.PQRS;
+                    var pqrsSorted = ladderSpins.ToList();
+                    pqrsSorted.Sort();
+
+                    // find the new PQRS (p'q'r's') and their corresponding original indices
+                    p = pqrsSorted[0];
+                    q = pqrsSorted[1];
+                    r = pqrsSorted[2];
+                    s = pqrsSorted[3];
+
+                    var pIndex = Array.IndexOf(ladderSpins, p);
+                    var qIndex = Array.IndexOf(ladderSpins, q);
+                    var rIndex = Array.IndexOf(ladderSpins, r);
+                    var sIndex = Array.IndexOf(ladderSpins, s);
+
+                    Console.WriteLine($"{pIndex}, {qIndex}, {rIndex}, {sIndex}");
+                    Console.WriteLine($"values: {p}, {q}, {r}, {s}");
+
+                    // set the leading sign coefficients
+                    var zSign = 0.0;
+                    if ((pIndex + rIndex == 1) || (pIndex + rIndex == 5))
+                    {
+                        // we have two annihilation / creation
+                        zSign = -1.0;
+                    }
+                    else
+                    {
+                        // we could have pr (2) to qs (4)
+                        zSign = 1.0;
+                    }
+                    var swapCoeff = RecursivelyIdentifyDeterminant(ladderSpins.ToArray());
+
+                    // identify which Q# pipeline to use
+                    if ((pIndex + qIndex == 1) || (pIndex + qIndex == 5))
+                    {
+                        // XXYY / YYXX are negative; pqsr pipeline
+                        ladderSpins[0] = p;
+                        ladderSpins[1] = q;
+                        ladderSpins[2] = s;
+                        ladderSpins[3] = r;
+
+                        // angle sign correction 
+                        // getting to pqsr itself takes one swap
+                        angle = -1.0 * angle;
+
+                    }
+                    else if ((qIndex + sIndex == 1) || (qIndex + sIndex == 5))
+                    {
+                        // XYXY / YXYX are negative; prsq pipeline
+                        ladderSpins[0] = p;
+                        ladderSpins[1] = r;
+                        ladderSpins[2] = s;
+                        ladderSpins[3] = q;
+
+                        // angle sign correction - not necessary
+
+                    }
+                    else if ((qIndex + rIndex == 1) || (qIndex + rIndex == 5))
+                    {
+                        // XYYX / YXXY are negative; psrq pipeline
+                        ladderSpins[0] = p;
+                        ladderSpins[1] = s;
+                        ladderSpins[2] = r;
+                        ladderSpins[3] = q;
+
+                        // angle sign correction
+
+                        angle = -1.0 * angle;
+
+                    }
+                    else
+                    {
+                        throw new System.NotImplementedException();
+                    }
+
+                    // apply final corrections
+                    angle = -1.0 * zSign * swapCoeff * angle;
+
                     break;
 
                 default:
@@ -323,174 +422,37 @@ namespace ImportOptimizedFermions
             return (convertedTerm, termType, angle);
         }
 
-        // Produce the completed Hamiltonian given JSON
-        // Input: JObject containing JSON
-        // Output: Packaged Hamiltonian data
-        // public static PackagedHamiltonian ProduceCompleteHamiltonian(
-        //     JObject OptimizedHamiltonian
-        //     )
-        // {
-        //     var statePrepData = PrepareStatePrepData(OptimizedHamiltonian);
-        //     var fermionTerms = ProduceLowLevelTerms(OptimizedHamiltonian);
-        //     var constantValues = PrepareConstantValues(OptimizedHamiltonian);
-        //     return new PackagedHamiltonian((constantValues, fermionTerms, statePrepData));
-        // }
-
-        // Convert the JSON fermion terms into GeneratorIndex[] that can be interpreted in Q#
-        // Input: JObject containing JSON
-        // Output: QArray<GeneratorIndex>
-        // Note: Much of this code has repurposed from Chemistry/src/DataModel/Fermion/JordanWignerEncoding.cs
-        public static QArray<GeneratorIndex> ProduceLowLevelTerms(
-            JObject OptimizedHamiltonian
-            )
+        // Identify the determinant of a permutation array
+        // Input: array with unique elements from 0..n -1
+        // Output: determinant of the array who had the elements of the permutation matrix
+        public static int RecursivelyIdentifyDeterminant(
+            int[] indexList
+        )
         {
-            var termList = OptimizedHamiltonian["terms"];
-            var outData = new List<GeneratorIndex>();
-            foreach (var term in termList)
+            // e.g. [0, 3, 1, 2]
+            // move 3, count the number of swaps, then move on until there is nothing
+            if (indexList.Length == 1)
             {
-                // extract relevant information
-                var targets = term["targets"].ToObject<long[]>();
-                var termType = term["type"].ToObject<string>();
-                var angle = term["angle"].ToObject<double>();
-
-                // decide on how to split the term based on its type
-                if (termType == "Identity")
-                {
-                    // add an Identity
-                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { -1 }), new QArray<Double>(angle)), new QArray<Int64>(targets))));
-
-                }
-                else if (termType == "SWAP")
-                {
-                    // add a SWAP
-                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { -2 }), new QArray<Double>(-1.0)), new QArray<Int64>(targets))));
-                }
-
-                else if (termType == "PP")
-                {
-                    // add an Identity, Z
-                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { -1 }), new QArray<Double>(0.5 * angle)), new QArray<Int64>(targets))));
-
-                    var PTarget = new QArray<Int64>(targets.Take(1));
-                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { 0 }), new QArray<Double>(-0.5 * angle)), PTarget)));
-                }
-                else if (termType == "PQ")
-                {
-                    // add a PQ
-                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { 2 }), new QArray<Double>(0.25 * angle)), new QArray<Int64>(targets))));
-                }
-                else if (termType == "PQQP")
-                {
-
-                    // add an Identity, ZZ, Z, Z
-                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { -1 }), new QArray<Double>(0.25 * angle)), new QArray<Int64>(targets))));
-
-                    var ZZTarget = new QArray<Int64>(targets.Take(2));
-                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { 1 }), new QArray<Double>(0.25 * angle)), ZZTarget)));
-
-                    var ZTarget1 = new QArray<Int64>(targets.Take(1));
-                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { 0 }), new QArray<Double>(-0.25 * angle)), ZTarget1)));
-
-                    var ZTarget2 = new QArray<Int64>(targets.Skip(1).Take(1));
-                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { 0 }), new QArray<Double>(-0.25 * angle)), ZTarget2)));
-                }
-                else if (termType == "PQQR")
-                {
-                    // Console.WriteLine("[{0}]", string.Join(", ", targets));
-                    var multiplier = 1.0;
-                    if (targets.First() == targets.Last())
-                    {
-                        // QPRQ -> PQQR
-                        targets[0] = targets[1];
-                        targets[1] = targets[3];
-                        targets[3] = targets[2];
-                        targets[2] = targets[1];
-                    }
-                    else if (targets[1] == targets[3])
-                    {
-                        // PQRQ -> PQQR
-                        targets[3] = targets[2];
-                        targets[2] = targets[1];
-                        multiplier = -1.0;
-                    }
-                    // FLAG - SHOULD THIS DO THIS?????????
-                    if (targets[0] > targets[3])
-                    {
-                        var lowerBound = targets[3];
-                        targets[3] = targets[0];
-                        targets[0] = lowerBound;
-                    }
-                    // Console.WriteLine("[{0}]", string.Join(", ", targets));
-
-                    // add a PQQR and PQ term
-                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { 2 }), new QArray<Double>(-0.125 * multiplier * angle)), new QArray<Int64>(targets))));
-
-                    var PQTargets = new QArray<Int64>(new long[] { targets[0], targets[3] });
-                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { 2 }), new QArray<Double>(0.125 * multiplier * angle)), PQTargets)));
-
-                }
-                else if (termType == "PQRS")
-                {
-
-                    var pqrsSorted = targets.ToList();
-                    pqrsSorted.Sort();
-                    var (newTerm, newCoeff) = IdentifyHpqrsPermutation((pqrsSorted, targets, angle));
-                    outData.Add(new GeneratorIndex(((new QArray<Int64>(new long[] { 3 }), new QArray<Double>(newCoeff)), new QArray<Int64>(newTerm))));
-                }
-                else
-                {
-
-                    throw new System.NotImplementedException();
-                }
-            }
-            return new QArray<GeneratorIndex>(outData.ToArray());
-        }
-
-        // Helper method for ProduceLowLevelTerms
-        // Identifies Hpqrs permutation and gives appropriate coefficients
-        public static (List<long>, double[]) IdentifyHpqrsPermutation((List<long>, long[], double) term)
-        {
-            //We only consider permutations pqrs || psqr || prsq || qprs || spqr || prqs
-            var (pqrsSorted, pqrsPermuted, coeff) = term;
-            coeff = coeff * 0.0625;
-            var h123 = new double[] { .0, .0, .0 };
-            var v0123 = new double[] { .0, .0, .0, .0 };
-
-            //Console.WriteLine($"{pqrsSorted}, {pqrsPermuted}");
-
-            var prsq = new long[] { pqrsSorted[0], pqrsSorted[2], pqrsSorted[3], pqrsSorted[1] };
-            var pqsr = new long[] { pqrsSorted[0], pqrsSorted[1], pqrsSorted[3], pqrsSorted[2] };
-            var psrq = new long[] { pqrsSorted[0], pqrsSorted[3], pqrsSorted[2], pqrsSorted[1] };
-
-            //Console.WriteLine($"{pqrs}, {psqr}, {prsq}, {qprs}, {spqr}, {prqs}");
-
-            if (Enumerable.SequenceEqual(pqrsPermuted, prsq))
-            {
-                h123 = new double[] { 0.0, 0.0, coeff };
-            }
-            else if (Enumerable.SequenceEqual(pqrsPermuted, pqsr))
-            {
-                h123 = new double[] { -coeff, 0.0, 0.0 };
-            }
-            else if (Enumerable.SequenceEqual(pqrsPermuted, psrq))
-            {
-                h123 = new double[] { 0.0, -coeff, 0.0 };
+                return 1;
             }
             else
             {
-                h123 = new double[] { 0.0, 0.0, 0.0 };
+                var mover = indexList.Max();
+                int[] moverArr = { mover };
+                var moverIndex = indexList.ToList().IndexOf(mover);
+
+                // we have 0, 3, 1 ,2 at 0, 1, 2, 3
+                // 3 will need to move from index 1 to 3, which is 2 swaps
+                var swapNum = mover - moverIndex;
+                if (swapNum % 2 == 0)
+                {
+                    return RecursivelyIdentifyDeterminant(indexList.Except(moverArr).ToArray());
+                }
+                else
+                {
+                    return -1 * RecursivelyIdentifyDeterminant(indexList.Except(moverArr).ToArray());
+                }
             }
-
-            v0123 = new double[] { -h123[0] - h123[1] + h123[2],
-                                        h123[0] - h123[1] + h123[2],
-                                        -h123[0] - h123[1] - h123[2],
-                                        -h123[0] + h123[1] + h123[2] };
-
-            // DEBUG for output h123
-            //v0123 = h123;
-            //v0123.Add(0.0);
-
-            return (pqrsSorted, v0123);
         }
 
         // Extracts the constant values
