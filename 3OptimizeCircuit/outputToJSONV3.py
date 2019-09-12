@@ -229,7 +229,7 @@ def produce_json(import_path, optimization_path, print_swaps=False, print_spin_o
 
                 new_single_body_list.append(single_body)
 
-        new_interaction_term_list.append(new_single_body_list)
+        new_interaction_term_list.insert(0, new_single_body_list)
 
     output_json["terms"] = {
         "swaps": new_swap_term_list,

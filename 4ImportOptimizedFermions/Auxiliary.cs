@@ -102,14 +102,14 @@ namespace ImportOptimizedFermions
             double newEnergyOffset = 0;
 
             // Put single-body terms at the beginning
-            var converted = ConvertOneToJWED(OptimizedHamiltonian, numberOfInteractionRounds - 1);
-            allRounds.Add(converted);
-            var (trash1, trash2, trash3, lastEnergyOffset) = converted;
-            newEnergyOffset += lastEnergyOffset;
+            // var converted = ConvertOneToJWED(OptimizedHamiltonian, numberOfInteractionRounds - 1);
+            // allRounds.Add(converted);
+            // var (trash1, trash2, trash3, lastEnergyOffset) = converted;
+            // newEnergyOffset += lastEnergyOffset;
 
-            for (int interactionIndex = 0; interactionIndex < numberOfInteractionRounds - 1; interactionIndex++)
+            for (int interactionIndex = 0; interactionIndex < numberOfInteractionRounds; interactionIndex++)
             {
-                converted = ConvertOneToJWED(OptimizedHamiltonian, interactionIndex);
+                var converted = ConvertOneToJWED(OptimizedHamiltonian, interactionIndex);
                 allRounds.Add(converted);
                 var (trash11, trash22, trash33, energyOffset) = converted;
                 newEnergyOffset += energyOffset;
