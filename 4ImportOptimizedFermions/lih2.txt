@@ -767,3 +767,11 @@ values: 1, 2, 3, 4
 3, 1, 2, 0
 values: 1, 2, 3, 4
 Predicted energy: -9.88482797368352
+Predicted energy: -9.91550758944123
+Predicted energy: -9.8053575074415
+Predicted energy: -9.8234687421681
+Predicted energy: -9.67007066337953
+Predicted energy: -8.92119150416331
+Predicted energy: -9.49856134986437
+Predicted energy: -9.51667258459097
+Predicted energy: -9.84157997689469

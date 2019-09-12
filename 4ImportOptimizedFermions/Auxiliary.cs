@@ -101,15 +101,21 @@ namespace ImportOptimizedFermions
             // We also need to calculate a new energy offset
             double newEnergyOffset = 0;
 
-            for (int interactionIndex = 0; interactionIndex < numberOfInteractionRounds; interactionIndex++)
+            // Put single-body terms at the beginning
+            var converted = ConvertOneToJWED(OptimizedHamiltonian, numberOfInteractionRounds - 1);
+            allRounds.Add(converted);
+            var (trash1, trash2, trash3, lastEnergyOffset) = converted;
+            newEnergyOffset += lastEnergyOffset;
+
+            for (int interactionIndex = 0; interactionIndex < numberOfInteractionRounds - 1; interactionIndex++)
             {
-                var converted = ConvertOneToJWED(OptimizedHamiltonian, interactionIndex);
+                converted = ConvertOneToJWED(OptimizedHamiltonian, interactionIndex);
                 allRounds.Add(converted);
-                var (trash1, trash2, trash3, energyOffset) = converted;
+                var (trash11, trash22, trash33, energyOffset) = converted;
                 newEnergyOffset += energyOffset;
             }
 
-            // Console.WriteLine(newEnergyOffset);
+            Console.WriteLine(newEnergyOffset);
 
             return (new QArray<JordanWignerEncodingData>(allRounds), newEnergyOffset);
         }
@@ -320,7 +326,7 @@ namespace ImportOptimizedFermions
                     {
                         ladderSpins[0] = r;
                         ladderSpins[3] = p;
-                        angle = angle * -1.0;
+                        // angle = angle * -1.0;
                     }
 
                     ladderSpins[1] = q;
@@ -352,7 +358,7 @@ namespace ImportOptimizedFermions
 
                     // set the leading sign coefficients
                     var zSign = 0.0;
-                    if ((pIndex + rIndex == 1) || (pIndex + rIndex == 5))
+                    if ((qIndex + sIndex == 1) || (qIndex + sIndex == 5))
                     {
                         // we have two annihilation / creation
                         zSign = -1.0;

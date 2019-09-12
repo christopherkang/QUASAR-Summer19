@@ -43,10 +43,10 @@
 
         // We'll apply all of the SWAPs and Interaction, alternating
         for (round in 0..iterationLength - 1) {
-            // Message($"{round}");
-            ApplySWAPRound(swapList[round], register);
             // Message($"interaction: {round}");
             ApplyInteractionRound(interactionList[round], trotterStep, trotterOrder, register);
+            // Message($"{round}");
+            ApplySWAPRound(swapList[round], register);
         }
     }
 
