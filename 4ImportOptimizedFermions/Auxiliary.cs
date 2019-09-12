@@ -228,6 +228,8 @@ namespace ImportOptimizedFermions
 
             // create the new ladder sequence
             var ladderSpins = interaction["targets"].ToObject<int[]>();
+            var pqrsSorted = ladderSpins.ToList();
+            pqrsSorted.Sort();
 
             switch (type)
             {
@@ -246,6 +248,10 @@ namespace ImportOptimizedFermions
 
                 case "PQQP":
                     termType = TermType.Fermion.PQQP;
+                    p = pqrsSorted[0];
+                    q = pqrsSorted[2];
+                    ladderSpins[0] = p;
+                    ladderSpins[1] = q;
                     break;
 
                 case "PQQR":
@@ -263,17 +269,14 @@ namespace ImportOptimizedFermions
                         p = ladderSpins[2];
                         q = ladderSpins[0];
                         r = ladderSpins[3];
-
                     }
                     else if (ladderSpins[0] == ladderSpins[2])
                     {
                         // we are in QPQR
-
                         p = ladderSpins[1];
                         q = ladderSpins[0];
                         r = ladderSpins[3];
                         angle = angle * -1.0;
-
                     }
                     else if (ladderSpins[0] == ladderSpins[3])
                     {
@@ -281,35 +284,28 @@ namespace ImportOptimizedFermions
                         p = ladderSpins[1];
                         q = ladderSpins[0];
                         r = ladderSpins[2];
-
                     }
                     else if (ladderSpins[1] == ladderSpins[2])
                     {
                         // we are in PQQR
-
                         p = ladderSpins[0];
                         q = ladderSpins[1];
                         r = ladderSpins[3];
-
                     }
                     else if (ladderSpins[1] == ladderSpins[3])
                     {
                         // we are in pqrq
-
                         p = ladderSpins[0];
                         q = ladderSpins[1];
                         r = ladderSpins[2];
                         angle = angle * -1.0;
-
                     }
                     else if (ladderSpins[2] == ladderSpins[3])
                     {
                         // we are in prqq
-
                         p = ladderSpins[0];
                         q = ladderSpins[2];
                         r = ladderSpins[1];
-
                     }
                     else
                     {
@@ -331,16 +327,10 @@ namespace ImportOptimizedFermions
 
                     ladderSpins[1] = q;
                     ladderSpins[2] = q;
-
-                    Console.WriteLine("[{0}]", string.Join(", ", ladderSpins));
-                    Console.WriteLine($"{angle}");
-
                     break;
 
                 case "PQRS":
                     termType = TermType.Fermion.PQRS;
-                    var pqrsSorted = ladderSpins.ToList();
-                    pqrsSorted.Sort();
 
                     // find the new PQRS (p'q'r's') and their corresponding original indices
                     p = pqrsSorted[0];
@@ -352,6 +342,9 @@ namespace ImportOptimizedFermions
                     var qIndex = Array.IndexOf(ladderSpins, q);
                     var rIndex = Array.IndexOf(ladderSpins, r);
                     var sIndex = Array.IndexOf(ladderSpins, s);
+
+                    // if the index is 0, 1, then that coefficient is creation
+                    // if the index is 2, 3, then that coefficient is annihilation
 
                     Console.WriteLine($"{pIndex}, {qIndex}, {rIndex}, {sIndex}");
                     Console.WriteLine($"values: {p}, {q}, {r}, {s}");
@@ -368,7 +361,8 @@ namespace ImportOptimizedFermions
                         // we could have pr (2) to qs (4)
                         zSign = 1.0;
                     }
-                    var swapCoeff = RecursivelyIdentifyDeterminant(ladderSpins.ToArray());
+                    int[] orderingArray = {pIndex, qIndex, rIndex, sIndex};
+                    var swapCoeff = RecursivelyIdentifyDeterminant(orderingArray.ToArray());
 
                     // identify which Q# pipeline to use
                     if ((pIndex + qIndex == 1) || (pIndex + qIndex == 5))
@@ -421,6 +415,8 @@ namespace ImportOptimizedFermions
                 default:
                     throw new System.NotImplementedException();
             }
+
+            Console.WriteLine($"{termType} | {string.Join(", ", ladderSpins)}");
 
             var ladderSeq = ladderSpins.ToLadderSequence();
             FermionTerm convertedTerm = new FermionTerm(ladderSeq);

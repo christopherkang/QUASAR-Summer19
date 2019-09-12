@@ -1,0 +1,29 @@
+0, 1, 3, 2
+values: 0, 1, 2, 3
+PQRS | 0, 1, 3, 2
+0, 3, 2, 1
+values: 0, 1, 2, 3
+PQRS | 0, 3, 2, 1
+PP | 3, 3
+PP | 2, 2
+PP | 1, 1
+PP | 0, 0
+Identity | 
+PQQP | 1, 2, 2, 1
+PQQP | 2, 3, 2, 3
+PQQP | 0, 1, 0, 1
+PQQP | 0, 1, 1, 0
+PQQP | 2, 3, 3, 2
+PQQP | 0, 1, 1, 0
+-0.0988344459999999
+Predicted energy: -1.17262099751995
+Predicted energy: -1.11126176600452
+Predicted energy: -1.11126176600452
+Predicted energy: -1.14194138176224
+Predicted energy: -1.14194138176224
+Predicted energy: -1.14194138176224
+Predicted energy: -1.16005261648883
+Predicted energy: -1.11126176600452
+Predicted energy: -1.14194138176224
+Predicted energy: -1.16005261648883
+Average predicted energy: -1.13942770555601
