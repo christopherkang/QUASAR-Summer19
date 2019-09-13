@@ -38,7 +38,7 @@ problem_description:
     label: '|G>'
     superposition:
       - [1.0, (1a)+, (1b)+, '|vacuum>']
-  - label: "UCCSD |G>"
+  - label: "|UCCSDG>"
     method: unitary_coupled_cluster
     cluster_operator:             
         reference_state: [1.0, (1a)+, (1b)+, '|vacuum>']             

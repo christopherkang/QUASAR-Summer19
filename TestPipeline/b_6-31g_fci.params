@@ -1,0 +1,7 @@
+YAML_PATH="/Users/kang828/Documents/GitHub/QUASAR-Summer19/YAML/b_6-31g_fci.yaml"
+INPUT_STATE="E1"
+PRECISION="7"
+TROTTER_STEP="0.4"
+TROTTER_ORDER="1"
+SAMPLE_SIZE="1"
+FOLDER_NAME="b_6-31g_fci"
