@@ -1,0 +1,7 @@
+YAML_PATH="/Users/kang828/Documents/GitHub/Quantum/Chemistry/IntegralData/Broombridge_v0.2/H2_sto-3g.yaml"
+INPUT_STATE="E1"
+PRECISION="7"
+TROTTER_STEP="0.4"
+TROTTER_ORDER="1"
+SAMPLE_SIZE="10"
+FOLDER_NAME="H2"

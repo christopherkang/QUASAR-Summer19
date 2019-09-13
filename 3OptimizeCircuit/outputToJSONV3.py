@@ -186,9 +186,9 @@ def produce_json(import_path, optimization_path, print_swaps=False, print_spin_o
         temp_swap_list = []
 
         for line in interaction_file:
-            print(spin_order)
+            # print(spin_order)
+            # print(line)
             line = line.rstrip()
-            print(line)
             if "Iteration" in line:
                 # add them to our list
                 new_interaction_term_list.append(parse_iteration_line(

@@ -23,7 +23,7 @@ class SpinOrder():
         return self.spin_order
 
 
-input_folder_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/TestPipeline/_temp"
+input_folder_path = "/Users/kang828/Documents/GitHub/QUASAR-Summer19/5ValidationTests/_temp"
 input_json_path = input_folder_path + "/extracted_terms.json"
 optimized_json_path = input_folder_path + "/reconstructed.json"
 interaction_file_path = input_folder_path + "/interaction_file.txt"
