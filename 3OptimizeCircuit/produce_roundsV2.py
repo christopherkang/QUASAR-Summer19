@@ -47,7 +47,7 @@ with open(path) as f:
         # do swaps
         temp_dict = make_round_dict()
 
-        print(swap_data[round_index])
+        # print(swap_data[round_index])
         for swap_episode in swap_data[round_index]:
             for swap in swap_episode:
                 temp_dict['qubit' + str(swap['targets'][0])] = swap

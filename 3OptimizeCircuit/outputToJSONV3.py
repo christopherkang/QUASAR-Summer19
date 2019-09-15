@@ -88,7 +88,7 @@ def parse_iteration_line(line_text, qubit_orbitals, categorized_interactions):
 
     # convert the interaction list back to spin orbital numberings
     for interaction_term in interaction_list:
-        print(interaction_term)
+        # print(interaction_term)
         # we now have a tuple; each of these needs to be converted
         # relabel the qubits with their spin orbitals
         renumbered_terms = list(
