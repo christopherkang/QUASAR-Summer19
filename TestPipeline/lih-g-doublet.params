@@ -1,0 +1,7 @@
+YAML_PATH="/Users/kang828/Documents/GitHub/QUASAR-Summer19/YAML/lih_sto-3g_fci_doublet.yaml"
+INPUT_STATE="G"
+PRECISION="7"
+TROTTER_STEP="0.4"
+TROTTER_ORDER="1"
+SAMPLE_SIZE="30"
+FOLDER_NAME="LiH-G-doublet"
