@@ -61,10 +61,6 @@ This folder contains a series of validation tests for the pipeline's output and 
 - Interaction / swap optimizations
 - Optimized JSON
 
-### Format
-
-This folder describes the format specification of the intermediate JSON file.
-
 ### TestPipeline
 
 Input: YAML file, parameters
@@ -87,3 +83,11 @@ This folder has a shell script which executes the other folders in the following
 5. `ValidationTests`, checking all outputs and the validity of the pipeline components
 
 Two files, `_sampled_optimized_energy.txt` and `_sampled_reference_energy.txt` are outputted in the `./_temp` folder, where the outputs with/wo optimizations can be compared.
+
+### YAML
+
+Sample YAML files from Microsoft / NWChem.
+
+## Notes on Format
+
+The JSON format used is NOT compatible across components. The JSON format used before `3OptimizeCircuit` keeps SWAPs and interactions separate; the JSON format after `3OptimizeCircuit` separates SWAPs and interactions, assuming that the interaction round goes first. This is made so that PP terms can be frontloaded (frontloading occurs in `outputToJSONV3.py`).
