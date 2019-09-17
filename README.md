@@ -1,6 +1,6 @@
 # QUASAR-Summer19
 
-## Christopher Kang | Sriram Krishnamoorthy @ PNNL
+## Christopher Kang | Sriram Krishnamoorthy @ PNNL | Summer 2019
 
 Collection of summer projects for my internship at PNNL over the summer of 2019.
 Warning: This work may need to be kept private and/or scrubbed before use, as it contains PNNL sensitive information (network username).
@@ -72,7 +72,7 @@ Output:
 - The raw extracted Hamiltonian (`extracted_terms.json`)
 - The optimizations to be applied (`interaction_file.txt`)
 - The optimized JSON (`reconstructed.json`)
-- The logfile describing all key parameters (`logfile.txt`)
+- The logfile describing all key parameters and time it took to execute each component (`logfile.txt`)
 
 This folder has a shell script which executes the other folders in the following order:
 
@@ -82,7 +82,7 @@ This folder has a shell script which executes the other folders in the following
 4. `ConvertFileToGates`, reingesting the optimized JSON to provide an energy level estimate
 5. `ValidationTests`, checking all outputs and the validity of the pipeline components
 
-Two files, `_sampled_optimized_energy.txt` and `_sampled_reference_energy.txt` are outputted in the `./_temp` folder, where the outputs with/wo optimizations can be compared.
+Two files, `_sampled_optimized_energy.txt` and `_sampled_reference_energy.txt`, contain the outputs with and without the optimizations, respectively.
 
 ### YAML
 
