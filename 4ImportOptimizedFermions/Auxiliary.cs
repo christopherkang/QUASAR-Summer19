@@ -261,8 +261,8 @@ namespace ImportOptimizedFermions
                     // Console.WriteLine("[{0}]", string.Join(", ", ladderSpins));
                     // Console.WriteLine($"{angle}");
 
-                    Console.WriteLine("-------------------");
-                    Console.WriteLine($"PQQR values: {ladderSpins[0]}, {ladderSpins[1]}, {ladderSpins[2]}, {ladderSpins[3]} | {angle}");
+                    // Console.WriteLine("-------------------");
+                    // Console.WriteLine($"PQQR values: {ladderSpins[0]}, {ladderSpins[1]}, {ladderSpins[2]}, {ladderSpins[3]} | {angle}");
 
                     p = -1;
                     q = -1;
@@ -382,7 +382,7 @@ namespace ImportOptimizedFermions
 
                     // ladderSpins[1] = q;
                     // ladderSpins[2] = q;
-                    Console.WriteLine($"PQQR values: {ladderSpins[0]}, {ladderSpins[1]}, {ladderSpins[2]}, {ladderSpins[3]} | {angle}");
+                    // Console.WriteLine($"PQQR values: {ladderSpins[0]}, {ladderSpins[1]}, {ladderSpins[2]}, {ladderSpins[3]} | {angle}");
                     break;
 
                 case "PQRS":
@@ -402,9 +402,9 @@ namespace ImportOptimizedFermions
                     // // if the index is 0, 1, then that coefficient is creation
                     // // if the index is 2, 3, then that coefficient is annihilation
 
-                    Console.WriteLine($"{pIndex}, {qIndex}, {rIndex}, {sIndex}");
+                    // Console.WriteLine($"{pIndex}, {qIndex}, {rIndex}, {sIndex}");
                     // Console.WriteLine($"values: {p}, {q}, {r}, {s}");
-                    Console.WriteLine($"values: {ladderSpins[0]}, {ladderSpins[1]}, {ladderSpins[2]}, {ladderSpins[3]} | {angle}");
+                    // Console.WriteLine($"values: {ladderSpins[0]}, {ladderSpins[1]}, {ladderSpins[2]}, {ladderSpins[3]} | {angle}");
 
                     // set the leading sign coefficients
                     var zSign = 0.0;
@@ -452,7 +452,7 @@ namespace ImportOptimizedFermions
                     }
 
                     // apply final corrections
-                    Console.WriteLine($"z: {zSign}, {swapCoeff}, {angle}");
+                    // Console.WriteLine($"z: {zSign}, {swapCoeff}, {angle}");
                     angle = -1.0 * zSign * swapCoeff * angle;
 
                     // Console.WriteLine($"values: {ladderSpins[0]}, {ladderSpins[1]}, {ladderSpins[2]}, {ladderSpins[3]} | {angle}");
