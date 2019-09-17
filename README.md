@@ -86,7 +86,7 @@ Two files, `_sampled_optimized_energy.txt` and `_sampled_reference_energy.txt` a
 
 ### YAML
 
-Sample YAML files from Microsoft / NWChem.
+Sample YAML files from Microsoft / NWChem. Params should point here.
 
 ## Notes on Format
 
