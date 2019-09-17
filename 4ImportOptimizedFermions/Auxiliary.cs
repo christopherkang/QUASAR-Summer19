@@ -115,7 +115,7 @@ namespace ImportOptimizedFermions
                 newEnergyOffset += energyOffset;
             }
 
-            Console.WriteLine(newEnergyOffset);
+            // Console.WriteLine(newEnergyOffset);
 
             return (new QArray<JordanWignerEncodingData>(allRounds), newEnergyOffset);
         }
@@ -185,8 +185,8 @@ namespace ImportOptimizedFermions
             // pull the interactions and parse them into the PauliHamiltonian format
             foreach (var interaction in interactionList)
             {
-                var (term, type, coeff) = ConvertToFermionFormat(interaction);
-                hamiltonian.AddRange(conversion(term, type, coeff));
+                var (term, type, coeffData) = ConvertToFermionFormat(interaction);
+                hamiltonian.AddRange(conversion(term, type, coeffData));
                 // if ((string)interaction["type"] == "Identity")
                 // {
                 //     // We need to still add the term if it's an identity term
@@ -219,7 +219,7 @@ namespace ImportOptimizedFermions
         {
             // extract only the fermionic interactions
             string type = (string)interaction["type"];
-            double angle = (double)interaction["angle"];
+            var angle = (double)interaction["angle"];
             var p = -1;
             var q = -1;
             var r = -1;
@@ -252,81 +252,137 @@ namespace ImportOptimizedFermions
                     q = pqrsSorted[2];
                     ladderSpins[0] = p;
                     ladderSpins[1] = q;
+                    ladderSpins[2] = q;
+                    ladderSpins[3] = p;
                     break;
 
                 case "PQQR":
                     termType = TermType.Fermion.PQQR;
-                    Console.WriteLine("[{0}]", string.Join(", ", ladderSpins));
-                    Console.WriteLine($"{angle}");
+                    // Console.WriteLine("[{0}]", string.Join(", ", ladderSpins));
+                    // Console.WriteLine($"{angle}");
+
+                    Console.WriteLine("-------------------");
+                    Console.WriteLine($"PQQR values: {ladderSpins[0]}, {ladderSpins[1]}, {ladderSpins[2]}, {ladderSpins[3]} | {angle}");
 
                     p = -1;
                     q = -1;
                     r = -1;
 
-                    if (ladderSpins[0] == ladderSpins[1])
-                    {
-                        // we are in QQPR, need to see if P, R should be switched
-                        p = ladderSpins[2];
-                        q = ladderSpins[0];
-                        r = ladderSpins[3];
-                    }
-                    else if (ladderSpins[0] == ladderSpins[2])
-                    {
-                        // we are in QPQR
-                        p = ladderSpins[1];
-                        q = ladderSpins[0];
-                        r = ladderSpins[3];
-                        angle = angle * -1.0;
-                    }
-                    else if (ladderSpins[0] == ladderSpins[3])
-                    {
-                        // we are in QPRQ
-                        p = ladderSpins[1];
-                        q = ladderSpins[0];
-                        r = ladderSpins[2];
-                    }
-                    else if (ladderSpins[1] == ladderSpins[2])
-                    {
-                        // we are in PQQR
-                        p = ladderSpins[0];
-                        q = ladderSpins[1];
-                        r = ladderSpins[3];
-                    }
-                    else if (ladderSpins[1] == ladderSpins[3])
-                    {
-                        // we are in pqrq
-                        p = ladderSpins[0];
-                        q = ladderSpins[1];
-                        r = ladderSpins[2];
-                        angle = angle * -1.0;
-                    }
-                    else if (ladderSpins[2] == ladderSpins[3])
-                    {
-                        // we are in prqq
-                        p = ladderSpins[0];
-                        q = ladderSpins[2];
-                        r = ladderSpins[1];
-                    }
-                    else
-                    {
-                        Console.WriteLine("Unknown PQQR Permutation");
+                    // PROBLEM: if you swap the ladderspins, the internal data format will try to move it
+                    // into a way it understands. HOWEVER, this causes two problems:
+                    // - the term has been reordered without your knowledge, into a form you're not sure of
+                    // - the coefficient induced by this swap is not recorded BY THE ACTUAL TRANSFORMATION
+                    // so, I avoided the more rigorous transformation by simply avoiding our main problem,
+                    // where p > q. This code checks for that and swaps p,q if so.
+                    // it also assumes we're in some combo of qprq or pqrq
+                    if (ladderSpins[0] == ladderSpins[3]) {
+                        // QPRQ
+                        if (ladderSpins[1] > ladderSpins[2]) {
+                            var temp = ladderSpins[1];
+                            ladderSpins[1] = ladderSpins[2];
+                            ladderSpins[2] = temp;
+                        }
+                    } else if (ladderSpins[1] == ladderSpins[3]) {
+                        // PQRQ
+                        if (ladderSpins[0] > ladderSpins[2]) {
+                            var temp = ladderSpins[2];
+                            ladderSpins[2] = ladderSpins[0];
+                            ladderSpins[0] = temp;
+                        }
+                    } else if (ladderSpins[1] == ladderSpins[2]) {
+                        // PQQR
+                        if (ladderSpins[0] > ladderSpins[3]) {
+                            var temp = ladderSpins[3];
+                            ladderSpins[3] = ladderSpins[0];
+                            ladderSpins[0] = temp;
+                        }
                     }
 
-                    // rename the terms now 
-                    if (p < r)
-                    {
-                        ladderSpins[0] = p;
-                        ladderSpins[3] = r;
-                    }
-                    else
-                    {
-                        ladderSpins[0] = r;
-                        ladderSpins[3] = p;
-                        // angle = angle * -1.0;
-                    }
+                    // if (ladderSpins[0] == ladderSpins[1])
+                    // {
+                    //     // we are in QQPR, need to see if P, R should be switched
+                    //     p = ladderSpins[2];
+                    //     q = ladderSpins[0];
+                    //     r = ladderSpins[3];
+                    //     Console.WriteLine("---------QQPR");
+                    //     ladderSpins[0] = p;
+                    //     ladderSpins[1] = q;
+                    //     ladderSpins[2] = q;
+                    //     ladderSpins[3] = r;
+                    // } else if (ladderSpins[0] == ladderSpins[2])
+                    // {
+                    //     // we are in QPQR
+                    //     p = ladderSpins[1];
+                    //     q = ladderSpins[0];
+                    //     r = ladderSpins[3];
+                    //     angle = angle * -1.0; // FLAG
+                    //     Console.WriteLine("---------QPQR");
+                    // } else if (ladderSpins[0] == ladderSpins[3])
+                    // {
+                    //     // we are in QPRQ
+                    //     p = ladderSpins[1];
+                    //     q = ladderSpins[0];
+                    //     r = ladderSpins[2];
+                    //     Console.WriteLine("---------QPRQ");
+                    // }
+                    // else 
+                    // if (ladderSpins[1] == ladderSpins[2])
+                    // {
+                    //     // we are in PQQR
+                    //     p = ladderSpins[0];
+                    //     q = ladderSpins[1];
+                    //     r = ladderSpins[3];
+                    //     Console.WriteLine("---------PQQR");
+                    // }
+                    // else 
+                    // if (ladderSpins[1] == ladderSpins[3])
+                    // {
+                    //     // we are in pqrq
+                    //     p = ladderSpins[0];
+                    //     q = ladderSpins[1];
+                    //     r = ladderSpins[2];
+                    //     angle = angle * -1.0;
+                    //     Console.WriteLine("---------PQRQ");
+                    //     ladderSpins[0] = p;
+                    //     ladderSpins[1] = q;
+                    //     ladderSpins[2] = q;
+                    //     ladderSpins[3] = r;
+                    // }
+                    // else if (ladderSpins[2] == ladderSpins[3])
+                    // {
+                    //     // we are in prqq
+                    //     p = ladderSpins[0];
+                    //     q = ladderSpins[2];
+                    //     r = ladderSpins[1];
+                    //     Console.WriteLine("---------PRQQ");
+                    //     ladderSpins[0] = p;
+                    //     ladderSpins[1] = q;
+                    //     ladderSpins[2] = q;
+                    //     ladderSpins[3] = r;
+                    // }
+                    // else
+                    // {
+                    //     Console.WriteLine("Unknown PQQR Permutation");
+                    // }
 
-                    ladderSpins[1] = q;
-                    ladderSpins[2] = q;
+                    // // rename the terms now 
+                    // if (p < r)
+                    // {
+                    //     ladderSpins[0] = p;
+                    //     ladderSpins[3] = r;
+                    // }
+                    // else
+                    // {
+                    //     ladderSpins[0] = r;
+                    //     ladderSpins[3] = p;
+                    //     angle = angle * -1.0;
+                    // }
+
+                    // // Console.WriteLine(angle);
+
+                    // ladderSpins[1] = q;
+                    // ladderSpins[2] = q;
+                    Console.WriteLine($"PQQR values: {ladderSpins[0]}, {ladderSpins[1]}, {ladderSpins[2]}, {ladderSpins[3]} | {angle}");
                     break;
 
                 case "PQRS":
@@ -343,11 +399,12 @@ namespace ImportOptimizedFermions
                     var rIndex = Array.IndexOf(ladderSpins, r);
                     var sIndex = Array.IndexOf(ladderSpins, s);
 
-                    // if the index is 0, 1, then that coefficient is creation
-                    // if the index is 2, 3, then that coefficient is annihilation
+                    // // if the index is 0, 1, then that coefficient is creation
+                    // // if the index is 2, 3, then that coefficient is annihilation
 
                     Console.WriteLine($"{pIndex}, {qIndex}, {rIndex}, {sIndex}");
-                    Console.WriteLine($"values: {p}, {q}, {r}, {s}");
+                    // Console.WriteLine($"values: {p}, {q}, {r}, {s}");
+                    Console.WriteLine($"values: {ladderSpins[0]}, {ladderSpins[1]}, {ladderSpins[2]}, {ladderSpins[3]} | {angle}");
 
                     // set the leading sign coefficients
                     var zSign = 0.0;
@@ -372,11 +429,6 @@ namespace ImportOptimizedFermions
                         ladderSpins[1] = q;
                         ladderSpins[2] = s;
                         ladderSpins[3] = r;
-
-                        // angle sign correction 
-                        // getting to pqsr itself takes one swap
-                        angle = -1.0 * angle;
-
                     }
                     else if ((qIndex + sIndex == 1) || (qIndex + sIndex == 5))
                     {
@@ -385,9 +437,6 @@ namespace ImportOptimizedFermions
                         ladderSpins[1] = r;
                         ladderSpins[2] = s;
                         ladderSpins[3] = q;
-
-                        // angle sign correction - not necessary
-
                     }
                     else if ((qIndex + rIndex == 1) || (qIndex + rIndex == 5))
                     {
@@ -396,11 +445,6 @@ namespace ImportOptimizedFermions
                         ladderSpins[1] = s;
                         ladderSpins[2] = r;
                         ladderSpins[3] = q;
-
-                        // angle sign correction
-
-                        angle = -1.0 * angle;
-
                     }
                     else
                     {
@@ -408,20 +452,25 @@ namespace ImportOptimizedFermions
                     }
 
                     // apply final corrections
+                    Console.WriteLine($"z: {zSign}, {swapCoeff}, {angle}");
                     angle = -1.0 * zSign * swapCoeff * angle;
 
+                    // Console.WriteLine($"values: {ladderSpins[0]}, {ladderSpins[1]}, {ladderSpins[2]}, {ladderSpins[3]} | {angle}");
                     break;
 
                 default:
                     throw new System.NotImplementedException();
             }
 
-            Console.WriteLine($"{termType} | {string.Join(", ", ladderSpins)}");
-
             var ladderSeq = ladderSpins.ToLadderSequence();
             FermionTerm convertedTerm = new FermionTerm(ladderSeq);
+            // Console.WriteLine($"{termType} | {convertedTerm} | {angle}");
+            // // Console.WriteLine($"{convertedTerm.Sequence}");
+            // Console.WriteLine("[{0}]", string.Join(", ", convertedTerm.Sequence));
+            // Console.WriteLine(convertedTerm.Coefficient);
 
-            return (convertedTerm, termType, angle);
+            // IMPORTANT: MAKE SURE TO KEEP THE convertedTerm.Coefficient, as it corrects for internal manipulation
+            return (convertedTerm, termType, angle * convertedTerm.Coefficient);
         }
 
         // Identify the determinant of a permutation array

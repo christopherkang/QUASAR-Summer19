@@ -2,7 +2,8 @@
 {
     open Microsoft.Quantum.Intrinsic;
     open Microsoft.Quantum.Canon;
-    open Microsoft.Quantum.Chemistry.JordanWigner;  
+    open Microsoft.Quantum.Chemistry.JordanWigner; 
+    open Microsoft.Quantum.Diagnostics; 
 	open Microsoft.Quantum.Simulation;	
     open Microsoft.Quantum.Characterization;
     open Microsoft.Quantum.Convert;
