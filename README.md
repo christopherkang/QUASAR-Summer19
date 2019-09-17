@@ -10,10 +10,11 @@ Warning: This work may need to be kept private and/or scrubbed before use, as it
 1. Clone this repo. If you want to use Microsoft's YAML files, also clone [this folder](https://github.com/microsoft/Quantum/tree/master/Chemistry/IntegralData/YAML) in Microsoft/Quantum
 2. Install all Python requirements with the `spec.yml` file provided.
 3. Install [Microsoft's QDK](https://docs.microsoft.com/en-us/quantum/install-guide/csharp?view=qsharp-preview)
-4. Create or use an existing `.params` file. I recommend copy/pasting an existing file and simply making modifications.
-5. Go to `/TestPipeline/testPipelineV2.sh` and copy the path of the `.params` file to use.
-6. Run the script with the `.params` path as a command line argument - you may need to give proper permissions. Use `./testPipelineV2.sh /path/to/.params` [Additionally, if you are Windows, you may need to run the commands in the shell script manually.] 
-7. Find results in `/TestPipeline/_data_{$FOLDER_NAME}_{$DATE}` where `FOLDER_NAME` is specified in `.params` and `DATE` is the date/time of program start.
+4. Add your own optimizations under `3OptimizeCircuit/swap` and modify their command line arguments in `/TestPipeline/testPipelineV2.sh`.
+5. Create or use an existing `.params` file. I recommend copy/pasting an existing file and simply making modifications.
+6. Go to `/TestPipeline/testPipelineV2.sh` and copy the path of the `.params` file to use.
+7. Run the script with the `.params` path as a command line argument - you may need to give proper permissions. Use `./testPipelineV2.sh /path/to/.params` [Additionally, if you are Windows, you may need to run the commands in the shell script manually.] 
+8. Find results in `/TestPipeline/_data_{$FOLDER_NAME}_{$DATE}` where `FOLDER_NAME` is specified in `.params` and `DATE` is the date/time of program start.
 
 ## Components
 
@@ -39,7 +40,7 @@ Input: JSON file
 
 Output: JSON file
 
-This folder applies a variety of optimizations onto the Trotter gate set. These optimizations are described in Khan, et al.
+This folder applies a variety of optimizations onto the Trotter gate set. These optimizations are described in Khan, et al. Put your own optimizations in a folder named `swap` and modify their command line arguments in `testPipelineV2.sh`.
 
 ### 4ImportOptimizedFermions
 
